@@ -1,4 +1,4 @@
-## Troubleshooting
+## 3. Troubleshooting
 
 #### MAINTENANCE: Code fails to download to Micro:bit
 

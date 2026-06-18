@@ -1,4 +1,4 @@
-## Troubleshooting
+## 4. Troubleshooting
 
 ### **Errors for Uploading Codes**
 
