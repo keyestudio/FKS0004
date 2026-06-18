@@ -1,108 +1,108 @@
-### Progetto 03: Pipistrello a Rilevamento Distanza
+### Projet 03 : Chauve-souris à distance
 
-#### 1. Panoramica
+#### 1. Vue d'ensemble
 
-Basato su un sensore ad ultrasuoni, il pipistrello a rilevamento distanza misura la distanza degli ostacoli e la visualizza in tempo reale su un OLED. Quando è inferiore a 10cm, l'altoparlante emette un allarme.
+Basée sur un capteur ultrasonique, la chauve-souris à distance détecte la distance des obstacles et l'affiche en temps réel sur un OLED. Lorsque la distance est inférieure à 10 cm, le haut-parleur émet une alarme.
 
-#### 2. Componenti
+#### 2. Composants
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| scheda micro:bit *1 | scheda di espansione micro:bit tipo T *1 | cavo micro USB *1 |
+| carte micro:bit *1 | carte d'extension micro:bit type T *1 | câble micro USB *1 |
 | ![Img](./media/A356.png)| ![Img](./media/A406.png)| ![Img](./media/A415.png) |
-| sensore ad ultrasuoni *1 | modulo OLED *1 | fili DuPont |
+| capteur ultrasonique *1 | module OLED *1 | fils DuPont |
 |![Img](./media/A017.png) | ![Img](./media/A950.png) | ![Img](./media/A024.png) |
-|breadboard *1 | fili jumper | portabatterie *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>)|
+| breadboard *1 | fils de connexion | support de pile *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>)|
 |![Img](./media/A315.png)|![Img](./media/A557.png) | |
-|scheda pipistrello *1| scheda OLED *1 | |
+| carte chauve-souris *1| carte OLED *1 | |
 
-#### 3. Conoscenza dei Componenti
+#### 3. Connaissances sur les composants
 
-**sensore ad ultrasuoni**
+**capteur ultrasonique**
 
-Le onde ultrasoniche rimbalzano quando colpiscono un ostacolo. Misuriamo la distanza calcolando l'intervallo di tempo tra l'invio e la ricezione delle onde. Poiché la velocità di propagazione del suono nell'aria è una costante v=340m/s, calcoliamo la distanza tra il sensore e l'ostacolo: s=vt/2.
+Les ondes ultrasoniques rebondissent lorsqu'elles rencontrent un obstacle. Nous mesurons la distance en calculant l'intervalle de temps entre l'émission et la réception des ondes. Comme la vitesse de propagation du son dans l'air est constante v=340m/s, nous calculons la distance entre le capteur et l'obstacle : s=vt/2.
 
 ![Img](./media/A846.png)
 
-Il modulo ad ultrasuoni HC-SR04 integra un trasmettitore e un ricevitore. Il primo converte segnali elettrici (energia elettrica) in onde sonore ad alta frequenza (oltre l'udito umano) (energia meccanica), mentre il secondo fa l'opposto.
+Le module ultrasonique HC-SR04 intègre un émetteur et un récepteur. Le premier convertit les signaux électriques (énergie électrique) en ondes sonores à haute fréquence (au-delà de l'audition humaine) (énergie mécanique), tandis que le second fait l'inverse.
 
-Lo schema del HC SR04:
+Le schéma du HC SR04 :
 
 ![Img](./media/A642.png)
 
-**Definizione dei Pin:**
+**Définition des broches :**
 
 ![Img](./media/A702.png)
 
-**Parametri:**
+**Paramètres :**
 
-- Tensione di funzionamento: 5V
-- Corrente di funzionamento: 12mA
-- Distanza minima di misurazione: 2cm
-- Distanza massima di misurazione: 200cm
+- Tension de fonctionnement : 5V
+- Courant de fonctionnement : 12mA
+- Distance minimale de mesure : 2cm
+- Distance maximale de mesure : 200cm
 
-**Principio di funzionamento:**
+**Principe de fonctionnement :**
 
-Un impulso di livello alto della durata di almeno 10us viene inviato sul pin Trig, e il modulo inizia a trasmettere onde ultrasoniche. Allo stesso tempo, il pin Echo viene portato alto. Quando il modulo riceve un'onda ultrasonica di ritorno dopo aver incontrato un ostacolo, il pin Echo viene portato basso. La durata del livello alto del pin Echo è il tempo totale dell'onda dall'invio alla ricezione: s=vt/2.
+Une impulsion de niveau haut d'au moins 10µs est envoyée sur la broche Trig, et le module commence à émettre des ondes ultrasoniques. En même temps, la broche Echo est mise à niveau haut. Lorsque le module reçoit une onde ultrasonique de retour après avoir rencontré un obstacle, la broche Echo passe à niveau bas. La durée du niveau haut de la broche Echo correspond au temps total de l'onde entre l'émission et la réception : s=vt/2.
 
 ![Img](./media/A728.png)
 
-**Modulo OLED**
+**Module OLED**
 
-La tecnologia OLED presenta una ricca resa cromatica, alto contrasto e ampio angolo di visuale, fornendo immagini chiare e vivide, particolarmente eccellente nel nero.
+La technologie OLED offre une riche performance de couleurs, un contraste élevé et un large angle de vue, fournissant des images claires et vives, particulièrement remarquables dans les noirs.
 
-Ogni pixel del display OLED emette luce propria senza retroilluminazione, quindi consuma relativamente poca energia. Con dimensioni ridotte, alta risoluzione e basso consumo, il display OLED da 0,9 pollici è molto adatto per dispositivi indossabili.
+Chaque pixel de l'écran OLED émet sa propre lumière sans rétroéclairage, ce qui consomme relativement peu d'énergie. Avec une petite taille, une haute résolution et une faible consommation, l'écran OLED de 0,9 pouce est très adapté aux dispositifs portables.
 
 ![Img](./media/A636.png)
 
-<span style="color: rgb(255, 76, 65);">**In questo progetto, il modulo display OLED collega l'interfaccia SDA al pin P20 e SCL al pin P19.**</span>
+<span style="color: rgb(255, 76, 65);">**Dans ce projet, le module d'affichage OLED connecte l'interface SDA à la broche P20 et SCL à la broche P19.**</span>
 
-**Parametri:**
+**Paramètres :**
 
-- Tensione di funzionamento: DC 3.3V-5V
+- Tension de fonctionnement : DC 3.3V-5V
 
-- Corrente di funzionamento: 30mA
+- Courant de fonctionnement : 30mA
 
-- Interfaccia: porte pin con passo di 2.54mm
+- Interface : ports à broches avec un espacement de 2.54mm
 
-- Modalità di comunicazione: I2C
+- Mode de communication : I2C
 
-- Chip driver interno: SSD1306
+- Puce pilote interne : SSD1306
 
-- Risoluzione: 128*64
+- Résolution : 128*64
 
-- Angolo di visuale: maggiore di 150°
+- Angle de vue : supérieur à 150°
 
-#### 4. Schema di Collegamento
+#### 4. Schéma de câblage
 
 ![Img](./media/A1849.png)
 
-<span style="color: rgb(255, 76, 65);">**Quando si utilizzano il display OLED e il sensore ad ultrasuoni, è necessario collegare un'alimentazione esterna e impostare l'interruttore DIP su ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Lors de l'utilisation de l'écran OLED et du capteur ultrasonique, il faut connecter une alimentation externe et mettre l'interrupteur DIP sur ON.**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A1906.png)
 
-#### 5. Flusso del Codice
+#### 5. Flux du code
 
 ![Img](./media/A924.png)
 
-#### 6. Codice di Test
+#### 6. Code de test
 
-Il file di codice è fornito nella cartella Progetto 03：Pipistrello a Rilevamento Distanza, file Project-03-Ranging-Bat.hex.
+Le fichier de code est fourni dans le dossier Projet 03 : Chauve-souris à distance, fichier Project-03-Ranging-Bat.hex.
 
 ![Img](./media/A955.png)
 
-**Carica i blocchi di codice:** <span style="color: rgb(255, 76, 65);">La soglia nella condizione 10 può essere modificata in base alle condizioni reali.</span>
+**Charger les blocs de code :** <span style="color: rgb(255, 76, 65);">Le seuil dans la condition 10 peut être modifié selon les conditions réelles.</span>
 
 ![Img](./media/A022.png)
 
-#### 7. Risultato del Test
+#### 7. Résultat du test
 
-Per l'App Windows 10, cliccare su “<span style="color: rgb(255, 76, 65);">Download</span>”. Per i browser, inviare il file “<span style="color: rgb(255, 76, 65);">.hex</span>” scaricato alla scheda micro:bit.
+Pour l'application Windows 10, cliquez sur “<span style="color: rgb(255, 76, 65);">Download</span>”. Pour les navigateurs, envoyez le fichier “<span style="color: rgb(255, 76, 65);">.hex</span>” téléchargé vers la carte micro:bit.
 
-Dopo aver scaricato il codice sulla scheda, <span style="color: rgb(255, 76, 65);">accendere tramite alimentazione esterna e impostare l'interruttore DIP su ON</span>, e l'OLED visualizza in tempo reale la distanza tra il sensore ad ultrasuoni e l'ostacolo. Quando il valore della distanza è inferiore a 10cm, l'altoparlante sulla scheda micro:bit emette un allarme.
+Après avoir téléchargé le code sur la carte, <span style="color: rgb(255, 76, 65);">alimentez via une alimentation externe et mettez l'interrupteur DIP sur ON</span>, et l'OLED affiche en temps réel la distance entre le capteur ultrasonique et l'obstacle. Lorsque la valeur de distance est inférieure à 10 cm, le haut-parleur de la carte micro:bit émet une alarme.
 
-<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non si vedono i risultati, premere il pulsante di reset sul retro della scheda.</span></span>
+<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez sur le bouton reset à l'arrière de la carte.</span></span>
 
 ![Img](./media/A605.gif)

@@ -1,101 +1,101 @@
-### Progetto 07: Monitoraggio Ambientale
+### Projet 07 : Surveillance de l'environnement
 
-#### 1. Panoramica
+#### 1. Aperçu
 
-Sull'OLED, il sistema intelligente di monitoraggio ambientale visualizza in tempo reale i valori di temperatura e umidità rilevati dal sensore DHT11, oltre al valore del livello di luminosità della luce ambientale rilevato dal sensore di luce integrato.
+Sur l'OLED, le système intelligent de surveillance de l'environnement affiche en temps réel les valeurs de température et d'humidité détectées par le capteur DHT11, ainsi que la valeur du niveau de luminosité de la lumière ambiante détectée par le capteur de lumière intégré.
 
-#### 2. Componenti
+#### 2. Composants
 
 |         ![Img](./media/A850.png)          |       ![Img](./media/A858.png)       |              ![Img](./media/A906.png)              |
 | :--------------------------------------: | :---------------------------------: | :-----------------------------------------------: |
-|            scheda micro:bit *1            | scheda di espansione micro:bit tipo T *1 |                cavo micro USB *1                 |
+|            carte micro:bit *1             | carte d'extension micro:bit type T *1 |                câble micro USB *1                 |
 |         ![Img](./media/A2637.png)         |       ![Img](./media/A406.png)       |              ![Img](./media/A415.png)              |
-| sensore di temperatura e umidità XHT11 *1 |           modulo OLED *1            |                   fili DuPont                    |
+| capteur de température et d'humidité XHT11 *1 |           module OLED *1            |                   fils DuPont                    |
 |         ![Img](./media/A017.png)          |       ![Img](./media/A950.png)       |              ![Img](./media/A024.png)              |
-|              breadboard *1               |             fili jumper              |portabatterie *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>)|
+|              breadboard *1                |             fils de connexion       |support de batterie *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>)|
 |         ![Img](./media/A0715.png)         |       ![Img](./media/A557.png)       |                                                   |
-|              scheda cloud *1               |            scheda OLED *1             |                                                   |
+|              carte cloud *1               |            carte OLED *1             |                                                   |
 
-#### 3. Conoscenza dei Componenti
+#### 3. Connaissances sur les composants
 
-**Sensore di temperatura e umidità XHT11**
+**Capteur de température et d'humidité XHT11**
 
 ![Img](./media/A2637.png)
 
-Il sensore di temperatura e umidità XHT11 è un sensore composito con uscita digitale calibrata, in grado di rilevare l'umidità e la temperatura nell'aria.
+Le capteur de température et d'humidité XHT11 est un capteur composite avec sortie de signal numérique calibrée, capable de détecter l'humidité et la température de l'air.
 
-**Precisione**: umidità ±5%RH, temperatura ±2℃
+**Précision** : humidité ±5%RH, température ±2℃
 
-**Intervallo di rilevamento**: umidità 5%RH ~ 95%RH, temperatura -25℃ ~ +60℃
+**Plage de détection** : humidité 5%RH ~ 95%RH, température -25℃ ~ +60℃
 
-Il sensore utilizza un modulo digitale speciale per l'acquisizione e la tecnologia di rilevamento di temperatura e umidità per garantire un'affidabilità estremamente elevata e un'eccellente stabilità a lungo termine. Include un elemento resistivo per il rilevamento dell'umidità e un elemento NTC per il rilevamento della temperatura, risultando molto adatto per misurazioni con requisiti di precisione relativamente bassi e in tempo reale.
+Le capteur utilise une acquisition par module numérique spécial et une technologie de détection de température et d'humidité pour garantir une fiabilité extrêmement élevée et une excellente stabilité à long terme. Il comprend un élément de détection d'humidité résistif et un élément de détection de température NTC, ce qui le rend très adapté aux mesures avec une précision relativement faible et des exigences en temps réel.
 
-**Modalità di comunicazione XHT11:**
+**Mode de communication XHT11 :**
 
-Viene adottata la comunicazione a bus singolo. Ciò significa che esiste una sola linea dati per lo scambio di dati e il controllo nel sistema.
+La communication par bus unique est adoptée. Cela signifie qu'il n'y a qu'une seule ligne de données pour l'échange de données et le contrôle dans le système.
 
-- Definizione dei bit dati trasmessi dal bus singolo:
+- Définition des bits de données transmis par bus unique :
 
-Formato dati bus singolo: vengono trasmessi 40 bit di dati alla volta, con il bit alto per primo.
+Format des données du bus unique : 40 bits de données sont transmis à la fois, avec le bit de poids fort en premier.
 
-8 bit interi umidità + 8 bit decimali umidità + 8 bit interi temperatura + 8 bit decimali temperatura + 8 bit di parità (la parte decimale dell'umidità è 0)
+8 bits entier humidité + 8 bits décimal humidité + 8 bits entier température + 8 bits décimal température + 8 bits bit de parité (la partie décimale de l'humidité est 0)
 
-- Definizione del bit di parità:
+- Définition du bit de parité :
 
-8 bit interi umidità + 8 bit decimali umidità + 8 bit interi temperatura + 8 bit decimali temperatura. 8 bit di parità = gli ultimi 8 bit del risultato ottenuto
+8 bits entier humidité + 8 bits décimal humidité + 8 bits entier température + 8 bits décimal température. 8 bits bit de parité = les 8 derniers bits du résultat obtenu
 
-- Cronologia dei dati:
+- Chronologie des données :
 
-Dopo che l'host utente (MCU) invia un segnale di avvio, l'XHT11 passa dalla modalità a basso consumo alla modalità ad alta velocità. Dopo il segnale di avvio, l'XHT11 invia un segnale di risposta e 40 bit di dati, e attiva un'acquisizione del segnale.
+Après que l'hôte utilisateur (MCU) envoie un signal de démarrage, le XHT11 passe du mode basse consommation au mode haute vitesse. Après le signal de démarrage, le XHT11 envoie un signal de réponse et 40 bits de données, et déclenche une acquisition de signal.
 
-- La trasmissione del segnale è mostrata nella figura:
+- La transmission du signal est illustrée dans la figure :
 
 ![Img](./media/A229.png)
 
- **Parametri**
+ **Paramètres**
 
-- Tensione di funzionamento: DC 3.3V a 5V
+- Tension de fonctionnement : DC 3.3V à 5V
 
-- Corrente di funzionamento: 2.1mA
+- Courant de fonctionnement : 2.1mA
 
-- Potenza massima: 0.0105W
+- Puissance maximale : 0.0105W
 
-- Intervallo di temperatura: -25℃ ~ +60℃ (± 2℃)
+- Plage de température : -25℃ ~ +60℃ (± 2℃)
 
-- Intervallo di umidità: 5%RH ~ 95%RH (precisione ±5%RH intorno a 25 °C)
+- Plage d'humidité : 5%RH ~ 95%RH (précision ±5%RH autour de 25 °C)
 
-**Sensore di luce Microbit**
+**Capteur de lumière Microbit**
 
 ![Img](./media/A0335.png)
 
-Un sensore di luce è un dispositivo di input che misura la luminosità della luce esterna. La scheda micro:bit non include un sensore di luce integrato. Rileva e misura la luminosità ambientale tramite una matrice LED che converte ripetutamente l'intensità luminosa in un valore di input, quindi viene campionato il tempo di attenuazione della tensione. In questo modo, <span style="color: rgb(255, 76, 65);">il livello di luminosità rilevato è un valore relativo</span>.
+Un capteur de lumière est un dispositif d'entrée qui mesure la luminosité de la lumière externe. La carte micro:bit ne comprend pas de capteur de lumière intégré. Elle détecte et mesure la luminosité ambiante par une matrice de LED qui convertit de manière répétée l'intensité lumineuse en une valeur d'entrée, puis le temps d'atténuation de la tension est échantillonné. De cette manière, <span style="color: rgb(255, 76, 65);">le niveau de luminosité détecté est une valeur relative</span>.
 
-#### 4. Schema di Collegamento
+#### 4. Schéma de câblage
 
 ![Img](./media/A409.png)
 
-<span style="color: rgb(255, 76, 65);">**Quando si utilizza il display OLED, è necessario collegare un'alimentazione esterna e impostare l'interruttore DIP su ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Lors de l'utilisation de l'affichage OLED, nous devons connecter une alimentation externe et mettre l'interrupteur DIP sur ON.**</span>
 
 ![Img](./media/A904.png)
 
 ![Img](./media/A554.png)
 
-#### 5. Importazione Libreria
+#### 5. Importer la bibliothèque
 
-Se non hai ancora aggiunto i file di libreria richiesti (DHT11 e oled_ssd1306), importali facendo riferimento a [Come Mu Importa Libreria su Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit).
+Si vous n'avez pas encore ajouté les fichiers de bibliothèque requis (DHT11 et oled_ssd1306), veuillez les importer en vous référant à [Comment Mu importe la bibliothèque vers Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit).
 
-#### 6. Flusso del Codice
+#### 6. Flux du code
 
 ![Img](./media/A638.png)
 
 
-#### 7. Codice di Test
+#### 7. Code de test
 
-Il file di codice è fornito nella cartella Project 07：Environment Monitoring中找文件Project-07-Environment-Monitoring\.py.
+Le fichier de code est fourni dans le dossier Project 07：Environment Monitoring中找文件Project-07-Environment-Monitoring\.py.
 
 ![Img](./media/A3641.png)
 
-**Codice completo:**
+**Code complet :**
 
 ```python
 '''
@@ -129,18 +129,18 @@ while True:
     sleep(2000)
 ```
 
-#### 8. Risultato del Test
+#### 8. Résultat du test
 
-Clicca su “<span style="color: rgb(255, 76, 65);">Flash</span>” per caricare il codice sulla scheda micro:bit.
+Cliquez sur “<span style="color: rgb(255, 76, 65);">Flash</span>” pour charger le code sur la carte micro:bit.
 
 ![Img](./media/A3710.png)
 
-Dopo aver scaricato il codice sulla scheda, **accendi tramite cavo micro USB o alimentazione esterna (imposta l'interruttore DIP su ON)**, e premi il pulsante di reset sulla scheda.
+Après avoir téléchargé le code sur la carte, **alimentez via le câble micro USB ou une alimentation externe (mettre l'interrupteur DIP sur ON)**, puis appuyez sur le bouton de réinitialisation de la carte.
 
 ![Img](./media/A455.png)
 
-L'OLED visualizza in tempo reale i valori di temperatura e umidità e il livello di luminosità della luce.
+L'OLED affiche en temps réel les valeurs de température, d'humidité et le niveau de luminosité de la lumière.
 
-<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non vedi i risultati, premi il pulsante di reset sul retro della scheda.</span>
+<span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez sur le bouton de réinitialisation à l'arrière de la carte.</span>
 
 ![Img](./media/A838.gif)

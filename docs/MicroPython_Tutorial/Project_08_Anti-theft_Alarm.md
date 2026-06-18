@@ -1,48 +1,48 @@
-### Progetto 08: Allarme Antifurto
+### Projet 08 : Alarme anti-vol
 
-#### 1. Panoramica
+#### 1. Vue d'ensemble
 
-Quando l'allarme antifurto intelligente rileva che la scatola antifurto è stata spostata, l'altoparlante sulla scheda micro:bit emetterà un allarme e il LED rosso lampeggierà.
+Lorsque l'alarme anti-vol intelligente détecte que la boîte anti-vol a été déplacée, le haut-parleur sur la carte micro:bit émettra une alarme et la LED rouge clignotera.
 
-#### 2. Componenti
+#### 2. Composants
 
 | ![Img](./media/A850.png) |              ![Img](./media/A858.png)              | ![Img](./media/A906.png) |
 | :---------------------: | :-----------------------------------------------: | :---------------------: |
-|   scheda micro:bit *1   |        scheda di espansione micro:bit tipo T *1   |   cavo micro USB *1     |
+|   carte micro:bit *1    |        carte d'extension micro:bit type T *1        |   câble micro USB *1    |
 | ![Img](./media/A937.png) |              ![Img](./media/A944.png)              | ![Img](./media/A950.png) |
-|       LED rosso *1      |                 resistore 220Ω *1                  |      filo jumper *2     |
+|       LED rouge *1      |                 résistance 220Ω *1                  |      fil de connexion *2       |
 | ![Img](./media/A017.png) |              ![Img](./media/A024.png)              | ![Img](./media/A952.png) |
-|      breadboard *1      |portabatterie *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>)|      scheda allarme *1  |
+|      breadboard *1      |porte-piles *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>)|      carte alarme *1      |
 
-#### 3. Conoscenza dei Componenti
+#### 3. Connaissances sur les composants
 
-**Accelerometro**
+**Accéléromètre**
 
 ![Img](./media/A026.png)
 
-La scheda micro:bit dispone di un sensore di accelerazione integrato LSM303AGR (chiamato accelerometro) che include modalità standard, veloce, plus e ad alta velocità (100 kHz, 400 kHz, 1 MHz e 3,4 MHz) per l'interfaccia bus seriale I2C e interfaccia standard seriale SPI per comunicazione esterna, con risoluzione di 8/10/12 bit e intervallo di ±2g, ±4g o ±8g.
+La carte micro:bit dispose d'un capteur d'accélération intégré LSM303AGR (appelé accéléromètre) qui comprend les modes standard, rapide, plus et haute vitesse (100 kHz, 400 kHz, 1 MHz et 3,4 MHz) de l'interface bus série I2C ainsi qu'une interface série standard SPI pour la communication externe, avec une résolution de 8/10/12 bits et une plage de ±2g, ±4g ou ±8g.
 
-Quando la scheda micro:bit è a riposo o in moto uniforme, l'accelerometro rileva solo l'accelerazione di gravità. Se viene leggermente oscillata, l'accelerazione rilevata è molto inferiore a quella della gravità, quindi la differenza può essere ignorata. Pertanto, rileviamo principalmente il cambiamento dell'accelerazione gravitazionale sugli assi x, y e z.
+Lorsque la carte micro:bit est au repos ou en mouvement uniforme, l'accéléromètre ne détecte que l'accélération due à la gravité. Si elle est légèrement balancée, l'accélération détectée est bien inférieure à celle de la gravité, donc la différence peut être ignorée. Par conséquent, nous détectons principalement le changement de l'accélération gravitationnelle sur les axes x, y et z.
 
-#### 4. Schema di Collegamento
+#### 4. Schéma de câblage
 
 ![Img](./media/A219.png)
 
-<span style="color: rgb(255, 76, 65);">Il pin di controllo della scheda per il LED è P1 (il pin della scheda di espansione tipo T è digitale 1).</span>
+<span style="color: rgb(255, 76, 65);">La broche de contrôle de la LED sur la carte est P1 (la broche de la carte d'extension type T est digitale 1).</span>
 
-#### 5. Flusso del Codice
+#### 5. Flux du code
 
 ![Img](./media/A4434.png)
 
-#### 6. Codice di Test
+#### 6. Code de test
 
-Il file di codice è fornito nella cartella Progetto 08：Allarme Antifurto, file Project-08-Burglar-Alarm\.py.
+Le fichier de code est fourni dans le dossier Projet 08 : Alarme anti-intrusion, fichier Project-08-Burglar-Alarm\.py.
 
 ![Img](./media/A3743.png)
 
-**Codice completo:** 
+**Code complet :** 
 
-<span style="color: rgb(255, 76, 65);">**Dopo aver importato il codice, se il buzzer suona continuamente anche se la breadboard non viene spostata; potrebbe essere causato da fattori geografici. Puoi modificare la soglia nelle condizioni -60 e 50 in base alle condizioni reali.**</span>
+<span style="color: rgb(255, 76, 65);">**Après avoir importé le code, si le buzzer continue de sonner même si la breadboard n'est pas déplacée ; cela peut être dû à des facteurs géographiques. Vous pouvez modifier le seuil dans la condition -60 et 50 selon les conditions réelles.**</span>
 
 ```python
 '''
@@ -70,18 +70,18 @@ while True:
         music.reset()             # no tone
 ```
 
-#### 7. Risultato del Test
+#### 7. Résultat du test
 
-Clicca “<span style="color: rgb(255, 76, 65);">Flash</span>” per caricare il codice sulla scheda micro:bit.
+Cliquez sur “<span style="color: rgb(255, 76, 65);">Flash</span>” pour charger le code sur la carte micro:bit.
 
 ![Img](./media/A3757.png)
 
-Dopo aver scaricato il codice sulla scheda, **accendi tramite cavo micro USB o alimentazione esterna (imposta l'interruttore DIP su ON)**, e premi il pulsante di reset sulla scheda.
+Après avoir téléchargé le code sur la carte, **alimentez via le câble micro USB ou une alimentation externe (passez l'interrupteur DIP sur ON)**, puis appuyez sur le bouton reset de la carte.
 
 ![Img](./media/A455.png)
 
-Dopo aver scaricato il codice sulla scheda, muovi la breadboard. Se il valore di accelerazione x＜-60 o x＞50, l'altoparlante sulla scheda emette l'allarme e il LED lampeggia, e la matrice LED del micro:bit mostra ![Img](./media/A706.png). Altrimenti, l'altoparlante non emette suono e il LED è spento, e la matrice LED del micro:bit mostra ![Img](./media/A720.png).
+Après avoir téléchargé le code sur la carte, déplacez la breadboard. Si la valeur d'accélération x＜-60 ou x＞50, le haut-parleur de la carte sonne et la LED clignote, et la matrice LED du micro:bit affiche ![Img](./media/A706.png). Sinon, le haut-parleur ne produit aucun son et la LED est éteinte, et la matrice LED du micro:bit affiche ![Img](./media/A720.png).
 
-<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non vedi i risultati, premi il pulsante di reset sul retro della scheda.</span>
+<span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez sur le bouton reset à l'arrière de la carte.</span>
 
 ![Img](./media/A936.gif)

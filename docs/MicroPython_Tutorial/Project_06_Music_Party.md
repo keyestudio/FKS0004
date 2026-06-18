@@ -1,30 +1,30 @@
-### Progetto 06: Festa Musicale
+### Projet 06 : Fête de la Musique
 
 ![Img](./media/A1317.png)
 
-#### 1. Panoramica
+#### 1. Aperçu
 
-Quando battiamo le mani, il microfono sulla scheda rileva i segnali sonori e l'altoparlante riproduce una allegra canzone di compleanno mentre il LED RGB emette una luce abbagliante.
+Lorsque nous applaudissons, le microphone sur la carte capte les signaux sonores, et le haut-parleur joue une joyeuse chanson d'anniversaire tandis que la LED RGB émet une lumière éblouissante.
 
-#### 2. Componenti
+#### 2. Composants
 
 | ![Img](./media/A850.png) |              ![Img](./media/A858.png)              | ![Img](./media/A906.png) |
 | :---------------------: | :-----------------------------------------------: | :---------------------: |
-|   scheda micro:bit *1   |        scheda di espansione micro:bit tipo T *1   |   cavo micro USB *1     |
+|   carte micro:bit *1    |        carte d'extension micro:bit type T *1       |   câble micro USB *1    |
 | ![Img](./media/A500.png) |              ![Img](./media/A944.png)              | ![Img](./media/A950.png) |
-|       LED rosso *1      |                 resistore 220Ω *3                  |      filo jumper *2     |
+|       LED rouge *1      |                 résistance 220Ω *3                  |      fil de connexion *2       |
 | ![Img](./media/A017.png) |              ![Img](./media/A024.png)              | ![Img](./media/A621.png) |
-|      breadboard *1      |portapile *1 <br> (<span style="color: rgb(255, 76, 65);">pile AA auto-fornite *2</span>)|       scheda RGB *1     |
+|      breadboard *1      |porte-piles *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>)|       carte RGB *1       |
 
-#### 3. Conoscenza dei Componenti
+#### 3. Connaissances sur les composants
 
-**Microfono**
+**Microphone**
 
-Un microfono digitale di alta qualità è integrato sul lato frontale della scheda micro:bit V2 per rilevare segnali sonori e audio. Il chip che controlla e processa il microfono si trova sul retro.
+Un microphone numérique de haute qualité est intégré sur la face avant de la carte micro:bit V2 pour détecter les signaux sonores et audio. La puce qui contrôle et traite le microphone se trouve à l'arrière.
 
 ![Img](./media/A1317.png)
 
-Il microfono è in un piccolo foro rotondo sul davanti della scheda, comodo per catturare i segnali sonori circostanti. Basta posizionare la scheda micro:bit con il lato frontale rivolto verso l'alto durante l'uso. Accanto al foro c'è un indicatore LED del microfono. Quando il micro:bit misura i livelli sonori, l'indicatore si accende.
+Le microphone est situé dans un petit trou rond sur la face avant de la carte, ce qui facilite la capture des signaux sonores environnants. Il suffit de placer la carte micro:bit face vers le haut lors de l'utilisation. À côté du trou se trouve un indicateur LED du microphone. Lorsque le micro:bit mesure les niveaux sonores, l'indicateur s'allume.
 
 ![Img](./media/A116.png)
 
@@ -32,47 +32,47 @@ Il microfono è in un piccolo foro rotondo sul davanti della scheda, comodo per 
 
 ![Img](./media/A2127.png)
 
-Il LED RGB è rappresentato dall'intersezione di tre colori primari (RGB): rosso, verde e blu. La maggior parte dei colori può essere sintetizzata da RGB in proporzioni diverse. I LED rosso, verde e blu sono racchiusi in un involucro di plastica trasparente per emettere colori di luce modificando la tensione di ingresso dei pin R, G e B.
+La LED RGB est représentée par l'intersection des trois couleurs primaires (RGB) : rouge, vert et bleu. La plupart des couleurs peuvent être synthétisées par le RGB en différentes proportions. Les LED rouge, verte et bleue sont encapsulées dans un boîtier plastique transparent pour émettre des couleurs lumineuses en modifiant la tension d'entrée des broches R, G et B.
 
 ![Img](./media/A137.png)
 
-**Teoria tricromatica:**
+**Théorie trichromatique :**
 
 ![Img](./media/A150.png)
 
-Il LED RGB può essere diviso in due tipi: anodo comune e catodo comune:
+La LED RGB peut être divisée en deux types : anode commune et cathode commune :
 
-In un LED RGB a catodo comune, i tre LED condividono una connessione negativa (catodo);
+Dans une LED RGB à cathode commune, les trois LED partagent une connexion négative (cathode) ;
 
-In un LED RGB ad anodo comune, i tre LED condividono una connessione positiva (anodo).
+Dans une LED RGB à anode commune, les trois LED partagent une connexion positive (anode).
 
 ![Img](./media/A209.png)
 
-<span style="color: rgb(255, 76, 65);">**Nota: Qui forniamo un LED RGB a catodo comune.**</span>
+<span style="color: rgb(255, 76, 65);">**Remarque : Ici, nous fournissons une LED RGB à cathode commune.**</span>
 
-**Pin del LED RGB:**
+**Broches de la LED RGB :**
 
-Il LED RGB ha 4 pin: GND (il più lungo), R (rosso), G (verde) e B (blu). Posizionare il LED RGB come mostrato sotto, i pin da sinistra a destra sono rosso, GND, verde e blu.
+La LED RGB possède 4 broches : GND (la plus longue), R (rouge), G (vert) et B (bleu). Placez la LED RGB comme indiqué ci-dessous, les broches de gauche à droite sont rouge, GND, vert et bleu.
 
 ![Img](./media/A239.png)
 
-#### 4. Schema di Collegamento
+#### 4. Schéma de câblage
 
 ![Img](./media/A308.png)
 
 ![Img](./media/A325.png)
 
-#### 5. Flusso del Codice
+#### 5. Flux du code
 
 ![Img](./media/A343.png)
 
-#### 6. Codice di Test
+#### 6. Code de test
 
-Il file del codice è fornito nella cartella Progetto 06：Festa Musicale, file Project-06-Music-Party\.py.
+Le fichier de code est fourni dans le dossier Projet 06 : Fête de la Musique, fichier Project-06-Music-Party\.py.
 
 ![Img](./media/A3523.png)
 
-**Codice completo:**
+**Code complet :**
 
 ```python
 '''
@@ -153,18 +153,18 @@ if microphone.current_event() == SoundEvent.QUIET:  # If the microphone picks up
        pin2.write_analog(0)
 ```
 
-#### 7. Risultato del Test
+#### 7. Résultat du test
 
-Clicca su “<span style="color: rgb(255, 76, 65);">Flash</span>” per caricare il codice sulla scheda micro:bit.
+Cliquez sur “<span style="color: rgb(255, 76, 65);">Flash</span>” pour charger le code sur la carte micro:bit.
 
 ![Img](./media/A3540.png)
 
-Dopo aver scaricato il codice sulla scheda, **accendi tramite cavo micro USB o alimentazione esterna (imposta l'interruttore DIP su ON)** e premi il pulsante di reset sulla scheda.
+Après avoir téléchargé le code sur la carte, **alimentez via le câble micro USB ou une alimentation externe (passez l'interrupteur DIP sur ON)**, puis appuyez sur le bouton reset de la carte.
 
 ![Img](./media/A455.png)
 
-Quando battiamo le mani, il microfono sulla scheda rileva i segnali sonori e l'altoparlante riproduce una allegra canzone di compleanno mentre il LED RGB emette una luce abbagliante. Non è forse una festa musicale in un'atmosfera felice e gioiosa?
+Lorsque nous applaudissons, le microphone sur la carte capte les signaux sonores, et le haut-parleur joue une joyeuse chanson d'anniversaire tandis que la LED RGB émet une lumière éblouissante. La fête de la musique n'est-elle pas dans une ambiance heureuse et joyeuse ?
 
-<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non vedi i risultati, premi il pulsante di reset sul retro della scheda.</span>
+<span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez sur le bouton reset à l'arrière de la carte.</span>
 
 ![Img](./media/A757.gif)

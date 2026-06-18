@@ -1,160 +1,160 @@
-### Progetto 01: Piccola Lampada con Pulsante
+### Projet 01 : Petite lampe avec bouton
 
-#### 1. Panoramica
+#### 1. Vue d'ensemble
 
-Ci sono due pulsanti programmabili sulla parte frontale della scheda micro:bit (A e B). Li combiniamo con un LED rosso e una scheda lampada per costruire una piccola lampada da scrivania. Quando si preme il pulsante A, il LED rosso si accende; quando si preme B, si spegne.
+Il y a deux boutons programmables sur la face avant de la carte micro:bit (A et B). Nous les combinons avec une LED rouge et une carte lampe pour construire une petite lampe de bureau. Lorsque le bouton A est pressé, la LED rouge s'allume ; lorsque le bouton B est pressé, elle s'éteint.
 
-#### 2. Componenti
+#### 2. Composants
 
 | ![Img](./media/A850.png) |              ![Img](./media/A858.png)              | ![Img](./media/A906.png) |
 | :---------------------: | :-----------------------------------------------: | :---------------------: |
-|   scheda micro:bit *1    |        scheda di espansione micro:bit tipo T *1        |   cavo micro USB *1    |
+|   carte micro:bit *1    |        carte d'extension micro:bit type T *1        |   câble micro USB *1    |
 | ![Img](./media/A937.png) |              ![Img](./media/A944.png)              | ![Img](./media/A950.png) |
-|       LED rosso *1        |                 resistore 220Ω *1                  |      filo jumper *2       |
+|       LED rouge *1      |                 résistance 220Ω *1                  |      fil de connexion *2       |
 | ![Img](./media/A017.png) |              ![Img](./media/A024.png)              | ![Img](./media/A920.png) |
-|      breadboard *1      | portabatterie *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>) |      scheda lampada *1       |
+|      breadboard *1      | support de pile *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>) |      carte lampe *1       |
 
-#### 3. Conoscenza dei Componenti
+#### 3. Connaissances sur les composants
 
-**Pulsanti**
+**Boutons**
 
-I pulsanti possono controllare l'accensione e lo spegnimento del circuito. Quando un pulsante è collegato a un circuito, il circuito è aperto quando il pulsante non è premuto; il circuito si chiude dopo aver premuto il pulsante.
+Les boutons peuvent contrôler l'ouverture et la fermeture d'un circuit. Lorsqu'un bouton est connecté à un circuit, le circuit est ouvert lorsque le bouton n'est pas pressé ; le circuit se ferme après avoir appuyé sur le bouton.
 
-Ci sono tre pulsanti sulla scheda micro:bit: un pulsante di reset sul retro e due pulsanti programmabili (A e B) sulla parte frontale.
+Il y a trois boutons sur la carte micro:bit : un bouton reset à l'arrière et deux boutons programmables (A et B) à l'avant.
 
 ![Img](./media/A230.png)
 
-**Resistori**
+**Résistances**
 
 ![Img](./media/A248.png)
 
-Un resistore è un componente elettronico che limita la corrente in un ramo del circuito. La resistenza di un resistore fisso non può essere regolata, mentre quella di un potenziometro o di un resistore variabile può esserlo.
+Une résistance est un composant électronique qui limite le courant dans une branche de circuit. La résistance d'une résistance fixe ne peut pas être ajustée, tandis que celle d'un potentiomètre ou d'une résistance variable peut l'être.
 
-Ecco due simboli circuitali comuni per i resistori. Se vedi questi simboli in un circuito, rappresentano un resistore.
+Voici deux symboles de circuit courants pour les résistances. Si vous voyez ces symboles dans un circuit, ils représentent une résistance.
 
 ![Img](./media/A303.png)
 
-Ω è l'unità di resistenza, inclusi Ω, KΩ, MΩ, ecc. Possono essere espressi come: 1 MΩ=1000 KΩ, 1 KΩ =1000 Ω. In generale, alcune resistenze sono indicate sulla superficie.
+Ω est l'unité de résistance, incluant Ω, KΩ, MΩ, etc. Elles peuvent s'exprimer ainsi : 1 MΩ = 1000 KΩ, 1 KΩ = 1000 Ω. En général, certaines résistances sont marquées sur la surface.
 
-Quando si usa un resistore, dobbiamo prima conoscere la sua resistenza. Ci sono due modi: osservare la banda colorata su di esso, o misurare la sua resistenza con un multimetro. Ovviamente, il primo è più comodo e veloce.
+Lors de l'utilisation d'une résistance, il faut d'abord connaître sa valeur. Il y a deux façons : observer la bande de couleur dessus, ou mesurer sa résistance avec un multimètre. Évidemment, la première méthode est plus pratique et rapide.
 
 ![Img](./media/A317.png)
 
-Come mostrato nella scheda dei resistori, ogni colore rappresenta un numero.
+Comme montré sur la carte des résistances, chaque couleur représente un chiffre.
 
 ![Img](./media/A3335.png)
 
-I resistori a 4 e 5 bande sono comunemente usati.
+Les résistances à 4 et 5 bandes sont couramment utilisées.
 
-Spesso, quando si riceve un resistore, può essere difficile decidere da dove iniziare a leggere i colori.
+Souvent, lorsque vous recevez une résistance, il peut être difficile de savoir par où commencer à lire les couleurs.
 
-**Pertanto, puoi osservare lo spazio tra le due bande a un'estremità; se è più ampio di qualsiasi altro spazio tra bande, leggi dall'estremità opposta.**
+**Par conséquent, vous pouvez observer l'écart entre les deux bandes à une extrémité ; s'il est plus large que les autres écarts, lisez à partir de l'extrémité opposée.**
 
-<span style="color: rgb(255, 76, 65);">**Nota che lo spazio tra la 4ª e la 5ª banda (la 3ª e la 4ª) è relativamente ampio in un resistore a 5 bande (4 bande).**</span>
+<span style="color: rgb(255, 76, 65);">**Notez que l'écart entre la 4e et la 5e bande (la 3e et la 4e) est relativement large dans une résistance à 5 bandes (4 bandes).**</span>
 
-Vediamo come leggere la resistenza di un resistore a 5 bande, come mostrato di seguito:
+Voyons comment lire la résistance d'une résistance à 5 bandes, comme ci-dessous :
 
 ![Img](./media/A426.png)
 
-Per questo resistore, la resistenza dovrebbe essere letta da sinistra a destra. Il valore dovrebbe essere: 1ª banda 2ª banda 3ª banda x 10^moltiplicatore(Ω), ±tolleranza%.
+Pour cette résistance, la lecture doit se faire de gauche à droite. La valeur est : 1ère bande 2ème bande 3ème bande x 10^multiplicateur(Ω), ±tolérance%.
 
-Quindi, la resistenza di questo resistore è 2(rosso) 2(rosso) 0(nero) × 10^0 (nero)Ω = 220Ω, ±1%(marrone). Per saperne di più sul [resistore da Wiki](https://en.wikipedia.org/wiki/Resistor).
+Donc, la résistance de cette résistance est 2(rouge) 2(rouge) 0(noir) × 10^0 (noir)Ω = 220Ω, ±1%(marron). En savoir plus sur la [résistance sur Wiki](https://en.wikipedia.org/wiki/Resistor).
 
 **LED**
 
-LED, chiamato completamente “diodo a emissione luminosa”, è un dispositivo elettronico fatto di materiali semiconduttori (silicio, selenio, germanio, ecc.). È polare, con un polo positivo - il pin lungo collegato a VCC (V o 3.3V o 5V o +), e un polo negativo - il pin corto collegato a GND (G o -). La corrente scorre dal positivo al negativo, in un flusso unidirezionale.
+LED, abréviation de « diode électroluminescente », est un dispositif électronique fabriqué à partir de matériaux semi-conducteurs (silicium, sélénium, germanium, etc.). Elle est polarisée, avec un pôle positif - la patte longue connectée à VCC (V ou 3.3V ou 5V ou +), et un pôle négatif - la patte courte connectée à GND (G ou -). Le courant circule du positif vers le négatif, dans un flux unidirectionnel.
 
-Simbolo elettronico e grafico del LED:
+Symbole électronique et graphique de la LED :
 
 ![Img](./media/A515.png)
 
-LED di varie dimensioni e colori:
+LED de différentes tailles et couleurs :
 
 ![Img](./media/A525.png)
 
-Rosso, giallo, blu, verde e bianco sono i colori più comuni del LED, che corrispondono ai loro colori di aspetto. Raramente si usa il LED trasparente, e la luce emessa potrebbe non essere bianca. Ci sono quattro dimensioni di LED: 3mm, 5mm (più comune), 8mm e 10mm.
+Rouge, jaune, bleu, vert et blanc sont les couleurs les plus courantes de LED, correspondant à leurs couleurs apparentes. Nous utilisons rarement des LED transparentes, et la lumière émise peut ne pas être blanche. Il existe quatre tailles de LED : 3mm, 5mm (la plus courante), 8mm et 10mm.
 
 ![Img](./media/A535.png)
 
-La tensione diretta deve essere usata quando il LED è acceso. È un parametro molto importante da conoscere quando si usa un LED, poiché determina quanta potenza si usa e quanto grande deve essere il resistore limitatore di corrente. Per la maggior parte dei LED rossi, gialli, arancioni e verde chiaro, tipicamente usano una tensione tra 1.9V e 2.1V.
+La tension directe doit être prise en compte lorsque la LED est allumée. C'est un paramètre très important à connaître lors de l'utilisation d'une LED, car il détermine la puissance utilisée et la taille de la résistance limitant le courant. Pour la plupart des LED rouges, jaunes, orange et vert clair, elles utilisent typiquement une tension entre 1,9V et 2,1V.
 
 ![Img](./media/A548.png)
 
-Secondo la legge di Ohm, la corrente attraverso il circuito diminuisce all'aumentare della resistenza, causando l'attenuazione del LED.
+Selon la loi d'Ohm, le courant dans le circuit diminue lorsque la résistance augmente, ce qui fait que la LED s'atténue.
 
 I = (VP-Vl)/R
 
-Per rendere il LED sicuro e con la giusta luminosità, quanta resistenza dovremmo usare nel circuito?
+Pour que la LED soit sûre et ait la bonne luminosité, quelle résistance devons-nous utiliser dans le circuit ?
 
-Per il 99% dei LED da 5mm, la corrente raccomandata è 20mA, come si vede dalla colonna delle condizioni nella sua scheda tecnica:
+Pour 99% des LED 5mm, le courant recommandé est de 20mA, comme indiqué dans la colonne conditions de leur fiche technique :
 
 ![Img](./media/A613.png)
 
-Ora convertiamo la formula sopra nella seguente:
+Convertissons la formule ci-dessus en :
 
 R = (VP-Vl)/I
 
-Se VP = 5V, Vl (tensione diretta) = 2V, e I = 20mA, possiamo dire che R è 150Ω. Pertanto, possiamo rendere il LED più luminoso riducendo la resistenza, ma la resistenza non dovrebbe essere inferiore a 150Ω (questo valore potrebbe non essere preciso perché il LED fornito varia).
+Si VP = 5V, Vl (tension directe) = 2V, et I = 20mA, alors R est de 150Ω. Par conséquent, on peut rendre la LED plus brillante en réduisant la résistance, mais la résistance ne doit pas être inférieure à 150Ω (cette valeur peut ne pas être précise car les LED fournies varient).
 
-La tensione diretta e la lunghezza d'onda dei LED di diversi colori sono mostrate di seguito come riferimento:
+La tension directe et la longueur d'onde des LED de différentes couleurs sont indiquées ci-dessous pour référence :
 
 ![Img](./media/A629.png)
 
-<span style="color: rgb(255, 76, 65);">**Non collegare un resistore con resistenza molto bassa direttamente ai due poli dell'alimentazione, altrimenti i componenti elettronici potrebbero danneggiarsi a causa della corrente eccessiva. I resistori non sono polari.**</span>
+<span style="color: rgb(255, 76, 65);">**Ne connectez pas une résistance de très faible valeur directement aux deux pôles de l'alimentation, sinon les composants électroniques peuvent être endommagés par un courant excessif. Les résistances ne sont pas polarisées.**</span>
 
 **Breadboard**
 
-Prima di completare qualsiasi circuito, si usa una breadboard per progettare e testare rapidamente i circuiti. Ci sono molti fori su una breadboard in cui possono essere inseriti componenti del circuito (ad esempio, resistori). Una breadboard tipica è mostrata di seguito:
+Avant de réaliser un circuit, une breadboard est utilisée pour concevoir et tester rapidement les circuits. Il y a de nombreux trous sur une breadboard où l'on peut insérer des composants électroniques (par exemple, des résistances). Une breadboard typique est montrée ci-dessous :
 
 ![Img](./media/A655.png)
 
-Una breadboard ha molte strisce metalliche sotto di essa per connettersi ai fori in alto. Sono disposte come mostrato di seguito.
+Une breadboard possède de nombreuses bandes métalliques en dessous qui connectent les trous en surface. Elles sont disposées comme montré ci-dessous.
 
-<span style="color: rgb(255, 76, 65);">**Nota che i fori in alto e in basso sono collegati orizzontalmente, mentre gli altri fori sono collegati verticalmente.**</span>
+<span style="color: rgb(255, 76, 65);">**Notez que les trous du haut et du bas sont connectés horizontalement, tandis que les autres trous sont connectés verticalement.**</span>
 
 ![Img](./media/A723.png)
 
-Le prime due file (in alto) e le ultime due (in basso) della breadboard sono usate rispettivamente per i poli positivo (+) e negativo (-) dell'alimentazione. Il diagramma della disposizione conduttiva è mostrato di seguito:
+Les deux premières rangées (en haut) et les deux dernières (en bas) de la breadboard sont utilisées respectivement pour les pôles positif (+) et négatif (-) de l'alimentation. Le schéma de disposition conducteur est montré ci-dessous :
 
 ![Img](./media/A730.png)
 
-Quando si collegano componenti DIP (Dual In-line Packages), come circuiti integrati, microcontrollori, chip, ecc., la scanalatura isola le due parti. Pertanto, i componenti DIP possono essere collegati come mostrato di seguito:
+Lors de la connexion de composants DIP (Dual In-line Packages), tels que circuits intégrés, microcontrôleurs, puces, etc., la rainure isole les deux parties. Par conséquent, les composants DIP peuvent être connectés comme montré ci-dessous :
 
 ![Img](./media/A740.png)
 
 ![Img](./media/A747.png)
 
-**Filo jumper e filo DuPont**
+**Fil de connexion et fil DuPont**
 
-I fili jumper e i fili DuPont collegano due terminali. Esistono vari tipi, ma qui ci concentriamo su quelli usati nella breadboard. Trasmettono segnali elettrici da qualsiasi punto della breadboard ai pin di input/output di un microcontrollore.
+Les fils de connexion et fils DuPont relient deux terminaux. Il en existe plusieurs types, mais ici nous nous concentrons sur ceux utilisés avec la breadboard. Ils transmettent des signaux électriques depuis n'importe où sur la breadboard vers les broches d'entrée/sortie d'un microcontrôleur.
 
-Durante l'uso, inserire “due pin” dei fili nella breadboard senza saldatura. Diverse serie di piste parallele sono disposte sotto la superficie della breadboard, quindi i fili devono essere inseriti solo in fori specifici in un particolare prototipo.
+Lors de l'utilisation, insérez les « deux broches » des fils dans la breadboard sans soudure. Plusieurs ensembles de bandes parallèles sont disposés sous la surface de la breadboard, donc les fils doivent être insérés uniquement dans des trous spécifiques dans un prototype particulier.
 
-Ci sono tre tipi di fili DuPont: F-F, M-M e M-F. Sul filo, il pin è chiamato estremità maschio (M), mentre il foro è femmina (F).
+Il existe trois types de fils DuPont : F-F, M-M et M-F. Sur le fil, la broche est appelée extrémité mâle (M), tandis que le trou est femelle (F).
 
 ![Img](./media/A811.png)
 
-Più di un tipo può essere usato in un progetto. Sebbene i colori dei fili siano diversi, servono allo stesso scopo. I colori sono usati per distinguere i circuiti.
+Plus d'un type peut être utilisé dans un projet. Bien que les couleurs des fils soient différentes, ils ont la même fonction. Les couleurs servent à distinguer les circuits.
 
-#### 4. Schema di Collegamento
+#### 4. Schéma de câblage
 
-<span style="color: rgb(255, 76, 65);">Nota: la scheda micro:bit deve essere inserita nella scheda di espansione tipo T come mostrato di seguito. La matrice LED della scheda micro:bit deve essere sullo stesso lato del logo della scheda di espansione.</span>
+<span style="color: rgb(255, 76, 65);">Note : la carte micro:bit doit être insérée dans la carte d'extension type T comme montré ci-dessous. La matrice LED de la carte micro:bit doit être du même côté que le logo de la carte d'extension.</span>
 
 ![Img](./media/A156.png)
 
-<span style="color: rgb(255, 76, 65);">**Il pin di controllo della scheda per il LED è P0 (il pin della scheda di espansione tipo T è digitale 0).**</span>
+<span style="color: rgb(255, 76, 65);">**La broche de contrôle de la LED sur la carte est P0 (la broche de la carte d'extension type T est digitale 0).**</span>
 
-#### 5. Flusso del Codice
+#### 5. Flux du code
 
 ![Img](./media/A4323.png)
 
-#### 6. Codice di Test
+#### 6. Code de test
 
-Il file di codice è fornito nella cartella Progetto 01：Piccola Lampada con Pulsante, file Project-01-Small-Lamp-with-Button\.py.
+Le fichier de code est fourni dans le dossier Projet 01 : Petite lampe avec bouton, fichier Project-01-Small-Lamp-with-Button\.py.
 
 ![Img](./media/A100.png)
 
-**Codice completo:**
+**Code complet :**
 
 ```python
 '''
@@ -177,22 +177,22 @@ while True:
         display.show(Image.SAD)   # LED matrix displays a crying face
 ```
 
-#### 7. Risultato del Test
+#### 7. Résultat du test
 
-Clicca “<span style="color: rgb(255, 76, 65);">Flash</span>” per caricare il codice sulla scheda micro:bit.
+Cliquez sur « <span style="color: rgb(255, 76, 65);">Flash</span> » pour charger le code sur la carte micro:bit.
 
 ![Img](./media/A2156.png)
 
-Dopo aver scaricato il codice sulla scheda, **accendi tramite cavo micro USB o alimentazione esterna (imposta l'interruttore DIP su ON)**, e premi il pulsante di reset sulla scheda.
+Après avoir téléchargé le code sur la carte, **alimentez via le câble micro USB ou une alimentation externe (mettez l'interrupteur DIP sur ON)**, puis appuyez sur le bouton reset de la carte.
 
 ![Img](./media/A455.png)
 
-Possiamo osservare il fenomeno: la matrice LED 5x5 mostra ![Img](./media/A512.png). Premi il pulsante A, e la matrice LED 5x5 mostra ![Img](./media/A518.png), il LED si accende. Premi il pulsante B, la matrice LED 5x5 mostra ![Img](./media/A527.png), il LED si spegne. Sembra una mini lampada?
+Nous pouvons observer le phénomène : la matrice LED 5x5 affiche ![Img](./media/A512.png). Appuyez sur le bouton A, et la matrice LED 5x5 affiche ![Img](./media/A518.png), la LED s'allume. Appuyez sur le bouton B, la matrice LED 5x5 affiche ![Img](./media/A527.png), la LED s'éteint. Cela ressemble-t-il à une mini lampe ?
 
-<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non vedi i risultati, premi di nuovo il pulsante di reset sul retro della scheda.</span>
+<span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez de nouveau sur le bouton reset à l'arrière de la carte.</span>
 
 ![Img](./media/A359.gif)
 
-<span style="color: rgb(255, 76, 65);">Quando si alimenta tramite alimentazione esterna, impostare l'interruttore DIP su ON.</span>
+<span style="color: rgb(255, 76, 65);">Lors de l'alimentation via une source externe, mettez l'interrupteur DIP sur ON.</span>
 
 ![Img](./media/A904.png)

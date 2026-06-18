@@ -1,13 +1,14 @@
-## 4. Risoluzione dei problemi
+## 4. Dépannage
 
-**Errori durante il caricamento del codice**
+**Erreurs lors du téléchargement des codes**
 
-- Se dopo aver caricato il codice sulla matrice del micro:bit compaiono icone disordinate, verifica se sono stati accidentalmente aggiunti o cancellati dei caratteri. Puoi cliccare su “check” ![Img](./media/A5457.png). Nota però che alcuni non sono errori, ma solo avvisi.
+- Si des icônes désordonnées s'affichent sur la matrice de la carte après le téléchargement du code, vérifiez si des caractères ont été accidentellement ajoutés ou supprimés. Vous pouvez cliquer sur « vérifier » ![Img](./media/A5457.png). Mais notez que certains ne sont pas des erreurs, juste des avertissements.
 
-- Se il codice utilizza una libreria, controlla se la libreria è stata caricata sulla scheda. Vedi “**Come Mu importa la libreria su Micro:bit**”. Poi verifica se sono stati accidentalmente aggiunti o cancellati dei caratteri.
+- Si le code utilise une bibliothèque, vérifiez si la bibliothèque est bien téléchargée sur la carte. Voir « **Comment Mu importe une bibliothèque sur Micro:bit** ». Puis vérifiez si des caractères ont été accidentellement ajoutés ou supprimés.
 
-**Nessuna stampa su REPL**
+**Aucune impression sur REPL**
 
-- Dopo aver caricato il codice, clicca su “REPL” ![Img](./media/A5530.png) e non viene stampato nulla. In questo caso, è necessario premere il pulsante di reset sul retro della scheda micro:bit.
+- Après avoir téléchargé le code, cliquez sur « REPL » ![Img](./media/A5530.png) et rien ne s'affiche. Dans ce cas, il faut appuyer sur le bouton reset à l'arrière de la carte micro:bit. 
+
 
 ![Img](./media/A455.png)

@@ -1,48 +1,48 @@
-### Progetto 02: Semaforo
+### Projet 02 : Feux de circulation
 
-#### 1. Panoramica
+#### 1. Aperçu
 
-In questo progetto, utilizziamo tre LED (rosso, giallo e verde), un altoparlante sulla scheda micro:bit e una matrice LED 5x5 per realizzare un modello di semaforo.
+Dans ce projet, nous utilisons trois LEDs (rouge, jaune et verte), un haut-parleur sur la carte micro:bit et une matrice LED 5x5 pour réaliser un modèle de feux de circulation.
 
-#### 2. Componenti
+#### 2. Composants
 
 |              ![Img](./media/A850.png)              |       ![Img](./media/A858.png)       | ![Img](./media/A906.png) |
 | :-----------------------------------------------: | :---------------------------------: | :---------------------: |
-|                scheda micro:bit *1                 | scheda di espansione micro:bit tipo T *1 |   cavo micro USB *1    |
+|                carte micro:bit *1                  | carte d'extension T-type micro:bit *1 |   câble micro USB *1    |
 |              ![Img](./media/A937.png)              |      ![Img](./media/A5652.png)       | ![Img](./media/A658.png) |
-|                    LED rosso *1                     |            LED giallo *1            |      LED verde *1       |
+|                    LED rouge *1                    |            LED jaune *1             |      LED verte *1       |
 |              ![Img](./media/A944.png)              |       ![Img](./media/A950.png)       | ![Img](./media/A017.png) |
-|                 resistore 220Ω *3                  |             fili jumper              |      breadboard *1      |
+|                 résistance 220Ω *3                 |             fils de connexion       |      breadboard *1      |
 |              ![Img](./media/A024.png)              |       ![Img](./media/A020.png)       |                         |
-| portabatterie *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>)|       scheda semaforo *1        |                         |
+| support de pile *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>)|       carte feux de circulation *1  |                         |
 
-#### 3. Conoscenza dei Componenti
+#### 3. Connaissances sur les composants
 
-**Altoparlante**
+**Haut-parleur**
 
 ![Img](./media/A833.png)
 
-Micro:bit è dotato di un altoparlante, che rende facile produrre suoni nel tuo progetto.
+Le micro:bit est équipé d'un haut-parleur, ce qui facilite la production de sons dans votre projet.
 
-#### 4. Schema di Collegamento
+#### 4. Schéma de câblage
 
 ![Img](./media/A908.png)
 
-<span style="color: rgb(255, 76, 65);">**Nota:** la scheda micro:bit deve essere inserita nella scheda di espansione tipo T come mostrato sotto. La matrice LED della scheda micro:bit deve essere sullo stesso lato del logo della scheda di espansione.</span>
+<span style="color: rgb(255, 76, 65);">**Remarque :** la carte micro:bit doit être insérée dans la carte d'extension T-type comme indiqué ci-dessous. La matrice LED de la carte micro:bit doit être du même côté que le logo de la carte d'extension.</span>
 
 ![Img](./media/A940.png)
 
-#### 5. Flusso del Codice
+#### 5. Flux du code
 
 ![Img](./media/A5956.png)
 
-#### 6. Codice di Test
+#### 6. Code de test
 
-Il file di codice è fornito nella cartella Progetto 02：Semaforo, file Project-02-Traffic-Lights\.py.
+Le fichier de code est fourni dans le dossier Projet 02 : Feux de circulation, fichier Project-02-Traffic-Lights\.py.
 
 ![Img](./media/A250.png)
 
-**Codice completo:** 
+**Code complet :** 
 
 ```python
 '''
@@ -115,22 +115,22 @@ while True:
    pin8.write_digital(0)
 ```
 
-#### 7. Risultato del Test
+#### 7. Résultat du test
 
-Clicca su “<span style="color: rgb(255, 76, 65);">Flash</span>” per caricare il codice sulla scheda micro:bit.
+Cliquez sur “<span style="color: rgb(255, 76, 65);">Flash</span>” pour charger le code sur la carte micro:bit.
 
 ![Img](./media/A353.png)
 
-Dopo aver scaricato il codice sulla scheda, **accendi tramite cavo micro USB o alimentatore esterno (imposta l'interruttore DIP su ON)**, e premi il pulsante di reset sulla scheda.
+Après avoir téléchargé le code sur la carte, **alimentez via le câble micro USB ou une alimentation externe (passez l'interrupteur DIP sur ON)**, puis appuyez sur le bouton reset de la carte.
 
 ![Img](./media/A455.png)
 
-Il LED verde si accende e la matrice LED 5×5 conta alla rovescia 6 secondi. Dopo che il LED verde si spegne, il LED giallo lampeggia e la matrice conta 3 secondi con suono dall'altoparlante. Infine, il LED rosso si accende con un conto alla rovescia di 6 secondi. Queste azioni si ripetono.
+La LED verte s'allume et la matrice LED 5×5 compte à rebours 6 secondes. Après que la LED verte s'éteint, la LED jaune clignote et la matrice compte à rebours 3s avec le haut-parleur qui sonne. Enfin, la LED rouge s'allume avec un compte à rebours de 6s. Ces actions se répètent.
 
-<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non vedi i risultati, premi il pulsante di reset sul retro della scheda.</span>
+<span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez sur le bouton reset à l'arrière de la carte.</span>
 
 ![Img](./media/A459.gif)
 
-<span style="color: rgb(255, 76, 65);">**Quando si alimenta tramite alimentatore esterno, impostare l'interruttore DIP su ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Lors de l'alimentation via une alimentation externe, passez l'interrupteur DIP sur ON.**</span>
 
 ![Img](./media/A904.png)

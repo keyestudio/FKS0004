@@ -1,152 +1,152 @@
-**Servizio post-vendita**
+**Service après-vente**
 
-Se qualcosa risulta mancante o rotto, o se avete difficoltà nell'apprendimento del kit, non esitate a contattarci. Benvenuti a inviarci un'email a: service@keyestudio.com
+Si quelque chose est manquant ou cassé, ou si vous rencontrez des difficultés pour apprendre avec le kit, n'hésitez pas à nous contacter. Vous êtes invités à nous envoyer un email à : service@keyestudio.com
 
-Ci impegneremo a aggiornare continuamente progetti e prodotti grazie ai vostri sinceri consigli! Grazie!
+Nous nous efforcerons de mettre à jour continuellement les projets et produits grâce à vos conseils sincères ! Merci !
 
-# Introduzione al prodotto
+# Introduction du produit
 
-**FKS0004 Keyestudio microbit learning kit**
+**FKS0004 Kit d'apprentissage microbit Keyestudio**
 
 ![Img](./media/A30.jpg)
 
-Questo kit di apprendimento copre sensori e componenti oltre a una scheda Micro:bit, e la scheda animata inclusa rende gli esperimenti più raffinati e belli. Non solo permette ai maker di sperimentare il fascino e la praticità della tecnologia, ma coltiva anche il loro pensiero logico.
+Ce kit d'apprentissage comprend des capteurs et composants ainsi qu'une carte Micro:bit, et la carte d'animation incluse rend les expériences plus raffinées et esthétiques. Il permet non seulement aux makers de découvrir le charme et la praticité de la technologie, mais aussi de développer leur pensée logique.
 
-Allo stesso tempo, dimostra pienamente il valore pratico e il significato educativo dell'applicazione della scienza e della tecnologia.
+En même temps, il démontre pleinement la valeur pratique et la signification éducative de l'application des sciences et technologies.
 
-# Ottenere risorse (**Importante**) 
+# Obtenir les ressources (**Important**) 
 
-**Download (<span style="color: rgb(255, 76, 65);">Importante</span>)**：[MakeCode_Tutorial](./MakeCode_Tutorial.7z) .
+**Téléchargement (<span style="color: rgb(255, 76, 65);">Important</span>)** : [MakeCode_Tutorial](./MakeCode_Tutorial.7z) .
 
-**Promemoria speciale:** Dopo aver scaricato il file MakeCode_Tutorial, estrailo. La cartella include codici, driver USB, ecc.
+**Rappel spécial :** Après avoir téléchargé le fichier MakeCode_Tutorial, extrayez-le. Le dossier comprend les codes, le pilote USB, etc.
 
-**Download (<span style="color: rgb(255, 76, 65);">Importante</span>)**：[MicroPython_Tutorial](./MicroPython_Tutorial.7z) .
+**Téléchargement (<span style="color: rgb(255, 76, 65);">Important</span>)** : [MicroPython_Tutorial](./MicroPython_Tutorial.7z) .
 
-**Promemoria speciale:** Dopo aver scaricato il file MicroPython_Tutorial, estrailo. La cartella include codici, libreria, driver USB, ecc.
+**Rappel spécial :** Après avoir téléchargé le fichier MicroPython_Tutorial, extrayez-le. Le dossier comprend les codes, la bibliothèque, le pilote USB, etc.
 
 
-# Lista del kit prodotto
+# Liste du kit produit
 
-Si prega di controllare la lista per assicurarsi che tutte le parti siano integre. Se trovate parti mancanti, contattate immediatamente il nostro personale di vendita.
+Veuillez vérifier la liste pour vous assurer que toutes les pièces sont intactes. Si vous constatez des manquants, veuillez contacter immédiatement notre personnel commercial.
 
-|  #   |           PIC            |                             NOME                             | QTY  |
+|  #   |           PIC            |                             NOM                              | QTE  |
 | :--: | :----------------------: | :----------------------------------------------------------: | :--: |
-|  1   | ![Img](./media/A107.png)  |                  scheda principale micro:bit V2.0            |  1   |
+|  1   | ![Img](./media/A107.png)  |                  carte principale micro:bit V2.0            |  1   |
 |  2   | ![Img](./media/A314.png)  |                          breadboard                          |  1   |
-|  3   | ![Img](./media/A332.png)  |                      sensore ad ultrasuoni                   |  1   |
-|  4   | ![Img](./media/A400.png)  |                       cavo Micro USB                         |  1   |
-|  5   | ![Img](./media/A457.png)  |                          jumper wire                         |  1   |
+|  3   | ![Img](./media/A332.png)  |                      capteur ultrasonique                    |  1   |
+|  4   | ![Img](./media/A400.png)  |                       câble Micro USB                        |  1   |
+|  5   | ![Img](./media/A457.png)  |                          fil de connexion                    |  1   |
 |  6   | ![Img](./media/A516.png)  |                            servo                             |  1   |
-|  7   | ![Img](./media/A534.png)  |               scheda di espansione micro:bit tipo T          |  1   |
-|  8   | ![Img](./media/A602.png)  |                         filo DuPont                          |  1   |
-|  9   | ![Img](./media/A620.png)  | XHT11 (compatibile con DHT11) |  1   |
-|  10  | ![Img](./media/A636.png)  |                         modulo OLED                          |  1   |
+|  7   | ![Img](./media/A534.png)  |               carte d'extension micro:bit en T               |  1   |
+|  8   | ![Img](./media/A602.png)  |                         fil DuPont                           |  1   |
+|  9   | ![Img](./media/A620.png)  | XHT11 (compatible avec DHT11) |  1   |
+|  10  | ![Img](./media/A636.png)  |                         module OLED                          |  1   |
 |  11  | ![Img](./media/A652.png)  |                           LED RGB                            |  1   |
-|  12  | ![Img](./media/A221.png)  |                        potenziometro                         |  1   |
-|  13  | ![Img](./media/A237.png)  |                        resistore 220Ω                        |  5   |
-|  14  | ![Img](./media/A257.png)  |                         resistore 1kΩ                        |  5   |
-|  15  | ![Img](./media/A316.png)  |                        resistore 10kΩ                        |  5   |
-|  16  | ![Img](./media/A333.png)  |                           LED rosso                          |  5   |
-|  17  | ![Img](./media/A401.png)  |                          LED giallo                          |  5   |
-|  18  | ![Img](./media/A416.png)  |                          LED verde                           |  5   |
-|  12  | ![Img](./media/A434.png)  |                       scheda resistenza                      |  1   |
-|  12  | ![Img](./media/A452.png)  |                        supporto batteria                     |  1   |
-|  13  | ![Img](./media/A757.png)  | Batteria AA (<span style="color: rgb(255, 76, 65);">fornita dall'utente</span>) |  2   |
-|  14  | ![Img](./media/A3343.png) |                             scheda                           |  1   |
-|  15  | ![Img](./media/A3237.png) |                             scheda                           |  1   |
+|  12  | ![Img](./media/A221.png)  |                        potentiomètre                         |  1   |
+|  13  | ![Img](./media/A237.png)  |                        résistance 220Ω                       |  5   |
+|  14  | ![Img](./media/A257.png)  |                         résistance 1kΩ                       |  5   |
+|  15  | ![Img](./media/A316.png)  |                        résistance 10kΩ                       |  5   |
+|  16  | ![Img](./media/A333.png)  |                           LED rouge                          |  5   |
+|  17  | ![Img](./media/A401.png)  |                          LED jaune                           |  5   |
+|  18  | ![Img](./media/A416.png)  |                          LED verte                           |  5   |
+|  12  | ![Img](./media/A434.png)  |                       carte de résistances                   |  1   |
+|  12  | ![Img](./media/A452.png)  |                        support de batterie                   |  1   |
+|  13  | ![Img](./media/A757.png)  | Pile AA (<span style="color: rgb(255, 76, 65);">non fournie</span>) |  2   |
+|  14  | ![Img](./media/A3343.png) |                             carte                            |  1   |
+|  15  | ![Img](./media/A3237.png) |                             carte                            |  1   |
 
-# Scheda di espansione tipo T
+# Carte d'extension en T
 
 ![Img](./media/A718.png)
 
-## 1. Introduzione
+## 1. Introduction
 
-Nel mercato educativo, le schede micro:bit stanno diventando sempre più popolari. Tuttavia, non è facile testare una singola scheda micro:bit con altri moduli sensore. Perciò, abbiamo progettato appositamente questa scheda di espansione micro:bit tipo T.
+Sur le marché de l'éducation, les cartes micro:bit deviennent de plus en plus populaires. Cependant, il n'est pas facile de tester une seule carte micro:bit avec d'autres modules capteurs. C'est pourquoi nous avons spécialement conçu cette carte d'extension micro:bit en T.
 
-La scheda di espansione micro:bit tipo T divide tutte le porte IO sulla scheda in pin con passo di 2,54mm (GND, 5V, 3V3, Segnale), molto comodo per collegarsi con altri moduli sensore e componenti elettronici.
+La carte d'extension micro:bit en T divise tous les ports IO de la carte en broches avec un espacement de 2,54 mm (GND, 5V, 3V3, Signal), ce qui est très pratique pour connecter d'autres modules capteurs et composants électroniques.
 
-Inoltre, è possibile alimentare la scheda micro:bit tramite la porta DC bianca (DC 3V) o l'interfaccia micro USB (DC 5V) sulla scheda di espansione.
+De plus, vous pouvez alimenter la carte micro:bit via le port DC blanc (DC 3V) ou l'interface micro USB (DC 5V) sur la carte d'extension.
 
-La scheda di espansione è in grado di aumentare o convertire la tensione. Se alimentata da una fonte esterna a 3V, può fornire tensioni di 3.3V e 5V.
+La carte d'extension est capable d'augmenter ou de convertir la tension. Si elle est alimentée par une source externe de 3V, elle peut fournir des tensions de 3,3V et 5V.
 
-## 2. Caratteristiche
+## 2. Caractéristiques
 
-- Tensione di ingresso: porta DC bianca (DC 3V) o interfaccia micro USB (DC 5V)
+- Tension d'entrée : port DC blanc (DC 3V) ou interface micro USB (DC 5V)
 
-- Tensione di uscita: 3.3V o 5V
+- Tension de sortie : 3,3V ou 5V
 
-- Le porte IO di micro:bit sono divise in pin con passo di 2,54mm
+- Les ports IO de micro:bit sont divisés en broches avec un espacement de 2,54 mm
 
-- Dimensioni: 64mm x 56mm x 18mm
+- Dimensions : 64 mm x 56 mm x 18 mm
 
-- Peso: 13.1g
+- Poids : 13,1 g
 
-## 3. Pin-out
+## 3. Brochage
 
 ![Img](./media/A854.png)
 
-# Informazioni su Micro:bit
+# À propos de Micro:bit
 
-## 1. Cos'è Micro:bit
+## 1. Qu'est-ce que Micro:bit
 
-Lanciato dalla British Broadcasting Corporation (BBC), micro:bit è una scheda di sviluppo microcomputer progettata per l'educazione alla programmazione per adolescenti.
+Lancé par la British Broadcasting Corporation (BBC), micro:bit est une carte de développement micro-ordinateur conçue pour l'éducation à la programmation des adolescents.
 
-Anche se ha le dimensioni di una carta di credito, la scheda integra molti componenti, tra cui una matrice LED 5x5, 2 pulsanti programmabili, un accelerometro, una bussola, un termometro, un logo sensibile al tocco e un microfono MEMS, un modulo Bluetooth a basso consumo e un buzzer. Questo buzzer integrato riproduce ogni tipo di suono senza alcuna apparecchiatura esterna. Inoltre, la modalità sleep riduce il consumo di batteria quando il pulsante Reset&Power è premuto a lungo.
+Bien qu'elle ait la taille d'une carte de crédit, la carte intègre de nombreux composants, notamment une matrice LED 5x5, 2 boutons programmables, un accéléromètre, une boussole, un thermomètre, un logo tactile, un microphone MEMS, un module Bluetooth basse énergie et un buzzer. Ce buzzer intégré joue toutes sortes de sons sans équipement externe. De plus, son mode veille réduit la consommation d'énergie des piles lorsque le bouton Reset & Power est maintenu enfoncé.
 
-### 1.1. Layout della scheda Micro:bit V2
+### 1.1. Disposition de la carte Micro:bit V2
 
 ![Img](./media/A549.png)
 
-### 1.2. Pin-out Micro:bit V2
+### 1.2. Brochage de la Micro:bit V2
 
 ![Img](./media/A639.png)
 
-Funzioni dei pin Micro:bit:
+Fonctions des broches Micro:bit :
 
-| funzione            | pin                                                          |
+| fonction            | broches                                                      |
 | :------------------ | :----------------------------------------------------------- |
 | GPIO                | P0，P1，P2，P3，P4，P5，P6，P7，P8，P9，P10，P11，P12，P13，P14，P15，P16，P19，P20 |
 | ADC/DAC             | P0，P1，P2，P3，P4，P10                                      |
 | IIC                 | P19（SCL），P20（SDA）                                       |
 | SPI                 | P13（SCK），P14（MISO），P15（MOSI）                         |
-| PWM (comunemente usato) | P0，P1，P2，P3，P4，P10                                   |
-| occupato            | P5(Button A)，P6(LED Col4)，P7(LED Col2)，P10(LED Col5)，P11(Button B) |
+| PWM (couramment utilisé) | P0，P1，P2，P3，P4，P10                                  |
+| occupé              | P5(Bouton A)，P6(LED Col4)，P7(LED Col2)，P10(LED Col5)，P11(Bouton B) |
 
-Per maggiori informazioni visitare il sito ufficiale:
+Pour plus d'informations, veuillez visiter le site officiel :
 
 - [https://tech.microbit.org/hardware/edgeconnector/](https://tech.microbit.org/hardware/edgeconnector/)
 
 - [https://microbit.org/guide/hardware/pins/](https://microbit.org/guide/hardware/pins/)
 
-### 1.3. Note per l'applicazione di Micro:bit V2
+### 1.3. Notes pour l'application de Micro:bit V2
 
-1. Si consiglia di coprirlo con un protettore in silicone per evitare cortocircuiti poiché contiene molti componenti elettronici sofisticati.
+1. Il est recommandé de le couvrir avec un protecteur en silicone pour éviter les courts-circuits car il contient beaucoup de composants électroniques sophistiqués.
 
-2. La sua porta IO ha una bassa capacità di pilotaggio poiché può gestire solo correnti inferiori a 300mA. Pertanto, non collegarlo a dispositivi che operano con correnti elevate, come servo MG995 e motori DC, altrimenti si brucerà. Inoltre, è necessario conoscere i requisiti di corrente dei dispositivi prima di usarli ed è generalmente consigliato usare la scheda insieme a uno shield Micro:bit.
+2. Son port IO est très faible en puissance car il ne peut gérer qu'un courant inférieur à 300mA. Par conséquent, ne le connectez pas à des dispositifs fonctionnant avec un courant élevé, tels que le servo MG995 et le moteur DC, sous peine de le brûler. De plus, vous devez connaître les besoins en courant des dispositifs avant de les utiliser et il est généralement recommandé d'utiliser la carte avec un shield Micro:bit.
 
-3. Si consiglia di alimentare la scheda principale tramite l'interfaccia USB o tramite batteria da 3V. La porta IO di questa scheda è 3V3, quindi non supporta sensori a 5V. Se è necessario 5V, è richiesta la scheda di espansione con alimentazione esterna.
+3. Il est recommandé d'alimenter la carte principale via l'interface USB ou via une pile de 3V. Le port IO de cette carte est en 3V3, donc il ne supporte pas les capteurs en 5V. Si vous avez besoin de 5V, la carte d'extension doit être connectée à une alimentation externe.
 
-4. Quando si usano i pin (P3, P4, P6, P7 e P10) condivisi con la matrice LED, bloccarli dalla matrice. Altrimenti, il LED potrebbe visualizzare in modo casuale e i dati dei sensori collegati potrebbero essere errati.
+4. Lors de l'utilisation des broches (P3, P4, P6, P7 et P10) partagées avec la matrice LED, bloquez-les depuis la matrice. Sinon, la LED peut afficher de manière aléatoire et les données des capteurs connectés peuvent être erronées.
 
-5. **I pin 19 e 20 non possono essere usati come porte IO** anche se Makecode mostra che possono. Possono essere usati solo per comunicazione I2C.
+5. **Les broches 19 et 20 ne peuvent pas être utilisées comme ports IO** bien que Makecode indique qu'elles le peuvent. Elles ne peuvent être utilisées que pour la communication I2C.
 
-6. La porta batteria da 3V non può essere collegata a batterie superiori a 3.3V, altrimenti la scheda si danneggerà.
+6. Le port batterie de 3V ne peut pas être connecté à une batterie de plus de 3,3V, sinon la carte sera endommagée.
 
-7. Vietato usarlo su prodotti metallici per evitare cortocircuiti.
+7. Il est interdit de l'utiliser sur des produits métalliques pour éviter les courts-circuits.
 
-<span style="color: rgb(255, 76, 65);">In parole semplici</span>, micro:bit è come un microcomputer che ha reso la programmazione a portata di mano e ha potenziato l'innovazione digitale.
+<span style="color: rgb(255, 76, 65);">En résumé</span>, micro:bit est comme un micro-ordinateur qui a rendu la programmation accessible et a renforcé l'innovation numérique.
 
-## 2. Driver Micro:bit
+## 2. Pilote Micro:bit
 
-Micro:bit non necessita di installazione driver. Tuttavia, nel caso in cui il computer non riconosca la scheda principale, è necessario installare il driver.
+Micro:bit ne nécessite pas d'installation de pilote. Cependant, si votre ordinateur ne reconnaît pas la carte principale, vous devez installer le pilote.
 
-**Istruzioni per l'installazione del driver:**
+**Instructions d'installation du pilote :**
 
-Collegare la scheda principale micro:bit al computer tramite cavo USB.
+Connectez la carte principale micro:bit à l'ordinateur via un câble USB.
 
 ![Img](./media/A252.png)
 
-Nelle cartelle MicroPython_Tutorial e MakeCode_Tutorial forniamo i file driver. Scegliere uno di essi. Cliccare sul file driver per “**Installare**”.
+Dans les dossiers MicroPython_Tutorial et MakeCode_Tutorial, nous fournissons des fichiers pilotes. Choisissez-en un. Cliquez sur le fichier pilote pour "**Installer**".
 
 ![Img](./media/A323a.png)
 
@@ -154,16 +154,16 @@ Nelle cartelle MicroPython_Tutorial e MakeCode_Tutorial forniamo i file driver. 
 
 ![Img](./media/A327.png)
 
- “**Installare**” e “**Avanti**”.
+ "**Installer**" et "**Suivant**".
 
 ![Img](./media/A347.png)
 
-“**Installare**” e “**Fine**”.
+"**Installer**" et "**Terminer**".
 
 ![Img](./media/A408.png)
 
 ![Img](./media/A349.png)
 
-Dopodiché, entrare in “**Computer**” —> “**Proprietà**” —> “**Gestione dispositivi**”:
+Ensuite, allez dans "**Ordinateur**" —> "**Propriétés**" —> "**Gestionnaire de périphériques**" :
 
 ![Img](./media/A427.png)

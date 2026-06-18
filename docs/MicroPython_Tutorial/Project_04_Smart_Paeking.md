@@ -1,10 +1,10 @@
-### Progetto 04: Parcheggio Intelligente
+### Projet 04 : Parking Intelligent
 
-#### 1. Panoramica
+#### 1. Aperçu
 
-I parcheggi intelligenti sono ovunque. Possiamo anche creare un parcheggio intelligente? Certo. Possiamo usare un sensore a ultrasuoni per rilevare se ci sono veicoli davanti. Quando un veicolo (o un oggetto) viene rilevato in avvicinamento, controlliamo il servo per sollevare l'asta di sollevamento; se viene rilevato che si allontana, il servo abbasserà l'asta di sollevamento.
+Les parkings intelligents sont partout. Pouvons-nous aussi créer un parking intelligent ? Bien sûr. Nous pouvons utiliser un capteur ultrasonique pour détecter s'il y a des véhicules devant. Lorsqu'un véhicule (ou un objet) est détecté en approche, nous contrôlons le servo pour lever la barre de levage ; s'il est détecté en train de s'éloigner, le servo abaissera la barre de levage.
 
-#### 2. Componenti
+#### 2. Composants
 
 | ![Img](./media/A850.png) |       ![Img](./media/A858.png)       |              ![Img](./media/A906.png)              |
 | :---------------------: | :---------------------------------: | :-----------------------------------------------: |
@@ -12,77 +12,77 @@ I parcheggi intelligenti sono ovunque. Possiamo anche creare un parcheggio intel
 | ![Img](./media/A356.png) |       ![Img](./media/A309.png)       |              ![Img](./media/A415.png)              |
 |  ultrasonic sensor *1   |              servo *1               |                   DuPont wires                    |
 | ![Img](./media/A017.png) |       ![Img](./media/A950.png)       |              ![Img](./media/A024.png)              |
-|      breadboard *1      |             jump wires              |battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>)|
+|      breadboard *1      |             jump wires              |battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>)|
 | ![Img](./media/A336.png) |       ![Img](./media/A131.png)       |                                                   |
 |       bat card *1       |          lift rod card *1           |                                                   |
 
-#### 3. Conoscenza dei Componenti
+#### 3. Connaissances sur les composants
 
 **Servo**
 
-Il servo è un attuatore di posizione. Possiamo usare il servo per controllare la posizione esatta o fornire alta coppia. Di solito viene usato in robot, automobili radiocomandate e persino modelli di aeroplani. Esistono molte specifiche, ma tutti i servi hanno tre fili: segnale (arancione), positivo (rosso) e negativo (marrone). Il colore può variare a seconda della marca del servo.
+Le servo est un actionneur de position. Nous pouvons utiliser le servo pour contrôler la position exacte ou fournir un couple élevé. Habituellement, il est utilisé dans les robots, les voitures télécommandées, et même les modèles d'avions. Il existe de nombreuses spécifications, mais tous les servos ont trois fils : signal (orange), positif (rouge) et négatif (marron). La couleur peut varier selon les marques de servo.
 
 ![Img](./media/A5525.png)
 
-**Diagramma della struttura interna:**
+**Schéma de structure interne :**
 
 ![Img](./media/A5534.png)
 
-① Segnale: riceve i segnali di controllo dal microcontrollore;
+① Signal : reçoit les signaux de contrôle du microcontrôleur ;
 
-② potenziometro: può misurare la posizione dell'albero di uscita, fa parte del feedback dell'intero servo;
+② potentiomètre : la position de l'arbre de sortie peut être mesurée, ce qui fait partie du retour d'information de l'ensemble du servo ;
 
-③ Controllore interno: la scheda embedded elabora i segnali di controllo esterni, aziona il motore e i segnali di feedback della posizione, è il cuore dell'intero servo;
+③ Contrôleur interne : la carte embarquée traite les signaux de contrôle externes, pilote le moteur et les signaux de position de retour, c'est le cœur de l'ensemble du servo ;
 
-④ Motore DC: funge da attuatore per fornire velocità, coppia e posizione;
+④ Moteur DC : agit comme un actionneur pour fournir vitesse, couple, position ;
 
-⑤ Trasmissione / meccanismo del servo: il meccanismo amplifica la corsa fornita dal motore all'angolo finale di uscita secondo un certo rapporto di trasmissione.
+⑤ Transmission / mécanisme servo : le mécanisme amplifie la course de sortie du moteur à l'angle final de sortie selon un certain rapport de transmission.
 
-**Azionare il servo**
+**Piloter le servo**
 
-Inviare segnali PWM alla linea del segnale del servo per controllarne l'uscita. Il duty cycle del PWM determina direttamente la posizione dell'albero di uscita. Il periodo è solitamente di 20 millisecondi e tipicamente impostato per generare impulsi a una frequenza di 50Hz.
+Envoyer des signaux PWM à la ligne de signal du servo pour contrôler sa sortie. Le rapport cyclique du PWM détermine directement la position de l'arbre de sortie. La période est généralement de 20 millisecondes et est typiquement réglée pour générer des impulsions à une fréquence de 50Hz.
 
-<span style="color: rgb(255, 0, 0);">Ad esempio (servo 180°):</span>
+<span style="color: rgb(255, 0, 0);">Par exemple (servo 180°) :</span>
 
-Quando inviamo un impulso di larghezza 1,5 millisecondi (ms) al servo 180°, l'albero di uscita del servo si sposterà nella posizione centrale (90 gradi);
+Lorsque nous envoyons une largeur d'impulsion de 1,5 millisecondes (ms) au servo 180°, l'arbre de sortie du servo se déplacera à la position médiane (90 degrés) ;
 
-Se la larghezza dell'impulso è 0,5ms, l'albero di uscita si sposterà a 0 gradi;
+Si la largeur d'impulsion est de 0,5 ms, l'arbre de sortie se déplacera à 0 degré ;
 
-Se la larghezza dell'impulso è 2,5ms, l'albero di uscita si sposterà a 180 gradi;
+Si la largeur d'impulsion est de 2,5 ms, l'arbre de sortie se déplacera à 180 degrés ;
 
 ![Img](./media/A5545.png)
 
-**Parametri:**
+**Paramètres :**
 
-- Tensione di funzionamento: DC 3.3V~5V
+- Tension de fonctionnement : DC 3,3V~5V
 
-- Temperatura di funzionamento: -10°C ~ +50°C
+- Température de fonctionnement : -10°C ~ +50°C
 
-- Dimensioni: 32.25mm x 12.25mm x 30.42mm
+- Dimensions : 32,25 mm x 12,25 mm x 30,42 mm
 
-- Interfaccia: interfaccia a 3 pin con passo di 2.54mm
+- Interface : interface 3 broches avec un espacement de 2,54 mm
 
-#### 4. Schema di Collegamento
+#### 4. Schéma de câblage
 
 ![Img](./media/A606.png)
 
-<span style="color: rgb(255, 76, 65);">**Quando si utilizzano il sensore a ultrasuoni e il servo, dobbiamo collegare un'alimentazione esterna e impostare l'interruttore DIP su ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Lors de l'utilisation du capteur ultrasonique et du servo, nous devons connecter une alimentation externe et mettre l'interrupteur DIP sur ON.**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A701.png)
 
-#### 5. Flusso del Codice
+#### 5. Flux du code
 
 ![Img](./media/A716.png)
 
-#### 6. Codice di Test
+#### 6. Code de test
 
-Il file del codice è fornito nella cartella Progetto 04：Smart-Parking, file Project-04-Smart-Parking\.py.
+Le fichier de code est fourni dans le dossier Projet 04 : Smart-Parking, fichier Project-04-Smart-Parking\.py.
 
 ![Img](./media/A3345.png)
 
-**Codice completo:** <span style="color: rgb(255, 76, 65);">La soglia nella condizione 10 può essere modificata in base alle condizioni reali.</span>
+**Code complet :** <span style="color: rgb(255, 76, 65);">Le seuil dans la condition 10 peut être modifié selon les conditions réelles.</span>
 
 ```python
 '''
@@ -133,18 +133,18 @@ while True:
        sleep(2000)
 ```
 
-#### 7. Risultato del Test
+#### 7. Résultat du test
 
-Clicca “<span style="color: rgb(255, 76, 65);">Flash</span>” per caricare il codice sulla scheda micro:bit.
+Cliquez sur “<span style="color: rgb(255, 76, 65);">Flash</span>” pour charger le code sur la carte micro:bit.
 
 ![Img](./media/A3400.png)
 
-Dopo aver scaricato il codice sulla scheda, **accendi tramite cavo micro USB o alimentazione esterna (imposta l'interruttore DIP su ON)**, e premi il pulsante di reset sulla scheda.
+Après avoir téléchargé le code sur la carte, **alimentez via le câble micro USB ou une alimentation externe (mettre l'interrupteur DIP sur ON)**, et appuyez sur le bouton reset de la carte.
 
 ![Img](./media/A455.png)
 
-Quando il sensore a ultrasuoni rileva un veicolo (o oggetto) in avvicinamento, il servo controlla l'asta di sollevamento per alzarla; se il sensore rileva che si allontana, il servo abbasserà l'asta di sollevamento.
+Lorsque le capteur ultrasonique détecte un véhicule (ou un objet) en approche, le servo contrôle la barre de levage pour la lever ; si le capteur détecte qu'il s'éloigne, le servo abaissera la barre de levage.
 
-<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non vedi i risultati, premi il pulsante di reset sul retro della scheda.</span>
+<span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez sur le bouton reset à l'arrière de la carte.</span>
 
 ![Img](./media/A021.gif)
