@@ -31,7 +31,7 @@ MicroPython_Tutorial
 
 
 .. _4. Troubleshooting:
-
+-------------------------
 
 .. toctree::
    :maxdepth: 3

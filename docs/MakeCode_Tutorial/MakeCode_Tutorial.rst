@@ -31,6 +31,7 @@ MakeCode_Tutorial
 
 
 .. _3. Troubleshooting:
+------------------------
 
 
 .. toctree::
