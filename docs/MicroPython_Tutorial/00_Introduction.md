@@ -1,5 +1,3 @@
-# MicroPython_Tutorial
-
 ## 1. About Mu Software
 
 ### 1.1. Install MU
