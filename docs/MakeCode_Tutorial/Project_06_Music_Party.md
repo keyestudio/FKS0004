@@ -1,30 +1,30 @@
-### Project 06: Muziekfeest
+### プロジェクト06：ミュージックパーティー
 
 ![Img](./media/A1317.png)
 
-#### 1. Overzicht
+#### 1. 概要
 
-Wanneer we in onze handen klappen, vangt de microfoon op de board geluidssignalen op, en speelt de speaker een vrolijk verjaardagslied terwijl de RGB LED schitterend licht uitstraalt.
+手をたたくと、ボードのマイクが音声信号を拾い、スピーカーが楽しいバースデーソングを再生し、RGB LEDがまばゆい光を放ちます。
 
-#### 2. Componenten
+#### 2. 部品
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| micro:bit board *1 | micro:bit T-type uitbreidingsboard *1 | micro USB-kabel *1 |
+| micro:bit ボード *1 | micro:bit T型拡張ボード *1 | micro USB ケーブル *1 |
 | ![Img](./media/A500.png)| ![Img](./media/A944.png) | ![Img](./media/A950.png) |
-| rode LED *1 | 220Ω weerstand *3 | verbindingsdraad *2 |
+| 赤色LED *1 | 220Ω 抵抗 *3 | ジャンプワイヤー *2 |
 | ![Img](./media/A017.png) | ![Img](./media/A024.png) | ![Img](./media/A621.png)  |
-| breadboard *1 | batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA-batterijen *2</span>)| RGB-kaart *1 |
+| ブレッドボード *1 | 電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)| RGBカード *1 |
 
-#### 3. Componentenkennis
+#### 3. 部品の知識
 
-**Microfoon**
+**マイクロフォン**
 
-Een hoogwaardige digitale microfoon is geïntegreerd aan de voorkant van het micro:bit V2 board om geluid- en audiosignalen te detecteren. De chip die de microfoon aanstuurt en verwerkt bevindt zich aan de achterkant.
+高品質なデジタルマイクがmicro:bit V2ボードの表面に内蔵されており、音や音声信号を検出します。マイクを制御・処理するチップは裏面にあります。
 
 ![Img](./media/A1317.png)
 
-De microfoon zit in een klein rond gaatje aan de voorkant van het board, wat handig is om omgevingsgeluid op te vangen. Plaats het micro:bit board gewoon met de voorkant naar boven tijdens gebruik. Naast het gaatje zit een microfoon LED-indicator. Wanneer de micro:bit geluidsniveaus meet, zal de indicator oplichten.
+マイクはボード表面の小さな丸い穴にあり、周囲の音声信号を拾いやすくなっています。使用時はmicro:bitボードを表向きに置いてください。穴の隣にはマイク用LEDインジケーターがあり、音のレベルを測定すると点灯します。
 
 ![Img](./media/A116.png)
 
@@ -32,54 +32,54 @@ De microfoon zit in een klein rond gaatje aan de voorkant van het board, wat han
 
 ![Img](./media/A2127.png)
 
-RGB LED is gebaseerd op de combinatie van drie primaire kleuren (RGB): rood, groen en blauw. De meeste kleuren kunnen worden samengesteld door RGB in verschillende verhoudingen te mengen. De rode, groene en blauwe LEDs zijn verpakt in een transparante plastic behuizing die kleuren licht uitstraalt door de ingangsspanning van de R-, G- en B-pinnen te veranderen.
+RGB LEDは三原色（赤、緑、青）の交差点としてイメージされます。RGBの異なる比率でほとんどの色を合成できます。赤、緑、青のLEDは透明なプラスチックケースに封入されており、R、G、Bピンの入力電圧を変えることで光の色を発します。
 
 ![Img](./media/A137.png)
 
-**Trichromatische theorie:**
+**三色説：**
 
 ![Img](./media/A150.png)
 
-RGB LED kan worden onderverdeeld in twee typen: common anode en common cathode:
+RGB LEDは共通アノード型と共通カソード型の2種類に分けられます：
 
-In een common cathode RGB LED delen de drie LEDs een negatieve aansluiting (kathode);
+共通カソードRGB LEDでは、3つのLEDが負極（カソード）を共有します；
 
-In een common anode RGB LED delen de drie LEDs een positieve aansluiting (anode).
+共通アノードRGB LEDでは、3つのLEDが正極（アノード）を共有します。
 
 ![Img](./media/A209.png)
 
-<span style="color: rgb(255, 76, 65);">**Opmerking: Hier leveren wij een common cathode RGB LED.**</span>
+<span style="color: rgb(255, 76, 65);">**注意：ここでは共通カソードRGB LEDを提供しています。**</span>
 
-**RGB LED-pinnen:**
+**RGB LEDのピン：**
 
-RGB LED heeft 4 pinnen: GND (de langste), R (rood), G (groen) en B (blauw). Plaats de RGB LED zoals hieronder getoond, pinnen van links naar rechts zijn rood, GND, groen en blauw.
+RGB LEDは4本のピンを持ちます：GND（最も長いピン）、R（赤）、G（緑）、B（青）。下図のようにRGB LEDを配置し、左から右へピンは赤、GND、緑、青の順です。
 
 ![Img](./media/A239.png)
 
-#### 4. Aansluitschema
+#### 4. 配線図
 
 ![Img](./media/A308.png)
 
 ![Img](./media/A325.png)
 
-#### 5. Codeflow
+#### 5. コードの流れ
 
 ![Img](./media/A343.png)
 
-#### 6. Testcode
+#### 6. テストコード
 
-Het codebestand is te vinden in de map Project 06：Music Party, bestand Project-06-Music-Party.hex.
+コードファイルはフォルダ Project 06：Music Party にあり、ファイル名は Project-06-Music-Party.hex です。
 
 ![Img](./media/A423.png)
 
-**Codeblokken laden:**
+**コードブロックの読み込み：**
 
 ![Img](./media/A445.png)
 
-#### 7. Testresultaat
+#### 7. テスト結果
 
-Na het downloaden van de code naar het board, wanneer we in onze handen klappen, vangt de microfoon op het board geluidssignalen op, en speelt de speaker een vrolijk verjaardagslied terwijl de RGB LED schitterend licht uitstraalt. Is het muziekfeest niet in een gelukkige en vreugdevolle sfeer?
+コードをボードにダウンロードした後、手をたたくとボードのマイクが音声信号を拾い、スピーカーが楽しいバースデーソングを再生し、RGB LEDがまばゆい光を放ちます。楽しい音楽パーティーの雰囲気が感じられませんか？
 
-<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van het board.</span>
+<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が見えない場合は、ボード裏面のリセットボタンを押してください。</span>
 
 ![Img](./media/A757.gif)

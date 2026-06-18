@@ -1,61 +1,61 @@
-### Project 02: Verkeerslichten
+### プロジェクト 02: 信号機
 
-#### 1. Overzicht
+#### 1. 概要
 
-In dit project gebruiken we drie LEDs (rood, geel en groen), een speaker op de micro:bit board en een 5x5 LED-matrix om een model van verkeerslichten te maken.
+このプロジェクトでは、micro:bit ボード上の3つのLED（赤、黄、緑）、スピーカー、5x5 LEDマトリックスを使って信号機のモデルを作成します。
 
-#### 2. Componenten
+#### 2. 部品
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| micro:bit board *1 | micro:bit T-type uitbreidingsbord *1 | micro USB-kabel *1 |
+| micro:bit ボード *1 | micro:bit T型拡張ボード *1 | micro USB ケーブル *1 |
 | ![Img](./media/A937.png)| ![Img](./media/A5652.png) | ![Img](./media/A658.png) |
-| rode LED *1 | gele LED *1 | groene LED *1 |
+| 赤色LED *1 | 黄色LED *1 | 緑色LED *1 |
 | ![Img](./media/A944.png) | ![Img](./media/A950.png) |![Img](./media/A017.png) |
-| 220Ω weerstand *3 | verbindingsdraden | breadboard *1 |
+| 220Ω抵抗 *3 | ジャンプワイヤー | ブレッドボード *1 |
 |  ![Img](./media/A024.png) |  ![Img](./media/A020.png) |  |
-| batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA-batterijen *2</span>) | verkeerslichtenkaart *1 | |
+| 電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自分で用意した単3電池 *2</span>) | 信号機カード *1 | |
 
-#### 3. Componentenkennis
+#### 3. 部品の知識
 
-**Speaker**
+**スピーカー**
 
 ![Img](./media/A833.png)
 
-De micro:bit wordt geleverd met een speaker, waardoor het eenvoudig is om geluid te maken in je project.
+Micro:bit にはスピーカーが搭載されており、プロジェクトで簡単に音を出すことができます。
 
-#### 4. Aansluitschema
+#### 4. 配線図
 
 ![Img](./media/A908.png)
 
-<span style="color: rgb(255, 76, 65);">**Let op:** het micro:bit board moet in het T-type uitbreidingsbord worden gestoken zoals hieronder getoond. De LED-matrix van het micro:bit board moet aan dezelfde kant zitten als het logo van het uitbreidingsbord.</span>
+<span style="color: rgb(255, 76, 65);">**注意:** micro:bit ボードは下図のようにT型拡張ボードに差し込む必要があります。micro:bit ボードのLEDマトリックスは拡張ボードのロゴと同じ側にしてください。</span>
 
 ![Img](./media/A940.png)
 
-#### 5. Codeflow
+#### 5. コードの流れ
 
 ![Img](./media/A5956.png)
 
-#### 6. Testcode
+#### 6. テストコード
 
-Het codebestand is te vinden in de map Project 02：Traffic Lights, bestand Project-02-Traffic-Lights.hex.
+コードファイルはフォルダ Project 02：Traffic Lights 内のファイル Project-02-Traffic-Lights.hex にあります。
 
 ![Img](./media/A0017.png)
 
-**Laad codeblokken:**
+**コードブロックの読み込み：**
 
 ![Img](./media/A605.png)
 
-#### 7. Testresultaat
+#### 7. テスト結果
 
-Voor de Windows 10-app, klik op “<span style="color: rgb(255, 76, 65);">Download</span>”. Voor browsers, stuur het gedownloade “<span style="color: rgb(255, 76, 65);">.hex</span>” bestand naar het micro:bit board.
+Windows 10 アプリの場合、「<span style="color: rgb(255, 76, 65);">Download</span>」をクリックしてください。ブラウザの場合は、ダウンロードした「<span style="color: rgb(255, 76, 65);">.hex</span>」ファイルを micro:bit ボードに送信します。
 
-Na het downloaden van de code naar het board, gaat de groene LED aan en telt de 5×5 LED-matrix 6 seconden af. Nadat de groene LED uitgaat, knippert de gele LED en telt de matrix 3 seconden af met geluid van de speaker. Tot slot gaat de rode LED aan met een aftelling van 6 seconden. Deze handelingen herhalen zich.
+コードをボードにダウンロードすると、緑色LEDが点灯し、5×5 LEDマトリックスが6秒のカウントダウンを表示します。緑色LEDが消えると黄色LEDが点滅し、マトリックスは3秒のカウントダウンを行い、スピーカーが鳴ります。最後に赤色LEDが点灯し、6秒のカウントダウンを行います。これらの動作が繰り返されます。
 
-<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van het board.</span>
+<span style="color: rgb(255, 76, 65);">**注意:** 配線が正しいのに結果が見えない場合は、ボード裏面のリセットボタンを押してください。</span>
 
 ![Img](./media/A459.gif)
 
-<span style="color: rgb(255, 76, 65);">**Bij voeding via externe stroomvoorziening, zet de DIP-schakelaar op ON.**</span>
+<span style="color: rgb(255, 76, 65);">**外部電源で電源を入れる場合は、DIPスイッチをONにしてください。**</span>
 
 ![Img](./media/A904.png)

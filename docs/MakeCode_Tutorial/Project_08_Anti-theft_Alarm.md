@@ -1,55 +1,55 @@
-### Project 08: Diefstalalarm
+### プロジェクト08：盗難防止アラーム
 
-#### 1. Overzicht
+#### 1. 概要
 
-Wanneer het slimme diefstalalarm detecteert dat de diefstalbox is verplaatst, zal de speaker op de micro:bit board alarm slaan en zal de rode LED knipperen.
+スマート盗難防止アラームが盗難防止ボックスの移動を検知すると、micro:bitボードのスピーカーが警報を鳴らし、赤色LEDが点滅します。
 
-#### 2. Componenten
+#### 2. 部品
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| micro:bit board *1 | micro:bit T-type uitbreidingsboard *1 | micro USB-kabel *1 |
+| micro:bitボード *1 | micro:bit T型拡張ボード *1 | micro USBケーブル *1 |
 | ![Img](./media/A937.png)| ![Img](./media/A944.png) | ![Img](./media/A950.png) |
-| rode LED *1 | 220Ω weerstand *1 | verbindingsdraad *2 |
+| 赤色LED *1 | 220Ω抵抗 *1 | ジャンプワイヤー *2 |
 | ![Img](./media/A017.png) | ![Img](./media/A024.png) | ![Img](./media/A952.png)  |
-| breadboard *1 | batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA-batterijen *2</span>)| alarmkaart *1 |
+| ブレッドボード *1 | 電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)| アラームカード *1 |
 
-#### 3. Componentenkennis
+#### 3. 部品の知識
 
-**Versnellingsmeter**
+**加速度センサー**
 
 ![Img](./media/A026.png)
 
-De micro:bit board beschikt over een ingebouwde LSM303AGR versnellingssensor (we noemen dit een versnellingsmeter) die standaard, snel, plus en hoge-snelheidsmodus (100 kHz, 400 kHz, 1 MHz en 3,4 MHz) van I2C-seriële businterface en SPI-seriële standaardinterface voor externe communicatie bevat, met een resolutie van 8/10/12 bits en een bereik van ±2g, ±4g of ±8g.
+micro:bitボードにはLSM303AGR加速度センサー（加速度計）が内蔵されており、標準、ファスト、プラス、高速モード（100 kHz、400 kHz、1 MHz、3.4 MHz）のI2CシリアルバスインターフェースとSPIシリアル標準インターフェースを備えています。分解能は8/10/12ビット、測定範囲は±2g、±4g、または±8gです。
 
-Wanneer de micro:bit board in rust is of in eenparige beweging, detecteert de versnellingsmeter alleen de zwaartekrachtversnelling. Als deze licht wordt bewogen, is de gedetecteerde versnelling veel kleiner dan die van de zwaartekracht, dus het verschil kan worden genegeerd. Daarom detecteren we voornamelijk de verandering van de zwaartekrachtversnelling op de x-, y- en z-assen.
+micro:bitボードが静止または等速運動している場合、加速度計は重力加速度のみを検出します。わずかに揺らした場合、検出される加速度は重力加速度よりはるかに小さいため、その差は無視できます。したがって、主にx、y、z軸の重力加速度の変化を検出します。
 
-#### 4. Aansluitschema
+#### 4. 配線図
 
 ![Img](./media/A219.png)
 
-<span style="color: rgb(255, 76, 65);">**De besturingspin van de LED op het board is P1 (de pin van het T-type uitbreidingsboard is digitaal 1).**</span>
+<span style="color: rgb(255, 76, 65);">**LEDのボード制御ピンはP1です（T型拡張ボードのピンはデジタル1）。**</span>
 
-#### 5. Codeflow
+#### 5. コードの流れ
 
 ![Img](./media/A4434.png)
 
-#### 6. Testcode
+#### 6. テストコード
 
-Het codebestand is te vinden in map Project 08：Burglar Alarm, bestand Project-08-Burglar-Alarm.hex.
+コードファイルはフォルダ Project 08：Burglar Alarm 内のファイル Project-08-Burglar-Alarm.hex にあります。
 
 ![Img](./media/A4518.png)
 
-**Laad codeblokken:** 
+**コードブロックの読み込み：**
 
-<span style="color: rgb(255, 76, 65);">**Na het importeren van de code, als de buzzer blijft klinken terwijl het breadboard niet wordt verplaatst; kan dit veroorzaakt worden door geografische factoren. Je kunt de drempelwaarden in de voorwaarde -60 en 50 aanpassen aan de werkelijke situatie.**</span>
+<span style="color: rgb(255, 76, 65);">**コードをインポートした後、ブレッドボードを動かしていないのにブザーが鳴り続ける場合は、地理的要因による可能性があります。条件内の閾値 -60 と 50 を実際の状況に応じて変更してください。**</span>
 
 ![Img](./media/A611.png)
 
-#### 7. Testresultaat
+#### 7. テスト結果
 
-Na het downloaden van de code naar het board, beweeg het breadboard. Als de versnellingswaarde x＜-60 of x＞50 is, slaat de speaker op het board alarm en knippert de LED, en toont de micro:bit LED-matrix ![Img](./media/A706.png). Anders maakt de speaker geen geluid en is de LED uit, en toont de micro:bit LED-matrix ![Img](./media/A720.png).
+コードをボードにダウンロードした後、ブレッドボードを動かします。加速度値が x＜-60 または x＞50 の場合、ボードのスピーカーが警報を鳴らし、LEDが点滅し、micro:bitのLEDマトリックスは ![Img](./media/A706.png) を表示します。そうでない場合はスピーカーは無音でLEDは消灯し、micro:bitのLEDマトリックスは ![Img](./media/A720.png) を表示します。
 
-<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van het board.</span>
+<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が見えない場合は、ボード裏面のリセットボタンを押してください。</span>
 
 ![Img](./media/A936.gif)

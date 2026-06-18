@@ -1,13 +1,13 @@
-## 4. Problemen oplossen
+## 4. トラブルシューティング
 
-**Fouten bij het uploaden van codes**
+**コードアップロード時のエラー**
 
-- Als er rommelige iconen worden weergegeven op de matrix van de board na het uploaden van code, controleer dan of er per ongeluk tekens zijn toegevoegd of verwijderd. Je kunt op “check” klikken ![Img](./media/A5457.png). Maar let op dat sommige geen fouten zijn, maar alleen waarschuwingen.
+- コードをアップロードした後、ボードのマトリックスに乱れたアイコンが表示される場合、文字が誤って追加または削除されていないか確認してください。「check」をクリックすることもできます！![Img](./media/A5457.png)。ただし、一部はエラーではなく警告であることに注意してください。
 
-- Als de code een bibliotheek bevat, controleer dan of de bibliotheek is geüpload naar de board. Zie “**Hoe Mu een bibliotheek importeert naar Micro:bit**”. Controleer daarna of er per ongeluk tekens zijn toegevoegd of verwijderd.
+- コードにライブラリが含まれている場合、ライブラリがボードにアップロードされているか確認してください。「**How Mu Import Library to Micro:bit**」を参照してください。その後、文字が誤って追加または削除されていないか確認してください。
 
-**Geen uitvoer op REPL**
+**REPLに何も表示されない**
 
-- Na het uploaden van code, klik op “REPL” ![Img](./media/A5530.png) en er wordt niets afgedrukt. In dit geval moeten we de resetknop aan de achterkant van de micro:bit board indrukken.
+- コードをアップロードした後、「REPL」をクリックしても ![Img](./media/A5530.png) 何も表示されない場合は、micro:bitボードの背面にあるリセットボタンを押す必要があります。
 
 ![Img](./media/A455.png)

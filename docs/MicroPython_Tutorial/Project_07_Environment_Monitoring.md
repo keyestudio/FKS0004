@@ -1,101 +1,101 @@
-### Project 07: Omgevingsbewaking
+### プロジェクト07：環境モニタリング
 
-#### 1. Overzicht
+#### 1. 概要
 
-Op de OLED toont het slimme omgevingsbewakingssysteem in realtime de temperatuur- en vochtigheidswaarden die door de DHT11-sensor worden gedetecteerd, evenals de helderheidswaarde van het omgevingslicht die wordt gedetecteerd door de ingebouwde lichtsensor.
+OLEDには、DHT11センサーで検出した温度と湿度の値をリアルタイムで表示し、さらに基板上の光センサーで検出した周囲の明るさレベルの値も表示するスマート環境モニタリングシステムです。
 
-#### 2. Componenten
+#### 2. コンポーネント
 
 |         ![Img](./media/A850.png)          |       ![Img](./media/A858.png)       |              ![Img](./media/A906.png)              |
 | :--------------------------------------: | :---------------------------------: | :-----------------------------------------------: |
-|            micro:bit board *1            | micro:bit T-type uitbreidingsbord *1 |                micro USB-kabel *1                 |
+|            micro:bit ボード *1            | micro:bit T型拡張ボード *1 |                micro USB ケーブル *1                 |
 |         ![Img](./media/A2637.png)         |       ![Img](./media/A406.png)       |              ![Img](./media/A415.png)              |
-| XHT11 temperatuur- en vochtigheidssensor *1 |           OLED-module *1            |                   DuPont-draadjes                  |
+| XHT11 温湿度センサー *1 |           OLED モジュール *1            |                   DuPont ワイヤー                    |
 |         ![Img](./media/A017.png)          |       ![Img](./media/A950.png)       |              ![Img](./media/A024.png)              |
-|              breadboard *1               |             jump wires              |batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA-batterijen *2</span>)|
+|              ブレッドボード *1               |             ジャンプワイヤー              |バッテリーホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)|
 |         ![Img](./media/A0715.png)         |       ![Img](./media/A557.png)       |                                                   |
-|              cloud card *1               |            OLED card *1             |                                                   |
+|              クラウドカード *1               |            OLEDカード *1             |                                                   |
 
-#### 3. Componentkennis
+#### 3. コンポーネント知識
 
-**XHT11 temperatuur- en vochtigheidssensor**
+**XHT11 温湿度センサー**
 
 ![Img](./media/A2637.png)
 
-De XHT11 temperatuur- en vochtigheidssensor is een samengestelde sensor met gekalibreerde digitale signaaluitgang, die de luchtvochtigheid en temperatuur kan detecteren.
+XHT11 温湿度センサーは、較正済みのデジタル信号出力を持つ複合センサーで、空気中の湿度と温度を検出できます。
 
-**Nauwkeurigheid**: vochtigheid ±5%RH, temperatuur ±2℃
+**精度**：湿度 ±5%RH、温度 ±2℃
 
-**Detectiebereik**: vochtigheid 5%RH ~ 95%RH, temperatuur -25℃ ~ +60℃
+**検出範囲**：湿度 5%RH ~ 95%RH、温度 -25℃ ~ +60℃
 
-De sensor gebruikt een speciale digitale module-acquisitie en temperatuur- en vochtigheidssensingtechnologie om een extreem hoge betrouwbaarheid en uitstekende lange termijn stabiliteit te garanderen. Het bevat een resistief vochtigheidssensorelement en een NTC-temperatuursensorelement, wat zeer geschikt is voor metingen met relatief lage nauwkeurigheid en realtime eisen.
+このセンサーは特殊なデジタルモジュール取得と温湿度検知技術を使用しており、非常に高い信頼性と優れた長期安定性を保証します。抵抗式湿度検知素子とNTC温度検知素子を含み、比較的低精度かつリアルタイム性が求められる測定に非常に適しています。
 
-**XHT11 communicatiemodus:**
+**XHT11 通信方式：**
 
-Er wordt gebruikgemaakt van single bus-communicatie. Dit betekent dat er slechts één datalijn is voor gegevensuitwisseling en controle in het systeem.
+シングルバス通信を採用しています。つまり、システム内でデータ交換と制御に使用されるデータ線は1本だけです。
 
-- Definitie van door single bus verzonden databits:
+- シングルバスで送信されるデータビットの定義：
 
-Single bus dataformaat: 40 bits data worden in één keer verzonden, met de hoogste bit eerst.
+シングルバスデータフォーマット：40ビットのデータを一度に送信し、上位ビットが先に来ます。
 
-8bit vochtigheidsinteger + 8bit vochtigheidsdecimaal + 8bit temperatuurinteger + 8bit temperatuurdecimaal + 8bit pariteitsbit (Het decimale deel van de vochtigheid is 0)
+8bit 湿度整数部 + 8bit 湿度小数部 + 8bit 温度整数部 + 8bit 温度小数部 + 8bit パリティビット（湿度の小数部は0）
 
-- Definitie van pariteitsbit:
+- パリティビットの定義：
 
-8bit vochtigheidsinteger + 8bit vochtigheidsdecimaal + 8bit temperatuurinteger + 8bit temperatuurdecimaal. 8bit pariteitsbit = de laatste 8 bits van het verkregen resultaat
+8bit 湿度整数部 + 8bit 湿度小数部 + 8bit 温度整数部 + 8bit 温度小数部。8bit パリティビット = 取得した結果の最後の8ビット
 
-- Datatijdlijn:
+- データタイムライン：
 
-Nadat de gebruikershost (MCU) een startsignaal heeft verzonden, schakelt de XHT11 over van laag stroomverbruik naar hoge snelheid modus. Na het startsignaal zendt XHT11 een respons signaal en 40bit data, en activeert een signaalacquisitie.
+ユーザーホスト（MCU）が開始信号を送信すると、XHT11は低電力モードから高速モードに切り替わります。開始信号の後、XHT11は応答信号と40ビットのデータを送信し、信号取得をトリガーします。
 
-- De signaaloverdracht wordt weergegeven in de afbeelding:
+- 信号伝送は図の通りです：
 
 ![Img](./media/A229.png)
 
- **Parameters**
+ **パラメータ**
 
-- Bedrijfsspanning: DC 3.3V tot 5V
+- 動作電圧：DC 3.3V ～ 5V
 
-- Bedrijfstroom: 2.1mA
+- 動作電流：2.1mA
 
-- Maximale stroom: 0.0105W
+- 最大消費電力：0.0105W
 
-- Temperatuurbereik: -25℃ ~ +60℃ (± 2℃)
+- 温度範囲：-25℃ ～ +60℃ (± 2℃)
 
-- Vochtigheidsbereik: 5%RH ~ 95%RH (nauwkeurigheid ±5%RH rond 25 °C)
+- 湿度範囲：5%RH ～ 95%RH (約25℃付近で精度 ±5%RH)
 
-**Microbit lichtsensor**
+**Microbit 光センサー**
 
 ![Img](./media/A0335.png)
 
-Een lichtsensor is een invoerapparaat dat de helderheid van extern licht meet. De micro:bit board bevat geen ingebouwde lichtsensor. Het detecteert en meet de omgevingshelderheid via een LED-matrix die herhaaldelijk de lichtintensiteit omzet in een waarde-invoer, waarna de spanningsvervaltijd wordt bemonsterd. Op deze manier is <span style="color: rgb(255, 76, 65);">de gedetecteerde helderheidswaarde een relatieve waarde</span>.
+光センサーは外部光の明るさを測定する入力デバイスです。micro:bit ボードには内蔵光センサーはありません。LEDマトリクスが光の強度を繰り返し値に変換し、その後電圧減衰時間をサンプリングすることで周囲の明るさを検出・感知します。このため、<span style="color: rgb(255, 76, 65);">検出される明るさレベルは相対値です</span>。
 
-#### 4. Aansluitschema
+#### 4. 配線図
 
 ![Img](./media/A409.png)
 
-<span style="color: rgb(255, 76, 65);">**Bij gebruik van het OLED-display moeten we een externe voeding aansluiten en de DIP-schakelaar op ON zetten.**</span>
+<span style="color: rgb(255, 76, 65);">**OLEDディスプレイを使用する場合は、必ず外部電源を接続し、DIPスイッチをONにしてください。**</span>
 
 ![Img](./media/A904.png)
 
 ![Img](./media/A554.png)
 
-#### 5. Bibliotheek importeren
+#### 5. ライブラリのインポート
 
-Als je de benodigde bibliotheekbestanden (DHT11 en oled_ssd1306) nog niet hebt toegevoegd, importeer deze dan volgens [Hoe Mu bibliotheek importeert naar Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit).
+必要なライブラリファイル（DHT11 と oled_ssd1306）をまだ追加していない場合は、[How Mu Import Library to Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit) を参照してインポートしてください。
 
-#### 6. Codeflow
+#### 6. コードの流れ
 
 ![Img](./media/A638.png)
 
 
-#### 7. Testcode
+#### 7. テストコード
 
-Het codebestand is te vinden in de map Project 07：Environment Monitoring中找文件Project-07-Environment-Monitoring\.py.
+コードファイルはフォルダ Project 07：Environment Monitoring 中の Project-07-Environment-Monitoring\.py にあります。
 
 ![Img](./media/A3641.png)
 
-**Volledige code:**
+**完成コード：**
 
 ```python
 '''
@@ -129,18 +129,18 @@ while True:
     sleep(2000)
 ```
 
-#### 8. Testresultaat
+#### 8. テスト結果
 
-Klik op “<span style="color: rgb(255, 76, 65);">Flash</span>” om de code op de micro:bit board te laden.
+「<span style="color: rgb(255, 76, 65);">Flash</span>」をクリックしてコードをmicro:bitボードに書き込みます。
 
 ![Img](./media/A3710.png)
 
-Na het downloaden van de code naar de board, **zet de voeding aan via micro USB-kabel of externe voeding (zet de DIP-schakelaar op ON)**, en druk op de resetknop op de board.
+コードをボードにダウンロードした後、**micro USBケーブルまたは外部電源で電源を入れ（DIPスイッチをONにする）、ボードのリセットボタンを押します。**
 
 ![Img](./media/A455.png)
 
-De OLED toont in realtime de temperatuur- en vochtigheidswaarden en het lichthelderheidsniveau.
+OLEDに温度・湿度の値と光の明るさレベルがリアルタイムで表示されます。
 
-<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaten, druk dan op de resetknop aan de achterkant van de board.</span>
+<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が表示されない場合は、ボード裏面のリセットボタンを押してください。</span>
 
 ![Img](./media/A838.gif)

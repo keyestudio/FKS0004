@@ -1,74 +1,74 @@
-### Project 05: Auto Wijzerplaat
+### プロジェクト05：カー ダイヤル
 
-#### 1. Overzicht
+#### 1. 概要
 
-In dit project combineren we een instelbare potentiometer, een servo en een mooie wijzerplaatkaart om een eenvoudig model van een auto wijzerplaat te maken.
+このプロジェクトでは、調整可能なポテンショメータ、サーボ、美しいダイヤルカードを組み合わせて、シンプルなカー ダイヤルモデルを作ります。
 
-#### 2. Componenten
+#### 2. 部品
 
 | ![Img](./media/A850.png)  |              ![Img](./media/A858.png)              | ![Img](./media/A906.png) |
 | :----------------------: | :-----------------------------------------------: | :---------------------: |
-|    micro:bit board *1    |        micro:bit T-type uitbreidingsbord *1       |   micro USB kabel *1    |
+|    micro:bit ボード *1    |        micro:bit T型拡張ボード *1        |   micro USB ケーブル *1    |
 | ![Img](./media/A350.png)  |              ![Img](./media/A309.png)              | ![Img](./media/A950.png) |
-|     potentiometer *1     |                     servo *1                      |       jump wires        |
+|     ポテンショメータ *1     |                     サーボ *1                      |       ジャンプワイヤー        |
 | ![Img](./media/A017.png)  |              ![Img](./media/A024.png)              | ![Img](./media/A233.png) |
-|      breadboard *1       |batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA batterijen *2</span>)|  potentiometer kaart *1  |
+|      ブレッドボード *1       |バッテリーホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)|  ポテンショメータカード *1  |
 | ![Img](./media/A1326.png) |                                                   |                         |
-|     auto wijzerplaat kaart*1      |                                                   |                         |
+|     カーダイヤルカード*1      |                                                   |                         |
 
-#### 3. Componenten Kennis
+#### 3. 部品の知識
 
-**potentiometer**
+**ポテンショメータ**
 
 ![Img](./media/A350.png)
 
-Een potentiometer is ook een weerstandselement met drie aansluitingen, waarvan de weerstandwaarde volgens een bepaalde regelmaat kan worden aangepast.
+ポテンショメータは3つの接点を持つ抵抗素子で、その抵抗値はある規則に従って調整可能です。
 
-Ze komen in alle vormen, maten en waarden, maar ze hebben allemaal het volgende gemeen:
+形状、サイズ、値は様々ですが、共通点は以下の通りです：
 
-① Drie terminals (of aansluitpunten).
+① 3つの端子（または接続点）。
 
-② Een beweegbare knop of schuifregelaar die de weerstand tussen de middelste terminal en een van de externe terminals kan veranderen.
+② 可動ノブまたはスライダーがあり、中間端子と任意の外部端子間の抵抗を変えられる。
 
-③ Terwijl de knop wordt bewogen, varieert de weerstand tussen de middelste terminal en een van de externe terminals van 0Ω tot het maximum.
+③ ノブを動かすと、中間端子と任意の外部端子間の抵抗が0Ωから最大値まで変化する。
 
-Het schakelsymbool van een potentiometer:
+ポテンショメータの回路記号：
 
 ![Img](./media/A654.png)
 
-(1)\. Als spanningsdeler
+(1)\. 電圧分割器として
 
-De potentiometer is een continu instelbare weerstand. Wanneer je de schuifregelaar draait, schuift het bewegende contact over de weerstand. Op dat moment kan er een spanning worden uitgegeven afhankelijk van de spanning die op de potentiometer wordt toegepast en de hoek of slag van de draaibeweging van de beweegbare schuifregelaar.
+ポテンショメータは連続可変抵抗器です。スライダーを回転させると、可動接点が抵抗体上を移動します。この時、ポテンショメータにかかる電圧と可動スライダーの角度やストロークに応じて電圧を出力できます。
 
-(2)\. Als variabele weerstand
+(2)\. 可変抵抗器として
 
-Wanneer de potentiometer wordt gebruikt als variabele weerstand, sluit je de middelste terminal aan op een van de twee extra terminals in het circuit. Op deze manier kun je een stabiele en continu variërende weerstandwaarde binnen het bereik verkrijgen.
+ポテンショメータを可変抵抗器として使う場合、中間端子を回路内の2つの追加端子のいずれかに接続します。こうすることで、その範囲内で安定かつ連続的に変化する抵抗値を得られます。
 
-(3)\. Als stroomregelaar
+(3)\. 電流制御器として
 
-Wanneer het wordt gebruikt als stroomregelaar, moet het bewegende contact worden aangesloten als een van de uitgangsterminals.
+電流制御器として使う場合、可動接点を出力端子の一つとして接続します。
 
-#### 4. Bedradingsschema
+#### 4. 配線図
 
 ![Img](./media/A812.png)
 
-<span style="color: rgb(255, 76, 65);">**Bij gebruik van de servo moeten we een externe voeding aansluiten en de DIP-schakelaar op ON zetten.**</span>
+<span style="color: rgb(255, 76, 65);">**サーボを使用する場合は、必ず外部電源を接続し、DIPスイッチをONにしてください。**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A836.png)
 
-#### 5. Code Stroomdiagram
+#### 5. コードの流れ
 
 ![Img](./media/A0854.png)
 
-#### 6. Testcode
+#### 6. テストコード
 
-Het codebestand is te vinden in de map Project 05：Car Dial, bestand Project-05-Car-Dial\.py.
+コードファイルはフォルダ Project 05：Car Dial 内のファイル Project-05-Car-Dial\.py にあります。
 
 ![Img](./media/A3438.png)
 
-**Volledige code:**
+**完成コード：**
 
 ```python
 '''
@@ -94,18 +94,18 @@ while True:
     sleep(20)
 ```
 
-#### 7. Testresultaat
+#### 7. テスト結果
 
-Klik op “<span style="color: rgb(255, 76, 65);">Flash</span>” om de code op het micro:bit board te laden.
+「<span style="color: rgb(255, 76, 65);">Flash</span>」をクリックしてコードをmicro:bitボードに書き込みます。
 
 ![Img](./media/A3457.png)
 
-Na het downloaden van de code naar het board, **zet de voeding aan via micro USB-kabel of externe voeding (zet de DIP-schakelaar op ON)**, en druk op de resetknop op het board.
+コードをボードにダウンロードした後、**micro USBケーブルまたは外部電源で電源を入れ（DIPスイッチをONにする）、ボードのリセットボタンを押します。**
 
 ![Img](./media/A455.png)
 
-Draai aan de knop van de potentiometer en de servo beweegt de wijzer op de wijzerplaat.
+ポテンショメータのノブを回すと、サーボがダイヤルのポインタを動かします。
 
-<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van het board.</span>
+<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに動作しない場合は、ボード裏面のリセットボタンを押してください。</span>
 
 ![Img](./media/A706.gif)

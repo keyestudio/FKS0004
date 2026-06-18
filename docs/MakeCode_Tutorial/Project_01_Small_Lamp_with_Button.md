@@ -1,173 +1,173 @@
-### Project 01: Kleine Lamp met Knop
+### プロジェクト01：ボタン付き小型ランプ
 
-#### 1. Overzicht
+#### 1. 概要
 
-Er zijn twee programmeerbare knoppen aan de voorkant van de micro:bit board (A en B). We combineren ze met een rode LED en een lampkaart om een kleine bureaulamp te bouwen. Wanneer knop A wordt ingedrukt, gaat de rode LED aan; wanneer knop B wordt ingedrukt, gaat deze uit.
+micro:bitボードの前面には2つのプログラム可能なボタン（AとB）があります。これらを赤色LEDとランプカードと組み合わせて、小さなデスクランプを作ります。ボタンAを押すと赤色LEDが点灯し、ボタンBを押すと消灯します。
 
-#### 2. Componenten
+#### 2. 部品
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| micro:bit board *1 | micro:bit T-type uitbreidingsbord *1 | micro USB-kabel *1 |
+| micro:bitボード *1 | micro:bit T型拡張ボード *1 | micro USBケーブル *1 |
 | ![Img](./media/A937.png)| ![Img](./media/A944.png) | ![Img](./media/A950.png) |
-| rode LED *1 | 220Ω weerstand *1 | jumper draad *2 |
+| 赤色LED *1 | 220Ω抵抗 *1 | ジャンプワイヤー *2 |
 | ![Img](./media/A017.png) | ![Img](./media/A024.png) | ![Img](./media/A920.png)  |
-| breadboard *1 | batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA batterijen *2</span>) | lampkaart *1 |
+| ブレッドボード *1 | 電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>) | ランプカード *1 |
 
-#### 3. Componenten Kennis
+#### 3. 部品の知識
 
-**Knoppen**
+**ボタン**
 
-Knoppen kunnen de schakeling aan en uit zetten. Wanneer een knop is aangesloten op een schakeling, is de schakeling open wanneer de knop niet wordt ingedrukt; de schakeling wordt gesloten nadat de knop is ingedrukt.
+ボタンは回路のオン・オフを制御できます。ボタンが回路に接続されている場合、ボタンが押されていないと回路は開いており、ボタンを押すと回路が閉じます。
 
-Er zijn drie knoppen op de micro:bit board: een resetknop aan de achterkant en twee programmeerbare knoppen (A en B) aan de voorkant.
+micro:bitボードには3つのボタンがあります：背面のリセットボタンと前面の2つのプログラム可能なボタン（AとB）です。
 
 ![Img](./media/A230.png)
 
-**Weerstanden**
+**抵抗**
 
 ![Img](./media/A248.png)
 
-Een weerstand is een elektronisch component dat de stroom in een tak van een schakeling beperkt. De weerstand van een vaste weerstand kan niet worden aangepast, terwijl die van een potentiometer of variabele weerstand dat wel kan.
+抵抗は分岐回路の電流を制限する電子部品です。固定抵抗の抵抗値は調整できませんが、ポテンショメーターや可変抵抗は調整可能です。
 
-Hier zijn twee veelvoorkomende schakelsymbolen voor weerstanden. Als je deze symbolen in een schakeling ziet, vertegenwoordigen ze een weerstand.
+抵抗の回路記号は以下の2つが一般的です。回路図でこれらの記号を見たら抵抗を表しています。
 
 ![Img](./media/A303.png)
 
-Ω is de eenheid van weerstand, inclusief Ω, KΩ, MΩ, enz. Ze kunnen worden uitgedrukt als: 1 MΩ=1000 KΩ, 1 KΩ =1000 Ω. Over het algemeen zijn sommige weerstanden gemarkeerd op het oppervlak.
+Ωは抵抗の単位で、Ω、KΩ、MΩなどがあります。1 MΩ=1000 KΩ、1 KΩ=1000 Ωと表せます。一般的に抵抗の表面に抵抗値が記されています。
 
-Bij het gebruik van een weerstand moeten we eerst de weerstand weten. Er zijn twee manieren: observeer de kleurband erop, of meet de weerstand met een multimeter. Uiteraard is de eerste manier handiger en sneller.
+抵抗を使う際はまず抵抗値を知る必要があります。方法は2つあります：色帯を観察するか、マルチメーターで測定することです。明らかに前者の方が便利で速いです。
 
 ![Img](./media/A317.png)
 
-Zoals te zien op de weerstandkaart, vertegenwoordigt elke kleur een nummer.
+抵抗カードに示されているように、各色は数字を表します。
 
 ![Img](./media/A3335.png)
 
-4-bands en 5-bands weerstanden worden vaak gebruikt.
+4バンド抵抗と5バンド抵抗がよく使われます。
 
-Vaak, wanneer je een weerstand krijgt, kan het moeilijk zijn te bepalen waar je moet beginnen met het lezen van de kleur.
+抵抗を手にしたとき、どこから色を読み始めるか迷うことがあります。
 
-**Daarom kun je de ruimte tussen de twee banden aan één uiteinde observeren; als deze breder is dan andere bandruimtes, lees dan vanaf het tegenovergestelde uiteinde.**
+**そのため、片端の2つの色帯の間の隙間を観察してください。もしその隙間が他の隙間より広ければ、反対側から読み始めます。**
 
-<span style="color: rgb(255, 76, 65);">**Let op dat de ruimte tussen de 4e en 5e banden (de 3e en 4e) relatief breed is bij een 5-bands (4-bands) weerstand.**</span>
+<span style="color: rgb(255, 76, 65);">**5バンド抵抗（4バンド抵抗）の場合、4番目と5番目（3番目と4番目）の色帯の間の隙間が比較的広いことに注意してください。**</span>
 
-Laten we zien hoe we de weerstand van een 5-bands weerstand lezen, zoals hieronder weergegeven:
+以下の5バンド抵抗の読み方を見てみましょう：
 
 ![Img](./media/A426.png)
 
-Voor deze weerstand moet de weerstand van links naar rechts worden gelezen. De waarde moet zijn: 1e band 2e band 3e band x 10^vermenigvuldiger(Ω), ±tolerantie%.
+この抵抗は左から右に読みます。値は「1番目の帯 2番目の帯 3番目の帯 × 10^乗数(Ω)、±許容差%」です。
 
-Daarom is de weerstand van deze weerstand 2(rood) 2(rood) 0(zwart) × 10^0 (zwart)Ω = 220Ω, ±1%(bruin). Leer meer over [weerstand van Wiki](https://en.wikipedia.org/wiki/Resistor).
+したがって、この抵抗の値は2（赤） 2（赤） 0（黒） × 10^0（黒）Ω = 220Ω、±1%（茶）となります。[抵抗についてのWiki](https://en.wikipedia.org/wiki/Resistor)も参照してください。
 
 **LED**
 
-LED, volledig genoemd "light-emitting diode", is een elektronisch apparaat gemaakt van halfgeleidermaterialen (silicium, selenium, germanium, enz.). Het is polair, met een positieve pool - de lange pin verbonden met VCC (V of 3.3V of 5V of +), en een negatieve pool - de korte pin verbonden met GND (G of -). De stroom vloeit van positief naar negatief, in éénrichtingsstroom.
+LEDは「発光ダイオード」の略で、半導体材料（シリコン、セレン、ゲルマニウムなど）で作られた電子デバイスです。極性があり、正極は長いピンでVCC（Vまたは3.3Vまたは5Vまたは+）に接続し、負極は短いピンでGND（Gまたは-）に接続します。電流は正極から負極へ一方向に流れます。
 
-Elektronisch en grafisch symbool van LED:
+LEDの電子記号と図記号：
 
 ![Img](./media/A515.png)
 
-LED in verschillende maten en kleuren:
+様々なサイズと色のLED：
 
 ![Img](./media/A525.png)
 
-Rood, geel, blauw, groen en wit zijn de meest voorkomende kleuren van LED, wat overeenkomt met hun uiterlijk. We gebruiken zelden transparante LED's, en het uitgestraalde licht is mogelijk niet wit. Er zijn vier maten LED: 3mm, 5mm (meest voorkomend), 8mm en 10mm.
+赤、黄、青、緑、白が最も一般的なLEDの色で、見た目の色と同じです。透明LEDはあまり使われず、発光色は白とは限りません。LEDのサイズは3mm、5mm（最も一般的）、8mm、10mmの4種類があります。
 
 ![Img](./media/A535.png)
 
-Voorwaartse spanning moet worden gebruikt wanneer de LED aan is. Het is een zeer belangrijke parameter om te weten bij het gebruik van een LED, omdat het bepaalt hoeveel vermogen je gebruikt en hoe groot de stroombegrenzende weerstand moet zijn. Voor de meeste rode, gele, oranje en lichtgroene LED's gebruiken ze typisch een spanning tussen 1,9V en 2,1V.
+LEDを点灯させる際には順方向電圧が必要です。これはLED使用時に知っておくべき重要なパラメータで、消費電力や電流制限抵抗の大きさを決めます。ほとんどの赤、黄、オレンジ、薄緑のLEDは1.9Vから2.1Vの電圧を使います。
 
 ![Img](./media/A548.png)
 
-Volgens de wet van Ohm neemt de stroom door de schakeling af naarmate de weerstand toeneemt, waardoor de LED dimt.
+オームの法則によれば、抵抗が大きくなると回路の電流は減り、LEDは暗くなります。
 
 I = (VP-Vl)/R
 
-Om de LED veilig te maken en de juiste helderheid te hebben, hoeveel weerstand moeten we dan in de schakeling gebruiken?
+LEDを安全に適切な明るさで点灯させるために、回路にどれくらいの抵抗を使うべきでしょうか？
 
-Voor 99% van de 5mm LED's is de aanbevolen stroom 20mA, wat te zien is in de condities-kolom in het datasheet:
+5mm LEDの99%は推奨電流が20mAで、データシートの条件欄に記載されています：
 
 ![Img](./media/A613.png)
 
-Nu zetten we de bovenstaande formule om in het volgende:
+上記の式を次のように変換します：
 
 R = (VP-Vl)/I
 
-Als VP = 5V, Vl (voorwaartse spanning) = 2V, en I = 20mA, kunnen we zeggen dat R 150Ω is. Daarom kunnen we de LED helderder maken door de weerstand te verlagen, maar de weerstand mag niet onder 150Ω komen (deze waarde kan onnauwkeurig zijn omdat de geleverde LED kan variëren).
+VP = 5V、Vl（順方向電圧）= 2V、I = 20mAの場合、Rは150Ωとなります。したがって、抵抗を小さくするとLEDは明るくなりますが、抵抗は150Ω以下にしてはいけません（この値はLEDによって異なる場合があります）。
 
-De voorwaartse spanning en golflengte van verschillende kleuren LED zijn hieronder weergegeven ter referentie:
+異なる色のLEDの順方向電圧と波長は以下の通りです（参考用）：
 
 ![Img](./media/A629.png)
 
-<span style="color: rgb(255, 76, 65);">**Sluit geen weerstand met zeer lage weerstand direct aan op de twee polen van de voeding, anders kunnen elektronische componenten beschadigd raken door overmatige stroom. Weerstanden zijn niet-polair.**</span>
+<span style="color: rgb(255, 76, 65);">**非常に低い抵抗値の抵抗を電源の両極に直接接続しないでください。過剰な電流で電子部品が損傷する恐れがあります。抵抗は極性がありません。**</span>
 
-**Breadboard**
+**ブレッドボード**
 
-Voordat je een schakeling voltooit, wordt een breadboard gebruikt om snel schakelingen te ontwerpen en te testen. Er zijn veel gaatjes op een breadboard waarin schakelingcomponenten (zoals weerstanden) kunnen worden gestoken. Een typisch breadboard wordt hieronder getoond:
+回路を完成させる前に、ブレッドボードを使って回路を素早く設計・テストします。ブレッドボードには多くの穴があり、回路部品（抵抗など）を差し込めます。典型的なブレッドボードは以下の通りです：
 
 ![Img](./media/A655.png)
 
-Een breadboard heeft veel metalen strips eronder die verbinding maken met de gaatjes aan de bovenkant. Ze zijn gerangschikt zoals hieronder weergegeven.
+ブレッドボードの下には多くの金属ストリップがあり、上部の穴と接続されています。配置は以下の通りです。
 
-<span style="color: rgb(255, 76, 65);">Let op dat de bovenste en onderste gaatjes horizontaal verbonden zijn, terwijl de rest van de gaatjes verticaal verbonden zijn.</span>
+<span style="color: rgb(255, 76, 65);">上部と下部の穴は水平方向に接続されており、それ以外の穴は垂直方向に接続されています。</span>
 
 ![Img](./media/A723.png)
 
-De eerste twee rijen (boven) en de laatste twee (onder) van het breadboard worden respectievelijk gebruikt voor de positieve (+) en negatieve (-) polen van de voeding. Het geleidende layoutdiagram wordt hieronder getoond:
+ブレッドボードの最初の2列（上部）と最後の2列（下部）は、それぞれ電源の正極（+）と負極（-）に使われます。導通レイアウト図は以下の通りです：
 
 ![Img](./media/A730.png)
 
-Bij het aansluiten van DIP (Dual In-line Packages) componenten, zoals geïntegreerde schakelingen, microcontrollers, chips, enz., is de groefoleiding tussen de twee delen. Daarom kunnen DIP-componenten als hieronder worden aangesloten:
+DIP（デュアルインラインパッケージ）部品（集積回路、マイコン、チップなど）を接続する場合、溝が2つの部分を隔離します。したがって、DIP部品は以下のように接続できます：
 
 ![Img](./media/A740.png)
 
 ![Img](./media/A747.png)
 
-**Jumper draad en DuPont draad**
+**ジャンプワイヤーとデュポン線**
 
-Jumper draden en DuPont draden verbinden twee aansluitingen. Er zijn verschillende types, maar hier richten we ons op die gebruikt worden in breadboards. Ze zenden elektrische signalen van overal op het breadboard naar de input/output pinnen van een microcontroller.
+ジャンプワイヤーとデュポン線は2つの端子を接続します。種類は様々ですが、ここではブレッドボードで使うものに焦点を当てます。これらはブレッドボードの任意の場所からマイコンの入出力ピンへ電気信号を伝えます。
 
-Bij gebruik steek je "twee pinnen" van de draden in het breadboard zonder te solderen. Er zijn meerdere sets parallelle strips onder het oppervlak van het breadboard, dus draden hoeven alleen in specifieke gaatjes in een bepaald prototype te worden gestoken.
+使用時はワイヤーの「両端のピン」をはんだ付けせずにブレッドボードに差し込みます。ブレッドボードの内部には複数の並列板があり、特定の穴に差し込むだけで回路が完成します。
 
-Er zijn drie types DuPont draden: F-F, M-M en M-F. Op de draad wordt de pin mannelijke kant (M) genoemd, terwijl het gaatje vrouwelijk (F) is.
+デュポン線にはF-F、M-M、M-Fの3種類があります。ワイヤーのピンはオス端子（M）、穴はメス端子（F）と呼ばれます。
 
 ![Img](./media/A811.png)
 
-Meer dan één type kan in een project worden gebruikt. Hoewel de kleuren van de draden verschillen, dienen ze hetzelfde doel. Kleuren worden gebruikt om schakelingen te onderscheiden.
+複数の種類をプロジェクトで使うこともあります。色は異なっても役割は同じで、色は回路の区別に使われます。
 
-#### 4. Aansluitschema
+#### 4. 配線図
 
-<span style="color: rgb(255, 76, 65);">Let op: de micro:bit board moet in het T-type uitbreidingsbord worden gestoken zoals hieronder weergegeven. De micro:bit board LED-matrix moet aan dezelfde zijde zijn als het logo van het uitbreidingsbord.</span>
+<span style="color: rgb(255, 76, 65);">注意：micro:bitボードは以下のようにT型拡張ボードに差し込む必要があります。micro:bitボードのLEDマトリクスは拡張ボードのロゴと同じ側にしてください。</span>
 
 ![Img](./media/A156.png)
 
-<span style="color: rgb(255, 76, 65);">De board besturingspin van de LED is P0 (de pin van het T-type uitbreidingsbord is digitaal 0).</span>
+<span style="color: rgb(255, 76, 65);">LEDの制御ピンはP0（T型拡張ボードのピンはデジタル0）です。</span>
 
-#### 5. Code Flow
+#### 5. コードの流れ
 
 ![Img](./media/A4323.png)
 
-#### 6. Test Code
+#### 6. テストコード
 
-Het codebestand is beschikbaar in de map Project 01：Kleine Lamp met Knop, bestand Project-01-Small-Lamp-with-Button.hex.
+コードファイルはフォルダ Project 01：Small Lamp with Button 内の Project-01-Small-Lamp-with-Button.hex にあります。
 
 ![Img](./media/A357.png)
 
-**Laad codeblokken:**
+**コードブロックの読み込み：**
 
 ![Img](./media/A440.png)
 
-#### 7. Testresultaat
+#### 7. テスト結果
 
-Voor Windows 10 App, klik op “<span style="color: rgb(255, 76, 65);">Download</span>”. Voor browsers, stuur het gedownloade “<span style="color: rgb(255, 76, 65);">.hex</span>” bestand naar de micro:bit board.
+Windows 10アプリの場合、「<span style="color: rgb(255, 76, 65);">ダウンロード</span>」をクリックします。ブラウザの場合、ダウンロードした「<span style="color: rgb(255, 76, 65);">.hex</span>」ファイルをmicro:bitボードに送信します。
 
-Na het downloaden van de code naar de board, toont de 5x5 LED-matrix het ![Img](./media/A512.png) icoon. Druk op knop A, en de 5x5 LED-matrix toont het ![Img](./media/A518.png) icoon, LED gaat aan. Druk op knop B, en de 5x5 LED-matrix toont het ![Img](./media/A527.png) icoon, LED gaat uit. Lijkt het op een mini lamp?
+コードをボードにダウンロードすると、5x5 LEDマトリクスに ![Img](./media/A512.png) アイコンが表示されます。ボタンAを押すと5x5 LEDマトリクスに ![Img](./media/A518.png) アイコンが表示され、LEDが点灯します。ボタンBを押すと5x5 LEDマトリクスに ![Img](./media/A527.png) アイコンが表示され、LEDが消灯します。ミニランプのように見えますか？
 
-<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van de board.</span>
+<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が見えない場合は、ボード背面のリセットボタンを押してください。</span>
 
 ![Img](./media/A359.gif)
 
-<span style="color: rgb(255, 76, 65);">**Bij voeding via externe voeding, zet de DIP-schakelaar op AAN.**</span>
+<span style="color: rgb(255, 76, 65);">**外部電源で給電する場合は、DIPスイッチをONにしてください。**</span>
 
 ![Img](./media/A904.png)

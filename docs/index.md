@@ -1,152 +1,151 @@
-**After-sales Service**
+**アフターサービス**
 
-Als er iets ontbreekt of kapot is, of als u moeite heeft met het leren van de kit, neem dan gerust contact met ons op. U bent welkom om een e-mail te sturen naar: service@keyestudio.com
+不足や破損が見つかった場合、またはキットの学習に困難がある場合は、お気軽にご連絡ください。メールでのお問い合わせも歓迎します：service@keyestudio.com
 
-We zullen ons best doen om projecten en producten continu bij te werken op basis van uw oprechte advies! Dank u!
+皆様の誠実なご意見をもとに、プロジェクトや製品の継続的な更新に努めてまいります！ありがとうございます！
 
-# Productintroductie
+# 製品紹介
 
-**FKS0004 Keyestudio microbit leerset**
+**FKS0004 Keyestudio microbit 学習キット**
 
 ![Img](./media/A30.jpg)
 
-Deze leerset bevat sensoren en componenten evenals een Micro:bit board, en de bijgevoegde animatiekaart maakt experimenten verfijnder en mooier. Het stelt makers niet alleen in staat om de charme en bruikbaarheid van technologie te ervaren, maar ontwikkelt ook hun logisch denken.
+この学習キットはセンサーや部品に加え、Micro:bitボードを含み、付属のアニメーションカードにより実験がより精巧で美しくなります。技術の魅力と実用性を体験できるだけでなく、論理的思考力も育成します。
 
-Tegelijkertijd toont het volledig de praktische waarde en educatieve betekenis van de toepassing van wetenschap en technologie.
+同時に、科学技術の応用における実用的価値と教育的意義を十分に示しています。
 
-# Bronnen verkrijgen (**Belangrijk**) 
+# リソースの入手（**重要**）
 
-**Download (<span style="color: rgb(255, 76, 65);">Belangrijk</span>)**：[MakeCode_Tutorial](./MakeCode_Tutorial.7z) .
+**ダウンロード (<span style="color: rgb(255, 76, 65);">重要</span>)**：[MakeCode_Tutorial](./MakeCode_Tutorial.7z) 。
 
-**Speciale herinnering:** Na het downloaden van het MakeCode_Tutorial-bestand, pak het uit. De map bevat codes, USB-driver, enz.
+**特別な注意:** MakeCode_Tutorialファイルをダウンロード後、解凍してください。フォルダにはコード、USBドライバーなどが含まれています。
 
-**Download (<span style="color: rgb(255, 76, 65);">Belangrijk</span>)**：[MicroPython_Tutorial](./MicroPython_Tutorial.7z) .
+**ダウンロード (<span style="color: rgb(255, 76, 65);">重要</span>)**：[MicroPython_Tutorial](./MicroPython_Tutorial.7z) 。
 
-**Speciale herinnering:** Na het downloaden van het MicroPython_Tutorial-bestand, pak het uit. De map bevat codes, bibliotheek, USB-driver, enz.
+**特別な注意:** MicroPython_Tutorialファイルをダウンロード後、解凍してください。フォルダにはコード、ライブラリ、USBドライバーなどが含まれています。
 
+# 製品キット一覧
 
-# Product Kit Lijst
+すべての部品が揃っているかリストでご確認ください。不足があれば、すぐに販売スタッフにご連絡ください。
 
-Controleer de lijst om te verzekeren dat alle onderdelen compleet zijn. Als u iets mist, neem dan onmiddellijk contact op met onze verkoopmedewerkers.
+|  #   |           PIC            |                             名称                             | 数量  |
+| :--: | :----------------------: | :----------------------------------------------------------: | :--: |
+|  1   | ![Img](./media/A107.png)  |                  micro:bit V2.0 メインボード                   |  1   |
+|  2   | ![Img](./media/A314.png)  |                          ブレッドボード                          |  1   |
+|  3   | ![Img](./media/A332.png)  |                      超音波センサー                       |  1   |
+|  4   | ![Img](./media/A400.png)  |                       Micro USB ケーブル                        |  1   |
+|  5   | ![Img](./media/A457.png)  |                          ジャンプワイヤ                           |  1   |
+|  6   | ![Img](./media/A516.png)  |                            サーボ                             |  1   |
+|  7   | ![Img](./media/A534.png)  |               micro:bit T型拡張ボード               |  1   |
+|  8   | ![Img](./media/A602.png)  |                         DuPont ワイヤ                          |  1   |
+|  9   | ![Img](./media/A620.png)  | XHT11 (DHT11互換) |  1   |
+|  10  | ![Img](./media/A636.png)  |                         OLED モジュール                          |  1   |
+|  11  | ![Img](./media/A652.png)  |                           RGB LED                            |  1   |
+|  12  | ![Img](./media/A221.png)  |                        ポテンショメーター                         |  1   |
+|  13  | ![Img](./media/A237.png)  |                        220Ω 抵抗                         |  5   |
+|  14  | ![Img](./media/A257.png)  |                         1kΩ 抵抗                         |  5   |
+|  15  | ![Img](./media/A316.png)  |                        10kΩ 抵抗                         |  5   |
+|  16  | ![Img](./media/A333.png)  |                           赤色LED                            |  5   |
+|  17  | ![Img](./media/A401.png)  |                          黄色LED                          |  5   |
+|  18  | ![Img](./media/A416.png)  |                          緑色LED                           |  5   |
+|  12  | ![Img](./media/A434.png)  |                       抵抗カード                        |  1   |
+|  12  | ![Img](./media/A452.png)  |                        電池ホルダー                        |  1   |
+|  13  | ![Img](./media/A757.png)  | 単三電池 (<span style="color: rgb(255, 76, 65);">別途用意</span>) |  2   |
+|  14  | ![Img](./media/A3343.png) |                             カード                             |  1   |
+|  15  | ![Img](./media/A3237.png) |                             カード                             |  1   |
 
-|  #   |           PIC            |                             NAAM                             | AANT  |
-| :--: | :----------------------: | :----------------------------------------------------------: | :---: |
-|  1   | ![Img](./media/A107.png)  |                  micro:bit V2.0 hoofdboard                   |  1    |
-|  2   | ![Img](./media/A314.png)  |                          breadboard                          |  1    |
-|  3   | ![Img](./media/A332.png)  |                      ultrasone sensor                        |  1    |
-|  4   | ![Img](./media/A400.png)  |                       Micro USB-kabel                        |  1    |
-|  5   | ![Img](./media/A457.png)  |                          jump wire                           |  1    |
-|  6   | ![Img](./media/A516.png)  |                            servo                             |  1    |
-|  7   | ![Img](./media/A534.png)  |               micro:bit T-type uitbreidingsboard            |  1    |
-|  8   | ![Img](./media/A602.png)  |                         DuPont draad                         |  1    |
-|  9   | ![Img](./media/A620.png)  | XHT11 (compatibel met DHT11)                                 |  1    |
-|  10  | ![Img](./media/A636.png)  |                         OLED module                          |  1    |
-|  11  | ![Img](./media/A652.png)  |                           RGB LED                            |  1    |
-|  12  | ![Img](./media/A221.png)  |                        potentiometer                         |  1    |
-|  13  | ![Img](./media/A237.png)  |                        220Ω weerstand                        |  5    |
-|  14  | ![Img](./media/A257.png)  |                         1kΩ weerstand                        |  5    |
-|  15  | ![Img](./media/A316.png)  |                        10kΩ weerstand                        |  5    |
-|  16  | ![Img](./media/A333.png)  |                           rode LED                           |  5    |
-|  17  | ![Img](./media/A401.png)  |                          gele LED                            |  5    |
-|  18  | ![Img](./media/A416.png)  |                          groene LED                          |  5    |
-|  12  | ![Img](./media/A434.png)  |                       weerstand kaart                        |  1    |
-|  12  | ![Img](./media/A452.png)  |                        batterijhouder                        |  1    |
-|  13  | ![Img](./media/A757.png)  | AA batterij (<span style="color: rgb(255, 76, 65);">zelf mee te brengen</span>) |  2    |
-|  14  | ![Img](./media/A3343.png) |                             kaart                            |  1    |
-|  15  | ![Img](./media/A3237.png) |                             kaart                            |  1    |
-
-# T-type uitbreidingsboard
+# T型拡張ボード
 
 ![Img](./media/A718.png)
 
-## 1. Introductie
+## 1. はじめに
 
-In de educatieve markt worden micro:bit boards steeds populairder. Het is echter niet eenvoudig om een enkele micro:bit board te testen met andere sensormodules. Daarom hebben we speciaal dit micro:bit T-type uitbreidingsboard ontworpen.
+教育市場において、micro:bitボードはますます人気が高まっています。しかし、単体のmicro:bitボードを他のセンサーモジュールとテストするのは簡単ではありません。そこで、特別にこのmicro:bit T型拡張ボードを設計しました。
 
-Het micro:bit T-type uitbreidingsboard splitst alle IO-poorten op het board in pinnen met een afstand van 2,54mm (GND, 5V, 3V3, Signaal), wat zeer handig is om te verbinden met andere sensormodules en elektronische componenten.
+Micro:bit T型拡張ボードは、ボード上のすべてのIOポートをピン（間隔2.54mm、GND、5V、3V3、信号）に分割しており、他のセンサーモジュールや電子部品との接続が非常に便利です。
 
-Daarnaast kunt u het micro:bit board voeden via de witte DC-poort (DC 3V) of micro USB-interface (DC 5V) op het uitbreidingsboard.
+さらに、拡張ボードの白いDCポート（DC 3V）またはmicro USBインターフェース（DC 5V）を通じてmicro:bitボードに電源を供給できます。
 
-Het uitbreidingsboard kan de spanning verhogen of omzetten. Als het wordt gevoed door een externe voeding van 3V, kan het 3,3V en 5V spanningen leveren.
+拡張ボードは電圧の昇圧または変換が可能です。外部電源3Vで駆動すると、3.3Vと5Vの電圧を出力できます。
 
-## 2. Kenmerken
+## 2. 特徴
 
-- Ingangsspanning: witte DC-poort (DC 3V) of micro USB-interface (DC 5V)
+- 入力電圧：白いDCポート（DC 3V）またはmicro USBインターフェース（DC 5V）
 
-- Uitgangsspanning: 3,3V of 5V
+- 出力電圧：3.3Vまたは5V
 
-- De IO-poorten van micro:bit zijn verdeeld in pinnen met een afstand van 2,54mm
+- micro:bitのIOポートは2.54mm間隔のピンに分割
 
-- Afmetingen: 64mm x 56mm x 18mm
+- 寸法：64mm x 56mm x 18mm
 
-- Gewicht: 13,1g
+- 重量：13.1g
 
-## 3. Pin-out
+## 3. ピン配置
 
 ![Img](./media/A854.png)
 
-# Over Micro:bit
+# Micro:bitについて
 
-## 1. Wat is Micro:bit
+## 1. Micro:bitとは
 
-Gelanceerd door de British Broadcasting Corporation (BBC), is micro:bit een microcomputer ontwikkelboard ontworpen voor programmeeronderwijs voor tieners.
+英国放送協会（BBC）が立ち上げたmicro:bitは、若者向けのプログラミング教育用に設計されたマイクロコンピュータ開発ボードです。
 
-Hoewel het slechts de grootte van een creditcard heeft, integreert het board veel componenten, waaronder een 5x5 LED-matrix, 2 programmeerbare knoppen, een versnellingsmeter, een kompas, een thermometer, een aanraakgevoelig logo en een MEMS-microfoon, een energiezuinige Bluetooth-module en een buzzer. Deze ingebouwde buzzer speelt allerlei geluiden zonder externe apparatuur. Bovendien verlaagt de slaapstand het stroomverbruik van batterijen wanneer de Reset&Power-knop lang wordt ingedrukt.
+クレジットカードサイズながら、5x5 LEDマトリックス、2つのプログラム可能なボタン、加速度計、コンパス、温度計、タッチ感知ロゴ、MEMSマイクロフォン、低消費電力Bluetoothモジュール、ブザーなど多くのコンポーネントを統合しています。この内蔵ブザーは外部機器なしで様々な音を再生できます。さらに、リセット＆電源ボタンを長押しするとスリープモードに入り、バッテリーの消費を抑えます。
 
-### 1.1. Micro:bit V2 Board Layout
+### 1.1. Micro:bit V2 ボードレイアウト
 
 ![Img](./media/A549.png)
 
-### 1.2. Micro:bit V2 Pin-out
+### 1.2. Micro:bit V2 ピン配置
 
 ![Img](./media/A639.png)
 
-Micro:bit pinfuncties:
+Micro:bitのピン機能：
 
-| functie             | pinnen                                                       |
+| 機能            | ピン                                                         |
 | :------------------ | :----------------------------------------------------------- |
 | GPIO                | P0，P1，P2，P3，P4，P5，P6，P7，P8，P9，P10，P11，P12，P13，P14，P15，P16，P19，P20 |
 | ADC/DAC             | P0，P1，P2，P3，P4，P10                                      |
 | IIC                 | P19（SCL），P20（SDA）                                       |
 | SPI                 | P13（SCK），P14（MISO），P15（MOSI）                         |
-| PWM (veelgebruikt)  | P0，P1，P2，P3，P4，P10                                      |
-| bezet               | P5(Button A)，P6(LED Kol4)，P7(LED Kol2)，P10(LED Kol5)，P11(Button B) |
+| PWM (よく使う)      | P0，P1，P2，P3，P4，P10                                      |
+| 使用中              | P5(Button A)，P6(LED Col4)，P7(LED Col2)，P10(LED Col5)，P11(Button B) |
 
-Voor meer informatie bezoek de officiële website:
+詳細は公式サイトをご覧ください：
 
 - [https://tech.microbit.org/hardware/edgeconnector/](https://tech.microbit.org/hardware/edgeconnector/)
 
 - [https://microbit.org/guide/hardware/pins/](https://microbit.org/guide/hardware/pins/)
 
-### 1.3. Aandachtspunten voor het gebruik van Micro:bit V2
+### 1.3. Micro:bit V2の使用上の注意
 
-1. Het wordt aanbevolen om het te bedekken met een siliconen beschermhoes om kortsluiting te voorkomen, omdat het veel geavanceerde elektronische componenten bevat.
+1. 多くの精密電子部品を含むため、ショート防止のためにシリコンプロテクターで覆うことを推奨します。
 
-2. De IO-poort is zwak in het aansturen omdat het slechts een stroom van minder dan 300mA kan verwerken. Verbind het daarom niet met apparaten die grote stroom gebruiken, zoals servo MG995 en DC-motor, anders kan het verbranden. Verder moet u de stroomvereisten van de apparaten kennen voordat u ze gebruikt en wordt het over het algemeen aanbevolen om het board samen met een Micro:bit shield te gebruiken.
+2. IOポートは駆動力が弱く、300mA未満の電流しか扱えません。サーボMG995やDCモーターなど大電流機器に接続すると焼損します。使用前に機器の電流要件を確認し、一般的にはMicro:bitシールドと併用することを推奨します。
 
-3. Het wordt aanbevolen om het hoofdboard via de USB-interface of via een 3V batterij van stroom te voorzien. De IO-poort van dit board is 3V3, dus het ondersteunt geen sensoren van 5V. Als u 5V nodig heeft, is het uitbreidingsboard vereist om op een externe voeding aan te sluiten.
+3. メインボードの電源はUSBインターフェースまたは3Vのバッテリーから供給することを推奨します。このボードのIOポートは3V3であり、5Vセンサーはサポートしていません。5Vが必要な場合は拡張ボードを使い外部電源に接続してください。
 
-4. Bij gebruik van pinnen (P3, P4, P6, P7 en P10) die gedeeld worden met de LED-dotmatrix, blokkeer ze dan van de matrix. Anders kan de LED willekeurig weergeven en kunnen de gegevens van aangesloten sensoren onjuist zijn.
+4. LEDドットマトリックスと共有するピン（P3, P4, P6, P7, P10）を使用する場合は、マトリックスからブロックしてください。そうしないとLEDがランダムに表示されたり、接続センサーのデータが誤る可能性があります。
 
-5. **Pin 19 en 20 kunnen niet als IO-poorten worden gebruikt** hoewel Makecode laat zien dat ze dat kunnen. Ze kunnen alleen worden gebruikt voor I2C-communicatie.
+5. Makecodeでは使用可能と表示されますが、ピン19と20はIOポートとして使用できません。I2C通信専用です。
 
-6. De batterijpoort van 3V mag niet worden verbonden met batterijen van meer dan 3,3V, anders raakt het board beschadigd.
+6. 3Vのバッテリーポートに3.3Vを超える電池を接続するとボードが破損します。
 
-7. Het is verboden om het op metalen producten te gebruiken om kortsluiting te voorkomen.
+7. ショート防止のため、金属製品上での操作は禁止します。
 
-<span style="color: rgb(255, 76, 65);">Kort gezegd</span>, micro:bit is als een microcomputer die programmeren binnen handbereik heeft gebracht en digitale innovatie heeft versterkt.
+<span style="color: rgb(255, 76, 65);">簡単に言うと</span>、micro:bitはプログラミングを手軽にし、デジタルイノベーションを促進するマイクロコンピュータのようなものです。
 
-## 2. Micro:bit Driver
+## 2. Micro:bit ドライバー
 
-Micro:bit vereist geen driverinstallatie. Echter, als uw computer het hoofdboard niet herkent, moet u de driver installeren.
+Micro:bitはドライバーのインストールが不要です。しかし、パソコンがメインボードを認識しない場合はドライバーをインストールする必要があります。
 
-**Instructies voor driverinstallatie:**
+**ドライバーインストール手順：**
 
-Verbind het micro:bit hoofdboard met de computer via een USB-kabel.
+USBケーブルでmicro:bitメインボードをパソコンに接続します。
 
 ![Img](./media/A252.png)
 
-In zowel de MicroPython_Tutorial map als de MicroPython_Tutorial map bieden we driverbestanden aan. Kies er een. Klik op het driverbestand om te “**Installeren**”.
+MicroPython_Tutorialフォルダ内にドライバーファイルを用意しています。いずれかを選択し、ドライバーファイルをクリックして「**インストール**」します。
 
 ![Img](./media/A323a.png)
 
@@ -154,16 +153,16 @@ In zowel de MicroPython_Tutorial map als de MicroPython_Tutorial map bieden we d
 
 ![Img](./media/A327.png)
 
- “**Installeren**” en “**Volgende**”.
+「**インストール**」と「**次へ**」。
 
 ![Img](./media/A347.png)
 
-“**Installeren**” en “**Voltooien**”.
+「**インストール**」と「**完了**」。
 
 ![Img](./media/A408.png)
 
 ![Img](./media/A349.png)
 
-Daarna, ga naar “**Deze computer**” —> “**Eigenschappen**” —> “**Apparaatbeheer**”:
+その後、「**コンピューター**」→「**プロパティ**」→「**デバイスマネージャー**」を開きます：
 
 ![Img](./media/A427.png)

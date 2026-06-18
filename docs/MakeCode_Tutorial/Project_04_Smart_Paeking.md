@@ -1,95 +1,95 @@
-### Project 04: Slim Parkeren
+### プロジェクト04：スマート駐車
 
-#### 1. Overzicht
+#### 1. 概要
 
-Slimme parkeerplaatsen zijn overal. Kunnen we ook een slimme parkeerplaats maken? Natuurlijk. We kunnen een ultrasone sensor gebruiken om te detecteren of er voertuigen in de buurt zijn. Wanneer een voertuig (of object) wordt gedetecteerd dat nadert, besturen we een servo om de hefboom omhoog te brengen; Als wordt gedetecteerd dat het weg beweegt, zal de servo de hefboom laten zakken.
+スマート駐車場はどこにでもあります。私たちもスマート駐車場を作ることができるでしょうか？もちろんです。超音波センサーを使って前方に車両があるかどうかを検出します。車両（または物）が近づいていると検出したら、サーボを制御してリフトロッドを上げます。離れていると検出したら、サーボはリフトロッドを下げます。
 
-#### 2. Componenten
+#### 2. コンポーネント
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| micro:bit board *1 | micro:bit T-type uitbreidingsbord *1 | micro USB-kabel *1 |
+| micro:bit ボード *1 | micro:bit T型拡張ボード *1 | micro USB ケーブル *1 |
 | ![Img](./media/A356.png)| ![Img](./media/A309.png)| ![Img](./media/A415.png) |
-| ultrasone sensor *1 | servo *1 | DuPont draden |
+| 超音波センサー *1 | サーボ *1 | DuPont ワイヤー |
 |![Img](./media/A017.png) | ![Img](./media/A950.png) | ![Img](./media/A024.png) |
-| breadboard *1 | jump wires | batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA batterijen *2</span>)|
+| ブレッドボード *1 | ジャンプワイヤー | 電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自分で用意した単三電池 *2</span>)|
 |![Img](./media/A336.png) |![Img](./media/A131.png) | |
-| bat kaart *1 | hefboom kaart *1| |
+| バットカード *1 | リフトロッドカード *1| |
 
-#### 3. Componentenkennis
+#### 3. コンポーネントの知識
 
-**Servo**
+**サーボ**
 
-Een servo is een positie-aandrijving. We kunnen een servo gebruiken om de exacte positie te regelen of een hoog koppel uit te voeren. Meestal wordt het gebruikt in robots, radiografisch bestuurbare auto's en zelfs vliegtuigmodellen. Er zijn veel specificaties, maar alle servo's hebben drie draden: signaal (oranje), positief (rood) en negatief (bruin). De kleur kan variëren per servomerk.
+サーボは位置駆動装置です。サーボを使って正確な位置制御や高トルクの出力が可能です。通常、ロボットやリモコンカー、さらには航空機モデルに使われます。多くの仕様がありますが、すべてのサーボは3本の線を持っています：信号線（オレンジ）、プラス線（赤）、マイナス線（茶色）。色はサーボのブランドによって異なります。
 
 ![Img](./media/A5525.png)
 
-**Interne structuurdiagram:**
+**内部構造図：**
 
 ![Img](./media/A5534.png)
 
-① Signaal: ontvangt besturingssignalen van de microcontroller;
+① 信号：マイコンからの制御信号を受け取る；
 
-② potentiometer: De positie van de uitgangsas kan worden gemeten, dit behoort tot het feedbackgedeelte van de hele servo;
+② ポテンショメーター：出力軸の位置を測定し、サーボ全体のフィードバック部分に属する；
 
-③ Interne controller: Het ingebedde bord verwerkt signalen van externe besturing, stuurt de motor aan en geeft positieterugkoppelingen, dit is de kern van de hele servo;
+③ 内部コントローラー：組み込み基板が外部制御からの信号を処理し、モーターとフィードバック位置信号を駆動する。サーボ全体のコア；
 
-④ DC-motor: Het fungeert als actuator om snelheid, koppel en positie uit te voeren;
+④ DCモーター：速度、トルク、位置を出力するアクチュエーター；
 
-⑤ Overbrenging / servomechanisme: Het mechanisme vergroot de slaguitgang van de motor tot de uiteindelijke uitgangshoek volgens een bepaalde overbrengingsverhouding.
+⑤ 伝達/サーボ機構：モーターのストローク出力を一定の伝達比で最終出力角度に拡大する機構。
 
-**De servo aansturen**
+**サーボの駆動**
 
-Stuur PWM-signalen naar de servosignaaldraad om de uitgang te regelen. De duty cycle van de PWM bepaalt direct de positie van de uitgangsas. De periode is meestal 20 milliseconden en wordt typisch ingesteld om pulsen te genereren met een frequentie van 50Hz.
+PWM信号をサーボの信号線に送って出力を制御します。PWMのデューティ比が出力軸の位置を直接決定します。周期は通常20ミリ秒で、50Hzの周波数でパルスを生成するように設定されます。
 
-<span style="color: rgb(255, 0, 0);">Bijvoorbeeld (180° servo):</span>
+<span style="color: rgb(255, 0, 0);">例えば（180°サーボ）：</span>
 
-Wanneer we een pulsbreedte van 1,5 milliseconden (ms) naar de 180° servo sturen, zal de uitgangsas van de servo naar de middenpositie (90 graden) bewegen;
+180°サーボに1.5ミリ秒（ms）のパルス幅を送ると、サーボの出力軸は中央位置（90度）に動きます；
 
-Als de pulsbreedte 0,5 ms is, zal de uitgangsas naar 0 graden bewegen;
+パルス幅が0.5msの場合、出力軸は0度に動きます；
 
-Als de pulsbreedte 2,5 ms is, zal de uitgangsas naar 180 graden bewegen;
+パルス幅が2.5msの場合、出力軸は180度に動きます；
 
 ![Img](./media/A5545.png)
 
-**Parameters:**
+**パラメータ：**
 
-- Bedrijfsspanning: DC 3,3V~5V
+- 動作電圧：DC 3.3V～5V
 
-- Bedrijfstemperatuur: -10°C ~ +50°C
+- 動作温度：-10°C ～ +50°C
 
-- Afmetingen: 32,25mm x 12,25mm x 30,42mm
+- 寸法：32.25mm x 12.25mm x 30.42mm
 
-- Interface: 3-pins interface met een afstand van 2,54mm
+- インターフェース：ピッチ2.54mmの3ピンインターフェース
 
-#### 4. Aansluitschema
+#### 4. 配線図
 
 ![Img](./media/A606.png)
 
-<span style="color: rgb(255, 76, 65);">**Bij gebruik van de ultrasone sensor en servo moeten we een externe voeding aansluiten en de DIP-schakelaar op ON zetten.**</span>
+<span style="color: rgb(255, 76, 65);">**超音波センサーとサーボを使用する場合は、必ず外部電源を接続し、DIPスイッチをONにしてください。**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A701.png)
 
-#### 5. Code Flow
+#### 5. コードフロー
 
 ![Img](./media/A716.png)
 
-#### 6. Testcode
+#### 6. テストコード
 
-Het codebestand is beschikbaar in map Project 04：Smart-Parking, bestand Project-04-Smart-Parking.hex.
+コードファイルはフォルダ Project 04：Smart-Parking 内のファイル Project-04-Smart-Parking.hex にあります。
 
 ![Img](./media/A758.png)
 
-**Laad codeblokken:** <span style="color: rgb(255, 76, 65);">**De drempelwaarde in de voorwaarde 10 kan worden aangepast aan de werkelijke omstandigheden.**</span>
+**コードブロックの読み込み：** <span style="color: rgb(255, 76, 65);">**条件10の閾値は実際の状況に応じて変更可能です。**</span>
 
 ![Img](./media/A832.png)
 
-#### 7. Testresultaat
+#### 7. テスト結果
 
-Na het downloaden van de code naar het board, wanneer de ultrasone sensor een voertuig (of object) detecteert dat nadert, bestuurt de servo de hefboom om omhoog te gaan; Als de sensor detecteert dat het weg beweegt, zal de servo de hefboom laten zakken.
+コードをボードにダウンロードした後、超音波センサーが車両（または物）が近づいていると検出すると、サーボがリフトロッドを上げます。センサーが離れていると検出すると、サーボはリフトロッドを下げます。
 
-<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van het board.</span>
+<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が見えない場合は、ボードの裏側のリセットボタンを押してください。</span>
 
 ![Img](./media/A021.gif)

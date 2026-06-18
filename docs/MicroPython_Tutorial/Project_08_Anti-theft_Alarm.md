@@ -1,48 +1,48 @@
-### Project 08: Anti-diefstal Alarm
+### プロジェクト08：防犯アラーム
 
-#### 1. Overzicht
+#### 1. 概要
 
-Wanneer het slimme anti-diefstal alarm detecteert dat de anti-diefstal doos is verplaatst, zal de speaker op de micro:bit board alarm slaan en zal de rode LED knipperen.
+スマート防犯アラームが防犯ボックスの移動を検知すると、micro:bitボードのスピーカーがアラームを鳴らし、赤色LEDが点滅します。
 
-#### 2. Componenten
+#### 2. 部品
 
 | ![Img](./media/A850.png) |              ![Img](./media/A858.png)              | ![Img](./media/A906.png) |
 | :---------------------: | :-----------------------------------------------: | :---------------------: |
-|   micro:bit board *1    |        micro:bit T-type uitbreidingsbord *1       |   micro USB kabel *1    |
+|   micro:bitボード *1    |        micro:bit T型拡張ボード *1                 |   micro USBケーブル *1  |
 | ![Img](./media/A937.png) |              ![Img](./media/A944.png)              | ![Img](./media/A950.png) |
-|       rode LED *1       |                 220Ω weerstand *1                  |      verbindingsdraad *2|
+|       赤色LED *1        |                 220Ω抵抗 *1                        |      ジャンパーワイヤー *2       |
 | ![Img](./media/A017.png) |              ![Img](./media/A024.png)              | ![Img](./media/A952.png) |
-|      breadboard *1      |batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA batterijen *2</span>)|      alarmkaart *1      |
+|      ブレッドボード *1      |電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)|      アラームカード *1      |
 
-#### 3. Componenten Kennis
+#### 3. 部品の知識
 
-**Versnellingsmeter**
+**加速度センサー**
 
 ![Img](./media/A026.png)
 
-De micro:bit board beschikt over een ingebouwde LSM303AGR versnellingssensor (we noemen dit een versnellingsmeter) die standaard, snel, plus en hoge-snelheidsmodus (100 kHz, 400 kHz, 1 MHz en 3.4 MHz) van I2C seriële bus interface en SPI seriële standaard interface voor externe communicatie bevat, met een resolutie van 8/10/12 bits en een bereik van ±2g, ±4g, of ±8g.
+micro:bitボードにはLSM303AGR加速度センサー（加速度計）が内蔵されており、標準、ファスト、プラス、高速モード（100 kHz、400 kHz、1 MHz、3.4 MHz）のI2CシリアルバスインターフェースとSPIシリアル標準インターフェースを備えています。分解能は8/10/12ビットで、測定範囲は±2g、±4g、または±8gです。
 
-Wanneer de micro:bit board in rust is of in eenparige beweging, detecteert de versnellingsmeter alleen de zwaartekrachtversnelling. Als het licht wordt bewogen, is de gedetecteerde versnelling veel minder dan die van de zwaartekracht, dus het verschil kan worden genegeerd. Daarom detecteren we voornamelijk de verandering van zwaartekrachtversnelling op de x-, y- en z-assen.
+micro:bitボードが静止または等速運動中の場合、加速度計は重力加速度のみを検出します。わずかに揺らすと検出される加速度は重力加速度よりかなり小さいため、その差は無視できます。したがって、主にx、y、z軸の重力加速度の変化を検出します。
 
-#### 4. Aansluitschema
+#### 4. 配線図
 
 ![Img](./media/A219.png)
 
-<span style="color: rgb(255, 76, 65);">De besturingspin van de LED op het bord is P1 (de pin van het T-type uitbreidingsbord is digitaal 1).</span>
+<span style="color: rgb(255, 76, 65);">LEDのボード制御ピンはP1です（T型拡張ボードのピンはデジタル1）。</span>
 
-#### 5. Code Stroomdiagram
+#### 5. コードの流れ
 
 ![Img](./media/A4434.png)
 
-#### 6. Testcode
+#### 6. テストコード
 
-Het codebestand is te vinden in map Project 08：Burglar Alarm, bestand Project-08-Burglar-Alarm\.py.
+コードファイルはフォルダ Project 08：Burglar Alarm 内のファイル Project-08-Burglar-Alarm\.py にあります。
 
 ![Img](./media/A3743.png)
 
-**Volledige code:** 
+**完成コード：**
 
-<span style="color: rgb(255, 76, 65);">**Na het importeren van de code, als de buzzer blijft klinken terwijl de breadboard niet is verplaatst; kan dit veroorzaakt worden door geografische factoren. Je kunt de drempelwaarden in de conditie -60 en 50 aanpassen aan de werkelijke situatie.**</span>
+<span style="color: rgb(255, 76, 65);">**コードをインポート後、ブレッドボードを動かしていないのにブザーが鳴り続ける場合は、地理的要因が原因かもしれません。条件内の閾値 -60 と 50 を実際の状況に合わせて調整してください。**</span>
 
 ```python
 '''
@@ -70,18 +70,18 @@ while True:
         music.reset()             # no tone
 ```
 
-#### 7. Testresultaat
+#### 7. テスト結果
 
-Klik op “<span style="color: rgb(255, 76, 65);">Flash</span>” om de code op de micro:bit board te laden.
+「<span style="color: rgb(255, 76, 65);">Flash</span>」をクリックしてコードをmicro:bitボードに書き込みます。
 
 ![Img](./media/A3757.png)
 
-Na het downloaden van de code naar de board, **zet de voeding aan via micro USB kabel of externe voeding (zet de DIP-schakelaar op ON)**, en druk op de resetknop op de board.
+コードを書き込んだ後、**micro USBケーブルまたは外部電源で電源を入れ（DIPスイッチをONにする）、ボードのリセットボタンを押します。**
 
 ![Img](./media/A455.png)
 
-Na het downloaden van de code naar de board, beweeg de breadboard. Als de versnelling x＜-60 of x＞50 is, slaat de speaker op de board alarm en knippert de LED, en toont de micro:bit LED-matrix ![Img](./media/A706.png). Anders maakt de speaker geen geluid en is de LED uit, en toont de micro:bit LED-matrix ![Img](./media/A720.png).
+コードを書き込んだ後、ブレッドボードを動かします。加速度値 x＜-60 または x＞50 の場合、ボードのスピーカーがアラームを鳴らし、LEDが点滅し、micro:bitのLEDマトリックスに ![Img](./media/A706.png) が表示されます。そうでなければ、スピーカーは音を出さずLEDは消灯し、micro:bitのLEDマトリックスに ![Img](./media/A720.png) が表示されます。
 
-<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van de board.</span>
+<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が見えない場合は、ボード裏面のリセットボタンを押してください。</span>
 
 ![Img](./media/A936.gif)

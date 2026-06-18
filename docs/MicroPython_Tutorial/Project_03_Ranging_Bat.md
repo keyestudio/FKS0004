@@ -1,103 +1,103 @@
-### Project 03: Ranging Bat
+### プロジェクト03：距離測定バット
 
-#### 1. Overzicht
+#### 1. 概要
 
-Op basis van een ultrasone sensor detecteert de ranging bat de afstand van obstakels en toont deze in realtime op een OLED. Wanneer de afstand minder dan 10 cm is, geeft de speaker een alarm.
+超音波センサーをベースに、距離測定バットは障害物までの距離を検出し、OLEDにリアルタイムで表示します。距離が10cm未満になると、スピーカーが警報を鳴らします。
 
-#### 2. Componenten
+#### 2. 部品
 
 | ![Img](./media/A850.png) |       ![Img](./media/A858.png)       |              ![Img](./media/A906.png)              |
 | :---------------------: | :---------------------------------: | :-----------------------------------------------: |
-|   micro:bit board *1    | micro:bit T-type uitbreidingsbord *1 |                micro USB-kabel *1                 |
+|   micro:bit ボード *1    | micro:bit T型拡張ボード *1 |                micro USB ケーブル *1                 |
 | ![Img](./media/A356.png) |       ![Img](./media/A406.png)       |              ![Img](./media/A415.png)              |
-|  ultrasone sensor *1    |           OLED-module *1            |                   DuPont-draadjes                 |
+|  超音波センサー *1   |           OLED モジュール *1            |                   DuPont ワイヤー                    |
 | ![Img](./media/A017.png) |       ![Img](./media/A950.png)       |              ![Img](./media/A024.png)              |
-|      breadboard *1      |             jump wires              | batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA-batterijen *2</span>)|
+|      ブレッドボード *1      |             ジャンプワイヤー              | 電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)|
 | ![Img](./media/A315.png) |       ![Img](./media/A557.png)       |                                                   |
-|       bat card *1       |            OLED card *1             |                                                   |
+|       バットカード *1       |            OLEDカード *1             |                                                   |
 
-#### 3. Kennis over componenten
+#### 3. 部品の知識
 
-**ultrasone sensor**
+**超音波センサー**
 
-Ultrasone golven kaatsen terug wanneer ze een obstakel raken. We meten de afstand door het tijdsinterval te berekenen tussen het verzenden en ontvangen van de golven. Aangezien de voortplantingssnelheid van geluid in lucht constant is v=340m/s, berekenen we de afstand tussen de sensor en het obstakel: s=vt/2.
+超音波は障害物に当たると跳ね返ります。送信と受信の間の時間差を計測することで距離を測定します。空気中の音速は一定で v=340m/s なので、センサーと障害物間の距離は s=vt/2 で計算します。
 
 ![Img](./media/A846.png)
 
-De HC-SR04 ultrasone module integreert een zender en ontvanger. De eerste zet elektrische signalen (elektrische energie) om in hoogfrequente (buiten het gehoor van mensen) geluidsgolven (mechanische energie), terwijl de tweede het omgekeerde doet.
+HC-SR04超音波モジュールは送信機と受信機を統合しています。送信機は電気信号（電気エネルギー）を高周波（人間の聴覚を超える）音波（機械エネルギー）に変換し、受信機はその逆を行います。
 
-Het schema van de HC SR04:
+HC SR04の回路図：
 
 ![Img](./media/A642.png)
 
-**Pin-definitie:**
+**ピン定義：**
 
 ![Img](./media/A702.png)
 
-**Parameters:**
+**パラメータ：**
 
-- Bedrijfsspanning: 5V
-- Bedrijfsstroom: 12mA
-- Minimale meetafstand: 2cm
-- Maximale meetafstand: 200cm
+- 動作電圧：5V
+- 動作電流：12mA
+- 最小測定距離：2cm
+- 最大測定距離：200cm
 
-**Werking:**
+**動作原理：**
 
-Een hoog niveau puls van minstens 10us wordt uitgegeven op de Trig-pin, en de module begint ultrasone golven uit te zenden. Tegelijkertijd wordt de Echo-pin hoog getrokken. Wanneer de module een ultrasone golf terug ontvangt bij een obstakel, wordt de Echo-pin laag getrokken. De duur van het hoge niveau van de Echo-pin is de totale tijd van golf van verzenden tot ontvangen: s=vt/2.
+Trigピンに10μs以上の高レベルパルスを出力すると、モジュールは超音波の送信を開始します。同時にEchoピンがプルアップされます。障害物に当たった超音波を受信すると、Echoピンはプルダウンされます。Echoピンの高レベルの継続時間は送信から受信までの合計時間であり、距離は s=vt/2 で計算されます。
 
 ![Img](./media/A728.png)
 
-**OLED-module**
+**OLEDモジュール**
 
-OLED-technologie kenmerkt zich door rijke kleurweergave, hoog contrast en brede kijkhoek, wat zorgt voor heldere en levendige beelden, vooral uitstekend in zwart.
+OLED技術は豊かな色彩表現、高いコントラスト、広い視野角を特徴とし、特に黒色が際立った鮮明で生き生きとした画像を提供します。
 
-Elke pixel van het OLED-scherm zendt zelf licht uit zonder achtergrondverlichting, waardoor het relatief weinig stroom verbruikt. Met een kleine afmeting, hoge resolutie en laag stroomverbruik is het 0,9-inch OLED-scherm zeer geschikt voor draagbare apparaten.
+OLEDディスプレイの各ピクセルは自発光でバックライトを必要としないため、比較的低消費電力です。小型で高解像度、低消費電力の0.9インチOLEDディスプレイはウェアラブルデバイスに非常に適しています。
 
 ![Img](./media/A636.png)
 
-<span style="color: rgb(255, 76, 65);">**In dit project is de OLED-displaymodule aangesloten met de SDA-interface op pin P20 en SCL op pin P19.**</span>
+<span style="color: rgb(255, 76, 65);">**このプロジェクトでは、OLEDディスプレイモジュールのSDAインターフェースをピンP20に、SCLをピンP19に接続します。**</span>
 
-**Parameters:**
+**パラメータ：**
 
-- Bedrijfsspanning: DC 3.3V-5V
+- 動作電圧：DC 3.3V-5V
 
-- Bedrijfsstroom: 30mA
+- 動作電流：30mA
 
-- Interface: Pin-poorten met een afstand van 2,54mm
+- インターフェース：ピンポート間隔2.54mm
 
-- Communicatiemodus: I2C
+- 通信方式：I2C
 
-- Interne driverchip: SSD1306
+- 内蔵ドライバーチップ：SSD1306
 
-- Resolutie: 128*64
+- 解像度：128*64
 
-- Kijkhoek: groter dan 150°
+- 視野角：150°以上
 
-#### 4. Aansluitschema
+#### 4. 配線図
 
 ![Img](./media/A1849.png)
 
-<span style="color: rgb(255, 76, 65);">**Bij gebruik van het OLED-display en ultrasone sensor moeten we een externe voeding aansluiten en de DIP-schakelaar op ON zetten.**</span>
+<span style="color: rgb(255, 76, 65);">**OLEDディスプレイと超音波センサーを使用する際は、外部電源を接続し、DIPスイッチをONにしてください。**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A1906.png)
 
-#### 5. Bibliotheek importeren
+#### 5. ライブラリのインポート
 
-Als je de benodigde bibliotheekbestanden (oled_ssd1306) nog niet hebt toegevoegd, importeer deze dan volgens [Hoe Mu bibliotheek importeert naar Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit).
+必要なライブラリファイル（oled_ssd1306）をまだ追加していない場合は、[How Mu Import Library to Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit) を参照してインポートしてください。
 
-#### 6. Codeflow
+#### 6. コードの流れ
 
 ![Img](./media/A924.png)
 
-#### 7. Testcode
+#### 7. テストコード
 
-Het codebestand is te vinden in de map Project 03：Ranging Bat, bestand Project-03-Ranging-Bat\.py.
+コードファイルはフォルダ Project 03：Ranging Bat 内のファイル Project-03-Ranging-Bat\.py にあります。
 
 ![Img](./media/A302.png)
 
-**Volledige code:** <span style="color: rgb(255, 76, 65);">**De drempelwaarde in de voorwaarde 10 kan worden aangepast aan de werkelijke situatie.**</span>
+**完成コード：** <span style="color: rgb(255, 76, 65);">**条件の10という閾値は実際の状況に応じて変更可能です。**</span>
 
 ```python
 '''
@@ -150,18 +150,18 @@ while True:
         sleep(200)
 ```
 
-#### 8. Testresultaat
+#### 8. テスト結果
 
-Klik op “<span style="color: rgb(255, 76, 65);">Flash</span>” om de code naar het micro:bit board te laden.
+「<span style="color: rgb(255, 76, 65);">Flash</span>」をクリックしてコードをmicro:bitボードに書き込みます。
 
 ![Img](./media/A3323.png)
 
-Na het downloaden van de code naar het board, **zet de voeding aan via micro USB-kabel of externe voeding (zet de DIP-schakelaar op ON)**, en druk op de resetknop op het board.
+コードをボードにダウンロードした後、**micro USBケーブルまたは外部電源で電源を入れ（DIPスイッチをONにする）、ボードのリセットボタンを押します。**
 
 ![Img](./media/A455.png)
 
-De OLED toont de afstand tussen de ultrasone sensor en het obstakel in realtime. Wanneer de afstand minder dan 10 cm is, geeft de speaker op het micro:bit board alarm.
+OLEDには超音波センサーと障害物間の距離がリアルタイムで表示されます。距離が10cm未満になると、micro:bitボードのスピーカーが警報を鳴らします。
 
-<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van het board.</span></span>
+<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が見えない場合は、ボード裏面のリセットボタンを押してください。</span></span>
 
 ![Img](./media/A605.gif)
