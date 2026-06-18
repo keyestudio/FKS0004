@@ -30,7 +30,7 @@ MicroPython_Tutorial
 
 
 
-.. _4. Troubleshooting:
+4. Troubleshooting
 -------------------------
 
 .. toctree::

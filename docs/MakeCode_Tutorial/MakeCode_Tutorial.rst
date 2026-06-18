@@ -30,7 +30,7 @@ MakeCode_Tutorial
 
 
 
-.. _3. Troubleshooting:
+3. Troubleshooting
 ------------------------
 
 
