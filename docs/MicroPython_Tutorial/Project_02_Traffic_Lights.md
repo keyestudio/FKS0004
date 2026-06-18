@@ -1,34 +1,34 @@
-### Project 02: Traffic Lights
+### Project 02: Verkeerslichten
 
-#### 1. Overview
+#### 1. Overzicht
 
-In this project, we adopt three LEDs( red, yellow and green), a speaker on micro:bit board and 5x5 LED matrix to make a model of traffic lights.
+In dit project gebruiken we drie LEDs (rood, geel en groen), een speaker op de micro:bit board en een 5x5 LED-matrix om een model van verkeerslichten te maken.
 
-#### 2. Components
+#### 2. Componenten
 
 |              ![Img](./media/A850.png)              |       ![Img](./media/A858.png)       | ![Img](./media/A906.png) |
 | :-----------------------------------------------: | :---------------------------------: | :---------------------: |
-|                micro:bit board *1                 | micro:bit T-type expansion board *1 |   micro USB cable *1    |
+|                micro:bit board *1                 | micro:bit T-type uitbreidingsboard *1 |   micro USB-kabel *1    |
 |              ![Img](./media/A937.png)              |      ![Img](./media/A5652.png)       | ![Img](./media/A658.png) |
-|                    red LED *1                     |            yellow LED *1            |      green LED *1       |
+|                    rode LED *1                     |            gele LED *1              |      groene LED *1      |
 |              ![Img](./media/A944.png)              |       ![Img](./media/A950.png)       | ![Img](./media/A017.png) |
-|                 220Ω resistor *3                  |             jump wires              |      breadboard *1      |
+|                 220Ω weerstand *3                  |             jumper draden           |      breadboard *1      |
 |              ![Img](./media/A024.png)              |       ![Img](./media/A020.png)       |                         |
-| battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">self-provided AA batteries *2</span>)|       traffic lights card *1        |                         |
+| batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA batterijen *2</span>)|       verkeerslichten kaart *1       |                         |
 
-#### 3. Components Knowledge
+#### 3. Componentkennis
 
 **Speaker**
 
 ![Img](./media/A833.png)
 
-Micro: bit comes with a speaker, which makes it easy to make sound in your project.
+Micro:bit wordt geleverd met een speaker, wat het gemakkelijk maakt om geluid te maken in je project.
 
-#### 4. Wiring Diagram
+#### 4. Bedradingsschema
 
 ![Img](./media/A908.png)
 
-<span style="color: rgb(255, 76, 65);">**Note:** the micro:bit board needs to be inserted into the T-type expansion board as shown below. The micro:bit board LED matrix should be on the same side with the logo of the expansion board.</span>
+<span style="color: rgb(255, 76, 65);">**Opmerking:** de micro:bit board moet in het T-type uitbreidingsboard worden gestoken zoals hieronder getoond. De LED-matrix van de micro:bit board moet aan dezelfde zijde zitten als het logo van het uitbreidingsboard.</span>
 
 ![Img](./media/A940.png)
 
@@ -36,13 +36,13 @@ Micro: bit comes with a speaker, which makes it easy to make sound in your proje
 
 ![Img](./media/A5956.png)
 
-#### 6. Test Code
+#### 6. Testcode
 
-The code file is provided in folder Project 02：Traffic Lights, file Project-02-Traffic-Lights\.py.
+Het codebestand is te vinden in de map Project 02：Traffic Lights, bestand Project-02-Traffic-Lights\.py.
 
 ![Img](./media/A250.png)
 
-**Complete code:** 
+**Volledige code:** 
 
 ```python
 '''
@@ -115,22 +115,22 @@ while True:
    pin8.write_digital(0)
 ```
 
-#### 7. Test Result
+#### 7. Testresultaat
 
-Click “<span style="color: rgb(255, 76, 65);">Flash</span>” to load the code to the micro:bit board.
+Klik op “<span style="color: rgb(255, 76, 65);">Flash</span>” om de code op de micro:bit board te laden.
 
 ![Img](./media/A353.png)
 
-After downloading the code to the board, **power on via micro USB cable or external power supply(turn the DIP switch to ON)**, and press the reset button on the board.
+Na het downloaden van de code naar de board, **zet de voeding aan via micro USB-kabel of externe voeding (zet de DIP-schakelaar op ON)**, en druk op de resetknop op de board.
 
 ![Img](./media/A455.png)
 
-The green LED turns on and the 5×5 LED matrix counts down 6 seconds. After the green LED is off, the yellow LED flashes and the matrix counts down 3s with speaker sounding. At last, the red LED is on with a countdown of 6s. These actions repeat.
+De groene LED gaat aan en de 5×5 LED-matrix telt 6 seconden af. Nadat de groene LED uitgaat, knippert de gele LED en telt de matrix 3 seconden af met geluid van de speaker. Tot slot gaat de rode LED aan met een aftelling van 6 seconden. Deze handelingen herhalen zich.
 
-<span style="color: rgb(255, 76, 65);">**ATTENTION:** If the wiring is correct but you cannot see the results, press the reset button on the back of the board.</span>
+<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van de board.</span>
 
 ![Img](./media/A459.gif)
 
-<span style="color: rgb(255, 76, 65);">**When powering on via external power supply, turn the DIP switch to ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Bij voeding via externe voeding, zet de DIP-schakelaar op ON.**</span>
 
 ![Img](./media/A904.png)

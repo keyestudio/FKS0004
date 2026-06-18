@@ -1,88 +1,88 @@
-### Project 04: Smart Paeking
+### Project 04: Slim Parkeren
 
-#### 1. Overview
+#### 1. Overzicht
 
-Smart parking lots are everywhere. Can we also create a smart parking lot? Of course. We can use ultrasonic sensor to detect if there are vehicles ahead. When a vehicle (or thing) is detected approaching, we control servo to raise the lift rod; If it is detected to be moving away, the servo will lower the lift rod.
+Slimme parkeerplaatsen zijn overal. Kunnen we ook een slimme parkeerplaats maken? Natuurlijk. We kunnen een ultrasone sensor gebruiken om te detecteren of er voertuigen in de buurt zijn. Wanneer een voertuig (of object) wordt gedetecteerd dat nadert, besturen we een servo om de hefboom omhoog te brengen; als wordt gedetecteerd dat het zich verwijdert, zal de servo de hefboom laten zakken.
 
-#### 2. Components
+#### 2. Componenten
 
 | ![Img](./media/A850.png) |       ![Img](./media/A858.png)       |              ![Img](./media/A906.png)              |
 | :---------------------: | :---------------------------------: | :-----------------------------------------------: |
-|   micro:bit board *1    | micro:bit T-type expansion board *1 |                micro USB cable *1                 |
+|   micro:bit board *1    | micro:bit T-type uitbreidingsbord *1 |                micro USB-kabel *1                 |
 | ![Img](./media/A356.png) |       ![Img](./media/A309.png)       |              ![Img](./media/A415.png)              |
-|  ultrasonic sensor *1   |              servo *1               |                   DuPont wires                    |
+|  ultrasone sensor *1    |              servo *1               |                   DuPont draden                    |
 | ![Img](./media/A017.png) |       ![Img](./media/A950.png)       |              ![Img](./media/A024.png)              |
-|      breadboard *1      |             jump wires              |battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">self-provided AA batteries *2</span>)|
+|      breadboard *1      |             jump draden             |batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA-batterijen *2</span>)|
 | ![Img](./media/A336.png) |       ![Img](./media/A131.png)       |                                                   |
-|       bat card *1       |          lift rod card *1           |                                                   |
+|       bat card *1       |          hefboom kaart *1           |                                                   |
 
-#### 3. Components Knowledge
+#### 3. Componenten Kennis
 
 **Servo**
 
-Servo is a position driver. We can use servo to control the exact position or output high torque. Usually, it is used in robots, remote control cars, and even aircraft models. There are many specifications, but all servos comes with three wires: signal(orange), positive(red) and negative(brown). The color will vary from servo brands.
+Een servo is een positiedrager. We kunnen een servo gebruiken om de exacte positie te regelen of een hoog koppel uit te voeren. Meestal wordt het gebruikt in robots, radiografisch bestuurbare auto's en zelfs vliegtuigmodellen. Er zijn veel specificaties, maar alle servo's hebben drie draden: signaal (oranje), positief (rood) en negatief (bruin). De kleur kan variëren per servomerk.
 
 ![Img](./media/A5525.png)
 
-**Internal structure diagram:**
+**Interne structuurdiagram:**
 
 ![Img](./media/A5534.png)
 
-① Signal: receives control signals from the microcontroller;
+① Signaal: ontvangt besturingssignalen van de microcontroller;
 
-② potentiometer: The position of the output shaft can be measured, which belongs to the feedback part of the whole servo;
+② potentiometer: De positie van de uitgangsas kan worden gemeten, dit behoort tot het feedbackgedeelte van de hele servo;
 
-③ Internal controller: The embedded board processes signals from external control, drives the motor and feedback position signals, which is the core of the whole servo;
+③ Interne controller: Het ingebedde bord verwerkt signalen van externe besturing, stuurt de motor aan en geeft positieterugkoppelingen, dit is de kern van de hele servo;
 
-④ DC motor: It is as an actuator to output speed, torque, position;
+④ DC-motor: Het fungeert als actuator om snelheid, koppel en positie uit te voeren;
 
-⑤ Transmission / servo mechanism: The mechanism zooms in the stroke output by the motor to the final output angle according to a certain transmission ratio.
+⑤ Overbrenging / servomechanisme: Het mechanisme vergroot de slaguitgang van de motor naar de uiteindelijke uitgangshoek volgens een bepaalde overbrengingsverhouding.
 
-**Drive the servo**
+**De servo aansturen**
 
-Send PWM signals to the servo signal line to control its output. The duty cycle of PWM directly determines the position of the output shaft. The period is usually 20 milliseconds and is typically set to generate pulses at a frequency of 50Hz.
+Stuur PWM-signalen naar de servosignaallijn om de uitgang te regelen. De duty cycle van de PWM bepaalt direct de positie van de uitgangsas. De periode is meestal 20 milliseconden en wordt typisch ingesteld om pulsen te genereren met een frequentie van 50Hz.
 
-<span style="color: rgb(255, 0, 0);">For example (180° servo):</span>
+<span style="color: rgb(255, 0, 0);">Bijvoorbeeld (180° servo):</span>
 
-When we send a pulse width of 1.5 milliseconds (ms) to the 180° servo, the output shaft of the servo will move to the middle position (90 degrees);
+Wanneer we een pulsbreedte van 1,5 milliseconden (ms) naar de 180° servo sturen, beweegt de uitgangsas van de servo naar de middenpositie (90 graden);
 
-If the pulse width is 0.5ms, the output shaft will move to 0 degree;
+Als de pulsbreedte 0,5 ms is, beweegt de uitgangsas naar 0 graden;
 
-If the pulse width is 2.5ms, the output shaft will move to 180 degree;
+Als de pulsbreedte 2,5 ms is, beweegt de uitgangsas naar 180 graden;
 
 ![Img](./media/A5545.png)
 
 **Parameters:**
 
-- Operating voltage: DC 3.3V~5V
+- Bedrijfsspanning: DC 3,3V~5V
 
-- Operating temperature: -10°C ~ +50°C
+- Bedrijfstemperatuur: -10°C ~ +50°C
 
-- Dimensions: 32.25mm x 12.25mm x 30.42mm
+- Afmetingen: 32,25mm x 12,25mm x 30,42mm
 
-- Interface: 3pin interface with a spacing of 2.54mm
+- Interface: 3-pins interface met een afstand van 2,54mm
 
-#### 4. Wiring Diagram
+#### 4. Aansluitschema
 
 ![Img](./media/A606.png)
 
-<span style="color: rgb(255, 76, 65);">**When using the ultrasonic sensor and servo, we must connect an external power supply and turn the DIP switch to ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Bij gebruik van de ultrasone sensor en servo moeten we een externe voeding aansluiten en de DIP-schakelaar op ON zetten.**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A701.png)
 
-#### 5. Code Flow
+#### 5. Code Stroomdiagram
 
 ![Img](./media/A716.png)
 
-#### 6. Test Code
+#### 6. Testcode
 
-The code file is provided in folder Project 04：Smart-Parking, file Project-04-Smart-Parking\.py.
+Het codebestand is te vinden in map Project 04：Smart-Parking, bestand Project-04-Smart-Parking\.py.
 
 ![Img](./media/A3345.png)
 
-**Complete code:** <span style="color: rgb(255, 76, 65);">The threshold in the condition 10 can be modified according to actual conditions.</span>
+**Volledige code:** <span style="color: rgb(255, 76, 65);">De drempelwaarde in de voorwaarde 10 kan worden aangepast aan de werkelijke omstandigheden.</span>
 
 ```python
 '''
@@ -133,18 +133,18 @@ while True:
        sleep(2000)
 ```
 
-#### 7. Test Result
+#### 7. Testresultaat
 
-Click “<span style="color: rgb(255, 76, 65);">Flash</span>” to load the code to the micro:bit board.
+Klik op “<span style="color: rgb(255, 76, 65);">Flash</span>” om de code naar het micro:bit board te laden.
 
 ![Img](./media/A3400.png)
 
-After downloading the code to the board, **power on via micro USB cable or external power supply(turn the DIP switch to ON)**, and press the reset button on the board.
+Na het downloaden van de code naar het board, **zet de voeding aan via micro USB-kabel of externe voeding (zet de DIP-schakelaar op ON)**, en druk op de resetknop op het board.
 
 ![Img](./media/A455.png)
 
-When the ultrasonic sensor detect a vehicle (or thing) approaching, the servo controls the lift rod to raise; If the sensor detects it moving away, the servo will lower the lift rod.
+Wanneer de ultrasone sensor een voertuig (of object) detecteert dat nadert, bestuurt de servo de hefboom omhoog; als de sensor detecteert dat het zich verwijdert, zal de servo de hefboom laten zakken.
 
-<span style="color: rgb(255, 76, 65);">**ATTENTION:** If the wiring is correct but you cannot see the results, press the reset button on the back of the board.</span>
+<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van het board.</span>
 
 ![Img](./media/A021.gif)

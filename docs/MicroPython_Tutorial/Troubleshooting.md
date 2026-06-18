@@ -1,14 +1,13 @@
-## 4. Troubleshooting
+## 4. Problemen oplossen
 
-### **Errors for Uploading Codes**
+**Fouten bij het uploaden van codes**
 
-- If messy icons are displayed on the matrix of the board after uploading code, check if any characters have been accidentally added or deleted. You may click “check”![Img](./media/A5457.png). But note that some are not errors, just warnings.
+- Als er rommelige iconen worden weergegeven op de matrix van de board na het uploaden van code, controleer dan of er per ongeluk tekens zijn toegevoegd of verwijderd. Je kunt op “check” klikken ![Img](./media/A5457.png). Maar let op dat sommige geen fouten zijn, maar alleen waarschuwingen.
 
-- If the code is with a library, check whether the library is uploaded to the board. See “**How Mu Import Library to Micro:bit**”. And then check if any characters have been accidentally added or deleted.
+- Als de code een bibliotheek bevat, controleer dan of de bibliotheek is geüpload naar de board. Zie “**Hoe Mu een bibliotheek importeert naar Micro:bit**”. Controleer daarna of er per ongeluk tekens zijn toegevoegd of verwijderd.
 
-### **No Printings on REPL**
+**Geen uitvoer op REPL**
 
-- After uploading code, click “REPL” ![Img](./media/A5530.png) and it prints nothing. In this case, we need to press the reset button on the back of micro:bit board. 
-
+- Na het uploaden van code, klik op “REPL” ![Img](./media/A5530.png) en er wordt niets afgedrukt. In dit geval moeten we de resetknop aan de achterkant van de micro:bit board indrukken.
 
 ![Img](./media/A455.png)

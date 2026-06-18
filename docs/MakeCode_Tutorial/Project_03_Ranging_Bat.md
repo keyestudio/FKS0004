@@ -1,83 +1,83 @@
 ### Project 03: Ranging Bat
 
-#### 1. Overview
+#### 1. Overzicht
 
-Based on an ultrasonic sensor, the ranging bat detects the distance of obstacles and displays it in real time on an OLED. When it is less than 10cm, the speaker alarms.
+Op basis van een ultrasone sensor detecteert de ranging bat de afstand van obstakels en toont deze in realtime op een OLED. Wanneer de afstand minder dan 10 cm is, geeft de speaker een alarm.
 
-#### 2. Components
+#### 2. Componenten
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| micro:bit board *1 | micro:bit T-type expansion board *1 | micro USB cable *1 |
+| micro:bit board *1 | micro:bit T-type uitbreidingsbord *1 | micro USB-kabel *1 |
 | ![Img](./media/A356.png)| ![Img](./media/A406.png)| ![Img](./media/A415.png) |
-| ultrasonic sensor *1 | OLED module *1 | DuPont wires |
+| ultrasone sensor *1 | OLED-module *1 | DuPont draden |
 |![Img](./media/A017.png) | ![Img](./media/A950.png) | ![Img](./media/A024.png) |
-|breadboard *1 | jump wires |battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">self-provided AA batteries *2</span>)|
+| breadboard *1 | jump wires | batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA-batterijen *2</span>)|
 |![Img](./media/A315.png)|![Img](./media/A557.png) | |
-|bat card *1| OLED card *1 | |
+| bat kaart *1| OLED kaart *1 | |
 
-#### 3. Components Knowledge
+#### 3. Componenten Kennis
 
-**ultrasonic sensor**
+**ultrasone sensor**
 
-Ultrasonic waves bounce back when they hit an obstacle. We measure the distance by calculating the time interval between sending and receiving the waves. Since the propagation speed of sound in air is a constant v=340m/s, we calculate the distance between the sensor and the obstacle: s=vt/2.
+Ultrasone golven kaatsen terug wanneer ze een obstakel raken. We meten de afstand door het tijdsinterval te berekenen tussen het verzenden en ontvangen van de golven. Aangezien de voortplantingssnelheid van geluid in lucht constant is v=340m/s, berekenen we de afstand tussen de sensor en het obstakel: s=vt/2.
 
 ![Img](./media/A846.png)
 
-The HC-SR04 ultrasonic module integrates a transmitter and receiver. The former converts electrical signals (electric energy) into high frequency (beyond human hearing) sound waves (mechanical energy), while the latter does the opposite.
+De HC-SR04 ultrasone module integreert een zender en ontvanger. De eerste zet elektrische signalen (elektrische energie) om in hoogfrequente (buiten het gehoor van mensen) geluidsgolven (mechanische energie), terwijl de tweede het omgekeerde doet.
 
-The schematic diagram of the HC SR04:
+Het schema van de HC SR04:
 
 ![Img](./media/A642.png)
 
-**Pin definition:**
+**Pin-definitie:**
 
 ![Img](./media/A702.png)
 
 **Parameters:**
 
-- Operating voltage: 5V
-- Operating current: 12mA
-- Minimum measuring distance: 2cm
-- Maximum measuring distance: 200cm
+- Bedrijfsspanning: 5V
+- Bedrijfsstroom: 12mA
+- Minimale meetafstand: 2cm
+- Maximale meetafstand: 200cm
 
-**Working principle:**
+**Werkingsprincipe:**
 
-A high level pulse lasting at least 10us is output on the Trig pin, and the module starts transmitting ultrasonic waves. At the same time, the Echo pin is pulled up. When the module receives an ultrasonic wave back when it encounters an obstacle, the Echo pin will be pulled down. The duration of the high level of the Echo pin is the total time of wave from sending to receiving: s=vt/2.
+Een hoog niveau puls van minstens 10us wordt uitgegeven op de Trig pin, en de module begint ultrasone golven uit te zenden. Tegelijkertijd wordt de Echo pin hoog getrokken. Wanneer de module een ultrasone golf terug ontvangt bij een obstakel, wordt de Echo pin laag getrokken. De duur van het hoge niveau van de Echo pin is de totale tijd van golf van verzenden tot ontvangen: s=vt/2.
 
 ![Img](./media/A728.png)
 
 **OLED module**
 
-OLED technology features rich color performance, high contrast and wide perspective, providing clear and vivid pictures, especially outstanding in black. 
+OLED-technologie kenmerkt zich door rijke kleurweergave, hoog contrast en brede kijkhoek, wat zorgt voor heldere en levendige beelden, vooral uitstekend in zwart.
 
-Each pixel of the OLED display emits light itself without backlight, so it consumes relatively low power. With small size, high resolution and low power consumption, the 0.9-inch OLED display is very suitable for wearable devices.
+Elke pixel van het OLED-scherm straalt zelf licht uit zonder achtergrondverlichting, waardoor het relatief weinig stroom verbruikt. Met een kleine afmeting, hoge resolutie en laag stroomverbruik is het 0,9-inch OLED-scherm zeer geschikt voor draagbare apparaten.
 
 ![Img](./media/A636.png)
 
-<span style="color: rgb(255, 76, 65);">**In this project, the OLED display module connects the SDA interface to pin P20 and SCL to pin P19.**</span>
+<span style="color: rgb(255, 76, 65);">**In dit project is de OLED display module aangesloten met de SDA-interface op pin P20 en SCL op pin P19.**</span>
 
 **Parameters:**
 
-- Operating voltage: DC 3.3V-5V
+- Bedrijfsspanning: DC 3.3V-5V
 
-- Operating current: 30mA
+- Bedrijfsstroom: 30mA
 
-- Interface: Pin ports with a spacing of 2.54mm
+- Interface: Pin-poorten met een afstand van 2,54mm
 
-- Communication mode: I2C
+- Communicatiemodus: I2C
 
-- Internal driver chip: SSD1306
+- Interne driverchip: SSD1306
 
-- Resolution: 128*64
+- Resolutie: 128*64
 
-- Viewing Angle: greater than 150°
+- Kijkhoek: groter dan 150°
 
-#### 4. Wiring Diagram
+#### 4. Aansluitschema
 
 ![Img](./media/A1849.png)
 
-<span style="color: rgb(255, 76, 65);">**When using the OLED display and ultrasonic sensor, we must connect an external power supply and turn the DIP switch to ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Bij gebruik van het OLED-display en ultrasone sensor moeten we een externe voeding aansluiten en de DIP-schakelaar op ON zetten.**</span>
 
 ![Img](./media/A902.png)
 
@@ -87,22 +87,22 @@ Each pixel of the OLED display emits light itself without backlight, so it consu
 
 ![Img](./media/A924.png)
 
-#### 6. Test Code
+#### 6. Testcode
 
-The code file is provided in folder Project 03：Ranging Bat, file Project-03-Ranging-Bat.hex.
+Het codebestand is te vinden in map Project 03：Ranging Bat, bestand Project-03-Ranging-Bat.hex.
 
 ![Img](./media/A955.png)
 
-**Load code blocks:** <span style="color: rgb(255, 76, 65);">The threshold in the condition 10 can be modified according to actual conditions.</span>
+**Laad codeblokken:** <span style="color: rgb(255, 76, 65);">De drempelwaarde in de voorwaarde 10 kan worden aangepast aan de werkelijke situatie.</span>
 
 ![Img](./media/A022.png)
 
-#### 7. Test Result
+#### 7. Testresultaat
 
-For Windows 10 App, click “<span style="color: rgb(255, 76, 65);">Download</span>” . For browsers, send the downloaded “<span style="color: rgb(255, 76, 65);">.hex</span>” file to the micro:bit board.
+Voor Windows 10 App, klik op “<span style="color: rgb(255, 76, 65);">Download</span>”. Voor browsers, stuur het gedownloade “<span style="color: rgb(255, 76, 65);">.hex</span>” bestand naar het micro:bit board.
 
-After downloading the code to the board, <span style="color: rgb(255, 76, 65);">power on via external power supply and turn the DIP switch to ON</span>, and the OLED displays the distance between the ultrasonic sensor and the obstacle in real time. When the distance value is less than 10cm, the speaker on micro:bit board alarms.
+Na het downloaden van de code naar het board, <span style="color: rgb(255, 76, 65);">zet de voeding aan via externe voeding en zet de DIP-schakelaar op ON</span>, en de OLED toont de afstand tussen de ultrasone sensor en het obstakel in realtime. Wanneer de afstand minder is dan 10 cm, geeft de speaker op het micro:bit board alarm.
 
-<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**ATTENTION:** If the wiring is correct but you cannot see the results, press the reset button on the back of the board.</span></span>
+<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van het board.</span></span>
 
 ![Img](./media/A605.gif)

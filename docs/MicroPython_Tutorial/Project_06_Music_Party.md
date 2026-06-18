@@ -1,30 +1,30 @@
-### Project 06: Music Party
+### Project 06: Muziekfeest
 
 ![Img](./media/A1317.png)
 
-#### 1. Overview
+#### 1. Overzicht
 
-When we clap our hands, the microphone on the board picks up sound signals, and the speaker plays a cheerful birthday song while the RGB LED emits dazzling light.
+Wanneer we in onze handen klappen, vangt de microfoon op de board geluidssignalen op, en speelt de speaker een vrolijk verjaardagslied terwijl de RGB LED schitterend licht uitstraalt.
 
-#### 2. Components
+#### 2. Componenten
 
 | ![Img](./media/A850.png) |              ![Img](./media/A858.png)              | ![Img](./media/A906.png) |
 | :---------------------: | :-----------------------------------------------: | :---------------------: |
-|   micro:bit board *1    |        micro:bit T-type expansion board *1        |   micro USB cable *1    |
+|   micro:bit board *1    |        micro:bit T-type uitbreidingsboard *1      |   micro USB-kabel *1    |
 | ![Img](./media/A500.png) |              ![Img](./media/A944.png)              | ![Img](./media/A950.png) |
-|       red LED *1        |                 220Ω resistor *3                  |      jump wire *2       |
+|       rode LED *1       |                 220Ω weerstand *3                  |      verbindingsdraad *2|
 | ![Img](./media/A017.png) |              ![Img](./media/A024.png)              | ![Img](./media/A621.png) |
-|      breadboard *1      |battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">self-provided AA batteries *2</span>)|       RGB card *1       |
+|      breadboard *1      |batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA-batterijen *2</span>)|       RGB kaart *1       |
 
-#### 3. Components Knowledge
+#### 3. Kennis over componenten
 
-**Microphone**
+**Microfoon**
 
-A high-quality digital microphone is integrated on the front side of the micro:bit V2 board to detect sound and audio signals. The chip that controls and processes the microphone is on its back.
+Een hoogwaardige digitale microfoon is geïntegreerd aan de voorkant van de micro:bit V2 board om geluid- en audiosignalen te detecteren. De chip die de microfoon aanstuurt en verwerkt bevindt zich aan de achterkant.
 
 ![Img](./media/A1317.png)
 
-The microphone is in a small round hole on the front of the board, which is convenient to capture surrounding sound signals. Just place the micro:bit board face up when using. Next to the hole is a microphone LED indicator. When the micro:bit measures sound levels, the indicator will light up.
+De microfoon zit in een klein rond gaatje aan de voorkant van de board, wat handig is om omgevingsgeluiden op te vangen. Plaats de micro:bit board gewoon met de voorkant naar boven tijdens gebruik. Naast het gaatje zit een microfoon LED-indicator. Wanneer de micro:bit geluidsniveaus meet, zal de indicator oplichten.
 
 ![Img](./media/A116.png)
 
@@ -32,47 +32,47 @@ The microphone is in a small round hole on the front of the board, which is conv
 
 ![Img](./media/A2127.png)
 
-RGB LED is imaged in the intersection of three primary colors (RGB): red, green and blue. Most colors can be synthesized by RGB in different proportions. The red, green and blue LEDs are packaged in a transparent plastic case to emit colors of light by changing the input voltage of R, G and B pins.
+RGB LED is gebaseerd op de combinatie van drie primaire kleuren (RGB): rood, groen en blauw. De meeste kleuren kunnen worden samengesteld door RGB in verschillende verhoudingen te mengen. De rode, groene en blauwe LEDs zijn verpakt in een transparante plastic behuizing om kleuren licht uit te stralen door de ingangsspanning van de R-, G- en B-pinnen te veranderen.
 
 ![Img](./media/A137.png)
 
-**Trichromatic theory:**
+**Driekleuren theorie:**
 
 ![Img](./media/A150.png)
 
-RGB LED can be divided into two types: common anode and common cathode:
+RGB LED kan worden onderverdeeld in twee types: gemeenschappelijke anode en gemeenschappelijke kathode:
 
-In a common cathode RGB LED, the three LEDs share a negative connection (cathode);
+In een gemeenschappelijke kathode RGB LED delen de drie LEDs een negatieve aansluiting (kathode);
 
-In a common anode RGB LED, the three LEDs share a positive connection (anode).
+In een gemeenschappelijke anode RGB LED delen de drie LEDs een positieve aansluiting (anode).
 
 ![Img](./media/A209.png)
 
-<span style="color: rgb(255, 76, 65);">**Note: Herein, we provide a common cathode RGB LED.**</span>
+<span style="color: rgb(255, 76, 65);">**Let op: Hier bieden wij een gemeenschappelijke kathode RGB LED aan.**</span>
 
-**RGB LED pins:**
+**RGB LED-pinnen:**
 
-RGB LED boasts 4 pins: GND(the longest one), R(red), G(green) and B(blue). Place the RGB LED as shown below, pins from left to right are red, GND, green and blue.
+RGB LED heeft 4 pinnen: GND (de langste), R (rood), G (groen) en B (blauw). Plaats de RGB LED zoals hieronder getoond, pinnen van links naar rechts zijn rood, GND, groen en blauw.
 
 ![Img](./media/A239.png)
 
-#### 4. Wiring Diagram
+#### 4. Aansluitschema
 
 ![Img](./media/A308.png)
 
 ![Img](./media/A325.png)
 
-#### 5. Code Flow
+#### 5. Codeflow
 
 ![Img](./media/A343.png)
 
-#### 6. Test Code
+#### 6. Testcode
 
-The code file is provided in folder Project 06：Music Party, file Project-06-Music-Party\.py.
+Het codebestand is te vinden in de map Project 06：Music Party, bestand Project-06-Music-Party\.py.
 
 ![Img](./media/A3523.png)
 
-**Complete code:**
+**Volledige code:**
 
 ```python
 '''
@@ -153,18 +153,18 @@ if microphone.current_event() == SoundEvent.QUIET:  # If the microphone picks up
        pin2.write_analog(0)
 ```
 
-#### 7. Test Result
+#### 7. Testresultaat
 
-Click “<span style="color: rgb(255, 76, 65);">Flash</span>” to load the code to the micro:bit board.
+Klik op “<span style="color: rgb(255, 76, 65);">Flash</span>” om de code op de micro:bit board te laden.
 
 ![Img](./media/A3540.png)
 
-After downloading the code to the board, **power on via micro USB cable or external power supply(turn the DIP switch to ON)**, and press the reset button on the board.
+Na het downloaden van de code naar de board, **zet de voeding aan via micro USB-kabel of externe voeding (zet de DIP-schakelaar op ON)**, en druk op de resetknop op de board.
 
 ![Img](./media/A455.png)
 
-When we clap our hands, the microphone on the board picks up sound signals, and the speaker plays a cheerful birthday song while the RGB LED emits dazzling light. Isn’t the music party in a happy and joyful atmosphere?
+Wanneer we in onze handen klappen, vangt de microfoon op de board geluidssignalen op, en speelt de speaker een vrolijk verjaardagslied terwijl de RGB LED schitterend licht uitstraalt. Is het muziekfeest niet in een vrolijke en blije sfeer?
 
-<span style="color: rgb(255, 76, 65);">**ATTENTION:** If the wiring is correct but you cannot see the results, press the reset button on the back of the board.</span>
+<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van de board.</span>
 
 ![Img](./media/A757.gif)

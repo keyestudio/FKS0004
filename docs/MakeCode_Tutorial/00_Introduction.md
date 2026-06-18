@@ -1,234 +1,234 @@
-## 1. Programming On MakeCode
+## 1. Programmeren met MakeCode
 
-The following instructions are applied for Windows system but can also serve as a reference if you are using a different system.
+De volgende instructies zijn van toepassing op het Windows-systeem, maar kunnen ook als referentie dienen als je een ander systeem gebruikt.
 
-#### 1.1. Fast Start
+#### 1.1. Snelle start
 
-**Step 1 Connect to micro:bit**
+**Stap 1 Verbinden met micro:bit**
 
-Connect the board to computer via USB cable. 
+Verbind de board met de computer via een USB-kabel.
 
 ![Img](./media/A800.png)
 
-If the red LED on the back of the board is on, that means the board is powered. When your computer communicates with the main board via the USB cable, the yellow LED on it will flashes. For example, it will flash when you burn a “.hex” file.
+Als de rode LED aan de achterkant van de board brandt, betekent dit dat de board van stroom wordt voorzien. Wanneer je computer via de USB-kabel communiceert met de hoofdboard, knippert de gele LED daarop. Bijvoorbeeld, het knippert wanneer je een “.hex” bestand brandt.
 
-Then Micro: bit main board will appear on your computer as a driver named “MICROBIT”. Please note that it is not an ordinary USB disk as shown below.
+Dan verschijnt de Micro:bit hoofdboard op je computer als een driver genaamd “MICROBIT”. Let op dat het geen gewone USB-schijf is zoals hieronder getoond.
 
 ![Img](./media/A849.png)
 
-**Step 2 Write heartbeat program**
+**Stap 2 Schrijf heartbeat-programma**
 
-Enter the link：[online version of Makecode](https://makecode.microbit.org/)
+Ga naar de link: [online versie van Makecode](https://makecode.microbit.org/)
 
-Click “<span style="color: rgb(255, 76, 65);">New Project</span>” and you will see a “<span style="color: rgb(255, 76, 65);">Creating a project</span>”, fill it with “<span style="color: rgb(255, 76, 65);">heartbeat</span>” and click “<span style="color: rgb(255, 76, 65);">Create √</span>”.
+Klik op “<span style="color: rgb(255, 76, 65);">Nieuw Project</span>” en je ziet “<span style="color: rgb(255, 76, 65);">Project aanmaken</span>”, vul het in met “<span style="color: rgb(255, 76, 65);">heartbeat</span>” en klik op “<span style="color: rgb(255, 76, 65);">Maak √</span>”.
 
-<span style="color: rgb(255, 76, 65);">Here we write programs on Google Chrome.</span>
+<span style="color: rgb(255, 76, 65);">Hier schrijven we programma's in Google Chrome.</span>
 
 ![Img](./media/A021.png)
 
-Let’s write a micro:bit code. 
+Laten we een micro:bit-code schrijven.
 
-You can drag some Blocks to the editing area and then run your program in Simulator as shown below. Here we demonstrate how to edit <span style="color: rgb(255, 76, 65);">heartbeat</span> program. 
+Je kunt enkele blokken naar het bewerkingsgebied slepen en vervolgens je programma uitvoeren in de simulator zoals hieronder getoond. Hier demonstreren we hoe je het <span style="color: rgb(255, 76, 65);">heartbeat</span>-programma bewerkt.
 
-Operation video guide:
+Bedieningsvideo gids:
 
 ![Img](./media/A100.png)
 
-**Step3 Download codes**
+**Stap 3 Download codes**
 
-Generally, for Windows 10 APP ([Get Windows 10 App](https://apps.microsoft.com/detail/9pjc7sv48lcx?hl=zh-CN&gl=CN#activetab=pivot:overviewtabdocx))(Click), simply clicking the  “<span style="color: rgb(255, 76, 65);">Download</span>” will directly download the code to the micro:bit board without any additional steps.
+Over het algemeen, voor de Windows 10 APP ([Windows 10 App krijgen](https://apps.microsoft.com/detail/9pjc7sv48lcx?hl=zh-CN&gl=CN#activetab=pivot:overviewtabdocx))(Klik), volstaat het om op “<span style="color: rgb(255, 76, 65);">Download</span>” te klikken om de code direct naar de micro:bit board te downloaden zonder extra stappen.
 
-Yet for browsers, please:
+Voor browsers, doe het volgende:
 
-Click “<span style="color: rgb(255, 76, 65);">Download</span>” in the editor. This will download a “hex” file, which is a format that the micro:bit board can read. After that, copy it to your micro:bit board just like you would copy a file to a USB drive. On Windows, you can also right-click on the “<span style="color: rgb(255, 76, 65);">.hex</span>” file and select “**Send to → MICROBIT**” to copy the file to the micro:bit board.
+Klik op “<span style="color: rgb(255, 76, 65);">Download</span>” in de editor. Dit zal een “hex” bestand downloaden, een formaat dat de micro:bit board kan lezen. Kopieer het daarna naar je micro:bit board zoals je een bestand naar een USB-drive zou kopiëren. Op Windows kun je ook met de rechtermuisknop op het “<span style="color: rgb(255, 76, 65);">.hex</span>” bestand klikken en “**Verzenden naar → MICROBIT**” selecteren om het bestand naar de micro:bit board te kopiëren.
 
 ![Img](./media/A319.png)
 
 ![Img](./media/A449.png)
 
-Or, you may directly drag the “<span style="color: rgb(255, 76, 65);">.hex</span>” file into MICROBIT.
+Of je kunt het “<span style="color: rgb(255, 76, 65);">.hex</span>” bestand direct naar MICROBIT slepen.
 
 ![Img](./media/A341.png)
 
 ![Img](./media/A345.png)
 
-During copying the “<span style="color: rgb(255, 76, 65);">.hex</span>” file to the Micro: bit, the yellow LED on the back of the board flashes. When the duplication is completed, the LED will stop flashing and remain on.
+Tijdens het kopiëren van het “<span style="color: rgb(255, 76, 65);">.hex</span>” bestand naar de Micro:bit knippert de gele LED aan de achterkant van de board. Wanneer het kopiëren voltooid is, stopt de LED met knipperen en blijft aan.
 
-**Step 4 Run porgram**
+**Stap 4 Programma uitvoeren**
 
-After the program is uploaded to the Micro: bit, you can power it via USB cable or an external power. Then the 5 x 5 LED dot matrix displays a heartbeat pattern.
+Nadat het programma is geüpload naar de Micro:bit, kun je het van stroom voorzien via USB-kabel of externe voeding. Dan toont de 5 x 5 LED-puntmatrix een hartslagpatroon.
 
 ![Img](./media/A425.png)
 
-<span style="color: rgb(255, 76, 65);">**Caution:**</span> When you programs each time, the driver of Micro: bit will automatically eject and return so the hex files will disappear. The board only has access to hex files rather than save them.
+<span style="color: rgb(255, 76, 65);">**Let op:**</span> Elke keer dat je programmeert, wordt de driver van Micro:bit automatisch uitgeworpen en teruggezet, waardoor de hex-bestanden verdwijnen. De board heeft alleen toegang tot hex-bestanden, maar slaat ze niet op.
 
 #### 1.2. MakeCode
 
-Enter [Makecode Google Chrome online version](https://makecode.microbit.org/) . Here is its main interface.
+Ga naar [Makecode Google Chrome online versie](https://makecode.microbit.org/). Dit is de hoofdinterface.
 
 ![Img](./media/A637.png)
 
-There are blocks “**on start**” and “**forever**”in the code editing area. <span style="color: rgb(255, 76, 65);">After powering on, codes in “on start” only executes once, while those in “forever” runs cyclically.</span>
+Er zijn blokken “**on start**” en “**forever**” in het codebewerkingsgebied. <span style="color: rgb(255, 76, 65);">Na het inschakelen wordt code in “on start” slechts één keer uitgevoerd, terwijl code in “forever” cyclisch draait.</span>
 
-Click “**JS JavaScript**” language:
+Klik op de taal “**JS JavaScript**”:
 
 ![Img](./media/A754.png)
 
-Switch it to “**Python**” language:
+Schakel over naar “**Python**” taal:
 
 ![Img](./media/A814.png)
 
 
-#### 1.3. Introduction to WebUSB Functions
+#### 1.3. Introductie tot WebUSB-functies
 
-As mentioned before, if your computer is Windows 10 and you have downloaded the APP MakeCode, you can quickly download codes to the board by “<span style="color: rgb(255, 76, 65);">Download</span>” button. We use the webUSB of **<span style="color: rgb(255, 76, 65);">Google Chrome</span>** to access the hardware device connected by USB. 
+Zoals eerder vermeld, als je computer Windows 10 is en je de MakeCode APP hebt gedownload, kun je snel codes naar de board downloaden via de “<span style="color: rgb(255, 76, 65);">Download</span>” knop. We gebruiken de webUSB van **<span style="color: rgb(255, 76, 65);">Google Chrome</span>** om toegang te krijgen tot het hardwareapparaat dat via USB is verbonden.
 
-**Devices Pairing:**
+**Apparaat koppelen:**
 
-1\. Connect the board to computer via USB cable.
+1\. Verbind de board met de computer via USB-kabel.
 
 ![Img](./media/A951.png)
 
-2\. Click “<span style="color: rgb(255, 76, 65);">Download</span>” -> “<span style="color: rgb(255, 76, 65);">...</span>” , and “<span style="color: rgb(255, 76, 65);">Connect device</span>”.
+2\. Klik op “<span style="color: rgb(255, 76, 65);">Download</span>” -> “<span style="color: rgb(255, 76, 65);">...</span>” en “<span style="color: rgb(255, 76, 65);">Apparaat verbinden</span>”.
 
 ![Img](./media/A028.png)
 
-3\.  “<span style="color: rgb(255, 76, 65);">Next</span>”.
+3\. “<span style="color: rgb(255, 76, 65);">Volgende</span>”.
 
 ![Img](./media/A046.png)
 
-4\.  “<span style="color: rgb(255, 76, 65);">Pair</span>” .
+4\. “<span style="color: rgb(255, 76, 65);">Koppelen</span>”.
 
 ![Img](./media/A104.png)
 
-5\. Then select the corresponding device and  “<span style="color: rgb(255, 76, 65);">Connect</span>” . 
+5\. Selecteer vervolgens het overeenkomstige apparaat en “<span style="color: rgb(255, 76, 65);">Verbinden</span>”.
 
 ![Img](./media/A127.png)
 
-6\. “<span style="color: rgb(255, 76, 65);">Done</span>”.
+6\. “<span style="color: rgb(255, 76, 65);">Klaar</span>”.
 
 ![Img](./media/A144.png)
 
-**Download Program:**
+**Programma downloaden:**
 
-After connection, click “<span style="color: rgb(255, 76, 65);">Download</span>” and you will see the ![Img](./media/A212.png) becomes ![Img](./media/A220.png). The program is downloaded to the micro:bit board. 
+Na verbinding klik je op “<span style="color: rgb(255, 76, 65);">Download</span>” en zie je dat ![Img](./media/A212.png) verandert in ![Img](./media/A220.png). Het programma wordt naar de micro:bit board gedownload.
 
 ![Img](./media/A232.png)
 
-If no device shows up for selection, please refer to [Troubleshooting downloads with WebUSB](https://makecode.microbit.org/device/usb/webusb/troubleshoot). Browse [the user guide](https://microbit.org/guide/firmware/) to know how to update micro:bit firmware. 
+Als er geen apparaat verschijnt om te selecteren, raadpleeg dan [Problemen oplossen bij downloads met WebUSB](https://makecode.microbit.org/device/usb/webusb/troubleshoot). Bekijk [de gebruikershandleiding](https://microbit.org/guide/firmware/) om te weten hoe je de micro:bit firmware bijwerkt.
 
-#### 1.4. MakeCode Extensions Library
+#### 1.4. MakeCode Extensiebibliotheek
 
-**3.4.1 Import Library Extensions**
+**3.4.1 Bibliotheekextensies importeren**
 
-Open makecode to enter a certain project, click ![Img](./media/A806.png) to choose “**Extensions**”.
+Open Makecode om een bepaald project te openen, klik op ![Img](./media/A806.png) om “**Extensies**” te kiezen.
 
 ![Img](./media/A842.png)
 
-Or click “**Extensions**”  above the Advanced.
+Of klik op “**Extensies**” boven Geavanceerd.
 
 ![Img](./media/A900.png)
 
-Search the library you want.
+Zoek de bibliotheek die je wilt.
 
 ![Img](./media/A909.png)
 
-We provide the code files for each project containing everything you need to run a project, so you can load it directly. If you want to build code blocks by yourself, remember to add the following three extensions.
+We bieden de codebestanden voor elk project aan die alles bevatten wat je nodig hebt om een project uit te voeren, dus je kunt ze direct laden. Als je zelf codeblokken wilt bouwen, vergeet dan niet de volgende drie extensies toe te voegen.
 
-<span style="color: rgb(0, 209, 0);">**OLED Extension:**</span>
+<span style="color: rgb(0, 209, 0);">**OLED-extensie:**</span>
 
-1\. Click “**Extensions**” to add library extensions.
+1\. Klik op “**Extensies**” om bibliotheekextensies toe te voegen.
 
 ![Img](./media/A236.png)
 
-2\. Search “**OLED**” and click ![Img](./media/A3257.png).
+2\. Zoek “**OLED**” en klik op ![Img](./media/A3257.png).
 
 ![Img](./media/A306.png)
 
-Click the first **oled-ssd1306** and wait for it to be added.
+Klik op de eerste **oled-ssd1306** en wacht tot deze is toegevoegd.
 
 ![Img](./media/A3316.png)
 
-3\. Add successful:
+3\. Succesvol toegevoegd:
 
 ![Img](./media/A335.png)
 
-<span style="color: rgb(0, 209, 0);">**Ultrasonic sensor extension:**</span>
+<span style="color: rgb(0, 209, 0);">**Ultrasone sensor-extensie:**</span>
 
-1\. Click “**Extensions**” to add library extensions.
+1\. Klik op “**Extensies**” om bibliotheekextensies toe te voegen.
 
 ![Img](./media/A236.png)
 
-2\. Search “**sonar**” and click![Img](./media/A3257.png) to find and load “sonar”.
+2\. Zoek “**sonar**” en klik op ![Img](./media/A3257.png) om “sonar” te vinden en te laden.
 
 ![Img](./media/A506.png)
 
-3\. Add successful:
+3\. Succesvol toegevoegd:
 
 ![Img](./media/A522.png)
 
-<span style="color: rgb(0, 209, 0);">**DHT11 sensor extension:**</span>
+<span style="color: rgb(0, 209, 0);">**DHT11 sensor-extensie:**</span>
 
-1\. Click “**Extensions**” to add library extensions.
+1\. Klik op “**Extensies**” om bibliotheekextensies toe te voegen.
 
 ![Img](./media/A236.png)
 
-2\. Search “**DHT11**” and click ![Img](./media/A3257.png) to find and load “DHT11_DHT22”.
+2\. Zoek “**DHT11**” en klik op ![Img](./media/A3257.png) om “DHT11_DHT22” te vinden en te laden.
 
 ![Img](./media/A616.png)
 
-3\. Add successful:
+3\. Succesvol toegevoegd:
 
 ![Img](./media/A645.png)
 
-**3.4.2 Update/Delete Extensions**
+**3.4.2 Extensies bijwerken/verwijderen**
 
-1\. Click “**JavaScript**” to switch to text code.
+1\. Klik op “**JavaScript**” om over te schakelen naar tekstcode.
 
 ![Img](./media/A724.png)
 
-2\. Click “**Explorer**”.
+2\. Klik op “**Verkenner**”.
 
 ![Img](./media/A749.png)
 
-3\. Find the “**OLED**” library and click ![Img](./media/A813.png) to delete it.
+3\. Zoek de “**OLED**” bibliotheek en klik op ![Img](./media/A813.png) om deze te verwijderen.
 
 ![Img](./media/A824.png)
 
-4\.  “**Remove it**”.
+4\. “**Verwijderen**”.
 
 ![Img](./media/A727.png)
 
-It is removed.
+Het is verwijderd.
 
-#### 1.5. How to Import Codes to MakeCode
+#### 1.5. Hoe codes te importeren in MakeCode
 
-Let’s take the “**heatbeat**” project as an example to show how to load the code. 
+Laten we het project “**heartbeat**” als voorbeeld nemen om te laten zien hoe je de code laadt.
 
-1\. Open the Web version of Makecode or the Windows 10 App Makecode, and click “<span style="color: rgb(255, 76, 65);">Import</span>” .
+1\. Open de webversie van Makecode of de Windows 10 App Makecode en klik op “<span style="color: rgb(255, 76, 65);">Importeren</span>”.
 
 ![Img](./media/A956.png)
 
-2\. “<span style="color: rgb(255, 76, 65);">Import File...</span>”
+2\. “<span style="color: rgb(255, 76, 65);">Bestand importeren...</span>”
 
 ![Img](./media/A042.png)
 
-3\. “<span style="color: rgb(255, 76, 65);">Choose File</span>”  to import the file you want to load.
+3\. “<span style="color: rgb(255, 76, 65);">Bestand kiezen</span>” om het bestand te importeren dat je wilt laden.
 
 ![Img](./media/A06.png)
 
-4\. Here we load “<span style="color: rgb(255, 76, 65);">heartbeat.hex</span>” .
+4\. Hier laden we “<span style="color: rgb(255, 76, 65);">heartbeat.hex</span>”.
 
 ![Img](./media/A28.png)
 
-5\. “<span style="color: rgb(255, 76, 65);">Go ahead √</span>”
+5\. “<span style="color: rgb(255, 76, 65);">Doorgaan √</span>”
 
 ![Img](./media/A149.png)
 
-In addition to the above method, you can also drag the the test code into the code editing area, as shown below:
+Naast bovenstaande methode kun je ook de testcode in het codebewerkingsgebied slepen, zoals hieronder getoond:
 
 ![Img](./media/A202.png)
 
-Wait for loading.
+Wacht tot het laden is voltooid.
 
 ![Img](./media/A217.png)

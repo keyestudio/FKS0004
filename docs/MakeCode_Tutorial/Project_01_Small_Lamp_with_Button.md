@@ -1,148 +1,148 @@
-### Project 01: Small Lamp with Button
+### Project 01: Kleine Lamp met Knop
 
-#### 1. Overview
+#### 1. Overzicht
 
-There are two programmable buttons on the front of the micro:bit board (A and B). We combine them with a red LED and a lamp card to build a small desk lamp. When the button A is pressed, the red LED lights up; when B is pressed, it goes off.
+Er zijn twee programmeerbare knoppen aan de voorkant van de micro:bit board (A en B). We combineren ze met een rode LED en een lampkaart om een kleine bureaulamp te bouwen. Wanneer knop A wordt ingedrukt, gaat de rode LED aan; wanneer knop B wordt ingedrukt, gaat deze uit.
 
-#### 2. Components
+#### 2. Componenten
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| micro:bit board *1 | micro:bit T-type expansion board *1 | micro USB cable *1 |
+| micro:bit board *1 | micro:bit T-type uitbreidingsbord *1 | micro USB-kabel *1 |
 | ![Img](./media/A937.png)| ![Img](./media/A944.png) | ![Img](./media/A950.png) |
-| red LED *1 | 220Ω resistor *1 | jump wire *2 |
+| rode LED *1 | 220Ω weerstand *1 | jumper draad *2 |
 | ![Img](./media/A017.png) | ![Img](./media/A024.png) | ![Img](./media/A920.png)  |
-| breadboard *1 |battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">self-provided AA batteries *2</span>) | lamp card *1 |
+| breadboard *1 | batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA batterijen *2</span>) | lampkaart *1 |
 
-#### 3. Components Knowledge
+#### 3. Componenten Kennis
 
-**Buttons**
+**Knoppen**
 
-Buttons can control the circuit on and off. When a button is connected to a circuit, the circuit is opened when the button is not pressed; the circuit will be closed after pressing the button. 
+Knoppen kunnen de schakeling aan en uit zetten. Wanneer een knop is aangesloten op een schakeling, is de schakeling open wanneer de knop niet wordt ingedrukt; de schakeling wordt gesloten nadat de knop is ingedrukt.
 
-There are three buttons on the micro:bit board: a reset button on its back and two programmable buttons (A and B) on its front.
+Er zijn drie knoppen op de micro:bit board: een resetknop aan de achterkant en twee programmeerbare knoppen (A en B) aan de voorkant.
 
 ![Img](./media/A230.png)
 
-**Resistors**
+**Weerstanden**
 
 ![Img](./media/A248.png)
 
-A resistor is an electronic component that limits the current in a branch circuit. The resistance of a fixed resistor cannot be adjusted, while that of a potentiometer or a variable resistor can.
+Een weerstand is een elektronisch component dat de stroom in een tak van een schakeling beperkt. De weerstand van een vaste weerstand kan niet worden aangepast, terwijl die van een potentiometer of variabele weerstand dat wel kan.
 
-Here are two common circuit symbols for resistors. If you see these symbols in a circuit, they represent a resistor.
+Hier zijn twee veelvoorkomende schakelsymbolen voor weerstanden. Als je deze symbolen in een schakeling ziet, vertegenwoordigen ze een weerstand.
 
 ![Img](./media/A303.png)
 
-Ω is the unit of resistance, including Ω, KΩ, MΩ, etc. They can be expressed as: 1 MΩ=1000 KΩ, 1 KΩ =1000 Ω. In general, some resistances are marked on the surface.
+Ω is de eenheid van weerstand, inclusief Ω, KΩ, MΩ, enz. Ze kunnen worden uitgedrukt als: 1 MΩ=1000 KΩ, 1 KΩ =1000 Ω. Over het algemeen zijn sommige weerstanden gemarkeerd op het oppervlak.
 
-When using a resistor, we first need to know its resistance. There are two ways: observe the color band on it, or measure its resistance by a multimeter. Obviously, the former one is more convenient and faster.
+Bij het gebruik van een weerstand moeten we eerst de weerstand weten. Er zijn twee manieren: observeer de kleurband erop, of meet de weerstand met een multimeter. Uiteraard is de eerste manier handiger en sneller.
 
 ![Img](./media/A317.png)
 
-As shown in the resistor card, each color represents a number.
+Zoals te zien op de weerstandkaart, vertegenwoordigt elke kleur een nummer.
 
 ![Img](./media/A3335.png)
 
-4-band and 5-band resistors are commonly used.
+4-bands en 5-bands weerstanden worden vaak gebruikt.
 
-Often, when you get a resistor, you may find it difficult to decide where to start reading the color.
+Vaak, wanneer je een weerstand krijgt, kan het moeilijk zijn te bepalen waar je moet beginnen met het lezen van de kleur.
 
-**Therefore, you can observe the gap between the two bands at one end of it; if it is wider than any other band gap, read from the opposite end.**
+**Daarom kun je de ruimte tussen de twee banden aan één uiteinde observeren; als deze breder is dan andere bandruimtes, lees dan vanaf het tegenovergestelde uiteinde.**
 
-<span style="color: rgb(255, 76, 65);">**Note that the gap between the 4th and 5th bands (the 3rd and 4th) is relatively wide in a 5-band (4-band) resistor.**</span>
+<span style="color: rgb(255, 76, 65);">**Let op dat de ruimte tussen de 4e en 5e banden (de 3e en 4e) relatief breed is bij een 5-bands (4-bands) weerstand.**</span>
 
-Let’s see how to read the resistance of a 5-band resistor, as shown below:
+Laten we zien hoe we de weerstand van een 5-bands weerstand lezen, zoals hieronder weergegeven:
 
 ![Img](./media/A426.png)
 
-For this resistor, the resistance should be read from left to right. The value should be: 1st band 2nd band 3rd band x 10^multiplier(Ω), ±tolerance%. 
+Voor deze weerstand moet de weerstand van links naar rechts worden gelezen. De waarde moet zijn: 1e band 2e band 3e band x 10^vermenigvuldiger(Ω), ±tolerantie%.
 
-Therefore, the resistance of this resistor is 2(red) 2(red) 0(black) × 10^0 (black)Ω = 220Ω, ±1%(brown). Learn more about [resistor from Wiki](https://en.wikipedia.org/wiki/Resistor).
+Daarom is de weerstand van deze weerstand 2(rood) 2(rood) 0(zwart) × 10^0 (zwart)Ω = 220Ω, ±1%(bruin). Leer meer over [weerstand van Wiki](https://en.wikipedia.org/wiki/Resistor).
 
 **LED**
 
-LED, fully called “light-emitting diode”, which is an electronic device made of semiconductor materials (silicon, selenium, germanium, etc.). It is polar, with a positive pole - the long pin connected to VCC (V or 3.3V or 5V or +), and a negative pole - the short pin connected to GND (G or-). The current flows from the positive to the negative, in a one-way flow.
+LED, volledig genoemd "light-emitting diode", is een elektronisch apparaat gemaakt van halfgeleidermaterialen (silicium, selenium, germanium, enz.). Het is polair, met een positieve pool - de lange pin verbonden met VCC (V of 3.3V of 5V of +), en een negatieve pool - de korte pin verbonden met GND (G of -). De stroom vloeit van positief naar negatief, in éénrichtingsstroom.
 
-Electronic and graphic symbol of LED:
+Elektronisch en grafisch symbool van LED:
 
 ![Img](./media/A515.png)
 
-LED in various sizes and colors:
+LED in verschillende maten en kleuren:
 
 ![Img](./media/A525.png)
 
-Red, yellow, blue, green and white are the most common colors of LED, which is same as their appearance colors. We rarely use transparent LED, and the light emitted may not be white. There are four sizes of LED: 3mm, 5mm(most common), 8mm and 10mm.
+Rood, geel, blauw, groen en wit zijn de meest voorkomende kleuren van LED, wat overeenkomt met hun uiterlijk. We gebruiken zelden transparante LED's, en het uitgestraalde licht is mogelijk niet wit. Er zijn vier maten LED: 3mm, 5mm (meest voorkomend), 8mm en 10mm.
 
 ![Img](./media/A535.png)
 
-Forward voltage needs to be used when the LED is on. It is a very important parameter to know when using an LED, as it determines how much power you use and how large the current limiting resistor should be. For most red, yellow, orange and light green LED, they typically use a voltage between 1.9V and 2.1V.
+Voorwaartse spanning moet worden gebruikt wanneer de LED aan is. Het is een zeer belangrijke parameter om te weten bij het gebruik van een LED, omdat het bepaalt hoeveel vermogen je gebruikt en hoe groot de stroombegrenzende weerstand moet zijn. Voor de meeste rode, gele, oranje en lichtgroene LED's gebruiken ze typisch een spanning tussen 1,9V en 2,1V.
 
 ![Img](./media/A548.png)
 
-According to Ohm's law, the current through the circuit decreases as the resistance increases, causing the LED to dim.
+Volgens de wet van Ohm neemt de stroom door de schakeling af naarmate de weerstand toeneemt, waardoor de LED dimt.
 
 I = (VP-Vl)/R
 
-In order to make the LED safe and have the right brightness, how much resistance should we use in the circuit?
+Om de LED veilig te maken en de juiste helderheid te hebben, hoeveel weerstand moeten we dan in de schakeling gebruiken?
 
-For 99% of 5mm LED, the recommended current is 20mA, which can be seen from the conditions column in its data sheet:
+Voor 99% van de 5mm LED's is de aanbevolen stroom 20mA, wat te zien is in de condities-kolom in het datasheet:
 
 ![Img](./media/A613.png)
 
-Now convert the above formula to the following:
+Nu zetten we de bovenstaande formule om in het volgende:
 
 R = (VP-Vl)/I
 
-If VP = 5V, Vl (forward voltage) = 2V, and I = 20mA, we can tell R is 150Ω. Therefore, we can make the LED brighter by reducing the resistance, but the resistance should not be below 150Ω (this value may not be accurate because the provided LED varies).
+Als VP = 5V, Vl (voorwaartse spanning) = 2V, en I = 20mA, kunnen we zeggen dat R 150Ω is. Daarom kunnen we de LED helderder maken door de weerstand te verlagen, maar de weerstand mag niet onder 150Ω komen (deze waarde kan onnauwkeurig zijn omdat de geleverde LED kan variëren).
 
-The forward voltage and wavelength of different colors of LED are shown below for your reference:
+De voorwaartse spanning en golflengte van verschillende kleuren LED zijn hieronder weergegeven ter referentie:
 
 ![Img](./media/A629.png)
 
-<span style="color: rgb(255, 76, 65);">**Do not connect a resistor with very low resistance directly to the two poles of the power supply, or the electronic components may be damaged due to excessive current. Resistors are non-polar.**</span>
+<span style="color: rgb(255, 76, 65);">**Sluit geen weerstand met zeer lage weerstand direct aan op de twee polen van de voeding, anders kunnen elektronische componenten beschadigd raken door overmatige stroom. Weerstanden zijn niet-polair.**</span>
 
 **Breadboard**
 
-Before completing any circuit, a breadboard is used for quickly designing and testing circuits. There are many holes on a breadboard that can be inserted with circuit components (say, resistors). A typical breadboard is shown below:
+Voordat je een schakeling voltooit, wordt een breadboard gebruikt om snel schakelingen te ontwerpen en te testen. Er zijn veel gaatjes op een breadboard waarin schakelingcomponenten (zoals weerstanden) kunnen worden gestoken. Een typisch breadboard wordt hieronder getoond:
 
 ![Img](./media/A655.png)
 
-A breadboard has many metal strips under it to connect to the holes at the top. They are arranged as shown below.
+Een breadboard heeft veel metalen strips eronder die verbinding maken met de gaatjes aan de bovenkant. Ze zijn gerangschikt zoals hieronder weergegeven.
 
-<span style="color: rgb(255, 76, 65);">Note that the top and bottom holes are horizontally connected, while the rest of the holes are vertically connected.</span>
+<span style="color: rgb(255, 76, 65);">Let op dat de bovenste en onderste gaatjes horizontaal verbonden zijn, terwijl de rest van de gaatjes verticaal verbonden zijn.</span>
 
 ![Img](./media/A723.png)
 
-The first two rows(top) and the last two(bottom) of the breadboard are used for the positive(+) and negative(-) poles of the power supply, respectively. The conductive layout diagram is shown below:
+De eerste twee rijen (boven) en de laatste twee (onder) van het breadboard worden respectievelijk gebruikt voor de positieve (+) en negatieve (-) polen van de voeding. Het geleidende layoutdiagram wordt hieronder getoond:
 
 ![Img](./media/A730.png)
 
-When connecting DIP(Dual In-line Packages) components, such as integrated circuits, microcontrollers, chips, etc., the groove isolates the two parts. Therefore, DIP components can be connected as shown below:
+Bij het aansluiten van DIP (Dual In-line Packages) componenten, zoals geïntegreerde schakelingen, microcontrollers, chips, enz., is de groefoleiding tussen de twee delen. Daarom kunnen DIP-componenten als hieronder worden aangesloten:
 
 ![Img](./media/A740.png)
 
 ![Img](./media/A747.png)
 
-**Jump wire and DuPont wire**
+**Jumper draad en DuPont draad**
 
-Jump wires and DuPont wires connect two terminals. There are various types of them, but here we focus on those used in breadboard. They transmit electrical signals from anywhere on the breadboard to the input/output pins of a microcontroller.
+Jumper draden en DuPont draden verbinden twee aansluitingen. Er zijn verschillende types, maar hier richten we ons op die gebruikt worden in breadboards. Ze zenden elektrische signalen van overal op het breadboard naar de input/output pinnen van een microcontroller.
 
-When using, insert “two pins” of the wires into the breadboard without soldering. Several sets of parallel boards are arranged under the surface of the breadboard, so wires only need to be inserted in specific holes in a particular prototype.
+Bij gebruik steek je "twee pinnen" van de draden in het breadboard zonder te solderen. Er zijn meerdere sets parallelle strips onder het oppervlak van het breadboard, dus draden hoeven alleen in specifieke gaatjes in een bepaald prototype te worden gestoken.
 
-There are three types of DuPont wires: F-F, M-M and M-F. On the wire, the pin is called male end(M), while the hole is female(F).
+Er zijn drie types DuPont draden: F-F, M-M en M-F. Op de draad wordt de pin mannelijke kant (M) genoemd, terwijl het gaatje vrouwelijk (F) is.
 
 ![Img](./media/A811.png)
 
-More than one type can be used in a project. Although the colors of wires are different, they serve the same purpose. Colors are used to distinguish circuits.
+Meer dan één type kan in een project worden gebruikt. Hoewel de kleuren van de draden verschillen, dienen ze hetzelfde doel. Kleuren worden gebruikt om schakelingen te onderscheiden.
 
-#### 4. Wiring Diagram
+#### 4. Aansluitschema
 
-<span style="color: rgb(255, 76, 65);">Note: the micro:bit board needs to be inserted into the T-type expansion board as shown below. The micro:bit board LED matrix should be on the same side with the logo of the expansion board.</span>
+<span style="color: rgb(255, 76, 65);">Let op: de micro:bit board moet in het T-type uitbreidingsbord worden gestoken zoals hieronder weergegeven. De micro:bit board LED-matrix moet aan dezelfde zijde zijn als het logo van het uitbreidingsbord.</span>
 
 ![Img](./media/A156.png)
 
-<span style="color: rgb(255, 76, 65);">The board control pin of LED is P0 (the pin of T-type expansion board is digital 0).</span>
+<span style="color: rgb(255, 76, 65);">De board besturingspin van de LED is P0 (de pin van het T-type uitbreidingsbord is digitaal 0).</span>
 
 #### 5. Code Flow
 
@@ -150,24 +150,24 @@ More than one type can be used in a project. Although the colors of wires are di
 
 #### 6. Test Code
 
-The code file is provided in folder Project 01：Small Lamp with Button, file Project-01-Small-Lamp-with-Button.hex.
+Het codebestand is beschikbaar in de map Project 01：Kleine Lamp met Knop, bestand Project-01-Small-Lamp-with-Button.hex.
 
 ![Img](./media/A357.png)
 
-**Load code blocks:**
+**Laad codeblokken:**
 
 ![Img](./media/A440.png)
 
-#### 7. Test Result
+#### 7. Testresultaat
 
-For Windows 10 App, click “<span style="color: rgb(255, 76, 65);">Download</span>” . For browsers, send the downloaded “<span style="color: rgb(255, 76, 65);">.hex</span>” file to the micro:bit board.
+Voor Windows 10 App, klik op “<span style="color: rgb(255, 76, 65);">Download</span>”. Voor browsers, stuur het gedownloade “<span style="color: rgb(255, 76, 65);">.hex</span>” bestand naar de micro:bit board.
 
-After downloading the code to the board, 5x5 LED matrix shows ![Img](./media/A512.png) icon. Press button A, and 5x5 LED matrix shows ![Img](./media/A518.png) icon, LED turns on. Press button B, 5x5 LED matrix shows ![Img](./media/A527.png) icon, LED goes off. Does it look like a mini lamp?
+Na het downloaden van de code naar de board, toont de 5x5 LED-matrix het ![Img](./media/A512.png) icoon. Druk op knop A, en de 5x5 LED-matrix toont het ![Img](./media/A518.png) icoon, LED gaat aan. Druk op knop B, en de 5x5 LED-matrix toont het ![Img](./media/A527.png) icoon, LED gaat uit. Lijkt het op een mini lamp?
 
-<span style="color: rgb(255, 76, 65);">**ATTENTION:** If the wiring is correct but you cannot see the results, press the reset button on the back of the board.</span>
+<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van de board.</span>
 
 ![Img](./media/A359.gif)
 
-<span style="color: rgb(255, 76, 65);">**When powering on via external power supply, turn the DIP switch to ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Bij voeding via externe voeding, zet de DIP-schakelaar op AAN.**</span>
 
 ![Img](./media/A904.png)

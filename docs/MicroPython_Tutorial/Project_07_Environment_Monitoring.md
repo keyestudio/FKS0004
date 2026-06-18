@@ -1,101 +1,101 @@
-### Project 07: Environment Monitoring
+### Project 07: Omgevingsbewaking
 
-#### 1. Overview
+#### 1. Overzicht
 
-On the OLED, the smart environment monitoring system displays the temperature and humidity values detected by the DHT11 sensor in real time, as well as the brightness level value of ambient light detected by the on-board light sensor.
+Op de OLED toont het slimme omgevingsbewakingssysteem in realtime de temperatuur- en vochtigheidswaarden die door de DHT11-sensor worden gedetecteerd, evenals de helderheidswaarde van het omgevingslicht die wordt gedetecteerd door de ingebouwde lichtsensor.
 
-#### 2. Components
+#### 2. Componenten
 
 |         ![Img](./media/A850.png)          |       ![Img](./media/A858.png)       |              ![Img](./media/A906.png)              |
 | :--------------------------------------: | :---------------------------------: | :-----------------------------------------------: |
-|            micro:bit board *1            | micro:bit T-type expansion board *1 |                micro USB cable *1                 |
+|            micro:bit board *1            | micro:bit T-type uitbreidingsbord *1 |                micro USB-kabel *1                 |
 |         ![Img](./media/A2637.png)         |       ![Img](./media/A406.png)       |              ![Img](./media/A415.png)              |
-| XHT11 temperature and humidity sensor *1 |           OLED module *1            |                   DuPont wires                    |
+| XHT11 temperatuur- en vochtigheidssensor *1 |           OLED-module *1            |                   DuPont-draadjes                  |
 |         ![Img](./media/A017.png)          |       ![Img](./media/A950.png)       |              ![Img](./media/A024.png)              |
-|              breadboard *1               |             jump wires              |battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">self-provided AA batteries *2</span>)|
+|              breadboard *1               |             jump wires              |batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA-batterijen *2</span>)|
 |         ![Img](./media/A0715.png)         |       ![Img](./media/A557.png)       |                                                   |
 |              cloud card *1               |            OLED card *1             |                                                   |
 
-#### 3. Component Knowledge
+#### 3. Componentkennis
 
-**XHT11 temperature and humidity sensor**
+**XHT11 temperatuur- en vochtigheidssensor**
 
 ![Img](./media/A2637.png)
 
-XHT11 temperature and humidity sensor is a composite sensor with calibrated digital signal output, which can detect the humidity and temperature in the air. 
+De XHT11 temperatuur- en vochtigheidssensor is een samengestelde sensor met gekalibreerde digitale signaaluitgang, die de luchtvochtigheid en temperatuur kan detecteren.
 
-**Accuracy**: humidity ±5%RH, temperature ±2℃
+**Nauwkeurigheid**: vochtigheid ±5%RH, temperatuur ±2℃
 
-**Detection range**: humidity 5%RH ~ 95%RH, temperature -25℃ ~ +60℃
+**Detectiebereik**: vochtigheid 5%RH ~ 95%RH, temperatuur -25℃ ~ +60℃
 
-The sensor uses special digital module acquisition and temperature and humidity sensing technology to ensure extremely high reliability and excellent long-term stability. It includes a resistive humidity sensing element and an NTC temperature sensing element, which is very suitable for measurement with relatively low accuracy and real-time requirements.
+De sensor gebruikt een speciale digitale module-acquisitie en temperatuur- en vochtigheidssensingtechnologie om een extreem hoge betrouwbaarheid en uitstekende lange termijn stabiliteit te garanderen. Het bevat een resistief vochtigheidssensorelement en een NTC-temperatuursensorelement, wat zeer geschikt is voor metingen met relatief lage nauwkeurigheid en realtime eisen.
 
-**XHT11 communication mode:**
+**XHT11 communicatiemodus:**
 
-Single bus communication is adopted. It means that there is only one data line for data exchange and control in the system.
+Er wordt gebruikgemaakt van single bus-communicatie. Dit betekent dat er slechts één datalijn is voor gegevensuitwisseling en controle in het systeem.
 
-- Definition of data bits transmitted by single bus:
+- Definitie van door single bus verzonden databits:
 
-Single bus data format: 40 bits of data are transmitted at a time, with the high bit coming first.
+Single bus dataformaat: 40 bits data worden in één keer verzonden, met de hoogste bit eerst.
 
-8bit humidity integer + 8bit humidity decimal + 8bit temperature integer + 8bit temperature decimal + 8bit parity bit (The decimal part of the humidity is 0)
+8bit vochtigheidsinteger + 8bit vochtigheidsdecimaal + 8bit temperatuurinteger + 8bit temperatuurdecimaal + 8bit pariteitsbit (Het decimale deel van de vochtigheid is 0)
 
-- Definition of parity bit:
+- Definitie van pariteitsbit:
 
-8bit humidity integer + 8bit humidity decimal + 8bit temperature integer + 8bit temperature decimal. 8bit parity bit = the last 8 bits of the obtained result
+8bit vochtigheidsinteger + 8bit vochtigheidsdecimaal + 8bit temperatuurinteger + 8bit temperatuurdecimaal. 8bit pariteitsbit = de laatste 8 bits van het verkregen resultaat
 
-- Data timeline:
+- Datatijdlijn:
 
-After the user host (MCU) sends a starting signal, the XHT11 switches from low power mode to high speed mode. After the starting signal, XHT11 sends a response signal and 40bit data, and triggers a signal acquisition.
+Nadat de gebruikershost (MCU) een startsignaal heeft verzonden, schakelt de XHT11 over van laag stroomverbruik naar hoge snelheid modus. Na het startsignaal zendt XHT11 een respons signaal en 40bit data, en activeert een signaalacquisitie.
 
-- The signal transmission is shown in the figure:
+- De signaaloverdracht wordt weergegeven in de afbeelding:
 
 ![Img](./media/A229.png)
 
  **Parameters**
 
-- Operating voltage: DC 3.3V to 5V
+- Bedrijfsspanning: DC 3.3V tot 5V
 
-- Operating current: 2.1mA
+- Bedrijfstroom: 2.1mA
 
-- Maximum power: 0.0105W
+- Maximale stroom: 0.0105W
 
-- Temperature range: -25℃ ~ +60℃ (± 2℃)
+- Temperatuurbereik: -25℃ ~ +60℃ (± 2℃)
 
-- Humidity range: 5%RH ~ 95%RH (accuracy ±5%RH under around 25 ° C)
+- Vochtigheidsbereik: 5%RH ~ 95%RH (nauwkeurigheid ±5%RH rond 25 °C)
 
-**Microbit Light Sensor**
+**Microbit lichtsensor**
 
 ![Img](./media/A0335.png)
 
-A light sensor is an input device that measures the brightness of external light. The micro:bit board does not include a built-in light sensor. It detects and senses ambient brightness by an LED matrix that repeatedly convert the light intensity into a value input, and then the voltage attenuation time is sampled. In this way, <span style="color: rgb(255, 76, 65);">the detected brightness level is a relative value</span>.
+Een lichtsensor is een invoerapparaat dat de helderheid van extern licht meet. De micro:bit board bevat geen ingebouwde lichtsensor. Het detecteert en meet de omgevingshelderheid via een LED-matrix die herhaaldelijk de lichtintensiteit omzet in een waarde-invoer, waarna de spanningsvervaltijd wordt bemonsterd. Op deze manier is <span style="color: rgb(255, 76, 65);">de gedetecteerde helderheidswaarde een relatieve waarde</span>.
 
-#### 4. Wiring Diagram
+#### 4. Aansluitschema
 
 ![Img](./media/A409.png)
 
-<span style="color: rgb(255, 76, 65);">**When using the OLED display, we must connect an external power supply and turn the DIP switch to ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Bij gebruik van het OLED-display moeten we een externe voeding aansluiten en de DIP-schakelaar op ON zetten.**</span>
 
 ![Img](./media/A904.png)
 
 ![Img](./media/A554.png)
 
-#### 5. Import Library
+#### 5. Bibliotheek importeren
 
-If you haven’t added the required library files yet (DHT11 and oled_ssd1306), please import it referring to [How Mu Import Library to Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit).
+Als je de benodigde bibliotheekbestanden (DHT11 en oled_ssd1306) nog niet hebt toegevoegd, importeer deze dan volgens [Hoe Mu bibliotheek importeert naar Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit).
 
-#### 6. Code Flow
+#### 6. Codeflow
 
 ![Img](./media/A638.png)
 
 
-#### 7. Test Code
+#### 7. Testcode
 
-The code file is provided in folder Project 07：Environment Monitoring中找文件Project-07-Environment-Monitoring\.py.
+Het codebestand is te vinden in de map Project 07：Environment Monitoring中找文件Project-07-Environment-Monitoring\.py.
 
 ![Img](./media/A3641.png)
 
-**Complete code:**
+**Volledige code:**
 
 ```python
 '''
@@ -129,18 +129,18 @@ while True:
     sleep(2000)
 ```
 
-#### 8. Test Result
+#### 8. Testresultaat
 
-Click “<span style="color: rgb(255, 76, 65);">Flash</span>” to load the code to the micro:bit board.
+Klik op “<span style="color: rgb(255, 76, 65);">Flash</span>” om de code op de micro:bit board te laden.
 
 ![Img](./media/A3710.png)
 
-After downloading the code to the board, **power on via micro USB cable or external power supply(turn the DIP switch to ON)**, and press the reset button on the board.
+Na het downloaden van de code naar de board, **zet de voeding aan via micro USB-kabel of externe voeding (zet de DIP-schakelaar op ON)**, en druk op de resetknop op de board.
 
 ![Img](./media/A455.png)
 
-The OLED displays the temperature and humidity values and the light brightness level in real time.
+De OLED toont in realtime de temperatuur- en vochtigheidswaarden en het lichthelderheidsniveau.
 
-<span style="color: rgb(255, 76, 65);">**ATTENTION:** If the wiring is correct but you cannot see the results, press the reset button on the back of the board.</span>
+<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaten, druk dan op de resetknop aan de achterkant van de board.</span>
 
 ![Img](./media/A838.gif)

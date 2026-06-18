@@ -1,81 +1,81 @@
-### Project 05: Car Dial
+### Project 05: Auto Wijzerplaat
 
-#### 1. Overview
+#### 1. Overzicht
 
-In this project, we combine an adjustable potentiometer, a servo and a beautiful dial card to make a simple car dial model.
+In dit project combineren we een instelbare potentiometer, een servo en een mooie wijzerplaatkaart om een eenvoudig auto wijzerplaatmodel te maken.
 
-#### 2. Components
+#### 2. Componenten
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| micro:bit board *1 | micro:bit T-type expansion board *1 | micro USB cable *1 |
+| micro:bit board *1 | micro:bit T-type uitbreidingsbord *1 | micro USB-kabel *1 |
 | ![Img](./media/A350.png)| ![Img](./media/A309.png)| ![Img](./media/A950.png) |
-| potentiometer *1 | servo *1 | jump wires |
+| potentiometer *1 | servo *1 | verbindingsdraden |
 |![Img](./media/A017.png)  | ![Img](./media/A024.png) |![Img](./media/A233.png) |
-|breadboard *1 |battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">self-provided AA batteries *2</span>)| potentiometer card *1 |
+| breadboard *1 | batterijhouder *1 <br> (<span style="color: rgb(255, 76, 65);">zelf meegebrachte AA-batterijen *2</span>)| potentiometer kaart *1 |
 |![Img](./media/A1326.png) |  |  |
-|car dial card*1| |  |
+| auto wijzerplaat kaart*1| |  |
 
-#### 3. Components Knowledge
+#### 3. Componenten Kennis
 
 **potentiometer**
 
 ![Img](./media/A350.png)
 
-A potentiometer is also a resistor element with three contacts, whose resistance value can be adjusted according to some regularity.
+Een potentiometer is ook een weerstandselement met drie aansluitingen, waarvan de weerstandwaarde volgens een bepaalde regelmaat kan worden aangepast.
 
-They come in all shapes, sizes and values, but they all have the followings in common:
+Ze zijn er in allerlei vormen, maten en waarden, maar ze hebben allemaal het volgende gemeen:
 
-① Three terminals (or connection points).
+① Drie terminals (of aansluitpunten).
 
-② A movable knob or slider that can change the resistance between the intermediate terminal and any external terminal.
+② Een beweegbare knop of schuifregelaar die de weerstand tussen de middelste terminal en een van de externe terminals kan veranderen.
 
-③ As the knob is moved, the resistance between the intermediate terminal and any external terminal varies from 0Ω to its maximum.
+③ Terwijl de knop wordt bewogen, varieert de weerstand tussen de middelste terminal en een van de externe terminals van 0Ω tot de maximale waarde.
 
-The circuit symbol of potentiometer:
+Het schakelsymbool van een potentiometer:
 
 ![Img](./media/A654.png)
 
-(1)\. As a voltage divider
+(1)\. Als spanningsdeler
 
-The potentiometer is a continuously adjustable resistor. When you rotate its slider, the moving contact slides across the resistor. At this point, a voltage can be output according to the voltage applied to potentiometer and the angle or stroke of rotation of the movable slider.
+De potentiometer is een continu instelbare weerstand. Wanneer je de schuifregelaar draait, schuift het bewegende contact over de weerstand. Op dat moment kan een spanning worden uitgegeven afhankelijk van de spanning die op de potentiometer wordt toegepast en de hoek of slag van de draaibeweging van de beweegbare schuifregelaar.
 
-(2)\. As a variable resistor
+(2)\. Als variabele weerstand
 
-When potentiometer is used as a variable resistor, connect its intermediate terminal to one of two additional terminals in the circuit. In this way, you can obtain a steady and continuously varying resistance value within the range of it.
+Wanneer de potentiometer als variabele weerstand wordt gebruikt, sluit je de middelste terminal aan op een van de twee extra terminals in het circuit. Op deze manier kun je een stabiele en continu variërende weerstandwaarde binnen het bereik verkrijgen.
 
-(3)\. As a current controller
+(3)\. Als stroomregelaar
 
-When it is used as a current controller, the moving contact must be connected as one of the output terminals.
+Wanneer het wordt gebruikt als stroomregelaar, moet het bewegende contact worden aangesloten als een van de uitgangsterminals.
 
-#### 4. Wiring Diagram
+#### 4. Aansluitschema
 
 ![Img](./media/A812.png)
 
-<span style="color: rgb(255, 76, 65);">When using the servo, we must connect an external power supply and turn the DIP switch to ON.</span>
+<span style="color: rgb(255, 76, 65);">Bij gebruik van de servo moeten we een externe voeding aansluiten en de DIP-schakelaar op ON zetten.</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A836.png)
 
-#### 5. Code Flow
+#### 5. Code Stroomdiagram
 
 ![Img](./media/A0854.png)
 
-#### 6. Test Code
+#### 6. Testcode
 
-The code file is provided in folder Project 05：Car Dial, file Project-05-Car-Dial.hex.
+Het codebestand is te vinden in map Project 05：Car Dial, bestand Project-05-Car-Dial.hex.
 
 ![Img](./media/A922.png)
 
-**Load code blocks:**
+**Laad codeblokken:**
 
 ![Img](./media/A942.png)
 
-#### 7. Test Result
+#### 7. Testresultaat
 
-After downloading the code to the board, rotate the knob on potentiometer and the servo moves the pointer on the dial.
+Na het downloaden van de code naar het bord, draai je aan de knop van de potentiometer en beweegt de servo de wijzer op de wijzerplaat.
 
-<span style="color: rgb(255, 76, 65);">**ATTENTION:** If the wiring is correct but you cannot see the results, press the reset button on the back of the board.</span>
+<span style="color: rgb(255, 76, 65);">**LET OP:** Als de bedrading correct is maar je ziet geen resultaat, druk dan op de resetknop aan de achterkant van het bord.</span>
 
 ![Img](./media/A706.gif)
