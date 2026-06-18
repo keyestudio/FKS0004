@@ -1,5 +1,3 @@
-# MakeCode_Tutorial
-
 ## 1. MakeCodeでのプログラミング
 
 以下の手順はWindowsシステム向けですが、他のシステムを使用している場合の参考にもなります。
