@@ -1,13 +1,13 @@
-## 4. トラブルシューティング
+## 4. Risoluzione dei problemi
 
-**コードアップロード時のエラー**
+**Errori durante il caricamento del codice**
 
-- コードをアップロードした後、ボードのマトリックスに乱れたアイコンが表示される場合、文字が誤って追加または削除されていないか確認してください。「check」をクリックすることもできます！![Img](./media/A5457.png)。ただし、一部はエラーではなく警告であることに注意してください。
+- Se dopo aver caricato il codice sulla matrice del micro:bit compaiono icone disordinate, verifica se sono stati accidentalmente aggiunti o cancellati dei caratteri. Puoi cliccare su “check” ![Img](./media/A5457.png). Nota però che alcuni non sono errori, ma solo avvisi.
 
-- コードにライブラリが含まれている場合、ライブラリがボードにアップロードされているか確認してください。「**How Mu Import Library to Micro:bit**」を参照してください。その後、文字が誤って追加または削除されていないか確認してください。
+- Se il codice utilizza una libreria, controlla se la libreria è stata caricata sulla scheda. Vedi “**Come Mu importa la libreria su Micro:bit**”. Poi verifica se sono stati accidentalmente aggiunti o cancellati dei caratteri.
 
-**REPLに何も表示されない**
+**Nessuna stampa su REPL**
 
-- コードをアップロードした後、「REPL」をクリックしても ![Img](./media/A5530.png) 何も表示されない場合は、micro:bitボードの背面にあるリセットボタンを押す必要があります。
+- Dopo aver caricato il codice, clicca su “REPL” ![Img](./media/A5530.png) e non viene stampato nulla. In questo caso, è necessario premere il pulsante di reset sul retro della scheda micro:bit.
 
 ![Img](./media/A455.png)

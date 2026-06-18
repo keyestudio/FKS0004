@@ -1,160 +1,160 @@
-### プロジェクト01：ボタン付き小型ランプ
+### Progetto 01: Piccola Lampada con Pulsante
 
-#### 1. 概要
+#### 1. Panoramica
 
-micro:bitボードの前面にはプログラム可能なボタンが2つ（AとB）あります。これらを赤色LEDとランプカードと組み合わせて、小さなデスクランプを作ります。ボタンAを押すと赤色LEDが点灯し、ボタンBを押すと消灯します。
+Ci sono due pulsanti programmabili sulla parte frontale della scheda micro:bit (A e B). Li combiniamo con un LED rosso e una scheda lampada per costruire una piccola lampada da scrivania. Quando si preme il pulsante A, il LED rosso si accende; quando si preme B, si spegne.
 
-#### 2. 部品
+#### 2. Componenti
 
 | ![Img](./media/A850.png) |              ![Img](./media/A858.png)              | ![Img](./media/A906.png) |
 | :---------------------: | :-----------------------------------------------: | :---------------------: |
-|   micro:bitボード *1    |        micro:bit T型拡張ボード *1                  |   micro USBケーブル *1  |
+|   scheda micro:bit *1    |        scheda di espansione micro:bit tipo T *1        |   cavo micro USB *1    |
 | ![Img](./media/A937.png) |              ![Img](./media/A944.png)              | ![Img](./media/A950.png) |
-|       赤色LED *1        |                 220Ω 抵抗 *1                        |      ジャンプワイヤー *2 |
+|       LED rosso *1        |                 resistore 220Ω *1                  |      filo jumper *2       |
 | ![Img](./media/A017.png) |              ![Img](./media/A024.png)              | ![Img](./media/A920.png) |
-|      ブレッドボード *1  | 電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>) |      ランプカード *1    |
+|      breadboard *1      | portabatterie *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>) |      scheda lampada *1       |
 
-#### 3. 部品の知識
+#### 3. Conoscenza dei Componenti
 
-**ボタン**
+**Pulsanti**
 
-ボタンは回路のオン・オフを制御します。ボタンが回路に接続されている場合、ボタンが押されていないときは回路は開いており、ボタンを押すと回路が閉じます。
+I pulsanti possono controllare l'accensione e lo spegnimento del circuito. Quando un pulsante è collegato a un circuito, il circuito è aperto quando il pulsante non è premuto; il circuito si chiude dopo aver premuto il pulsante.
 
-micro:bitボードには3つのボタンがあります：裏面のリセットボタンと、前面のプログラム可能な2つのボタン（AとB）です。
+Ci sono tre pulsanti sulla scheda micro:bit: un pulsante di reset sul retro e due pulsanti programmabili (A e B) sulla parte frontale.
 
 ![Img](./media/A230.png)
 
-**抵抗**
+**Resistori**
 
 ![Img](./media/A248.png)
 
-抵抗は回路の分岐で電流を制限する電子部品です。固定抵抗の抵抗値は調整できませんが、ポテンショメーターや可変抵抗は調整可能です。
+Un resistore è un componente elettronico che limita la corrente in un ramo del circuito. La resistenza di un resistore fisso non può essere regolata, mentre quella di un potenziometro o di un resistore variabile può esserlo.
 
-抵抗の回路記号は以下の2つが一般的です。回路図でこれらの記号を見たら抵抗を表しています。
+Ecco due simboli circuitali comuni per i resistori. Se vedi questi simboli in un circuito, rappresentano un resistore.
 
 ![Img](./media/A303.png)
 
-Ωは抵抗の単位で、Ω、KΩ、MΩなどがあります。1 MΩ=1000 KΩ、1 KΩ=1000 Ωと表せます。一般的に抵抗の表面に抵抗値が表示されています。
+Ω è l'unità di resistenza, inclusi Ω, KΩ, MΩ, ecc. Possono essere espressi come: 1 MΩ=1000 KΩ, 1 KΩ =1000 Ω. In generale, alcune resistenze sono indicate sulla superficie.
 
-抵抗を使う際はまず抵抗値を知る必要があります。抵抗値を知る方法は2つあります：色帯を観察するか、マルチメーターで測定するかです。前者の方が便利で速いです。
+Quando si usa un resistore, dobbiamo prima conoscere la sua resistenza. Ci sono due modi: osservare la banda colorata su di esso, o misurare la sua resistenza con un multimetro. Ovviamente, il primo è più comodo e veloce.
 
 ![Img](./media/A317.png)
 
-抵抗カードのように、色ごとに数字が割り当てられています。
+Come mostrato nella scheda dei resistori, ogni colore rappresenta un numero.
 
 ![Img](./media/A3335.png)
 
-4バンド抵抗と5バンド抵抗がよく使われます。
+I resistori a 4 e 5 bande sono comunemente usati.
 
-抵抗を手にしたとき、どちらの端から色を読み始めるか迷うことがあります。
+Spesso, quando si riceve un resistore, può essere difficile decidere da dove iniziare a leggere i colori.
 
-**そのため、色帯の端の2つの間隔を観察してください。もしその間隔が他の間隔より広ければ、反対側から読み始めます。**
+**Pertanto, puoi osservare lo spazio tra le due bande a un'estremità; se è più ampio di qualsiasi altro spazio tra bande, leggi dall'estremità opposta.**
 
-<span style="color: rgb(255, 76, 65);">**5バンド抵抗（4バンド抵抗）では、4番目と5番目（3番目と4番目）の色帯の間隔が比較的広いことに注意してください。**</span>
+<span style="color: rgb(255, 76, 65);">**Nota che lo spazio tra la 4ª e la 5ª banda (la 3ª e la 4ª) è relativamente ampio in un resistore a 5 bande (4 bande).**</span>
 
-以下は5バンド抵抗の読み方の例です：
+Vediamo come leggere la resistenza di un resistore a 5 bande, come mostrato di seguito:
 
 ![Img](./media/A426.png)
 
-この抵抗は左から右に読みます。値は「1番目の色帯 2番目の色帯 3番目の色帯 × 10の乗数（Ω）、許容差%」です。
+Per questo resistore, la resistenza dovrebbe essere letta da sinistra a destra. Il valore dovrebbe essere: 1ª banda 2ª banda 3ª banda x 10^moltiplicatore(Ω), ±tolleranza%.
 
-この抵抗の値は、2（赤） 2（赤） 0（黒） × 10^0（黒）Ω = 220Ω、許容差±1%（茶色）となります。詳しくは[抵抗器 - Wikipedia](https://en.wikipedia.org/wiki/Resistor)を参照してください。
+Quindi, la resistenza di questo resistore è 2(rosso) 2(rosso) 0(nero) × 10^0 (nero)Ω = 220Ω, ±1%(marrone). Per saperne di più sul [resistore da Wiki](https://en.wikipedia.org/wiki/Resistor).
 
 **LED**
 
-LEDは「発光ダイオード」の略で、半導体材料（シリコン、セレン、ゲルマニウムなど）で作られた電子デバイスです。極性があり、正極は長いピンでVCC（Vまたは3.3V、5V、+）に接続し、負極は短いピンでGND（Gまたは-）に接続します。電流は正極から負極へ一方向に流れます。
+LED, chiamato completamente “diodo a emissione luminosa”, è un dispositivo elettronico fatto di materiali semiconduttori (silicio, selenio, germanio, ecc.). È polare, con un polo positivo - il pin lungo collegato a VCC (V o 3.3V o 5V o +), e un polo negativo - il pin corto collegato a GND (G o -). La corrente scorre dal positivo al negativo, in un flusso unidirezionale.
 
-LEDの電子記号と図形記号：
+Simbolo elettronico e grafico del LED:
 
 ![Img](./media/A515.png)
 
-様々なサイズと色のLED：
+LED di varie dimensioni e colori:
 
 ![Img](./media/A525.png)
 
-赤、黄、青、緑、白が最も一般的なLEDの色で、見た目の色と同じです。透明LEDはあまり使われず、発光色は白とは限りません。LEDのサイズは3mm、5mm（最も一般的）、8mm、10mmの4種類があります。
+Rosso, giallo, blu, verde e bianco sono i colori più comuni del LED, che corrispondono ai loro colori di aspetto. Raramente si usa il LED trasparente, e la luce emessa potrebbe non essere bianca. Ci sono quattro dimensioni di LED: 3mm, 5mm (più comune), 8mm e 10mm.
 
 ![Img](./media/A535.png)
 
-LEDを点灯させる際には順方向電圧が必要です。これはLED使用時に重要なパラメータで、消費電力や電流制限抵抗の大きさを決めます。赤、黄、オレンジ、薄緑のLEDは通常1.9Vから2.1Vの電圧を使います。
+La tensione diretta deve essere usata quando il LED è acceso. È un parametro molto importante da conoscere quando si usa un LED, poiché determina quanta potenza si usa e quanto grande deve essere il resistore limitatore di corrente. Per la maggior parte dei LED rossi, gialli, arancioni e verde chiaro, tipicamente usano una tensione tra 1.9V e 2.1V.
 
 ![Img](./media/A548.png)
 
-オームの法則によれば、抵抗が大きくなると回路の電流は減り、LEDの明るさは暗くなります。
+Secondo la legge di Ohm, la corrente attraverso il circuito diminuisce all'aumentare della resistenza, causando l'attenuazione del LED.
 
-I = (VP - Vl) / R
+I = (VP-Vl)/R
 
-LEDを安全に適切な明るさで使うために、回路にどれくらいの抵抗を使うべきでしょうか？
+Per rendere il LED sicuro e con la giusta luminosità, quanta resistenza dovremmo usare nel circuito?
 
-ほとんどの5mm LEDの推奨電流は20mAで、データシートの条件欄に記載されています：
+Per il 99% dei LED da 5mm, la corrente raccomandata è 20mA, come si vede dalla colonna delle condizioni nella sua scheda tecnica:
 
 ![Img](./media/A613.png)
 
-上記の式を変形すると：
+Ora convertiamo la formula sopra nella seguente:
 
-R = (VP - Vl) / I
+R = (VP-Vl)/I
 
-VP = 5V、Vl（順方向電圧）= 2V、I = 20mAの場合、抵抗は150Ωとなります。抵抗を小さくするとLEDは明るくなりますが、抵抗は150Ω以下にしないでください（LEDの種類によって異なる場合があります）。
+Se VP = 5V, Vl (tensione diretta) = 2V, e I = 20mA, possiamo dire che R è 150Ω. Pertanto, possiamo rendere il LED più luminoso riducendo la resistenza, ma la resistenza non dovrebbe essere inferiore a 150Ω (questo valore potrebbe non essere preciso perché il LED fornito varia).
 
-異なる色のLEDの順方向電圧と波長は以下の通りです：
+La tensione diretta e la lunghezza d'onda dei LED di diversi colori sono mostrate di seguito come riferimento:
 
 ![Img](./media/A629.png)
 
-<span style="color: rgb(255, 76, 65);">**非常に低い抵抗値の抵抗を電源の両極に直接接続しないでください。過電流により電子部品が損傷する恐れがあります。抵抗は極性がありません。**</span>
+<span style="color: rgb(255, 76, 65);">**Non collegare un resistore con resistenza molto bassa direttamente ai due poli dell'alimentazione, altrimenti i componenti elettronici potrebbero danneggiarsi a causa della corrente eccessiva. I resistori non sono polari.**</span>
 
-**ブレッドボード**
+**Breadboard**
 
-回路を完成させる前に、ブレッドボードを使って回路設計やテストを素早く行います。ブレッドボードには多くの穴があり、抵抗などの回路部品を差し込めます。典型的なブレッドボードは以下の通りです：
+Prima di completare qualsiasi circuito, si usa una breadboard per progettare e testare rapidamente i circuiti. Ci sono molti fori su una breadboard in cui possono essere inseriti componenti del circuito (ad esempio, resistori). Una breadboard tipica è mostrata di seguito:
 
 ![Img](./media/A655.png)
 
-ブレッドボードの下には多くの金属ストリップがあり、上部の穴同士を接続しています。配置は以下の通りです。
+Una breadboard ha molte strisce metalliche sotto di essa per connettersi ai fori in alto. Sono disposte come mostrato di seguito.
 
-<span style="color: rgb(255, 76, 65);">**上部と下部の穴は横方向に接続されており、それ以外の穴は縦方向に接続されています。**</span>
+<span style="color: rgb(255, 76, 65);">**Nota che i fori in alto e in basso sono collegati orizzontalmente, mentre gli altri fori sono collegati verticalmente.**</span>
 
 ![Img](./media/A723.png)
 
-ブレッドボードの最初の2列（上部）と最後の2列（下部）はそれぞれ電源の正極（+）と負極（-）用です。導通レイアウトは以下の通りです：
+Le prime due file (in alto) e le ultime due (in basso) della breadboard sono usate rispettivamente per i poli positivo (+) e negativo (-) dell'alimentazione. Il diagramma della disposizione conduttiva è mostrato di seguito:
 
 ![Img](./media/A730.png)
 
-DIP（デュアルインラインパッケージ）部品、例えば集積回路、マイコン、チップなどを接続する場合、溝が2つの部分を隔離しています。したがって、DIP部品は以下のように接続できます：
+Quando si collegano componenti DIP (Dual In-line Packages), come circuiti integrati, microcontrollori, chip, ecc., la scanalatura isola le due parti. Pertanto, i componenti DIP possono essere collegati come mostrato di seguito:
 
 ![Img](./media/A740.png)
 
 ![Img](./media/A747.png)
 
-**ジャンプワイヤーとデュポン線**
+**Filo jumper e filo DuPont**
 
-ジャンプワイヤーとデュポン線は2つの端子を接続します。種類はいろいろありますが、ここではブレッドボードで使うものに注目します。これらはブレッドボードの任意の場所からマイコンの入出力ピンへ電気信号を伝えます。
+I fili jumper e i fili DuPont collegano due terminali. Esistono vari tipi, ma qui ci concentriamo su quelli usati nella breadboard. Trasmettono segnali elettrici da qualsiasi punto della breadboard ai pin di input/output di un microcontrollore.
 
-使用時はワイヤーの「両端のピン」をはんだ付けせずにブレッドボードに差し込みます。ブレッドボードの内部には複数の並列板があり、特定の穴に差し込むだけで接続できます。
+Durante l'uso, inserire “due pin” dei fili nella breadboard senza saldatura. Diverse serie di piste parallele sono disposte sotto la superficie della breadboard, quindi i fili devono essere inseriti solo in fori specifici in un particolare prototipo.
 
-デュポン線にはF-F、M-M、M-Fの3種類があります。ワイヤーのピンはオス端子（M）、穴はメス端子（F）と呼ばれます。
+Ci sono tre tipi di fili DuPont: F-F, M-M e M-F. Sul filo, il pin è chiamato estremità maschio (M), mentre il foro è femmina (F).
 
 ![Img](./media/A811.png)
 
-複数の種類をプロジェクトで使うこともあります。色は異なっても役割は同じで、色は回路を区別するために使われます。
+Più di un tipo può essere usato in un progetto. Sebbene i colori dei fili siano diversi, servono allo stesso scopo. I colori sono usati per distinguere i circuiti.
 
-#### 4. 配線図
+#### 4. Schema di Collegamento
 
-<span style="color: rgb(255, 76, 65);">注意：micro:bitボードは以下のようにT型拡張ボードに差し込む必要があります。micro:bitボードのLEDマトリクスは拡張ボードのロゴと同じ側にしてください。</span>
+<span style="color: rgb(255, 76, 65);">Nota: la scheda micro:bit deve essere inserita nella scheda di espansione tipo T come mostrato di seguito. La matrice LED della scheda micro:bit deve essere sullo stesso lato del logo della scheda di espansione.</span>
 
 ![Img](./media/A156.png)
 
-<span style="color: rgb(255, 76, 65);">**LEDの制御ピンはP0です（T型拡張ボードのピンはデジタル0）。**</span>
+<span style="color: rgb(255, 76, 65);">**Il pin di controllo della scheda per il LED è P0 (il pin della scheda di espansione tipo T è digitale 0).**</span>
 
-#### 5. コードの流れ
+#### 5. Flusso del Codice
 
 ![Img](./media/A4323.png)
 
-#### 6. テストコード
+#### 6. Codice di Test
 
-コードファイルはフォルダ Project 01：Small Lamp with Button 内の Project-01-Small-Lamp-with-Button\.py にあります。
+Il file di codice è fornito nella cartella Progetto 01：Piccola Lampada con Pulsante, file Project-01-Small-Lamp-with-Button\.py.
 
 ![Img](./media/A100.png)
 
-**完成コード：**
+**Codice completo:**
 
 ```python
 '''
@@ -177,22 +177,22 @@ while True:
         display.show(Image.SAD)   # LED matrix displays a crying face
 ```
 
-#### 7. テスト結果
+#### 7. Risultato del Test
 
-「<span style="color: rgb(255, 76, 65);">Flash</span>」をクリックしてコードをmicro:bitボードに書き込みます。
+Clicca “<span style="color: rgb(255, 76, 65);">Flash</span>” per caricare il codice sulla scheda micro:bit.
 
 ![Img](./media/A2156.png)
 
-コードをボードにダウンロードした後、**micro USBケーブルまたは外部電源で電源を入れ（DIPスイッチをONにする）、ボードのリセットボタンを押します。**
+Dopo aver scaricato il codice sulla scheda, **accendi tramite cavo micro USB o alimentazione esterna (imposta l'interruttore DIP su ON)**, e premi il pulsante di reset sulla scheda.
 
 ![Img](./media/A455.png)
 
-現象は以下の通りです：5x5 LEDマトリクスに ![Img](./media/A512.png) が表示されます。ボタンAを押すと5x5 LEDマトリクスに ![Img](./media/A518.png) が表示され、LEDが点灯します。ボタンBを押すと5x5 LEDマトリクスに ![Img](./media/A527.png) が表示され、LEDが消灯します。ミニランプのように見えますか？
+Possiamo osservare il fenomeno: la matrice LED 5x5 mostra ![Img](./media/A512.png). Premi il pulsante A, e la matrice LED 5x5 mostra ![Img](./media/A518.png), il LED si accende. Premi il pulsante B, la matrice LED 5x5 mostra ![Img](./media/A527.png), il LED si spegne. Sembra una mini lampada?
 
-<span style="color: rgb(255, 76, 65);">**注意：配線が正しいのに結果が見えない場合は、ボード裏面のリセットボタンをもう一度押してください。**</span>
+<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non vedi i risultati, premi di nuovo il pulsante di reset sul retro della scheda.</span>
 
 ![Img](./media/A359.gif)
 
-<span style="color: rgb(255, 76, 65);">外部電源で電源を入れる場合は、DIPスイッチをONにしてください。</span>
+<span style="color: rgb(255, 76, 65);">Quando si alimenta tramite alimentazione esterna, impostare l'interruttore DIP su ON.</span>
 
 ![Img](./media/A904.png)

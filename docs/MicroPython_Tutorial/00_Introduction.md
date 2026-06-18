@@ -1,203 +1,203 @@
-## 1. Muソフトウェアについて
+## 1. Informazioni sul Software Mu
 
-### 1.1. MUのインストール
+### 1.1. Installare MU
 
-[Muソフトウェア公式サイト](https://codewith.mu/)をクリックしてアクセスしてください。
+Clicca per visitare il [sito ufficiale del software Mu](https://codewith.mu/).
 
-Muは、教師や学生など初心者プログラマー向けのPythonコードエディタです。Windows、Mac OSX、Linux用の公式インストーラーから入手できます（Muは32ビットWindowsをサポートしなくなりました）。推奨バージョンはMu 1.2.0です。
+Mu è un editor di codice Python per programmatori principianti, come insegnanti e studenti. Possiamo ottenerlo tramite l'installer ufficiale per Windows, Mac OSX o Linux (Mu non supporta più Windows a 32 bit). La versione consigliata è Mu 1.2.0.
 
-**ステップ1 - OSを確認してからMuインストーラーをダウンロード**
+**Passo 1 - Assicurati del tuo sistema operativo e poi scarica l'installer di Mu**
 
-まず、コンピュータのOS（WindowsまたはMac OSX）を確認します。「**このPC**」を開き、「**プロパティ**」を見てください。
+Prima scopri il sistema operativo del tuo computer (Windows o Mac OSX). Apri “**Questo PC**” per vedere le “**Proprietà**”.
 
 ![Img](./media/A225.png)
 
-システムの種類を確認します：64ビットか32ビットか。
+Controlla il tipo di sistema: 64-bit o 32-bit.
 
 ![Img](./media/A253.png)
 
-[MUをダウンロード](https://codewith.mu/en/download)。コンピュータのOSに合わせたバージョンをダウンロードしてください。
+[Scarica MU](https://codewith.mu/en/download). Scarica la versione in base al sistema operativo del tuo computer.
 
 ![Img](./media/A348.png)
 
-<span style="color: rgb(255, 76, 65);">ここではWindowsシステムを例にしていますが、Mac OSXやLinuxの参考にもなります。</span>
+<span style="color: rgb(255, 76, 65);">Qui prendiamo come esempio il sistema Windows, che può essere un riferimento per Mac OSX e Linux.</span>
 
 ![Img](./media/A422.png)
 
-**ステップ2 - インストーラーを実行**
+**Passo 2 - Esegui l'installer**
 
-インストーラーをダブルクリックして実行します（おそらくダウンロードフォルダにあります）。
+Fai doppio clic sull'installer (probabilmente nella cartella Download) per eseguirlo.
 
 ![Img](./media/A440.png)
 
-Windows 10でMuをインストールするための追加手順を説明しています。他のバージョンもほぼ同様です。
+Abbiamo evidenziato i passaggi extra necessari per aiutare Windows a installare Mu su Windows 10. Le altre versioni saranno simili.
 
-[MacOS用Muインストーラー](https://codewith.mu/en/howto/1.1/install_macos)。
+[Installer Mu per MacOS](https://codewith.mu/en/howto/1.1/install_macos).
 
-[Linux用Muインストーラー](https://codewith.mu/en/howto/1.2/install_linux)。
+[Installer Mu per sistema Linux](https://codewith.mu/en/howto/1.2/install_linux).
 
-Windows 10の場合、Defenderが警告メッセージを表示します。「**詳細情報**」リンクをクリックしてください。
+Per Windows 10, Defender mostrerà un messaggio di avviso. Dovresti cliccare sul link “**Ulteriori informazioni**”.
 
 ![Img](./media/A615.png)
 
-メッセージが変わり、インストーラーの詳細情報と「**実行する**」ボタンが表示されます。「**実行する**」をクリック。
+Il messaggio cambierà fornendo più informazioni sull'installer e mostrerà un pulsante “**Esegui comunque**”. Clicca “**Esegui comunque**”.
 
 ![Img](./media/A626.png)
 
-**ステップ3 - ライセンス契約**
+**Passo 3 - Accordo di Licenza**
 
-ライセンスを確認し、チェックボックスを選択して「**インストール**」をクリック。
+Rivedi la licenza, seleziona la casella e clicca “**Installa**”.
 
 ![Img](./media/A1716.png)
 
-**ステップ4 - インストール中**
+**Passo 4 - Installazione**
 
-Muがコンピュータにインストールされる間、コーヒーを一杯どうぞ。
+Prenditi un caffè mentre Mu si installa sul tuo computer.
 
 ![Img](./media/A1740.png)
 
-**ステップ5 - 完了**
+**Passo 5 - Completamento**
 
-インストールが正常に完了しました。「**完了**」をクリックしてインストーラーを閉じます。
+L'installazione è stata completata con successo, clicca “**Fine**” per chiudere l'installer.
 
 ![Img](./media/A817.png)
 
-**ステップ6 - Muを起動**
+**Passo 6 - Avvia Mu**
 
-スタートメニューのアイコンをクリックするか、検索ボックスに「Mu」と入力して起動できます（下図の両方がハイライトされています）。初回起動は少し時間がかかる場合があります。
+Puoi avviare Mu cliccando sull'icona nel menu Start o digitando “Mu” nella casella di ricerca (entrambi evidenziati sotto). Al primo avvio, potrebbe richiedere un po' di tempo.
 
 ![Img](./media/A852.png)
 
-起動後の画面は以下の通りです：
+Ecco come appare:
 
 ![Img](./media/A909.png)
 
-### 1.2. モードとメニューバーの使い方
+### 1.2. Uso delle Modalità e della Barra del Menu
 
-「<span style="color: rgb(255, 76, 65);">モード</span>」をBBC micro:bitに設定します。
+Imposta “<span style="color: rgb(255, 76, 65);">Modalità</span>” su BBC micro:bit.
 
-メニューで「**Mode**」をクリックし、「**BBC micro：bit**」に設定してください。micro:bitモードはmicro:bitとの接続や操作方法を理解しています。
+Nel menu, clicca “**Modalità**” per impostarla su “**BBC micro：bit**”. La modalità micro:bit capisce come interagire e connettersi a un micro:bit.
 
 ![Img](./media/A022.png)
 
-[Muの始め方](https://codewith.mu/en/tutorials/1.1/start)をクリック。
+Clicca per [Iniziare con Mu](https://codewith.mu/en/tutorials/1.1/start).
 
-Muの使い方に関する他のチュートリアルは、https://codewith.mu/en/tutorials/ をご覧ください。
+Per ulteriori tutorial sull'uso di Mu, visita: https://codewith.mu/en/tutorials/
 
-### 1.3. Muでのプログラム
+### 1.3. Programmare su Mu
 
-ここでは「<span style="color: rgb(255, 76, 65);">heartbeat\.py</span>」をMuに読み込みます。提供した「<span style="color: rgb(255, 76, 65);">Heart beat</span>」フォルダ内にあります。
+Qui carichiamo il file “<span style="color: rgb(255, 76, 65);">heartbeat\.py</span>” su Mu. Lo trovi nella cartella “<span style="color: rgb(255, 76, 65);">Heart beat</span>” che abbiamo fornito.
 
 ![Img](./media/A200.png)
 
-**方法1：**
+**Metodo uno:**
 
-Muを開き、「<span style="color: rgb(255, 76, 65);">Load</span>」をクリックして、コードをダウンロードしたパスを選択します。
+Apri Mu e clicca “<span style="color: rgb(255, 76, 65);">Carica</span>” per scegliere il percorso dove hai scaricato il codice.
 
 ![Img](./media/A341.png)
 
 ![Img](./media/A345.png)
 
-正常に読み込まれました。下図の通りです：
+Caricato con successo, come mostrato sotto:
 
 ![Img](./media/A354.png)
 
-**方法2：**
+**Metodo due:**
 
-「new」 ![Img](./media/A503.png)をクリックして新しいプログラムを作成し、「heartbeat\.py」をドラッグ＆ドロップします：
+Clicca “nuovo” ![Img](./media/A503.png) per creare un nuovo programma e trascina “heartbeat\.py” dentro:
 
 ![Img](./media/A521.png)
 
-正常に読み込まれました。下図の通りです：
+Caricato con successo, come mostrato sotto:
 
 ![Img](./media/A533.png)
 
-<span style="color: rgb(255, 76, 65);">他のコードを追加する場合も同様です。</span>
+<span style="color: rgb(255, 76, 65);">Lo stesso vale per aggiungere altri codici.</span>
 
-### 1.4. コードをMicro:bitにダウンロード
+### 1.4. Scaricare il Codice su Micro:bit
 
-USBケーブルでボードをコンピュータに接続します。
+Collega la scheda al computer tramite cavo USB.
 
 ![Img](./media/A252.png)
 
-「<span style="color: rgb(255, 76, 65);">**Flash**</span>」をクリックしてコードをmicro:bitボードにダウンロードします。
+Clicca “<span style="color: rgb(255, 76, 65);">**Flash**</span>” per scaricare il codice sulla scheda micro:bit.
 
 ![Img](./media/A3728.png)
 
-その後、<span style="color: rgb(255, 76, 65);">**micro USBケーブルまたは外部電源で電源を入れます（DIPスイッチをONにしてください）**</span>。オンボードの5×5 LEDマトリックスが繰り返し ![Img](./media/A903.png) と ![Img](./media/A910.png) を表示します。
+Dopo, <span style="color: rgb(255, 76, 65);">**accendi tramite il cavo micro USB o alimentazione esterna (imposta l'interruttore DIP su ON)**</span>. Vedrai la matrice LED 5×5 a bordo mostrare ripetutamente ![Img](./media/A903.png) e poi ![Img](./media/A910.png).
 
-<span style="color: rgb(255, 76, 65);">**コードにエラーがあってもダウンロードは可能ですが、正常に動作しません。**</span>
+<span style="color: rgb(255, 76, 65);">**Nota che se c'è un errore nel tuo codice, potrebbe comunque essere scaricato ma non funzionerà correttamente.**</span>
 
-<span style="color: rgb(0, 209, 0);">例えば、関数sleep()をsleeps()と書いてしまった場合、「**Flash**」をクリックしてmicro:bitにコードをロードしても、5×5 LEDマトリックスは乱れたアイコンを表示します。</span>
+<span style="color: rgb(0, 209, 0);">Ad esempio, la funzione sleep() è scritta come sleeps() nel codice. Clicca “**Flash**” per caricare il codice sul micro:bit. Tuttavia, la matrice LED 5×5 mostra icone confuse.</span>
 
 ![Img](./media/A4003.png)
 
-この場合、「**REPL**」をクリックし、ボード背面のリセットボタンを押します。エラーメッセージがREPL画面に表示されます。下図参照：
+In questo caso, clicca “**REPL**” e premi il pulsante reset sulla scheda sul retro. Il messaggio di errore sarà mostrato nell'interfaccia REPL, come mostrato sotto:
 
 ![Img](./media/A029.png)
 
 ![Img](./media/A033.png)
 
-再度「**REPL**」をクリックしてREPLを閉じ、「<span style="color: rgb(255, 76, 65);">**Flash**</span>」をクリックします。
+Clicca di nuovo “**REPL**” per chiudere REPL. Poi clicca “<span style="color: rgb(255, 76, 65);">**Flash**</span>”.
 
-コードが正しいか確認するために、完了後「<span style="color: rgb(255, 76, 65);">**Check**</span>」をクリックすると、Muがコードのエラーを指摘します。
+Per assicurarti che il codice sia corretto, clicca “<span style="color: rgb(255, 76, 65);">**Controlla**</span>” dopo aver finito, e Mu indicherà l'errore nel codice.
 
 ![Img](./media/A119.png)
 
-エラーメッセージに従ってコードを修正し、再度「<span style="color: rgb(255, 76, 65);">**Check**</span>」をクリックします。Muがエラーを表示しなければOKです。
+Modifica il codice secondo il messaggio di errore, e clicca di nuovo “<span style="color: rgb(255, 76, 65);">**Controlla**</span>”. Mu non mostrerà errori.
 
 ![Img](./media/A134.png)
 
-[Muの特定の機能を説明する他のチュートリアル](https://codewith.mu/en/tutorials/)もご覧ください。
+Vedi [più tutorial che spiegano aspetti specifici di Mu](https://codewith.mu/en/tutorials/).
 
-## 2. MuからMicro:bitへのライブラリのインポート方法
+## 2. Come Mu Importa le Librerie su Micro:bit
 
-<span style="color: rgb(255, 76, 65);">ライブラリをインポートする前に、.pyコード（空のコードでも可）をmicro:bitボードにアップロードする必要があります。ここでは空のコードを例にします。</span>
+<span style="color: rgb(255, 76, 65);">Prima di importare le librerie, dobbiamo caricare un codice .py (anche vuoto va bene) sulla scheda micro:bit. Qui prendiamo come esempio un codice vuoto.</span>
 
-USBケーブルでボードをコンピュータに接続し、Muを開いて「Flash」をクリックして.pyコード（空のコード）をボードにアップロードします。
+Collega la scheda al computer tramite cavo USB. Apri Mu e clicca “Flash” per caricare il codice .py (vuoto) sulla scheda.
 
 ![Img](./media/A252.png)
 
-このチュートリアルではOLEDとDHT11モジュールを使用します。したがって、「<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>」と「<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>」のライブラリファイルをmicro:bitボードにインポートする必要があります。
+In questo tutorial, vengono usati i moduli OLED e DHT11. Pertanto, i file di libreria “<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>” e “<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>” devono essere importati nella scheda micro:bit.
 
-Muがファイルを保存するデフォルトのディレクトリは、ユーザーディレクトリのルートにある「mu_code」です。
+La directory predefinita dove Mu salva i file è “mu_code” nella directory principale dell'utente.
 
-参考リンク：[https://codewith.mu/en/tutorials/1.0/files](https://codewith.mu/en/tutorials/1.0/files)
+Link di riferimento: [https://codewith.mu/en/tutorials/1.0/files](https://codewith.mu/en/tutorials/1.0/files)
 
-**ライブラリのインポート手順：**
+**Istruzioni per importare le librerie:**
 
-1\. ディスク(C:)で「<span style="color: rgb(255, 76, 65);">mu_code</span>」フォルダを探します。
+1\. Cerca la cartella “<span style="color: rgb(255, 76, 65);">mu_code</span>” nel Disco (C:).
 
 ![Img](./media/A543.png)
 
 ![Img](./media/A550.png)
 
-2\. 「<span style="color: rgb(255, 76, 65);">mu_code</span>」を開きます。
+2\. Apri “<span style="color: rgb(255, 76, 65);">mu_code</span>”.
 
 ![Img](./media/A628.png)
 
-3\. ライブラリファイル「<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>」と「<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>」を「<span style="color: rgb(255, 76, 65);">**Libraries**</span>」にコピー＆ペーストします。
+3\. Copia e incolla i file di libreria “<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>” e “<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>” in “<span style="color: rgb(255, 76, 65);">**Libraries**</span>”.
 
 ![Img](./media/A4716.png)
 
-4\. 下図のようになります：
+4\. Come mostrato sotto:
 
 ![Img](./media/A735.png)
 
-5\. Muを開き、「<span style="color: rgb(255, 76, 65);">**Files**</span>」をクリックします。ここで「<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>」ライブラリをmicro:bitにドラッグします。
+5\. Apri Mu e clicca “<span style="color: rgb(255, 76, 65);">**Files**</span>”. Qui trascini la libreria “<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>” nel micro:bit.
 
 ![Img](./media/A816.png)
 
 ![Img](./media/A820.png)
 
-6\. 「<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>」をインポートすると、左のボックスに表示されます。
+6\. Dopo aver importato “<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>”, la vedrai nella casella a sinistra.
 
 ![Img](./media/A841.png)
 
-7\. 「<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>」も同様に行います。
+7\. Facciamo lo stesso con “<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>”.
 
 ![Img](./media/A916.png)
 
 ![Img](./media/A4920.png)
 
-<span style="color: rgb(255, 76, 65);">**他のファイルをmicro:bitにアップロードすると元の内容が上書きされるため、次回使う際には再度インポートが必要です。**</span>
+<span style="color: rgb(255, 76, 65);">**Nota che quando carichi altri file sul micro:bit, sovrascriveranno il contenuto originale quindi devi reimportarli la prossima volta che li usi.**</span>

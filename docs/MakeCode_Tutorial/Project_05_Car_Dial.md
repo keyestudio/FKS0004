@@ -1,81 +1,81 @@
-### プロジェクト05：カー ダイヤル
+### Progetto 05: Quadrante Auto
 
-#### 1. 概要
+#### 1. Panoramica
 
-このプロジェクトでは、調整可能なポテンショメータ、サーボ、そして美しいダイヤルカードを組み合わせて、シンプルなカー ダイヤルモデルを作成します。
+In questo progetto, combiniamo un potenziometro regolabile, un servo e una bella scheda quadrante per realizzare un semplice modello di quadrante per auto.
 
-#### 2. 部品
+#### 2. Componenti
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| micro:bit ボード *1 | micro:bit T型拡張ボード *1 | micro USB ケーブル *1 |
+| scheda micro:bit *1 | scheda di espansione micro:bit tipo T *1 | cavo micro USB *1 |
 | ![Img](./media/A350.png)| ![Img](./media/A309.png)| ![Img](./media/A950.png) |
-| ポテンショメータ *1 | サーボ *1 | ジャンプワイヤー |
+| potenziometro *1 | servo *1 | fili jumper |
 |![Img](./media/A017.png)  | ![Img](./media/A024.png) |![Img](./media/A233.png) |
-| ブレッドボード *1 | 電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)| ポテンショメータカード *1 |
+|breadboard *1 |portapile *1 <br> (<span style="color: rgb(255, 76, 65);">pile AA auto-fornite *2</span>)| scheda potenziometro *1 |
 |![Img](./media/A1326.png) |  |  |
-| カーダイヤルカード*1| |  |
+|scheda quadrante auto*1| |  |
 
-#### 3. 部品の知識
+#### 3. Conoscenze sui Componenti
 
-**ポテンショメータ**
+**potenziometro**
 
 ![Img](./media/A350.png)
 
-ポテンショメータは3つの端子を持つ抵抗素子であり、その抵抗値は一定の規則に従って調整可能です。
+Un potenziometro è anche un elemento resistivo con tre contatti, il cui valore di resistenza può essere regolato secondo una certa regolarità.
 
-形状、サイズ、値は様々ですが、共通点は以下の通りです：
+Sono disponibili in tutte le forme, dimensioni e valori, ma hanno tutti in comune:
 
-① 3つの端子（または接続点）。
+① Tre terminali (o punti di connessione).
 
-② 可動ノブまたはスライダーがあり、中間端子と任意の外部端子間の抵抗を変化させることができる。
+② Una manopola o cursore mobile che può cambiare la resistenza tra il terminale intermedio e qualsiasi terminale esterno.
 
-③ ノブを動かすと、中間端子と任意の外部端子間の抵抗が0Ωから最大値まで変化する。
+③ Quando la manopola viene spostata, la resistenza tra il terminale intermedio e qualsiasi terminale esterno varia da 0Ω al suo massimo.
 
-ポテンショメータの回路記号：
+Il simbolo circuitale del potenziometro:
 
 ![Img](./media/A654.png)
 
-(1)\. 電圧分割器として
+(1)\. Come partitore di tensione
 
-ポテンショメータは連続可変抵抗器です。スライダーを回転させると、可動接点が抵抗体上をスライドします。この時、ポテンショメータに印加された電圧と可動スライダーの角度やストロークに応じて電圧を出力できます。
+Il potenziometro è una resistenza regolabile continuamente. Quando si ruota il suo cursore, il contatto mobile scorre lungo la resistenza. A questo punto, può essere fornita una tensione in uscita in base alla tensione applicata al potenziometro e all'angolo o corsa di rotazione del cursore mobile.
 
-(2)\. 可変抵抗器として
+(2)\. Come resistore variabile
 
-ポテンショメータを可変抵抗器として使う場合、中間端子を回路の2つの追加端子のいずれかに接続します。これにより、その範囲内で安定かつ連続的に変化する抵抗値を得られます。
+Quando il potenziometro è usato come resistore variabile, si collega il suo terminale intermedio a uno dei due terminali aggiuntivi nel circuito. In questo modo, si può ottenere un valore di resistenza stabile e continuamente variabile all'interno del suo intervallo.
 
-(3)\. 電流制御器として
+(3)\. Come controllore di corrente
 
-電流制御器として使う場合、可動接点を出力端子の一つとして接続します。
+Quando è usato come controllore di corrente, il contatto mobile deve essere collegato come uno dei terminali di uscita.
 
-#### 4. 配線図
+#### 4. Schema di Collegamento
 
 ![Img](./media/A812.png)
 
-<span style="color: rgb(255, 76, 65);">サーボを使用する場合は、外部電源を接続し、DIPスイッチをONにしてください。</span>
+<span style="color: rgb(255, 76, 65);">Quando si usa il servo, dobbiamo collegare un'alimentazione esterna e impostare l'interruttore DIP su ON.</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A836.png)
 
-#### 5. コードフロー
+#### 5. Flusso del Codice
 
 ![Img](./media/A0854.png)
 
-#### 6. テストコード
+#### 6. Codice di Test
 
-コードファイルはフォルダ Project 05：Car Dial 内の Project-05-Car-Dial.hex にあります。
+Il file del codice è fornito nella cartella Progetto 05：Quadrante Auto, file Project-05-Car-Dial.hex.
 
 ![Img](./media/A922.png)
 
-**コードブロックの読み込み：**
+**Carica i blocchi di codice:**
 
 ![Img](./media/A942.png)
 
-#### 7. テスト結果
+#### 7. Risultato del Test
 
-コードをボードにダウンロードした後、ポテンショメータのノブを回すと、サーボがダイヤル上のポインタを動かします。
+Dopo aver scaricato il codice sulla scheda, ruotare la manopola sul potenziometro e il servo muove l'indicatore sul quadrante.
 
-<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が見えない場合は、ボード裏面のリセットボタンを押してください。</span>
+<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non si vedono risultati, premere il pulsante di reset sul retro della scheda.</span>
 
 ![Img](./media/A706.gif)

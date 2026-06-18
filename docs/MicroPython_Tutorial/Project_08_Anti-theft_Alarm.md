@@ -1,48 +1,48 @@
-### プロジェクト08：防犯アラーム
+### Progetto 08: Allarme Antifurto
 
-#### 1. 概要
+#### 1. Panoramica
 
-スマート防犯アラームが防犯ボックスの移動を検知すると、micro:bitボードのスピーカーがアラームを鳴らし、赤色LEDが点滅します。
+Quando l'allarme antifurto intelligente rileva che la scatola antifurto è stata spostata, l'altoparlante sulla scheda micro:bit emetterà un allarme e il LED rosso lampeggierà.
 
-#### 2. 部品
+#### 2. Componenti
 
 | ![Img](./media/A850.png) |              ![Img](./media/A858.png)              | ![Img](./media/A906.png) |
 | :---------------------: | :-----------------------------------------------: | :---------------------: |
-|   micro:bitボード *1    |        micro:bit T型拡張ボード *1                 |   micro USBケーブル *1  |
+|   scheda micro:bit *1   |        scheda di espansione micro:bit tipo T *1   |   cavo micro USB *1     |
 | ![Img](./media/A937.png) |              ![Img](./media/A944.png)              | ![Img](./media/A950.png) |
-|       赤色LED *1        |                 220Ω抵抗 *1                        |      ジャンパーワイヤー *2       |
+|       LED rosso *1      |                 resistore 220Ω *1                  |      filo jumper *2     |
 | ![Img](./media/A017.png) |              ![Img](./media/A024.png)              | ![Img](./media/A952.png) |
-|      ブレッドボード *1      |電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)|      アラームカード *1      |
+|      breadboard *1      |portabatterie *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>)|      scheda allarme *1  |
 
-#### 3. 部品の知識
+#### 3. Conoscenza dei Componenti
 
-**加速度センサー**
+**Accelerometro**
 
 ![Img](./media/A026.png)
 
-micro:bitボードにはLSM303AGR加速度センサー（加速度計）が内蔵されており、標準、ファスト、プラス、高速モード（100 kHz、400 kHz、1 MHz、3.4 MHz）のI2CシリアルバスインターフェースとSPIシリアル標準インターフェースを備えています。分解能は8/10/12ビットで、測定範囲は±2g、±4g、または±8gです。
+La scheda micro:bit dispone di un sensore di accelerazione integrato LSM303AGR (chiamato accelerometro) che include modalità standard, veloce, plus e ad alta velocità (100 kHz, 400 kHz, 1 MHz e 3,4 MHz) per l'interfaccia bus seriale I2C e interfaccia standard seriale SPI per comunicazione esterna, con risoluzione di 8/10/12 bit e intervallo di ±2g, ±4g o ±8g.
 
-micro:bitボードが静止または等速運動中の場合、加速度計は重力加速度のみを検出します。わずかに揺らすと検出される加速度は重力加速度よりかなり小さいため、その差は無視できます。したがって、主にx、y、z軸の重力加速度の変化を検出します。
+Quando la scheda micro:bit è a riposo o in moto uniforme, l'accelerometro rileva solo l'accelerazione di gravità. Se viene leggermente oscillata, l'accelerazione rilevata è molto inferiore a quella della gravità, quindi la differenza può essere ignorata. Pertanto, rileviamo principalmente il cambiamento dell'accelerazione gravitazionale sugli assi x, y e z.
 
-#### 4. 配線図
+#### 4. Schema di Collegamento
 
 ![Img](./media/A219.png)
 
-<span style="color: rgb(255, 76, 65);">LEDのボード制御ピンはP1です（T型拡張ボードのピンはデジタル1）。</span>
+<span style="color: rgb(255, 76, 65);">Il pin di controllo della scheda per il LED è P1 (il pin della scheda di espansione tipo T è digitale 1).</span>
 
-#### 5. コードの流れ
+#### 5. Flusso del Codice
 
 ![Img](./media/A4434.png)
 
-#### 6. テストコード
+#### 6. Codice di Test
 
-コードファイルはフォルダ Project 08：Burglar Alarm 内のファイル Project-08-Burglar-Alarm\.py にあります。
+Il file di codice è fornito nella cartella Progetto 08：Allarme Antifurto, file Project-08-Burglar-Alarm\.py.
 
 ![Img](./media/A3743.png)
 
-**完成コード：**
+**Codice completo:** 
 
-<span style="color: rgb(255, 76, 65);">**コードをインポート後、ブレッドボードを動かしていないのにブザーが鳴り続ける場合は、地理的要因が原因かもしれません。条件内の閾値 -60 と 50 を実際の状況に合わせて調整してください。**</span>
+<span style="color: rgb(255, 76, 65);">**Dopo aver importato il codice, se il buzzer suona continuamente anche se la breadboard non viene spostata; potrebbe essere causato da fattori geografici. Puoi modificare la soglia nelle condizioni -60 e 50 in base alle condizioni reali.**</span>
 
 ```python
 '''
@@ -70,18 +70,18 @@ while True:
         music.reset()             # no tone
 ```
 
-#### 7. テスト結果
+#### 7. Risultato del Test
 
-「<span style="color: rgb(255, 76, 65);">Flash</span>」をクリックしてコードをmicro:bitボードに書き込みます。
+Clicca “<span style="color: rgb(255, 76, 65);">Flash</span>” per caricare il codice sulla scheda micro:bit.
 
 ![Img](./media/A3757.png)
 
-コードを書き込んだ後、**micro USBケーブルまたは外部電源で電源を入れ（DIPスイッチをONにする）、ボードのリセットボタンを押します。**
+Dopo aver scaricato il codice sulla scheda, **accendi tramite cavo micro USB o alimentazione esterna (imposta l'interruttore DIP su ON)**, e premi il pulsante di reset sulla scheda.
 
 ![Img](./media/A455.png)
 
-コードを書き込んだ後、ブレッドボードを動かします。加速度値 x＜-60 または x＞50 の場合、ボードのスピーカーがアラームを鳴らし、LEDが点滅し、micro:bitのLEDマトリックスに ![Img](./media/A706.png) が表示されます。そうでなければ、スピーカーは音を出さずLEDは消灯し、micro:bitのLEDマトリックスに ![Img](./media/A720.png) が表示されます。
+Dopo aver scaricato il codice sulla scheda, muovi la breadboard. Se il valore di accelerazione x＜-60 o x＞50, l'altoparlante sulla scheda emette l'allarme e il LED lampeggia, e la matrice LED del micro:bit mostra ![Img](./media/A706.png). Altrimenti, l'altoparlante non emette suono e il LED è spento, e la matrice LED del micro:bit mostra ![Img](./media/A720.png).
 
-<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が見えない場合は、ボード裏面のリセットボタンを押してください。</span>
+<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non vedi i risultati, premi il pulsante di reset sul retro della scheda.</span>
 
 ![Img](./media/A936.gif)

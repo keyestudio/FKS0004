@@ -1,234 +1,234 @@
-## 1. MakeCodeでのプログラミング
+## 1. Programmazione su MakeCode
 
-以下の手順はWindowsシステム向けですが、他のシステムを使用している場合の参考にもなります。
+Le seguenti istruzioni si applicano al sistema Windows ma possono anche servire come riferimento se si utilizza un sistema diverso.
 
-#### 1.1. クイックスタート
+#### 1.1. Avvio rapido
 
-**ステップ1 micro:bitに接続**
+**Passo 1 Collegare al micro:bit**
 
-USBケーブルでボードをコンピューターに接続します。
+Collegare la scheda al computer tramite cavo USB.
 
 ![Img](./media/A800.png)
 
-ボードの裏側の赤いLEDが点灯していれば、ボードに電源が供給されています。コンピューターがUSBケーブル経由でメインボードと通信すると、黄色のLEDが点滅します。例えば、「.hex」ファイルを書き込むときに点滅します。
+Se il LED rosso sul retro della scheda è acceso, significa che la scheda è alimentata. Quando il computer comunica con la scheda principale tramite il cavo USB, il LED giallo lampeggia. Ad esempio, lampeggia quando si carica un file “.hex”.
 
-その後、Micro:bitメインボードは「MICROBIT」という名前のドライバーとしてコンピューターに表示されます。以下のように通常のUSBディスクではないことに注意してください。
+La scheda principale Micro:bit apparirà quindi sul computer come un driver chiamato “MICROBIT”. Si noti che non è un disco USB ordinario come mostrato di seguito.
 
 ![Img](./media/A849.png)
 
-**ステップ2 heartbeatプログラムを書く**
+**Passo 2 Scrivere il programma heartbeat**
 
-リンクにアクセス：[Makecodeオンライン版](https://makecode.microbit.org/)
+Accedi al link: [versione online di Makecode](https://makecode.microbit.org/)
 
-「<span style="color: rgb(255, 76, 65);">新しいプロジェクト</span>」をクリックすると「<span style="color: rgb(255, 76, 65);">プロジェクトを作成中</span>」が表示され、「<span style="color: rgb(255, 76, 65);">heartbeat</span>」と入力し、「<span style="color: rgb(255, 76, 65);">作成 √</span>」をクリックします。
+Clicca su “<span style="color: rgb(255, 76, 65);">Nuovo Progetto</span>” e vedrai “<span style="color: rgb(255, 76, 65);">Creazione di un progetto</span>”, inserisci “<span style="color: rgb(255, 76, 65);">heartbeat</span>” e clicca su “<span style="color: rgb(255, 76, 65);">Crea √</span>”.
 
-<span style="color: rgb(255, 76, 65);">ここではGoogle Chromeでプログラムを書きます。</span>
+<span style="color: rgb(255, 76, 65);">Qui scriviamo programmi su Google Chrome.</span>
 
 ![Img](./media/A021.png)
 
-micro:bitのコードを書いてみましょう。
+Scriviamo un codice micro:bit.
 
-いくつかのブロックを編集エリアにドラッグし、下記のようにシミュレーターでプログラムを実行できます。ここでは<span style="color: rgb(255, 76, 65);">heartbeat</span>プログラムの編集方法を示します。
+Puoi trascinare alcuni blocchi nell'area di modifica e quindi eseguire il programma nel simulatore come mostrato di seguito. Qui dimostriamo come modificare il programma <span style="color: rgb(255, 76, 65);">heartbeat</span>.
 
-操作動画ガイド：
+Video guida operativa:
 
 ![Img](./media/A100.png)
 
-**ステップ3 コードをダウンロード**
+**Passo 3 Scaricare i codici**
 
-一般的に、Windows 10アプリ（[Windows 10アプリを入手](https://apps.microsoft.com/detail/9pjc7sv48lcx?hl=zh-CN&gl=CN#activetab=pivot:overviewtabdocx)）（クリック））では、「<span style="color: rgb(255, 76, 65);">ダウンロード</span>」をクリックするだけで、追加の手順なしにコードがmicro:bitボードに直接ダウンロードされます。
+Generalmente, per l'app Windows 10 ([Ottieni l'app Windows 10](https://apps.microsoft.com/detail/9pjc7sv48lcx?hl=zh-CN&gl=CN#activetab=pivot:overviewtabdocx))(Clicca), basta cliccare su “<span style="color: rgb(255, 76, 65);">Download</span>” per scaricare direttamente il codice sulla scheda micro:bit senza ulteriori passaggi.
 
-ブラウザの場合は：
+Per i browser, invece:
 
-エディター内の「<span style="color: rgb(255, 76, 65);">ダウンロード</span>」をクリックします。これにより、micro:bitボードが読み取れる形式の「hex」ファイルがダウンロードされます。その後、USBドライブにファイルをコピーするように、micro:bitボードにコピーしてください。Windowsでは、「<span style="color: rgb(255, 76, 65);">.hex</span>」ファイルを右クリックし、「**送る → MICROBIT**」を選択してmicro:bitボードにコピーすることもできます。
+Clicca su “<span style="color: rgb(255, 76, 65);">Download</span>” nell'editor. Questo scaricherà un file “hex”, un formato che la scheda micro:bit può leggere. Successivamente, copialo sulla tua scheda micro:bit come faresti con un file su una chiavetta USB. Su Windows, puoi anche cliccare con il tasto destro sul file “<span style="color: rgb(255, 76, 65);">.hex</span>” e selezionare “**Invia a → MICROBIT**” per copiare il file sulla scheda micro:bit.
 
 ![Img](./media/A319.png)
 
 ![Img](./media/A449.png)
 
-または、「<span style="color: rgb(255, 76, 65);">.hex</span>」ファイルを直接MICROBITにドラッグしても構いません。
+Oppure, puoi trascinare direttamente il file “<span style="color: rgb(255, 76, 65);">.hex</span>” in MICROBIT.
 
 ![Img](./media/A341.png)
 
 ![Img](./media/A345.png)
 
-「<span style="color: rgb(255, 76, 65);">.hex</span>」ファイルをMicro:bitにコピーしている間、ボードの裏側の黄色いLEDが点滅します。コピーが完了すると、LEDは点滅を止めて点灯したままになります。
+Durante la copia del file “<span style="color: rgb(255, 76, 65);">.hex</span>” sul Micro:bit, il LED giallo sul retro della scheda lampeggia. Quando la copia è completata, il LED smette di lampeggiare e rimane acceso.
 
-**ステップ4 プログラムを実行**
+**Passo 4 Eseguire il programma**
 
-プログラムがMicro:bitにアップロードされたら、USBケーブルまたは外部電源で電源を供給できます。すると5 x 5のLEDドットマトリックスにハートビートパターンが表示されます。
+Dopo che il programma è stato caricato sul Micro:bit, puoi alimentarlo tramite cavo USB o alimentazione esterna. La matrice LED 5 x 5 mostrerà un motivo a battito cardiaco.
 
 ![Img](./media/A425.png)
 
-<span style="color: rgb(255, 76, 65);">**注意：**</span> プログラムを実行するたびに、Micro:bitのドライバーは自動的に取り出されて戻るため、hexファイルは消えます。ボードはhexファイルにアクセスするだけで保存はしません。
+<span style="color: rgb(255, 76, 65);">**Attenzione:**</span> Ogni volta che programmi, il driver del Micro:bit si espelle automaticamente e ritorna, quindi i file hex scompaiono. La scheda ha solo accesso ai file hex ma non li salva.
 
 #### 1.2. MakeCode
 
-[Makecode Google Chromeオンライン版](https://makecode.microbit.org/)にアクセスします。これがメインインターフェースです。
+Accedi alla [versione online Makecode Google Chrome](https://makecode.microbit.org/). Ecco la sua interfaccia principale.
 
 ![Img](./media/A637.png)
 
-コード編集エリアには「**on start**」と「**forever**」のブロックがあります。<span style="color: rgb(255, 76, 65);">電源オン後、「on start」のコードは一度だけ実行され、「forever」のコードは繰り返し実行されます。</span>
+Nell'area di modifica del codice ci sono i blocchi “**on start**” e “**forever**”. <span style="color: rgb(255, 76, 65);">Dopo l'accensione, il codice in “on start” viene eseguito una sola volta, mentre quello in “forever” viene eseguito ciclicamente.</span>
 
-「**JS JavaScript**」言語をクリック：
+Clicca sulla lingua “**JS JavaScript**”:
 
 ![Img](./media/A754.png)
 
-「**Python**」言語に切り替え：
+Cambia in “**Python**”:
 
 ![Img](./media/A814.png)
 
 
-#### 1.3. WebUSB機能の紹介
+#### 1.3. Introduzione alle funzioni WebUSB
 
-前述の通り、Windows 10のコンピューターでMakeCodeアプリをダウンロードしている場合、「<span style="color: rgb(255, 76, 65);">ダウンロード</span>」ボタンでコードを素早くボードにダウンロードできます。USB接続されたハードウェアデバイスにアクセスするために**<span style="color: rgb(255, 76, 65);">Google Chrome</span>**のwebUSBを使用しています。
+Come detto prima, se il tuo computer è Windows 10 e hai scaricato l'app MakeCode, puoi scaricare rapidamente i codici sulla scheda tramite il pulsante “<span style="color: rgb(255, 76, 65);">Download</span>”. Usiamo il webUSB di **<span style="color: rgb(255, 76, 65);">Google Chrome</span>** per accedere al dispositivo hardware collegato via USB.
 
-**デバイスのペアリング：**
+**Accoppiamento dispositivi:**
 
-1\. USBケーブルでボードをコンピューターに接続。
+1\. Collega la scheda al computer tramite cavo USB.
 
 ![Img](./media/A951.png)
 
-2\. 「<span style="color: rgb(255, 76, 65);">ダウンロード</span>」->「<span style="color: rgb(255, 76, 65);">...</span>」をクリックし、「<span style="color: rgb(255, 76, 65);">デバイスに接続</span>」。
+2\. Clicca su “<span style="color: rgb(255, 76, 65);">Download</span>” -> “<span style="color: rgb(255, 76, 65);">...</span>” e “<span style="color: rgb(255, 76, 65);">Connetti dispositivo</span>”.
 
 ![Img](./media/A028.png)
 
-3\. 「<span style="color: rgb(255, 76, 65);">次へ</span>」。
+3\. “<span style="color: rgb(255, 76, 65);">Avanti</span>”.
 
 ![Img](./media/A046.png)
 
-4\. 「<span style="color: rgb(255, 76, 65);">ペアリング</span>」。
+4\. “<span style="color: rgb(255, 76, 65);">Accoppia</span>”.
 
 ![Img](./media/A104.png)
 
-5\. 対応するデバイスを選択し、「<span style="color: rgb(255, 76, 65);">接続</span>」。
+5\. Seleziona il dispositivo corrispondente e “<span style="color: rgb(255, 76, 65);">Connetti</span>”.
 
 ![Img](./media/A127.png)
 
-6\. 「<span style="color: rgb(255, 76, 65);">完了</span>」。
+6\. “<span style="color: rgb(255, 76, 65);">Fatto</span>”.
 
 ![Img](./media/A144.png)
 
-**プログラムのダウンロード：**
+**Scarica il programma:**
 
-接続後、「<span style="color: rgb(255, 76, 65);">ダウンロード</span>」をクリックすると、![Img](./media/A212.png)が![Img](./media/A220.png)に変わります。プログラムがmicro:bitボードにダウンロードされます。
+Dopo la connessione, clicca su “<span style="color: rgb(255, 76, 65);">Download</span>” e vedrai che ![Img](./media/A212.png) diventa ![Img](./media/A220.png). Il programma viene scaricato sulla scheda micro:bit.
 
 ![Img](./media/A232.png)
 
-選択用のデバイスが表示されない場合は、[WebUSBでのダウンロードのトラブルシューティング](https://makecode.microbit.org/device/usb/webusb/troubleshoot)を参照してください。micro:bitのファームウェア更新方法は[ユーザーガイド](https://microbit.org/guide/firmware/)をご覧ください。
+Se non appare nessun dispositivo per la selezione, consulta [Risoluzione problemi download con WebUSB](https://makecode.microbit.org/device/usb/webusb/troubleshoot). Consulta [la guida utente](https://microbit.org/guide/firmware/) per sapere come aggiornare il firmware micro:bit.
 
-#### 1.4. MakeCode拡張ライブラリ
+#### 1.4. Libreria di estensioni MakeCode
 
-**3.4.1 ライブラリ拡張のインポート**
+**3.4.1 Importa estensioni libreria**
 
-Makecodeを開き、特定のプロジェクトに入り、![Img](./media/A806.png)をクリックして「**拡張機能**」を選択。
+Apri Makecode per entrare in un progetto specifico, clicca su ![Img](./media/A806.png) per scegliere “**Estensioni**”.
 
 ![Img](./media/A842.png)
 
-または、Advancedの上にある「**拡張機能**」をクリック。
+Oppure clicca su “**Estensioni**” sopra la sezione Avanzate.
 
 ![Img](./media/A900.png)
 
-欲しいライブラリを検索。
+Cerca la libreria che desideri.
 
 ![Img](./media/A909.png)
 
-各プロジェクトに必要なすべてを含むコードファイルを提供しているので、直接ロードできます。自分でコードブロックを作成したい場合は、以下の3つの拡張機能を追加してください。
+Forniamo i file di codice per ogni progetto contenenti tutto il necessario per eseguire un progetto, quindi puoi caricarli direttamente. Se vuoi costruire i blocchi di codice da solo, ricorda di aggiungere le seguenti tre estensioni.
 
-<span style="color: rgb(0, 209, 0);">**OLED拡張:**</span>
+<span style="color: rgb(0, 209, 0);">**Estensione OLED:**</span>
 
-1\. 「**拡張機能**」をクリックしてライブラリ拡張を追加。
+1\. Clicca su “**Estensioni**” per aggiungere estensioni libreria.
 
 ![Img](./media/A236.png)
 
-2\. 「**OLED**」を検索し、![Img](./media/A3257.png)をクリック。
+2\. Cerca “**OLED**” e clicca ![Img](./media/A3257.png).
 
 ![Img](./media/A306.png)
 
-最初の**oled-ssd1306**をクリックし、追加されるのを待つ。
+Clicca sul primo **oled-ssd1306** e aspetta che venga aggiunto.
 
 ![Img](./media/A3316.png)
 
-3\. 追加成功：
+3\. Aggiunta riuscita:
 
 ![Img](./media/A335.png)
 
-<span style="color: rgb(0, 209, 0);">**超音波センサー拡張:**</span>
+<span style="color: rgb(0, 209, 0);">**Estensione sensore ultrasonico:**</span>
 
-1\. 「**拡張機能**」をクリックしてライブラリ拡張を追加。
+1\. Clicca su “**Estensioni**” per aggiungere estensioni libreria.
 
 ![Img](./media/A236.png)
 
-2\. 「**sonar**」を検索し、![Img](./media/A3257.png)をクリックして「sonar」を見つけてロード。
+2\. Cerca “**sonar**” e clicca ![Img](./media/A3257.png) per trovare e caricare “sonar”.
 
 ![Img](./media/A506.png)
 
-3\. 追加成功：
+3\. Aggiunta riuscita:
 
 ![Img](./media/A522.png)
 
-<span style="color: rgb(0, 209, 0);">**DHT11センサー拡張:**</span>
+<span style="color: rgb(0, 209, 0);">**Estensione sensore DHT11:**</span>
 
-1\. 「**拡張機能**」をクリックしてライブラリ拡張を追加。
+1\. Clicca su “**Estensioni**” per aggiungere estensioni libreria.
 
 ![Img](./media/A236.png)
 
-2\. 「**DHT11**」を検索し、![Img](./media/A3257.png)をクリックして「DHT11_DHT22」を見つけてロード。
+2\. Cerca “**DHT11**” e clicca ![Img](./media/A3257.png) per trovare e caricare “DHT11_DHT22”.
 
 ![Img](./media/A616.png)
 
-3\. 追加成功：
+3\. Aggiunta riuscita:
 
 ![Img](./media/A645.png)
 
-**3.4.2 拡張機能の更新/削除**
+**3.4.2 Aggiorna/Elimina estensioni**
 
-1\. 「**JavaScript**」をクリックしてテキストコードに切り替え。
+1\. Clicca su “**JavaScript**” per passare al codice testuale.
 
 ![Img](./media/A724.png)
 
-2\. 「**エクスプローラー**」をクリック。
+2\. Clicca su “**Explorer**”.
 
 ![Img](./media/A749.png)
 
-3\. 「**OLED**」ライブラリを見つけ、![Img](./media/A813.png)をクリックして削除。
+3\. Trova la libreria “**OLED**” e clicca ![Img](./media/A813.png) per eliminarla.
 
 ![Img](./media/A824.png)
 
-4\. 「**削除**」。
+4\. “**Rimuovi**”.
 
 ![Img](./media/A727.png)
 
-削除されました。
+È stata rimossa.
 
-#### 1.5. MakeCodeにコードをインポートする方法
+#### 1.5. Come importare codici in MakeCode
 
-「**heartbeat**」プロジェクトを例にコードの読み込み方法を示します。
+Prendiamo il progetto “**heartbeat**” come esempio per mostrare come caricare il codice.
 
-1\. MakecodeのWeb版またはWindows 10アプリMakecodeを開き、「<span style="color: rgb(255, 76, 65);">インポート</span>」をクリック。
+1\. Apri la versione Web di Makecode o l'app Windows 10 Makecode e clicca su “<span style="color: rgb(255, 76, 65);">Importa</span>”.
 
 ![Img](./media/A956.png)
 
-2\. 「<span style="color: rgb(255, 76, 65);">ファイルをインポート...</span>」
+2\. “<span style="color: rgb(255, 76, 65);">Importa file...</span>”
 
 ![Img](./media/A042.png)
 
-3\. 「<span style="color: rgb(255, 76, 65);">ファイルを選択</span>」して読み込みたいファイルをインポート。
+3\. “<span style="color: rgb(255, 76, 65);">Scegli file</span>” per importare il file che vuoi caricare.
 
 ![Img](./media/A06.png)
 
-4\. ここでは「<span style="color: rgb(255, 76, 65);">heartbeat.hex</span>」を読み込み。
+4\. Qui carichiamo “<span style="color: rgb(255, 76, 65);">heartbeat.hex</span>”.
 
 ![Img](./media/A28.png)
 
-5\. 「<span style="color: rgb(255, 76, 65);">続行 √</span>」
+5\. “<span style="color: rgb(255, 76, 65);">Procedi √</span>”
 
 ![Img](./media/A149.png)
 
-上記の方法に加え、テストコードをコード編集エリアにドラッグしても読み込めます。下記参照：
+Oltre al metodo sopra, puoi anche trascinare il codice di prova nell'area di modifica del codice, come mostrato di seguito:
 
 ![Img](./media/A202.png)
 
-読み込みを待ちます。
+Attendi il caricamento.
 
 ![Img](./media/A217.png)

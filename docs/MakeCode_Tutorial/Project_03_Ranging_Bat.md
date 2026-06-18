@@ -1,108 +1,108 @@
-### プロジェクト03：距離測定コウモリ
+### Progetto 03: Pipistrello a Rilevamento Distanza
 
-#### 1. 概要
+#### 1. Panoramica
 
-超音波センサーを基に、距離測定コウモリは障害物までの距離を検出し、OLEDにリアルタイムで表示します。距離が10cm未満になると、スピーカーが警報を鳴らします。
+Basato su un sensore ad ultrasuoni, il pipistrello a rilevamento distanza misura la distanza degli ostacoli e la visualizza in tempo reale su un OLED. Quando è inferiore a 10cm, l'altoparlante emette un allarme.
 
-#### 2. 部品
+#### 2. Componenti
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| micro:bit ボード *1 | micro:bit T型拡張ボード *1 | micro USB ケーブル *1 |
+| scheda micro:bit *1 | scheda di espansione micro:bit tipo T *1 | cavo micro USB *1 |
 | ![Img](./media/A356.png)| ![Img](./media/A406.png)| ![Img](./media/A415.png) |
-| 超音波センサー *1 | OLED モジュール *1 | DuPont ワイヤー |
+| sensore ad ultrasuoni *1 | modulo OLED *1 | fili DuPont |
 |![Img](./media/A017.png) | ![Img](./media/A950.png) | ![Img](./media/A024.png) |
-|ブレッドボード *1 | ジャンプワイヤー | 電池ホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)|
+|breadboard *1 | fili jumper | portabatterie *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>)|
 |![Img](./media/A315.png)|![Img](./media/A557.png) | |
-|コウモリカード *1| OLEDカード *1 | |
+|scheda pipistrello *1| scheda OLED *1 | |
 
-#### 3. 部品の知識
+#### 3. Conoscenza dei Componenti
 
-**超音波センサー**
+**sensore ad ultrasuoni**
 
-超音波は障害物に当たると跳ね返ります。送信から受信までの時間差を計測して距離を測定します。空気中の音速は一定で v=340m/s なので、センサーと障害物間の距離は s=vt/2 で計算されます。
+Le onde ultrasoniche rimbalzano quando colpiscono un ostacolo. Misuriamo la distanza calcolando l'intervallo di tempo tra l'invio e la ricezione delle onde. Poiché la velocità di propagazione del suono nell'aria è una costante v=340m/s, calcoliamo la distanza tra il sensore e l'ostacolo: s=vt/2.
 
 ![Img](./media/A846.png)
 
-HC-SR04超音波モジュールは送信機と受信機を統合しています。送信機は電気信号（電気エネルギー）を高周波（人間の聴覚を超える）音波（機械エネルギー）に変換し、受信機はその逆を行います。
+Il modulo ad ultrasuoni HC-SR04 integra un trasmettitore e un ricevitore. Il primo converte segnali elettrici (energia elettrica) in onde sonore ad alta frequenza (oltre l'udito umano) (energia meccanica), mentre il secondo fa l'opposto.
 
-HC SR04の回路図：
+Lo schema del HC SR04:
 
 ![Img](./media/A642.png)
 
-**ピン定義：**
+**Definizione dei Pin:**
 
 ![Img](./media/A702.png)
 
-**パラメータ：**
+**Parametri:**
 
-- 動作電圧：5V
-- 動作電流：12mA
-- 最小測定距離：2cm
-- 最大測定距離：200cm
+- Tensione di funzionamento: 5V
+- Corrente di funzionamento: 12mA
+- Distanza minima di misurazione: 2cm
+- Distanza massima di misurazione: 200cm
 
-**動作原理：**
+**Principio di funzionamento:**
 
-Trigピンに10μs以上の高レベルパルスを出力すると、モジュールは超音波を送信開始します。同時にEchoピンがプルアップされます。障害物に当たって超音波が戻ってくると、Echoピンはプルダウンされます。Echoピンの高レベルの継続時間が送信から受信までの合計時間であり、距離は s=vt/2 で計算されます。
+Un impulso di livello alto della durata di almeno 10us viene inviato sul pin Trig, e il modulo inizia a trasmettere onde ultrasoniche. Allo stesso tempo, il pin Echo viene portato alto. Quando il modulo riceve un'onda ultrasonica di ritorno dopo aver incontrato un ostacolo, il pin Echo viene portato basso. La durata del livello alto del pin Echo è il tempo totale dell'onda dall'invio alla ricezione: s=vt/2.
 
 ![Img](./media/A728.png)
 
-**OLEDモジュール**
+**Modulo OLED**
 
-OLED技術は豊かな色表現、高いコントラスト、広い視野角を特徴とし、特に黒色が際立つ鮮明で生き生きとした画像を提供します。
+La tecnologia OLED presenta una ricca resa cromatica, alto contrasto e ampio angolo di visuale, fornendo immagini chiare e vivide, particolarmente eccellente nel nero.
 
-OLEDディスプレイの各ピクセルは自発光でバックライトを必要としないため、比較的低消費電力です。小型、高解像度、低消費電力の0.9インチOLEDディスプレイはウェアラブルデバイスに非常に適しています。
+Ogni pixel del display OLED emette luce propria senza retroilluminazione, quindi consuma relativamente poca energia. Con dimensioni ridotte, alta risoluzione e basso consumo, il display OLED da 0,9 pollici è molto adatto per dispositivi indossabili.
 
 ![Img](./media/A636.png)
 
-<span style="color: rgb(255, 76, 65);">**本プロジェクトでは、OLEDディスプレイモジュールのSDA端子をピンP20に、SCL端子をピンP19に接続します。**</span>
+<span style="color: rgb(255, 76, 65);">**In questo progetto, il modulo display OLED collega l'interfaccia SDA al pin P20 e SCL al pin P19.**</span>
 
-**パラメータ：**
+**Parametri:**
 
-- 動作電圧：DC 3.3V-5V
+- Tensione di funzionamento: DC 3.3V-5V
 
-- 動作電流：30mA
+- Corrente di funzionamento: 30mA
 
-- インターフェース：ピン間隔2.54mmのピンポート
+- Interfaccia: porte pin con passo di 2.54mm
 
-- 通信方式：I2C
+- Modalità di comunicazione: I2C
 
-- 内蔵ドライバーチップ：SSD1306
+- Chip driver interno: SSD1306
 
-- 解像度：128*64
+- Risoluzione: 128*64
 
-- 視野角：150°以上
+- Angolo di visuale: maggiore di 150°
 
-#### 4. 配線図
+#### 4. Schema di Collegamento
 
 ![Img](./media/A1849.png)
 
-<span style="color: rgb(255, 76, 65);">**OLEDディスプレイと超音波センサーを使用する際は、外部電源を接続し、DIPスイッチをONにしてください。**</span>
+<span style="color: rgb(255, 76, 65);">**Quando si utilizzano il display OLED e il sensore ad ultrasuoni, è necessario collegare un'alimentazione esterna e impostare l'interruttore DIP su ON.**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A1906.png)
 
-#### 5. コードの流れ
+#### 5. Flusso del Codice
 
 ![Img](./media/A924.png)
 
-#### 6. テストコード
+#### 6. Codice di Test
 
-コードファイルはフォルダ Project 03：Ranging Bat 内のファイル Project-03-Ranging-Bat.hex にあります。
+Il file di codice è fornito nella cartella Progetto 03：Pipistrello a Rilevamento Distanza, file Project-03-Ranging-Bat.hex.
 
 ![Img](./media/A955.png)
 
-**コードブロックの読み込み：** <span style="color: rgb(255, 76, 65);">条件の10の閾値は実際の状況に応じて変更可能です。</span>
+**Carica i blocchi di codice:** <span style="color: rgb(255, 76, 65);">La soglia nella condizione 10 può essere modificata in base alle condizioni reali.</span>
 
 ![Img](./media/A022.png)
 
-#### 7. テスト結果
+#### 7. Risultato del Test
 
-Windows 10アプリの場合、「<span style="color: rgb(255, 76, 65);">Download</span>」をクリックします。ブラウザの場合はダウンロードした「<span style="color: rgb(255, 76, 65);">.hex</span>」ファイルをmicro:bitボードに送信します。
+Per l'App Windows 10, cliccare su “<span style="color: rgb(255, 76, 65);">Download</span>”. Per i browser, inviare il file “<span style="color: rgb(255, 76, 65);">.hex</span>” scaricato alla scheda micro:bit.
 
-コードをボードにダウンロードした後、<span style="color: rgb(255, 76, 65);">外部電源で電源を入れ、DIPスイッチをONにしてください</span>。OLEDには超音波センサーと障害物間の距離がリアルタイムで表示されます。距離が10cm未満になると、micro:bitボードのスピーカーが警報を鳴らします。
+Dopo aver scaricato il codice sulla scheda, <span style="color: rgb(255, 76, 65);">accendere tramite alimentazione esterna e impostare l'interruttore DIP su ON</span>, e l'OLED visualizza in tempo reale la distanza tra il sensore ad ultrasuoni e l'ostacolo. Quando il valore della distanza è inferiore a 10cm, l'altoparlante sulla scheda micro:bit emette un allarme.
 
-<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が表示されない場合は、ボード裏面のリセットボタンを押してください。</span></span>
+<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non si vedono i risultati, premere il pulsante di reset sul retro della scheda.</span></span>
 
 ![Img](./media/A605.gif)

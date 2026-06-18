@@ -1,88 +1,88 @@
-### プロジェクト04：スマート駐車
+### Progetto 04: Parcheggio Intelligente
 
-#### 1. 概要
+#### 1. Panoramica
 
-スマート駐車場はどこにでもあります。私たちもスマート駐車場を作ることができるでしょうか？もちろんです。超音波センサーを使って前方に車両があるかどうかを検出します。車両（または物）が近づいてくるのを検出したら、サーボを制御してリフトロッドを上げます。離れていくのを検出したら、サーボはリフトロッドを下げます。
+I parcheggi intelligenti sono ovunque. Possiamo anche creare un parcheggio intelligente? Certo. Possiamo usare un sensore a ultrasuoni per rilevare se ci sono veicoli davanti. Quando un veicolo (o un oggetto) viene rilevato in avvicinamento, controlliamo il servo per sollevare l'asta di sollevamento; se viene rilevato che si allontana, il servo abbasserà l'asta di sollevamento.
 
-#### 2. 部品
+#### 2. Componenti
 
 | ![Img](./media/A850.png) |       ![Img](./media/A858.png)       |              ![Img](./media/A906.png)              |
 | :---------------------: | :---------------------------------: | :-----------------------------------------------: |
-|   micro:bit ボード *1    | micro:bit T型拡張ボード *1 |                micro USB ケーブル *1                 |
+|   micro:bit board *1    | micro:bit T-type expansion board *1 |                micro USB cable *1                 |
 | ![Img](./media/A356.png) |       ![Img](./media/A309.png)       |              ![Img](./media/A415.png)              |
-|  超音波センサー *1   |              サーボ *1               |                   DuPont ワイヤー                    |
+|  ultrasonic sensor *1   |              servo *1               |                   DuPont wires                    |
 | ![Img](./media/A017.png) |       ![Img](./media/A950.png)       |              ![Img](./media/A024.png)              |
-|      ブレッドボード *1      |             ジャンプワイヤー              |バッテリーホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)|
+|      breadboard *1      |             jump wires              |battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>)|
 | ![Img](./media/A336.png) |       ![Img](./media/A131.png)       |                                                   |
-|       バットカード *1       |          リフトロッドカード *1           |                                                   |
+|       bat card *1       |          lift rod card *1           |                                                   |
 
-#### 3. 部品の知識
+#### 3. Conoscenza dei Componenti
 
-**サーボ**
+**Servo**
 
-サーボは位置駆動装置です。サーボを使って正確な位置制御や高トルク出力が可能です。通常、ロボット、リモコンカー、さらには航空機モデルで使われます。多くの仕様がありますが、すべてのサーボは3本の線を持っています：信号線（オレンジ）、正極（赤）、負極（茶色）。色はサーボのブランドによって異なります。
+Il servo è un attuatore di posizione. Possiamo usare il servo per controllare la posizione esatta o fornire alta coppia. Di solito viene usato in robot, automobili radiocomandate e persino modelli di aeroplani. Esistono molte specifiche, ma tutti i servi hanno tre fili: segnale (arancione), positivo (rosso) e negativo (marrone). Il colore può variare a seconda della marca del servo.
 
 ![Img](./media/A5525.png)
 
-**内部構造図：**
+**Diagramma della struttura interna:**
 
 ![Img](./media/A5534.png)
 
-① 信号線：マイコンからの制御信号を受け取る；
+① Segnale: riceve i segnali di controllo dal microcontrollore;
 
-② ポテンショメーター：出力軸の位置を測定し、サーボ全体のフィードバック部分に属する；
+② potenziometro: può misurare la posizione dell'albero di uscita, fa parte del feedback dell'intero servo;
 
-③ 内部コントローラー：組み込み基板が外部制御からの信号を処理し、モーターと位置フィードバック信号を駆動する。サーボ全体のコア；
+③ Controllore interno: la scheda embedded elabora i segnali di controllo esterni, aziona il motore e i segnali di feedback della posizione, è il cuore dell'intero servo;
 
-④ DCモーター：速度、トルク、位置を出力するアクチュエーター；
+④ Motore DC: funge da attuatore per fornire velocità, coppia e posizione;
 
-⑤ 伝達機構／サーボ機構：モーターのストローク出力を一定の伝達比で最終出力角度に拡大する機構。
+⑤ Trasmissione / meccanismo del servo: il meccanismo amplifica la corsa fornita dal motore all'angolo finale di uscita secondo un certo rapporto di trasmissione.
 
-**サーボの駆動**
+**Azionare il servo**
 
-PWM信号をサーボの信号線に送って出力を制御します。PWMのデューティ比が出力軸の位置を直接決定します。周期は通常20ミリ秒で、50Hzの周波数でパルスを生成するように設定されます。
+Inviare segnali PWM alla linea del segnale del servo per controllarne l'uscita. Il duty cycle del PWM determina direttamente la posizione dell'albero di uscita. Il periodo è solitamente di 20 millisecondi e tipicamente impostato per generare impulsi a una frequenza di 50Hz.
 
-<span style="color: rgb(255, 0, 0);">例えば（180°サーボ）：</span>
+<span style="color: rgb(255, 0, 0);">Ad esempio (servo 180°):</span>
 
-180°サーボに1.5ミリ秒（ms）のパルス幅を送ると、サーボの出力軸は中間位置（90度）に移動します；
+Quando inviamo un impulso di larghezza 1,5 millisecondi (ms) al servo 180°, l'albero di uscita del servo si sposterà nella posizione centrale (90 gradi);
 
-パルス幅が0.5msなら、出力軸は0度に移動します；
+Se la larghezza dell'impulso è 0,5ms, l'albero di uscita si sposterà a 0 gradi;
 
-パルス幅が2.5msなら、出力軸は180度に移動します；
+Se la larghezza dell'impulso è 2,5ms, l'albero di uscita si sposterà a 180 gradi;
 
 ![Img](./media/A5545.png)
 
-**パラメータ：**
+**Parametri:**
 
-- 動作電圧：DC 3.3V～5V
+- Tensione di funzionamento: DC 3.3V~5V
 
-- 動作温度：-10°C ～ +50°C
+- Temperatura di funzionamento: -10°C ~ +50°C
 
-- 寸法：32.25mm x 12.25mm x 30.42mm
+- Dimensioni: 32.25mm x 12.25mm x 30.42mm
 
-- インターフェース：ピッチ2.54mmの3ピンインターフェース
+- Interfaccia: interfaccia a 3 pin con passo di 2.54mm
 
-#### 4. 配線図
+#### 4. Schema di Collegamento
 
 ![Img](./media/A606.png)
 
-<span style="color: rgb(255, 76, 65);">**超音波センサーとサーボを使用する場合は、必ず外部電源を接続し、DIPスイッチをONにしてください。**</span>
+<span style="color: rgb(255, 76, 65);">**Quando si utilizzano il sensore a ultrasuoni e il servo, dobbiamo collegare un'alimentazione esterna e impostare l'interruttore DIP su ON.**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A701.png)
 
-#### 5. コードフロー
+#### 5. Flusso del Codice
 
 ![Img](./media/A716.png)
 
-#### 6. テストコード
+#### 6. Codice di Test
 
-コードファイルはフォルダ Project 04：Smart-Parking 内のファイル Project-04-Smart-Parking\.py にあります。
+Il file del codice è fornito nella cartella Progetto 04：Smart-Parking, file Project-04-Smart-Parking\.py.
 
 ![Img](./media/A3345.png)
 
-**完成コード：** <span style="color: rgb(255, 76, 65);">条件10の閾値は実際の状況に応じて変更可能です。</span>
+**Codice completo:** <span style="color: rgb(255, 76, 65);">La soglia nella condizione 10 può essere modificata in base alle condizioni reali.</span>
 
 ```python
 '''
@@ -133,18 +133,18 @@ while True:
        sleep(2000)
 ```
 
-#### 7. テスト結果
+#### 7. Risultato del Test
 
-「<span style="color: rgb(255, 76, 65);">Flash</span>」をクリックしてコードをmicro:bitボードに書き込みます。
+Clicca “<span style="color: rgb(255, 76, 65);">Flash</span>” per caricare il codice sulla scheda micro:bit.
 
 ![Img](./media/A3400.png)
 
-コードをボードにダウンロードした後、**micro USBケーブルまたは外部電源で電源を入れ（DIPスイッチをONにする）、ボードのリセットボタンを押します。**
+Dopo aver scaricato il codice sulla scheda, **accendi tramite cavo micro USB o alimentazione esterna (imposta l'interruttore DIP su ON)**, e premi il pulsante di reset sulla scheda.
 
 ![Img](./media/A455.png)
 
-超音波センサーが車両（または物）が近づいてくるのを検出すると、サーボがリフトロッドを上げます。センサーが離れていくのを検出すると、サーボはリフトロッドを下げます。
+Quando il sensore a ultrasuoni rileva un veicolo (o oggetto) in avvicinamento, il servo controlla l'asta di sollevamento per alzarla; se il sensore rileva che si allontana, il servo abbasserà l'asta di sollevamento.
 
-<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が見えない場合は、ボードの裏側のリセットボタンを押してください。</span>
+<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non vedi i risultati, premi il pulsante di reset sul retro della scheda.</span>
 
 ![Img](./media/A021.gif)

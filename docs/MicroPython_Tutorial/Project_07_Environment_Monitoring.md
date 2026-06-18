@@ -1,101 +1,101 @@
-### プロジェクト07：環境モニタリング
+### Progetto 07: Monitoraggio Ambientale
 
-#### 1. 概要
+#### 1. Panoramica
 
-OLEDには、DHT11センサーで検出した温度と湿度の値をリアルタイムで表示し、さらに基板上の光センサーで検出した周囲の明るさレベルの値も表示するスマート環境モニタリングシステムです。
+Sull'OLED, il sistema intelligente di monitoraggio ambientale visualizza in tempo reale i valori di temperatura e umidità rilevati dal sensore DHT11, oltre al valore del livello di luminosità della luce ambientale rilevato dal sensore di luce integrato.
 
-#### 2. コンポーネント
+#### 2. Componenti
 
 |         ![Img](./media/A850.png)          |       ![Img](./media/A858.png)       |              ![Img](./media/A906.png)              |
 | :--------------------------------------: | :---------------------------------: | :-----------------------------------------------: |
-|            micro:bit ボード *1            | micro:bit T型拡張ボード *1 |                micro USB ケーブル *1                 |
+|            scheda micro:bit *1            | scheda di espansione micro:bit tipo T *1 |                cavo micro USB *1                 |
 |         ![Img](./media/A2637.png)         |       ![Img](./media/A406.png)       |              ![Img](./media/A415.png)              |
-| XHT11 温湿度センサー *1 |           OLED モジュール *1            |                   DuPont ワイヤー                    |
+| sensore di temperatura e umidità XHT11 *1 |           modulo OLED *1            |                   fili DuPont                    |
 |         ![Img](./media/A017.png)          |       ![Img](./media/A950.png)       |              ![Img](./media/A024.png)              |
-|              ブレッドボード *1               |             ジャンプワイヤー              |バッテリーホルダー *1 <br> (<span style="color: rgb(255, 76, 65);">自前の単三電池 *2</span>)|
+|              breadboard *1               |             fili jumper              |portabatterie *1 <br> (<span style="color: rgb(255, 76, 65);">batterie AA auto-fornite *2</span>)|
 |         ![Img](./media/A0715.png)         |       ![Img](./media/A557.png)       |                                                   |
-|              クラウドカード *1               |            OLEDカード *1             |                                                   |
+|              scheda cloud *1               |            scheda OLED *1             |                                                   |
 
-#### 3. コンポーネント知識
+#### 3. Conoscenza dei Componenti
 
-**XHT11 温湿度センサー**
+**Sensore di temperatura e umidità XHT11**
 
 ![Img](./media/A2637.png)
 
-XHT11 温湿度センサーは、較正済みのデジタル信号出力を持つ複合センサーで、空気中の湿度と温度を検出できます。
+Il sensore di temperatura e umidità XHT11 è un sensore composito con uscita digitale calibrata, in grado di rilevare l'umidità e la temperatura nell'aria.
 
-**精度**：湿度 ±5%RH、温度 ±2℃
+**Precisione**: umidità ±5%RH, temperatura ±2℃
 
-**検出範囲**：湿度 5%RH ~ 95%RH、温度 -25℃ ~ +60℃
+**Intervallo di rilevamento**: umidità 5%RH ~ 95%RH, temperatura -25℃ ~ +60℃
 
-このセンサーは特殊なデジタルモジュール取得と温湿度検知技術を使用しており、非常に高い信頼性と優れた長期安定性を保証します。抵抗式湿度検知素子とNTC温度検知素子を含み、比較的低精度かつリアルタイム性が求められる測定に非常に適しています。
+Il sensore utilizza un modulo digitale speciale per l'acquisizione e la tecnologia di rilevamento di temperatura e umidità per garantire un'affidabilità estremamente elevata e un'eccellente stabilità a lungo termine. Include un elemento resistivo per il rilevamento dell'umidità e un elemento NTC per il rilevamento della temperatura, risultando molto adatto per misurazioni con requisiti di precisione relativamente bassi e in tempo reale.
 
-**XHT11 通信方式：**
+**Modalità di comunicazione XHT11:**
 
-シングルバス通信を採用しています。つまり、システム内でデータ交換と制御に使用されるデータ線は1本だけです。
+Viene adottata la comunicazione a bus singolo. Ciò significa che esiste una sola linea dati per lo scambio di dati e il controllo nel sistema.
 
-- シングルバスで送信されるデータビットの定義：
+- Definizione dei bit dati trasmessi dal bus singolo:
 
-シングルバスデータフォーマット：40ビットのデータを一度に送信し、上位ビットが先に来ます。
+Formato dati bus singolo: vengono trasmessi 40 bit di dati alla volta, con il bit alto per primo.
 
-8bit 湿度整数部 + 8bit 湿度小数部 + 8bit 温度整数部 + 8bit 温度小数部 + 8bit パリティビット（湿度の小数部は0）
+8 bit interi umidità + 8 bit decimali umidità + 8 bit interi temperatura + 8 bit decimali temperatura + 8 bit di parità (la parte decimale dell'umidità è 0)
 
-- パリティビットの定義：
+- Definizione del bit di parità:
 
-8bit 湿度整数部 + 8bit 湿度小数部 + 8bit 温度整数部 + 8bit 温度小数部。8bit パリティビット = 取得した結果の最後の8ビット
+8 bit interi umidità + 8 bit decimali umidità + 8 bit interi temperatura + 8 bit decimali temperatura. 8 bit di parità = gli ultimi 8 bit del risultato ottenuto
 
-- データタイムライン：
+- Cronologia dei dati:
 
-ユーザーホスト（MCU）が開始信号を送信すると、XHT11は低電力モードから高速モードに切り替わります。開始信号の後、XHT11は応答信号と40ビットのデータを送信し、信号取得をトリガーします。
+Dopo che l'host utente (MCU) invia un segnale di avvio, l'XHT11 passa dalla modalità a basso consumo alla modalità ad alta velocità. Dopo il segnale di avvio, l'XHT11 invia un segnale di risposta e 40 bit di dati, e attiva un'acquisizione del segnale.
 
-- 信号伝送は図の通りです：
+- La trasmissione del segnale è mostrata nella figura:
 
 ![Img](./media/A229.png)
 
- **パラメータ**
+ **Parametri**
 
-- 動作電圧：DC 3.3V ～ 5V
+- Tensione di funzionamento: DC 3.3V a 5V
 
-- 動作電流：2.1mA
+- Corrente di funzionamento: 2.1mA
 
-- 最大消費電力：0.0105W
+- Potenza massima: 0.0105W
 
-- 温度範囲：-25℃ ～ +60℃ (± 2℃)
+- Intervallo di temperatura: -25℃ ~ +60℃ (± 2℃)
 
-- 湿度範囲：5%RH ～ 95%RH (約25℃付近で精度 ±5%RH)
+- Intervallo di umidità: 5%RH ~ 95%RH (precisione ±5%RH intorno a 25 °C)
 
-**Microbit 光センサー**
+**Sensore di luce Microbit**
 
 ![Img](./media/A0335.png)
 
-光センサーは外部光の明るさを測定する入力デバイスです。micro:bit ボードには内蔵光センサーはありません。LEDマトリクスが光の強度を繰り返し値に変換し、その後電圧減衰時間をサンプリングすることで周囲の明るさを検出・感知します。このため、<span style="color: rgb(255, 76, 65);">検出される明るさレベルは相対値です</span>。
+Un sensore di luce è un dispositivo di input che misura la luminosità della luce esterna. La scheda micro:bit non include un sensore di luce integrato. Rileva e misura la luminosità ambientale tramite una matrice LED che converte ripetutamente l'intensità luminosa in un valore di input, quindi viene campionato il tempo di attenuazione della tensione. In questo modo, <span style="color: rgb(255, 76, 65);">il livello di luminosità rilevato è un valore relativo</span>.
 
-#### 4. 配線図
+#### 4. Schema di Collegamento
 
 ![Img](./media/A409.png)
 
-<span style="color: rgb(255, 76, 65);">**OLEDディスプレイを使用する場合は、必ず外部電源を接続し、DIPスイッチをONにしてください。**</span>
+<span style="color: rgb(255, 76, 65);">**Quando si utilizza il display OLED, è necessario collegare un'alimentazione esterna e impostare l'interruttore DIP su ON.**</span>
 
 ![Img](./media/A904.png)
 
 ![Img](./media/A554.png)
 
-#### 5. ライブラリのインポート
+#### 5. Importazione Libreria
 
-必要なライブラリファイル（DHT11 と oled_ssd1306）をまだ追加していない場合は、[How Mu Import Library to Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit) を参照してインポートしてください。
+Se non hai ancora aggiunto i file di libreria richiesti (DHT11 e oled_ssd1306), importali facendo riferimento a [Come Mu Importa Libreria su Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit).
 
-#### 6. コードの流れ
+#### 6. Flusso del Codice
 
 ![Img](./media/A638.png)
 
 
-#### 7. テストコード
+#### 7. Codice di Test
 
-コードファイルはフォルダ Project 07：Environment Monitoring 中の Project-07-Environment-Monitoring\.py にあります。
+Il file di codice è fornito nella cartella Project 07：Environment Monitoring中找文件Project-07-Environment-Monitoring\.py.
 
 ![Img](./media/A3641.png)
 
-**完成コード：**
+**Codice completo:**
 
 ```python
 '''
@@ -129,18 +129,18 @@ while True:
     sleep(2000)
 ```
 
-#### 8. テスト結果
+#### 8. Risultato del Test
 
-「<span style="color: rgb(255, 76, 65);">Flash</span>」をクリックしてコードをmicro:bitボードに書き込みます。
+Clicca su “<span style="color: rgb(255, 76, 65);">Flash</span>” per caricare il codice sulla scheda micro:bit.
 
 ![Img](./media/A3710.png)
 
-コードをボードにダウンロードした後、**micro USBケーブルまたは外部電源で電源を入れ（DIPスイッチをONにする）、ボードのリセットボタンを押します。**
+Dopo aver scaricato il codice sulla scheda, **accendi tramite cavo micro USB o alimentazione esterna (imposta l'interruttore DIP su ON)**, e premi il pulsante di reset sulla scheda.
 
 ![Img](./media/A455.png)
 
-OLEDに温度・湿度の値と光の明るさレベルがリアルタイムで表示されます。
+L'OLED visualizza in tempo reale i valori di temperatura e umidità e il livello di luminosità della luce.
 
-<span style="color: rgb(255, 76, 65);">**注意：** 配線が正しいのに結果が表示されない場合は、ボード裏面のリセットボタンを押してください。</span>
+<span style="color: rgb(255, 76, 65);">**ATTENZIONE:** Se il cablaggio è corretto ma non vedi i risultati, premi il pulsante di reset sul retro della scheda.</span>
 
 ![Img](./media/A838.gif)
