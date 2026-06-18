@@ -1,81 +1,81 @@
-### Projet 05 : Cadran de voiture
+### Proyecto 05: Dial de Coche
 
-#### 1. Aperçu
+#### 1. Resumen
 
-Dans ce projet, nous combinons un potentiomètre réglable, un servo et une belle carte de cadran pour réaliser un modèle simple de cadran de voiture.
+En este proyecto, combinamos un potenciómetro ajustable, un servo y una hermosa tarjeta de dial para hacer un modelo simple de dial de coche.
 
-#### 2. Composants
+#### 2. Componentes
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| carte micro:bit *1 | carte d'extension micro:bit type T *1 | câble micro USB *1 |
+| placa micro:bit *1 | placa de expansión tipo T para micro:bit *1 | cable micro USB *1 |
 | ![Img](./media/A350.png)| ![Img](./media/A309.png)| ![Img](./media/A950.png) |
-| potentiomètre *1 | servo *1 | fils de connexion |
+| potenciómetro *1 | servo *1 | cables de conexión |
 |![Img](./media/A017.png)  | ![Img](./media/A024.png) |![Img](./media/A233.png) |
-| breadboard *1 | support de piles *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>)| carte de potentiomètre *1 |
+|protoboard *1 |portapilas *1 <br> (<span style="color: rgb(255, 76, 65);">pilas AA auto-proporcionadas *2</span>)| tarjeta de potenciómetro *1 |
 |![Img](./media/A1326.png) |  |  |
-| carte de cadran de voiture *1| |  |
+|tarjeta de dial de coche*1| |  |
 
-#### 3. Connaissances sur les composants
+#### 3. Conocimiento de Componentes
 
-**potentiomètre**
+**potenciómetro**
 
 ![Img](./media/A350.png)
 
-Un potentiomètre est également un élément résistif à trois contacts, dont la valeur de résistance peut être ajustée selon une certaine régularité.
+Un potenciómetro es también un elemento resistor con tres contactos, cuyo valor de resistencia puede ajustarse según cierta regularidad.
 
-Ils existent sous toutes les formes, tailles et valeurs, mais ont tous en commun les points suivants :
+Vienen en todas las formas, tamaños y valores, pero todos tienen en común lo siguiente:
 
-① Trois bornes (ou points de connexion).
+① Tres terminales (o puntos de conexión).
 
-② Un bouton ou curseur mobile qui peut changer la résistance entre la borne intermédiaire et n'importe quelle borne externe.
+② Una perilla o deslizador móvil que puede cambiar la resistencia entre el terminal intermedio y cualquier terminal externo.
 
-③ Lorsque le bouton est déplacé, la résistance entre la borne intermédiaire et n'importe quelle borne externe varie de 0Ω à sa valeur maximale.
+③ Al mover la perilla, la resistencia entre el terminal intermedio y cualquier terminal externo varía desde 0Ω hasta su máximo.
 
-Le symbole de circuit du potentiomètre :
+El símbolo del circuito del potenciómetro:
 
 ![Img](./media/A654.png)
 
-(1)\. En tant que diviseur de tension
+(1)\. Como divisor de voltaje
 
-Le potentiomètre est une résistance réglable en continu. Lorsque vous faites tourner son curseur, le contact mobile glisse sur la résistance. À ce moment, une tension peut être sortie en fonction de la tension appliquée au potentiomètre et de l'angle ou de la course de rotation du curseur mobile.
+El potenciómetro es un resistor ajustable continuamente. Cuando giras su deslizador, el contacto móvil se desliza a lo largo del resistor. En este punto, se puede obtener una salida de voltaje según el voltaje aplicado al potenciómetro y el ángulo o recorrido de rotación del deslizador móvil.
 
-(2)\. En tant que résistance variable
+(2)\. Como resistor variable
 
-Lorsque le potentiomètre est utilisé comme résistance variable, connectez sa borne intermédiaire à l'une des deux bornes supplémentaires dans le circuit. De cette façon, vous pouvez obtenir une valeur de résistance stable et continuellement variable dans sa plage.
+Cuando el potenciómetro se usa como resistor variable, conecta su terminal intermedio a uno de los dos terminales adicionales en el circuito. De esta manera, puedes obtener un valor de resistencia estable y continuamente variable dentro de su rango.
 
-(3)\. En tant que contrôleur de courant
+(3)\. Como controlador de corriente
 
-Lorsqu'il est utilisé comme contrôleur de courant, le contact mobile doit être connecté comme l'une des bornes de sortie.
+Cuando se usa como controlador de corriente, el contacto móvil debe conectarse como uno de los terminales de salida.
 
-#### 4. Schéma de câblage
+#### 4. Diagrama de Conexiones
 
 ![Img](./media/A812.png)
 
-<span style="color: rgb(255, 76, 65);">Lors de l'utilisation du servo, nous devons connecter une alimentation externe et mettre l'interrupteur DIP sur ON.</span>
+<span style="color: rgb(255, 76, 65);">Al usar el servo, debemos conectar una fuente de alimentación externa y poner el interruptor DIP en ON.</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A836.png)
 
-#### 5. Flux du code
+#### 5. Flujo del Código
 
 ![Img](./media/A0854.png)
 
-#### 6. Code de test
+#### 6. Código de Prueba
 
-Le fichier de code est fourni dans le dossier Projet 05 : Cadran de voiture, fichier Project-05-Car-Dial.hex.
+El archivo de código se proporciona en la carpeta Proyecto 05：Dial de Coche, archivo Project-05-Car-Dial.hex.
 
 ![Img](./media/A922.png)
 
-**Charger les blocs de code :**
+**Cargar bloques de código:**
 
 ![Img](./media/A942.png)
 
-#### 7. Résultat du test
+#### 7. Resultado de la Prueba
 
-Après avoir téléchargé le code sur la carte, tournez le bouton du potentiomètre et le servo déplace l'aiguille sur le cadran.
+Después de descargar el código a la placa, gira la perilla del potenciómetro y el servo mueve la aguja en el dial.
 
-<span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez sur le bouton reset à l'arrière de la carte.</span>
+<span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no ves resultados, presiona el botón de reinicio en la parte trasera de la placa.</span>
 
 ![Img](./media/A706.gif)

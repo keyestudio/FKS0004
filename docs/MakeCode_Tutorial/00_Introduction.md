@@ -1,234 +1,234 @@
-## 1. Programmation sur MakeCode
+## 1. Programación en MakeCode
 
-Les instructions suivantes s'appliquent au système Windows mais peuvent également servir de référence si vous utilisez un autre système.
+Las siguientes instrucciones se aplican al sistema Windows pero también pueden servir como referencia si usas un sistema diferente.
 
-#### 1.1. Démarrage rapide
+#### 1.1. Inicio rápido
 
-**Étape 1 Connecter au micro:bit**
+**Paso 1 Conectar al micro:bit**
 
-Connectez la carte à l'ordinateur via un câble USB.
+Conecta la placa al ordenador mediante un cable USB.
 
 ![Img](./media/A800.png)
 
-Si la LED rouge à l'arrière de la carte est allumée, cela signifie que la carte est alimentée. Lorsque votre ordinateur communique avec la carte principale via le câble USB, la LED jaune clignote. Par exemple, elle clignote lorsque vous transférez un fichier “.hex”.
+Si el LED rojo en la parte trasera de la placa está encendido, significa que la placa está alimentada. Cuando tu ordenador se comunica con la placa principal a través del cable USB, el LED amarillo parpadea. Por ejemplo, parpadea cuando cargas un archivo “.hex”.
 
-Ensuite, la carte principale Micro:bit apparaîtra sur votre ordinateur comme un lecteur nommé “MICROBIT”. Veuillez noter qu'il ne s'agit pas d'un disque USB ordinaire comme montré ci-dessous.
+Luego, la placa principal Micro:bit aparecerá en tu ordenador como un dispositivo llamado “MICROBIT”. Ten en cuenta que no es un disco USB ordinario como se muestra a continuación.
 
 ![Img](./media/A849.png)
 
-**Étape 2 Écrire le programme heartbeat**
+**Paso 2 Escribir programa heartbeat**
 
-Accédez au lien : [version en ligne de Makecode](https://makecode.microbit.org/)
+Entra en el enlace: [versión online de Makecode](https://makecode.microbit.org/)
 
-Cliquez sur “<span style="color: rgb(255, 76, 65);">Nouveau Projet</span>” et vous verrez “<span style="color: rgb(255, 76, 65);">Création d'un projet</span>”, remplissez avec “<span style="color: rgb(255, 76, 65);">heartbeat</span>” et cliquez sur “<span style="color: rgb(255, 76, 65);">Créer √</span>”.
+Haz clic en “<span style="color: rgb(255, 76, 65);">Nuevo Proyecto</span>” y verás “<span style="color: rgb(255, 76, 65);">Creando un proyecto</span>”, escribe “<span style="color: rgb(255, 76, 65);">heartbeat</span>” y haz clic en “<span style="color: rgb(255, 76, 65);">Crear √</span>”.
 
-<span style="color: rgb(255, 76, 65);">Ici, nous écrivons les programmes sur Google Chrome.</span>
+<span style="color: rgb(255, 76, 65);">Aquí escribimos programas en Google Chrome.</span>
 
 ![Img](./media/A021.png)
 
-Écrivons un code micro:bit.
+Vamos a escribir un código para micro:bit.
 
-Vous pouvez glisser des blocs dans la zone d'édition puis exécuter votre programme dans le simulateur comme montré ci-dessous. Ici, nous montrons comment éditer le programme <span style="color: rgb(255, 76, 65);">heartbeat</span>.
+Puedes arrastrar algunos bloques al área de edición y luego ejecutar tu programa en el simulador como se muestra a continuación. Aquí demostramos cómo editar el programa <span style="color: rgb(255, 76, 65);">heartbeat</span>.
 
-Vidéo guide opérationnelle :
+Video guía de operación:
 
 ![Img](./media/A100.png)
 
-**Étape 3 Télécharger les codes**
+**Paso 3 Descargar códigos**
 
-Généralement, pour l'application Windows 10 ([Obtenir l'application Windows 10](https://apps.microsoft.com/detail/9pjc7sv48lcx?hl=zh-CN&gl=CN#activetab=pivot:overviewtabdocx))(Cliquez), un simple clic sur “<span style="color: rgb(255, 76, 65);">Télécharger</span>” téléchargera directement le code sur la carte micro:bit sans étapes supplémentaires.
+Generalmente, para la APP de Windows 10 ([Obtener la APP de Windows 10](https://apps.microsoft.com/detail/9pjc7sv48lcx?hl=zh-CN&gl=CN#activetab=pivot:overviewtabdocx))(Haz clic), simplemente hacer clic en “<span style="color: rgb(255, 76, 65);">Descargar</span>” descargará directamente el código a la placa micro:bit sin pasos adicionales.
 
-Pour les navigateurs, veuillez :
+Para navegadores, por favor:
 
-Cliquer sur “<span style="color: rgb(255, 76, 65);">Télécharger</span>” dans l'éditeur. Cela téléchargera un fichier “hex”, un format que la carte micro:bit peut lire. Ensuite, copiez-le sur votre carte micro:bit comme vous copieriez un fichier sur une clé USB. Sous Windows, vous pouvez aussi faire un clic droit sur le fichier “<span style="color: rgb(255, 76, 65);">.hex</span>” et sélectionner “**Envoyer vers → MICROBIT**” pour copier le fichier sur la carte micro:bit.
+Haz clic en “<span style="color: rgb(255, 76, 65);">Descargar</span>” en el editor. Esto descargará un archivo “hex”, que es un formato que la placa micro:bit puede leer. Después, cópialo a tu placa micro:bit como si copiaras un archivo a una unidad USB. En Windows, también puedes hacer clic derecho en el archivo “<span style="color: rgb(255, 76, 65);">.hex</span>” y seleccionar “**Enviar a → MICROBIT**” para copiar el archivo a la placa micro:bit.
 
 ![Img](./media/A319.png)
 
 ![Img](./media/A449.png)
 
-Ou, vous pouvez directement glisser le fichier “<span style="color: rgb(255, 76, 65);">.hex</span>” dans MICROBIT.
+O bien, puedes arrastrar directamente el archivo “<span style="color: rgb(255, 76, 65);">.hex</span>” a MICROBIT.
 
 ![Img](./media/A341.png)
 
 ![Img](./media/A345.png)
 
-Pendant la copie du fichier “<span style="color: rgb(255, 76, 65);">.hex</span>” vers le Micro:bit, la LED jaune à l'arrière de la carte clignote. Lorsque la copie est terminée, la LED cesse de clignoter et reste allumée.
+Durante la copia del archivo “<span style="color: rgb(255, 76, 65);">.hex</span>” al Micro:bit, el LED amarillo en la parte trasera de la placa parpadea. Cuando la copia termina, el LED deja de parpadear y permanece encendido.
 
-**Étape 4 Exécuter le programme**
+**Paso 4 Ejecutar programa**
 
-Après que le programme est téléchargé sur le Micro:bit, vous pouvez l'alimenter via le câble USB ou une alimentation externe. Ensuite, la matrice LED 5 x 5 affiche un motif de battement de cœur.
+Después de que el programa se haya cargado en el Micro:bit, puedes alimentarlo mediante el cable USB o una fuente de alimentación externa. Entonces, la matriz de puntos LED 5 x 5 muestra un patrón de latido del corazón.
 
 ![Img](./media/A425.png)
 
-<span style="color: rgb(255, 76, 65);">**Attention :**</span> À chaque programmation, le pilote du Micro:bit s'éjecte automatiquement puis revient, donc les fichiers hex disparaissent. La carte n'a accès qu'aux fichiers hex mais ne les sauvegarde pas.
+<span style="color: rgb(255, 76, 65);">**Precaución:**</span> Cada vez que programas, el controlador del Micro:bit se expulsará automáticamente y volverá, por lo que los archivos hex desaparecerán. La placa solo tiene acceso a archivos hex pero no los guarda.
 
 #### 1.2. MakeCode
 
-Accédez à la [version en ligne Makecode Google Chrome](https://makecode.microbit.org/). Voici son interface principale.
+Entra en la [versión online de Makecode Google Chrome](https://makecode.microbit.org/). Aquí está su interfaz principal.
 
 ![Img](./media/A637.png)
 
-Il y a les blocs “**on start**” et “**forever**” dans la zone d'édition de code. <span style="color: rgb(255, 76, 65);">Après mise sous tension, le code dans “on start” s'exécute une seule fois, tandis que celui dans “forever” s'exécute en boucle.</span>
+Hay bloques “**on start**” y “**forever**” en el área de edición de código. <span style="color: rgb(255, 76, 65);">Después de encender, el código en “on start” se ejecuta solo una vez, mientras que el código en “forever” se ejecuta cíclicamente.</span>
 
-Cliquez sur la langue “**JS JavaScript**” :
+Haz clic en el lenguaje “**JS JavaScript**”:
 
 ![Img](./media/A754.png)
 
-Changez-la en “**Python**” :
+Cámbialo a “**Python**”:
 
 ![Img](./media/A814.png)
 
 
-#### 1.3. Introduction aux fonctions WebUSB
+#### 1.3. Introducción a las funciones WebUSB
 
-Comme mentionné précédemment, si votre ordinateur est sous Windows 10 et que vous avez téléchargé l'application MakeCode, vous pouvez rapidement télécharger les codes sur la carte via le bouton “<span style="color: rgb(255, 76, 65);">Télécharger</span>”. Nous utilisons le webUSB de **<span style="color: rgb(255, 76, 65);">Google Chrome</span>** pour accéder au périphérique matériel connecté par USB.
+Como se mencionó antes, si tu ordenador es Windows 10 y has descargado la APP MakeCode, puedes descargar rápidamente los códigos a la placa con el botón “<span style="color: rgb(255, 76, 65);">Descargar</span>”. Usamos el webUSB de **<span style="color: rgb(255, 76, 65);">Google Chrome</span>** para acceder al dispositivo hardware conectado por USB.
 
-**Appairage des appareils :**
+**Emparejamiento de dispositivos:**
 
-1\. Connectez la carte à l'ordinateur via un câble USB.
+1\. Conecta la placa al ordenador mediante un cable USB.
 
 ![Img](./media/A951.png)
 
-2\. Cliquez sur “<span style="color: rgb(255, 76, 65);">Télécharger</span>” -> “<span style="color: rgb(255, 76, 65);">...</span>” , puis “<span style="color: rgb(255, 76, 65);">Connecter l'appareil</span>”.
+2\. Haz clic en “<span style="color: rgb(255, 76, 65);">Descargar</span>” -> “<span style="color: rgb(255, 76, 65);">...</span>” y “<span style="color: rgb(255, 76, 65);">Conectar dispositivo</span>”.
 
 ![Img](./media/A028.png)
 
-3\. “<span style="color: rgb(255, 76, 65);">Suivant</span>”.
+3\. “<span style="color: rgb(255, 76, 65);">Siguiente</span>”.
 
 ![Img](./media/A046.png)
 
-4\. “<span style="color: rgb(255, 76, 65);">Appairer</span>”.
+4\. “<span style="color: rgb(255, 76, 65);">Emparejar</span>”.
 
 ![Img](./media/A104.png)
 
-5\. Sélectionnez ensuite l'appareil correspondant et “<span style="color: rgb(255, 76, 65);">Connecter</span>”.
+5\. Luego selecciona el dispositivo correspondiente y “<span style="color: rgb(255, 76, 65);">Conectar</span>”.
 
 ![Img](./media/A127.png)
 
-6\. “<span style="color: rgb(255, 76, 65);">Terminé</span>”.
+6\. “<span style="color: rgb(255, 76, 65);">Hecho</span>”.
 
 ![Img](./media/A144.png)
 
-**Télécharger le programme :**
+**Descargar programa:**
 
-Après la connexion, cliquez sur “<span style="color: rgb(255, 76, 65);">Télécharger</span>” et vous verrez que ![Img](./media/A212.png) devient ![Img](./media/A220.png). Le programme est téléchargé sur la carte micro:bit.
+Después de la conexión, haz clic en “<span style="color: rgb(255, 76, 65);">Descargar</span>” y verás que ![Img](./media/A212.png) se convierte en ![Img](./media/A220.png). El programa se descarga a la placa micro:bit.
 
 ![Img](./media/A232.png)
 
-Si aucun appareil n'apparaît pour la sélection, veuillez consulter [Dépannage des téléchargements avec WebUSB](https://makecode.microbit.org/device/usb/webusb/troubleshoot). Consultez [le guide utilisateur](https://microbit.org/guide/firmware/) pour savoir comment mettre à jour le firmware micro:bit.
+Si no aparece ningún dispositivo para seleccionar, consulta [Solución de problemas de descargas con WebUSB](https://makecode.microbit.org/device/usb/webusb/troubleshoot). Consulta [la guía del usuario](https://microbit.org/guide/firmware/) para saber cómo actualizar el firmware de micro:bit.
 
-#### 1.4. Bibliothèque d'extensions MakeCode
+#### 1.4. Biblioteca de extensiones MakeCode
 
-**3.4.1 Importer des extensions de bibliothèque**
+**3.4.1 Importar extensiones de biblioteca**
 
-Ouvrez Makecode pour entrer dans un projet donné, cliquez sur ![Img](./media/A806.png) pour choisir “**Extensions**”.
+Abre Makecode para entrar en un proyecto determinado, haz clic en ![Img](./media/A806.png) para elegir “**Extensiones**”.
 
 ![Img](./media/A842.png)
 
-Ou cliquez sur “**Extensions**” au-dessus de la section Avancé.
+O haz clic en “**Extensiones**” encima de Avanzado.
 
 ![Img](./media/A900.png)
 
-Recherchez la bibliothèque que vous souhaitez.
+Busca la biblioteca que deseas.
 
 ![Img](./media/A909.png)
 
-Nous fournissons les fichiers de code pour chaque projet contenant tout ce dont vous avez besoin pour exécuter un projet, vous pouvez donc les charger directement. Si vous souhaitez créer vous-même des blocs de code, n'oubliez pas d'ajouter les trois extensions suivantes.
+Proporcionamos los archivos de código para cada proyecto que contienen todo lo necesario para ejecutar un proyecto, por lo que puedes cargarlos directamente. Si quieres construir bloques de código tú mismo, recuerda añadir las siguientes tres extensiones.
 
-<span style="color: rgb(0, 209, 0);">**Extension OLED :**</span>
+<span style="color: rgb(0, 209, 0);">**Extensión OLED:**</span>
 
-1\. Cliquez sur “**Extensions**” pour ajouter des extensions de bibliothèque.
+1\. Haz clic en “**Extensiones**” para añadir extensiones de biblioteca.
 
 ![Img](./media/A236.png)
 
-2\. Recherchez “**OLED**” et cliquez sur ![Img](./media/A3257.png).
+2\. Busca “**OLED**” y haz clic en ![Img](./media/A3257.png).
 
 ![Img](./media/A306.png)
 
-Cliquez sur le premier **oled-ssd1306** et attendez qu'il soit ajouté.
+Haz clic en el primer **oled-ssd1306** y espera a que se añada.
 
 ![Img](./media/A3316.png)
 
-3\. Ajout réussi :
+3\. Añadido con éxito:
 
 ![Img](./media/A335.png)
 
-<span style="color: rgb(0, 209, 0);">**Extension capteur ultrasonique :**</span>
+<span style="color: rgb(0, 209, 0);">**Extensión sensor ultrasónico:**</span>
 
-1\. Cliquez sur “**Extensions**” pour ajouter des extensions de bibliothèque.
+1\. Haz clic en “**Extensiones**” para añadir extensiones de biblioteca.
 
 ![Img](./media/A236.png)
 
-2\. Recherchez “**sonar**” et cliquez sur ![Img](./media/A3257.png) pour trouver et charger “sonar”.
+2\. Busca “**sonar**” y haz clic en ![Img](./media/A3257.png) para encontrar y cargar “sonar”.
 
 ![Img](./media/A506.png)
 
-3\. Ajout réussi :
+3\. Añadido con éxito:
 
 ![Img](./media/A522.png)
 
-<span style="color: rgb(0, 209, 0);">**Extension capteur DHT11 :**</span>
+<span style="color: rgb(0, 209, 0);">**Extensión sensor DHT11:**</span>
 
-1\. Cliquez sur “**Extensions**” pour ajouter des extensions de bibliothèque.
+1\. Haz clic en “**Extensiones**” para añadir extensiones de biblioteca.
 
 ![Img](./media/A236.png)
 
-2\. Recherchez “**DHT11**” et cliquez sur ![Img](./media/A3257.png) pour trouver et charger “DHT11_DHT22”.
+2\. Busca “**DHT11**” y haz clic en ![Img](./media/A3257.png) para encontrar y cargar “DHT11_DHT22”.
 
 ![Img](./media/A616.png)
 
-3\. Ajout réussi :
+3\. Añadido con éxito:
 
 ![Img](./media/A645.png)
 
-**3.4.2 Mettre à jour/Supprimer des extensions**
+**3.4.2 Actualizar/Eliminar extensiones**
 
-1\. Cliquez sur “**JavaScript**” pour passer au code texte.
+1\. Haz clic en “**JavaScript**” para cambiar al código de texto.
 
 ![Img](./media/A724.png)
 
-2\. Cliquez sur “**Explorateur**”.
+2\. Haz clic en “**Explorador**”.
 
 ![Img](./media/A749.png)
 
-3\. Trouvez la bibliothèque “**OLED**” et cliquez sur ![Img](./media/A813.png) pour la supprimer.
+3\. Encuentra la biblioteca “**OLED**” y haz clic en ![Img](./media/A813.png) para eliminarla.
 
 ![Img](./media/A824.png)
 
-4\. “**Supprimer**”.
+4\. “**Eliminar**”.
 
 ![Img](./media/A727.png)
 
-Elle est supprimée.
+Se ha eliminado.
 
-#### 1.5. Comment importer des codes dans MakeCode
+#### 1.5. Cómo importar códigos a MakeCode
 
-Prenons le projet “**heartbeat**” comme exemple pour montrer comment charger le code.
+Tomemos el proyecto “**heartbeat**” como ejemplo para mostrar cómo cargar el código.
 
-1\. Ouvrez la version Web de Makecode ou l'application Windows 10 Makecode, et cliquez sur “<span style="color: rgb(255, 76, 65);">Importer</span>”.
+1\. Abre la versión web de Makecode o la app Windows 10 Makecode y haz clic en “<span style="color: rgb(255, 76, 65);">Importar</span>”.
 
 ![Img](./media/A956.png)
 
-2\. “<span style="color: rgb(255, 76, 65);">Importer un fichier...</span>”
+2\. “<span style="color: rgb(255, 76, 65);">Importar archivo...</span>”
 
 ![Img](./media/A042.png)
 
-3\. “<span style="color: rgb(255, 76, 65);">Choisir un fichier</span>” pour importer le fichier que vous souhaitez charger.
+3\. “<span style="color: rgb(255, 76, 65);">Elegir archivo</span>” para importar el archivo que deseas cargar.
 
 ![Img](./media/A06.png)
 
-4\. Ici, nous chargeons “<span style="color: rgb(255, 76, 65);">heartbeat.hex</span>”.
+4\. Aquí cargamos “<span style="color: rgb(255, 76, 65);">heartbeat.hex</span>”.
 
 ![Img](./media/A28.png)
 
-5\. “<span style="color: rgb(255, 76, 65);">Continuer √</span>”
+5\. “<span style="color: rgb(255, 76, 65);">Continuar √</span>”
 
 ![Img](./media/A149.png)
 
-En plus de la méthode ci-dessus, vous pouvez également glisser le code test dans la zone d'édition de code, comme montré ci-dessous :
+Además del método anterior, también puedes arrastrar el código de prueba al área de edición de código, como se muestra a continuación:
 
 ![Img](./media/A202.png)
 
-Attendez le chargement.
+Espera a que cargue.
 
 ![Img](./media/A217.png)

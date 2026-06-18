@@ -1,103 +1,103 @@
-### Projet 03 : Chauve-souris à ultrasons
+### Proyecto 03: Murciélago Medidor de Distancia
 
-#### 1. Aperçu
+#### 1. Resumen
 
-Basée sur un capteur à ultrasons, la chauve-souris à ultrasons détecte la distance des obstacles et l'affiche en temps réel sur un OLED. Lorsque la distance est inférieure à 10 cm, le haut-parleur émet une alarme.
+Basado en un sensor ultrasónico, el murciélago medidor detecta la distancia de los obstáculos y la muestra en tiempo real en un OLED. Cuando es menor a 10cm, el altavoz emite una alarma.
 
-#### 2. Composants
+#### 2. Componentes
 
 | ![Img](./media/A850.png) |       ![Img](./media/A858.png)       |              ![Img](./media/A906.png)              |
 | :---------------------: | :---------------------------------: | :-----------------------------------------------: |
-|   micro:bit board *1    | micro:bit T-type expansion board *1 |                micro USB cable *1                 |
+|   placa micro:bit *1    | placa de expansión tipo T para micro:bit *1 |                cable micro USB *1                 |
 | ![Img](./media/A356.png) |       ![Img](./media/A406.png)       |              ![Img](./media/A415.png)              |
-|  ultrasonic sensor *1   |           OLED module *1            |                   DuPont wires                    |
+|  sensor ultrasónico *1   |           módulo OLED *1            |                   cables DuPont                    |
 | ![Img](./media/A017.png) |       ![Img](./media/A950.png)       |              ![Img](./media/A024.png)              |
-|      breadboard *1      |             jump wires              | battery holder *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>)|
+|      protoboard *1      |             cables de salto              | portapilas *1 <br> (<span style="color: rgb(255, 76, 65);">pilas AA auto-proporcionadas *2</span>)|
 | ![Img](./media/A315.png) |       ![Img](./media/A557.png)       |                                                   |
-|       bat card *1       |            OLED card *1             |                                                   |
+|       tarjeta bat *1       |            tarjeta OLED *1             |                                                   |
 
-#### 3. Connaissances sur les composants
+#### 3. Conocimiento de Componentes
 
-**capteur à ultrasons**
+**sensor ultrasónico**
 
-Les ondes ultrasonores rebondissent lorsqu'elles rencontrent un obstacle. Nous mesurons la distance en calculant l'intervalle de temps entre l'émission et la réception des ondes. Comme la vitesse de propagation du son dans l'air est constante v=340m/s, nous calculons la distance entre le capteur et l'obstacle : s=vt/2.
+Las ondas ultrasónicas rebotan cuando golpean un obstáculo. Medimos la distancia calculando el intervalo de tiempo entre el envío y la recepción de las ondas. Dado que la velocidad de propagación del sonido en el aire es constante v=340m/s, calculamos la distancia entre el sensor y el obstáculo: s=vt/2.
 
 ![Img](./media/A846.png)
 
-Le module ultrasonique HC-SR04 intègre un émetteur et un récepteur. Le premier convertit les signaux électriques (énergie électrique) en ondes sonores à haute fréquence (au-delà de l'audition humaine) (énergie mécanique), tandis que le second fait l'inverse.
+El módulo ultrasónico HC-SR04 integra un transmisor y un receptor. El primero convierte señales eléctricas (energía eléctrica) en ondas sonoras de alta frecuencia (más allá del oído humano) (energía mecánica), mientras que el segundo hace lo contrario.
 
-Le schéma du HC SR04 :
+El diagrama esquemático del HC SR04:
 
 ![Img](./media/A642.png)
 
-**Définition des broches :**
+**Definición de pines:**
 
 ![Img](./media/A702.png)
 
-**Paramètres :**
+**Parámetros:**
 
-- Tension de fonctionnement : 5V
-- Courant de fonctionnement : 12mA
-- Distance minimale de mesure : 2cm
-- Distance maximale de mesure : 200cm
+- Voltaje de operación: 5V
+- Corriente de operación: 12mA
+- Distancia mínima de medición: 2cm
+- Distancia máxima de medición: 200cm
 
-**Principe de fonctionnement :**
+**Principio de funcionamiento:**
 
-Une impulsion de niveau haut d'au moins 10µs est envoyée sur la broche Trig, et le module commence à émettre des ondes ultrasonores. En même temps, la broche Echo est mise à niveau haut. Lorsque le module reçoit une onde ultrasonore de retour après avoir rencontré un obstacle, la broche Echo passe à niveau bas. La durée du niveau haut de la broche Echo correspond au temps total de l'onde entre l'émission et la réception : s=vt/2.
+Se emite un pulso de nivel alto de al menos 10us en el pin Trig, y el módulo comienza a transmitir ondas ultrasónicas. Al mismo tiempo, el pin Echo se pone en alto. Cuando el módulo recibe una onda ultrasónica de vuelta al encontrar un obstáculo, el pin Echo se pone en bajo. La duración del nivel alto del pin Echo es el tiempo total de la onda desde el envío hasta la recepción: s=vt/2.
 
 ![Img](./media/A728.png)
 
-**Module OLED**
+**Módulo OLED**
 
-La technologie OLED offre une riche performance de couleurs, un contraste élevé et un large angle de vue, fournissant des images claires et vives, particulièrement remarquables dans les noirs.
+La tecnología OLED ofrece un rendimiento de color rico, alto contraste y amplio ángulo de visión, proporcionando imágenes claras y vívidas, especialmente destacadas en el color negro.
 
-Chaque pixel de l'écran OLED émet sa propre lumière sans rétroéclairage, ce qui consomme relativement peu d'énergie. Avec une petite taille, une haute résolution et une faible consommation, l'écran OLED de 0,9 pouce est très adapté aux dispositifs portables.
+Cada píxel de la pantalla OLED emite luz por sí mismo sin retroiluminación, por lo que consume relativamente poca energía. Con tamaño pequeño, alta resolución y bajo consumo, la pantalla OLED de 0.9 pulgadas es muy adecuada para dispositivos portátiles.
 
 ![Img](./media/A636.png)
 
-<span style="color: rgb(255, 76, 65);">**Dans ce projet, le module d'affichage OLED connecte l'interface SDA à la broche P20 et SCL à la broche P19.**</span>
+<span style="color: rgb(255, 76, 65);">**En este proyecto, el módulo de pantalla OLED conecta la interfaz SDA al pin P20 y SCL al pin P19.**</span>
 
-**Paramètres :**
+**Parámetros:**
 
-- Tension de fonctionnement : DC 3.3V-5V
+- Voltaje de operación: DC 3.3V-5V
 
-- Courant de fonctionnement : 30mA
+- Corriente de operación: 30mA
 
-- Interface : ports à broches avec un espacement de 2,54 mm
+- Interfaz: Puertos de pines con un espaciado de 2.54mm
 
-- Mode de communication : I2C
+- Modo de comunicación: I2C
 
-- Puce pilote interne : SSD1306
+- Chip controlador interno: SSD1306
 
-- Résolution : 128*64
+- Resolución: 128*64
 
-- Angle de vue : supérieur à 150°
+- Ángulo de visión: mayor a 150°
 
-#### 4. Schéma de câblage
+#### 4. Diagrama de Conexiones
 
 ![Img](./media/A1849.png)
 
-<span style="color: rgb(255, 76, 65);">**Lors de l'utilisation de l'écran OLED et du capteur à ultrasons, il faut connecter une alimentation externe et mettre l'interrupteur DIP sur ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Al usar la pantalla OLED y el sensor ultrasónico, debemos conectar una fuente de alimentación externa y poner el interruptor DIP en ON.**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A1906.png)
 
-#### 5. Importer la bibliothèque
+#### 5. Importar Biblioteca
 
-Si vous n'avez pas encore ajouté les fichiers de bibliothèque requis (oled_ssd1306), veuillez l'importer en vous référant à [Comment Mu importe la bibliothèque vers Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit).
+Si aún no has agregado los archivos de biblioteca requeridos (oled_ssd1306), por favor impórtala refiriéndote a [Cómo Mu importa biblioteca a Micro:bit](https://docs.keyestudio.com/projects/FKS0004/en/latest/docs/MicroPython_Tutorial/MicroPython_Tutorial.html#how-mu-import-library-to-micro-bit).
 
-#### 6. Flux du code
+#### 6. Flujo del Código
 
 ![Img](./media/A924.png)
 
-#### 7. Code de test
+#### 7. Código de Prueba
 
-Le fichier de code est fourni dans le dossier Projet 03：Chauve-souris à ultrasons, fichier Project-03-Ranging-Bat\.py.
+El archivo de código se proporciona en la carpeta Proyecto 03：Murciélago Medidor de Distancia, archivo Project-03-Ranging-Bat\.py.
 
 ![Img](./media/A302.png)
 
-**Code complet :** <span style="color: rgb(255, 76, 65);">**Le seuil dans la condition 10 peut être modifié selon les conditions réelles.**</span>
+**Código completo:** <span style="color: rgb(255, 76, 65);">**El umbral en la condición 10 puede modificarse según las condiciones reales.**</span>
 
 ```python
 '''
@@ -150,18 +150,18 @@ while True:
         sleep(200)
 ```
 
-#### 8. Résultat du test
+#### 8. Resultado de la Prueba
 
-Cliquez sur “<span style="color: rgb(255, 76, 65);">Flash</span>” pour charger le code sur la carte micro:bit.
+Haz clic en “<span style="color: rgb(255, 76, 65);">Flash</span>” para cargar el código en la placa micro:bit.
 
 ![Img](./media/A3323.png)
 
-Après avoir téléchargé le code sur la carte, **alimentez via le câble micro USB ou une alimentation externe (mettre l'interrupteur DIP sur ON)**, puis appuyez sur le bouton reset de la carte.
+Después de descargar el código a la placa, **enciende mediante el cable micro USB o fuente de alimentación externa (pon el interruptor DIP en ON)**, y presiona el botón de reinicio en la placa.
 
 ![Img](./media/A455.png)
 
-L'OLED affiche en temps réel la distance entre le capteur à ultrasons et l'obstacle. Lorsque la valeur de distance est inférieure à 10 cm, le haut-parleur de la carte micro:bit émet une alarme.
+El OLED muestra la distancia entre el sensor ultrasónico y el obstáculo en tiempo real. Cuando el valor de la distancia es menor a 10cm, el altavoz en la placa micro:bit emite una alarma.
 
-<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez sur le bouton reset à l'arrière de la carte.</span></span>
+<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no ves resultados, presiona el botón de reinicio en la parte trasera de la placa.</span></span>
 
 ![Img](./media/A605.gif)

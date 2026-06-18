@@ -1,14 +1,14 @@
-## 4. Dépannage
+## 4. Solución de Problemas
 
-**Erreurs lors du téléchargement des codes**
+**Errores al Subir Códigos**
 
-- Si des icônes désordonnées s'affichent sur la matrice de la carte après le téléchargement du code, vérifiez si des caractères ont été accidentellement ajoutés ou supprimés. Vous pouvez cliquer sur « vérifier » ![Img](./media/A5457.png). Mais notez que certains ne sont pas des erreurs, juste des avertissements.
+- Si se muestran íconos desordenados en la matriz de la placa después de subir el código, verifica si se han agregado o eliminado caracteres accidentalmente. Puedes hacer clic en “check” ![Img](./media/A5457.png). Pero ten en cuenta que algunos no son errores, solo advertencias.
 
-- Si le code utilise une bibliothèque, vérifiez si la bibliothèque est bien téléchargée sur la carte. Voir « **Comment Mu importe une bibliothèque sur Micro:bit** ». Puis vérifiez si des caractères ont été accidentellement ajoutés ou supprimés.
+- Si el código incluye una biblioteca, verifica si la biblioteca está cargada en la placa. Consulta “**Cómo Mu importa la biblioteca a Micro:bit**”. Y luego verifica si se han agregado o eliminado caracteres accidentalmente.
 
-**Aucune impression sur REPL**
+**No Hay Impresiones en REPL**
 
-- Après avoir téléchargé le code, cliquez sur « REPL » ![Img](./media/A5530.png) et rien ne s'affiche. Dans ce cas, il faut appuyer sur le bouton reset à l'arrière de la carte micro:bit. 
+- Después de subir el código, haz clic en “REPL” ![Img](./media/A5530.png) y no imprime nada. En este caso, necesitamos presionar el botón de reinicio en la parte trasera de la placa micro:bit. 
 
 
 ![Img](./media/A455.png)

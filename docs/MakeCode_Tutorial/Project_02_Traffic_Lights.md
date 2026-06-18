@@ -1,61 +1,61 @@
-### Projet 02 : Feux de circulation
+### Proyecto 02: Semáforos
 
-#### 1. Aperçu
+#### 1. Resumen
 
-Dans ce projet, nous utilisons trois LED (rouge, jaune et verte), un haut-parleur sur la carte micro:bit et une matrice LED 5x5 pour réaliser un modèle de feux de circulation.
+En este proyecto, utilizamos tres LEDs (rojo, amarillo y verde), un altavoz en la placa micro:bit y una matriz LED 5x5 para hacer un modelo de semáforo.
 
-#### 2. Composants
+#### 2. Componentes
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| carte micro:bit *1 | carte d'extension de type T pour micro:bit *1 | câble micro USB *1 |
+| placa micro:bit *1 | placa de expansión tipo T para micro:bit *1 | cable micro USB *1 |
 | ![Img](./media/A937.png)| ![Img](./media/A5652.png) | ![Img](./media/A658.png) |
-| LED rouge *1 | LED jaune *1 | LED verte *1 |
+| LED rojo *1 | LED amarillo *1 | LED verde *1 |
 | ![Img](./media/A944.png) | ![Img](./media/A950.png) |![Img](./media/A017.png) |
-| résistance 220Ω *3 | fils de connexion | breadboard *1 |
+| resistencia 220Ω *3 | cables de salto | protoboard *1 |
 |  ![Img](./media/A024.png) |  ![Img](./media/A020.png) |  |
-| support de pile *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>) | carte de feux de circulation *1 | |
+| portapilas *1 <br> (<span style="color: rgb(255, 76, 65);">pilas AA auto-proporcionadas *2</span>) | tarjeta de semáforo *1 | |
 
-#### 3. Connaissances sur les composants
+#### 3. Conocimiento de Componentes
 
-**Haut-parleur**
+**Altavoz**
 
 ![Img](./media/A833.png)
 
-Le micro:bit est équipé d’un haut-parleur, ce qui facilite la production de sons dans votre projet.
+Micro:bit viene con un altavoz, lo que facilita hacer sonido en tu proyecto.
 
-#### 4. Schéma de câblage
+#### 4. Diagrama de Conexiones
 
 ![Img](./media/A908.png)
 
-<span style="color: rgb(255, 76, 65);">**Remarque :** la carte micro:bit doit être insérée dans la carte d'extension de type T comme indiqué ci-dessous. La matrice LED de la carte micro:bit doit être du même côté que le logo de la carte d'extension.</span>
+<span style="color: rgb(255, 76, 65);">**Nota:** la placa micro:bit debe insertarse en la placa de expansión tipo T como se muestra a continuación. La matriz LED de la placa micro:bit debe estar del mismo lado que el logo de la placa de expansión.</span>
 
 ![Img](./media/A940.png)
 
-#### 5. Flux du code
+#### 5. Flujo del Código
 
 ![Img](./media/A5956.png)
 
-#### 6. Code de test
+#### 6. Código de Prueba
 
-Le fichier de code est fourni dans le dossier Projet 02 : Feux de circulation, fichier Project-02-Traffic-Lights.hex.
+El archivo de código se proporciona en la carpeta Proyecto 02：Semáforos, archivo Project-02-Traffic-Lights.hex.
 
 ![Img](./media/A0017.png)
 
-**Charger les blocs de code :**
+**Cargar bloques de código:**
 
 ![Img](./media/A605.png)
 
-#### 7. Résultat du test
+#### 7. Resultado de la Prueba
 
-Pour l’application Windows 10, cliquez sur “<span style="color: rgb(255, 76, 65);">Télécharger</span>”. Pour les navigateurs, envoyez le fichier “<span style="color: rgb(255, 76, 65);">.hex</span>” téléchargé vers la carte micro:bit.
+Para la aplicación de Windows 10, haga clic en “<span style="color: rgb(255, 76, 65);">Descargar</span>”. Para navegadores, envíe el archivo “<span style="color: rgb(255, 76, 65);">.hex</span>” descargado a la placa micro:bit.
 
-Après avoir téléchargé le code sur la carte, la LED verte s’allume et la matrice LED 5×5 compte à rebours pendant 6 secondes. Après l’extinction de la LED verte, la LED jaune clignote et la matrice compte à rebours 3 s avec le haut-parleur qui sonne. Enfin, la LED rouge s’allume avec un compte à rebours de 6 s. Ces actions se répètent.
+Después de descargar el código a la placa, el LED verde se enciende y la matriz LED 5×5 cuenta regresivamente 6 segundos. Después de que el LED verde se apaga, el LED amarillo parpadea y la matriz cuenta regresivamente 3s con el altavoz sonando. Finalmente, el LED rojo se enciende con una cuenta regresiva de 6s. Estas acciones se repiten.
 
-<span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez sur le bouton de réinitialisation à l’arrière de la carte.</span>
+<span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no ves los resultados, presiona el botón de reinicio en la parte trasera de la placa.</span>
 
 ![Img](./media/A459.gif)
 
-<span style="color: rgb(255, 76, 65);">**Lors de l’alimentation via une source externe, mettez l’interrupteur DIP sur ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Al alimentar mediante fuente de alimentación externa, encienda el interruptor DIP.**</span>
 
 ![Img](./media/A904.png)

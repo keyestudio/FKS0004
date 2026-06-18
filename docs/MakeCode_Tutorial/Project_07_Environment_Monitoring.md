@@ -1,104 +1,104 @@
-### Projet 07 : Surveillance de l'environnement
+### Proyecto 07: Monitoreo del Ambiente
 
-#### 1. Aperçu
+#### 1. Resumen
 
-Sur l'OLED, le système intelligent de surveillance de l'environnement affiche en temps réel les valeurs de température et d'humidité détectées par le capteur DHT11, ainsi que la valeur du niveau de luminosité de la lumière ambiante détectée par le capteur de lumière intégré.
+En el OLED, el sistema inteligente de monitoreo ambiental muestra en tiempo real los valores de temperatura y humedad detectados por el sensor DHT11, así como el valor del nivel de brillo de la luz ambiental detectado por el sensor de luz integrado.
 
-#### 2. Composants
+#### 2. Componentes
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| carte micro:bit *1 | carte d'extension micro:bit de type T *1 | câble micro USB *1 |
+| placa micro:bit *1 | placa de expansión tipo T para micro:bit *1 | cable micro USB *1 |
 | ![Img](./media/A2637.png)| ![Img](./media/A406.png)| ![Img](./media/A415.png) |
-| capteur de température et d'humidité XHT11 *1 | module OLED *1 | fils DuPont |
+| sensor de temperatura y humedad XHT11 *1 | módulo OLED *1 | cables DuPont |
 |![Img](./media/A017.png) | ![Img](./media/A950.png) | ![Img](./media/A024.png) |
-| breadboard *1 | fils de connexion | support de batterie *1 <br> (<span style="color: rgb(255, 76, 65);">piles AA auto-fournies *2</span>)|
+| protoboard *1 | cables de salto | soporte para batería *1 <br> (<span style="color: rgb(255, 76, 65);">pilas AA auto-proporcionadas *2</span>)|
 |![Img](./media/A0715.png) |![Img](./media/A557.png)  | |
-| carte cloud *1| carte OLED *1 | |
+| tarjeta nube *1| tarjeta OLED *1 | |
 
-#### 3. Connaissances sur les composants
+#### 3. Conocimiento de los Componentes
 
-**Capteur de température et d'humidité XHT11**
+**Sensor de temperatura y humedad XHT11**
 
 ![Img](./media/A2637.png)
 
-Le capteur de température et d'humidité XHT11 est un capteur composite avec sortie numérique calibrée, capable de détecter l'humidité et la température de l'air.
+El sensor de temperatura y humedad XHT11 es un sensor compuesto con salida de señal digital calibrada, que puede detectar la humedad y temperatura en el aire.
 
-**Précision** : humidité ±5%RH, température ±2℃
+**Precisión**: humedad ±5%RH, temperatura ±2℃
 
-**Plage de détection** : humidité 5%RH ~ 95%RH, température -25℃ ~ +60℃
+**Rango de detección**: humedad 5%RH ~ 95%RH, temperatura -25℃ ~ +60℃
 
-Le capteur utilise une acquisition par module numérique spécial et une technologie de détection de température et d'humidité pour garantir une fiabilité extrêmement élevée et une excellente stabilité à long terme. Il comprend un élément de détection d'humidité résistif et un élément de détection de température NTC, ce qui le rend très adapté aux mesures avec une précision relativement faible et des exigences en temps réel.
+El sensor utiliza un módulo digital especial para adquisición y tecnología de detección de temperatura y humedad para asegurar una fiabilidad extremadamente alta y una excelente estabilidad a largo plazo. Incluye un elemento resistivo de detección de humedad y un elemento NTC de detección de temperatura, siendo muy adecuado para mediciones con precisión relativamente baja y requisitos en tiempo real.
 
-**Mode de communication XHT11 :**
+**Modo de comunicación XHT11:**
 
-La communication par bus unique est adoptée. Cela signifie qu'il n'y a qu'une seule ligne de données pour l'échange de données et le contrôle dans le système.
+Se adopta comunicación de bus único. Esto significa que solo hay una línea de datos para el intercambio de datos y control en el sistema.
 
-- Définition des bits de données transmis par bus unique :
+- Definición de bits de datos transmitidos por bus único:
 
-Format des données du bus unique : 40 bits de données sont transmis à la fois, avec le bit de poids fort en premier.
+Formato de datos de bus único: se transmiten 40 bits de datos a la vez, con el bit alto primero.
 
-8 bits humidité entière + 8 bits humidité décimale + 8 bits température entière + 8 bits température décimale + 8 bits bit de parité (La partie décimale de l'humidité est 0)
+8bit entero de humedad + 8bit decimal de humedad + 8bit entero de temperatura + 8bit decimal de temperatura + 8bit bit de paridad (La parte decimal de la humedad es 0)
 
-- Définition du bit de parité
+- Definición del bit de paridad
 
-8 bits humidité entière + 8 bits humidité décimale + 8 bits température entière + 8 bits température décimale. 8 bits bit de parité = les 8 derniers bits du résultat obtenu
+8bit entero de humedad + 8bit decimal de humedad + 8bit entero de temperatura + 8bit decimal de temperatura. 8bit bit de paridad = los últimos 8 bits del resultado obtenido
 
-- Chronologie des données :
+- Línea de tiempo de datos:
 
-Après que l'hôte utilisateur (MCU) envoie un signal de démarrage, le XHT11 passe du mode basse consommation au mode haute vitesse. Après le signal de démarrage, le XHT11 envoie un signal de réponse et 40 bits de données, et déclenche une acquisition de signal.
+Después de que el host usuario (MCU) envía una señal de inicio, el XHT11 cambia de modo de bajo consumo a modo de alta velocidad. Tras la señal de inicio, XHT11 envía una señal de respuesta y 40bit de datos, y activa una adquisición de señal.
 
-- La transmission du signal est illustrée dans la figure :
+- La transmisión de señal se muestra en la figura:
 
 ![Img](./media/A229.png)
 
- **Paramètres**
+ **Parámetros**
 
-- Tension de fonctionnement : DC 3.3V à 5V
+- Voltaje de operación: DC 3.3V a 5V
 
-- Courant de fonctionnement : 2.1mA
+- Corriente de operación: 2.1mA
 
-- Puissance maximale : 0.0105W
+- Potencia máxima: 0.0105W
 
-- Plage de température : -25℃ ~ +60℃ (± 2℃)
+- Rango de temperatura: -25℃ ~ +60℃ (± 2℃)
 
-- Plage d'humidité : 5%RH ~ 95%RH (précision ±5%RH autour de 25 °C)
+- Rango de humedad: 5%RH ~ 95%RH (precisión ±5%RH alrededor de 25 ° C)
 
-**Capteur de lumière Microbit**
+**Sensor de Luz Microbit**
 
 ![Img](./media/A0335.png)
 
-Un capteur de lumière est un dispositif d'entrée qui mesure la luminosité de la lumière externe. La carte micro:bit ne comprend pas de capteur de lumière intégré. Elle détecte et mesure la luminosité ambiante par une matrice de LED qui convertit à plusieurs reprises l'intensité lumineuse en une valeur d'entrée, puis le temps d'atténuation de la tension est échantillonné. De cette façon, <span style="color: rgb(255, 76, 65);">le niveau de luminosité détecté est une valeur relative</span>.
+Un sensor de luz es un dispositivo de entrada que mide el brillo de la luz externa. La placa micro:bit no incluye un sensor de luz incorporado. Detecta y percibe el brillo ambiental mediante una matriz de LED que convierte repetidamente la intensidad de la luz en un valor de entrada, y luego se muestrea el tiempo de atenuación del voltaje. De esta manera, <span style="color: rgb(255, 76, 65);">el nivel de brillo detectado es un valor relativo</span>.
 
-#### 4. Schéma de câblage
+#### 4. Diagrama de Conexiones
 
 ![Img](./media/A409.png)
 
-<span style="color: rgb(255, 76, 65);">Lors de l'utilisation de l'affichage OLED, nous devons connecter une alimentation externe et mettre l'interrupteur DIP sur ON.</span>
+<span style="color: rgb(255, 76, 65);">Al usar la pantalla OLED, debemos conectar una fuente de alimentación externa y poner el interruptor DIP en ON.</span>
 
 ![Img](./media/A904.png)
 
 ![Img](./media/A554.png)
 
-#### 5. Flux du code
+#### 5. Flujo del Código
 
 ![Img](./media/A638.png)
 
 
-#### 6. Code de test
+#### 6. Código de Prueba
 
-Le fichier de code est fourni dans le dossier Projet 07：Surveillance de l'environnement, fichier Project-07-Environment-Monitoring.hex.
+El archivo de código se proporciona en la carpeta Proyecto 07：Monitoreo del Ambiente, archivo Project-07-Environment-Monitoring.hex.
 
 ![Img](./media/A656.png)
 
-**Charger les blocs de code :**
+**Cargar bloques de código:**
 
 ![Img](./media/A715.png)
 
-#### 7. Résultat du test
+#### 7. Resultado de la Prueba
 
-Après avoir téléchargé le code sur la carte, l'OLED affiche en temps réel les valeurs de température et d'humidité ainsi que le niveau de luminosité de la lumière.
+Después de descargar el código a la placa, el OLED muestra en tiempo real los valores de temperatura y humedad y el nivel de brillo de la luz.
 
-<span style="color: rgb(255, 76, 65);">**ATTENTION :** Si le câblage est correct mais que vous ne voyez pas les résultats, appuyez sur le bouton reset à l'arrière de la carte.</span>
+<span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no puede ver los resultados, presione el botón de reinicio en la parte trasera de la placa.</span>
 
 ![Img](./media/A838.gif)
