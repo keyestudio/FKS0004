@@ -1,173 +1,173 @@
-### Proyecto 01: Pequeña Lámpara con Botón
+### Projekt 01: Kleine Lampe mit Knopf
 
-#### 1. Resumen
+#### 1. Überblick
 
-Hay dos botones programables en la parte frontal de la placa micro:bit (A y B). Los combinamos con un LED rojo y una tarjeta de lámpara para construir una pequeña lámpara de escritorio. Cuando se presiona el botón A, el LED rojo se enciende; cuando se presiona B, se apaga.
+Auf der Vorderseite des micro:bit Boards befinden sich zwei programmierbare Tasten (A und B). Wir kombinieren sie mit einer roten LED und einer Lampenkarte, um eine kleine Schreibtischlampe zu bauen. Wenn die Taste A gedrückt wird, leuchtet die rote LED; wenn B gedrückt wird, geht sie aus.
 
-#### 2. Componentes
+#### 2. Komponenten
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| placa micro:bit *1 | placa de expansión tipo T para micro:bit *1 | cable micro USB *1 |
+| micro:bit Board *1 | micro:bit T-Typ Erweiterungsboard *1 | micro USB Kabel *1 |
 | ![Img](./media/A937.png)| ![Img](./media/A944.png) | ![Img](./media/A950.png) |
-| LED rojo *1 | resistencia 220Ω *1 | cable de puente *2 |
+| rote LED *1 | 220Ω Widerstand *1 | Steckdraht *2 |
 | ![Img](./media/A017.png) | ![Img](./media/A024.png) | ![Img](./media/A920.png)  |
-| protoboard *1 | portapilas *1 <br> (<span style="color: rgb(255, 76, 65);">pilas AA auto-proporcionadas *2</span>) | tarjeta de lámpara *1 |
+| Steckbrett *1 | Batteriefach *1 <br> (<span style="color: rgb(255, 76, 65);">selbst mitgebrachte AA Batterien *2</span>) | Lampenkarte *1 |
 
-#### 3. Conocimientos sobre Componentes
+#### 3. Komponentenwissen
 
-**Botones**
+**Tasten**
 
-Los botones pueden controlar el encendido y apagado del circuito. Cuando un botón está conectado a un circuito, el circuito está abierto cuando el botón no está presionado; el circuito se cierra al presionar el botón.
+Tasten können den Stromkreis ein- und ausschalten. Wenn eine Taste mit einem Stromkreis verbunden ist, ist der Stromkreis geöffnet, wenn die Taste nicht gedrückt wird; der Stromkreis wird geschlossen, nachdem die Taste gedrückt wurde.
 
-Hay tres botones en la placa micro:bit: un botón de reinicio en la parte trasera y dos botones programables (A y B) en la parte frontal.
+Auf dem micro:bit Board befinden sich drei Tasten: eine Reset-Taste auf der Rückseite und zwei programmierbare Tasten (A und B) auf der Vorderseite.
 
 ![Img](./media/A230.png)
 
-**Resistencias**
+**Widerstände**
 
 ![Img](./media/A248.png)
 
-Una resistencia es un componente electrónico que limita la corriente en una rama del circuito. La resistencia de una resistencia fija no puede ajustarse, mientras que la de un potenciómetro o una resistencia variable sí puede.
+Ein Widerstand ist ein elektronisches Bauteil, das den Strom in einem Zweigkreis begrenzt. Der Widerstand eines Festwiderstands kann nicht eingestellt werden, während der eines Potentiometers oder eines veränderlichen Widerstands verstellbar ist.
 
-Aquí hay dos símbolos comunes de circuito para resistencias. Si ves estos símbolos en un circuito, representan una resistencia.
+Hier sind zwei gängige Schaltzeichensymbole für Widerstände. Wenn Sie diese Symbole in einem Schaltkreis sehen, repräsentieren sie einen Widerstand.
 
 ![Img](./media/A303.png)
 
-Ω es la unidad de resistencia, incluyendo Ω, KΩ, MΩ, etc. Se pueden expresar como: 1 MΩ=1000 KΩ, 1 KΩ =1000 Ω. En general, algunas resistencias están marcadas en la superficie.
+Ω ist die Einheit des Widerstands, einschließlich Ω, KΩ, MΩ usw. Sie können wie folgt ausgedrückt werden: 1 MΩ = 1000 KΩ, 1 KΩ = 1000 Ω. Im Allgemeinen sind einige Widerstände auf der Oberfläche markiert.
 
-Al usar una resistencia, primero necesitamos conocer su resistencia. Hay dos maneras: observar la banda de color en ella, o medir su resistencia con un multímetro. Obviamente, la primera es más conveniente y rápida.
+Beim Verwenden eines Widerstands müssen wir zuerst seinen Widerstandswert kennen. Es gibt zwei Möglichkeiten: die Farbringe darauf beobachten oder den Widerstand mit einem Multimeter messen. Offensichtlich ist die erste Methode bequemer und schneller.
 
 ![Img](./media/A317.png)
 
-Como se muestra en la tarjeta de resistencias, cada color representa un número.
+Wie auf der Widerstandskarte gezeigt, steht jede Farbe für eine Zahl.
 
 ![Img](./media/A3335.png)
 
-Las resistencias de 4 bandas y 5 bandas son las más comunes.
+4-Band- und 5-Band-Widerstände werden häufig verwendet.
 
-A menudo, cuando recibes una resistencia, puede ser difícil decidir por dónde empezar a leer el color.
+Oft ist es schwierig zu entscheiden, von welcher Seite man die Farbringe lesen soll, wenn man einen Widerstand erhält.
 
-**Por lo tanto, puedes observar la separación entre las dos bandas en un extremo; si es más ancha que cualquier otra separación de banda, lee desde el extremo opuesto.**
+**Daher können Sie den Abstand zwischen den beiden Bändern an einem Ende beobachten; wenn dieser breiter ist als jeder andere Bandabstand, lesen Sie von der gegenüberliegenden Seite.**
 
-<span style="color: rgb(255, 76, 65);">**Ten en cuenta que la separación entre la 4ª y 5ª banda (la 3ª y 4ª) es relativamente ancha en una resistencia de 5 bandas (4 bandas).**</span>
+<span style="color: rgb(255, 76, 65);">**Beachten Sie, dass der Abstand zwischen dem 4. und 5. Band (bzw. 3. und 4. Band) bei einem 5-Band- (bzw. 4-Band-) Widerstand relativ breit ist.**</span>
 
-Veamos cómo leer la resistencia de una resistencia de 5 bandas, como se muestra a continuación:
+Sehen wir uns an, wie man den Widerstand eines 5-Band-Widerstands liest, wie unten gezeigt:
 
 ![Img](./media/A426.png)
 
-Para esta resistencia, la resistencia debe leerse de izquierda a derecha. El valor debe ser: 1ª banda 2ª banda 3ª banda x 10^multiplicador(Ω), ±tolerancia%.
+Für diesen Widerstand sollte der Wert von links nach rechts gelesen werden. Der Wert lautet: 1. Band 2. Band 3. Band × 10^Multiplikator(Ω), ±Toleranz%.
 
-Por lo tanto, la resistencia de esta resistencia es 2(rojo) 2(rojo) 0(negro) × 10^0 (negro)Ω = 220Ω, ±1%(marrón). Aprende más sobre [resistencia en Wiki](https://en.wikipedia.org/wiki/Resistor).
+Daher beträgt der Widerstand dieses Widerstands 2(rot) 2(rot) 0(schwarz) × 10^0 (schwarz)Ω = 220Ω, ±1%(braun). Mehr über [Widerstände bei Wiki](https://en.wikipedia.org/wiki/Resistor).
 
 **LED**
 
-LED, llamado completamente “diodo emisor de luz”, es un dispositivo electrónico hecho de materiales semiconductores (silicio, selenio, germanio, etc.). Es polarizado, con un polo positivo - el pin largo conectado a VCC (V o 3.3V o 5V o +), y un polo negativo - el pin corto conectado a GND (G o -). La corriente fluye del positivo al negativo, en un flujo unidireccional.
+LED, vollständig „Licht emittierende Diode“ genannt, ist ein elektronisches Bauteil aus Halbleitermaterialien (Silizium, Selen, Germanium usw.). Sie ist polarisiert, mit einem positiven Pol – dem langen Anschluss, der mit VCC (V oder 3.3V oder 5V oder +) verbunden ist, und einem negativen Pol – dem kurzen Anschluss, der mit GND (G oder -) verbunden ist. Der Strom fließt vom positiven zum negativen Pol, in einem Einwegfluss.
 
-Símbolo electrónico y gráfico del LED:
+Elektronisches und grafisches Symbol der LED:
 
 ![Img](./media/A515.png)
 
-LED en varios tamaños y colores:
+LEDs in verschiedenen Größen und Farben:
 
 ![Img](./media/A525.png)
 
-Rojo, amarillo, azul, verde y blanco son los colores más comunes de LED, que coinciden con sus colores de apariencia. Raramente usamos LED transparentes, y la luz emitida puede no ser blanca. Hay cuatro tamaños de LED: 3mm, 5mm (el más común), 8mm y 10mm.
+Rot, Gelb, Blau, Grün und Weiß sind die gebräuchlichsten LED-Farben, entsprechend ihrer Erscheinungsfarben. Transparente LEDs werden selten verwendet, und das ausgestrahlte Licht ist möglicherweise nicht weiß. Es gibt vier LED-Größen: 3mm, 5mm (am häufigsten), 8mm und 10mm.
 
 ![Img](./media/A535.png)
 
-El voltaje directo debe usarse cuando el LED está encendido. Es un parámetro muy importante al usar un LED, ya que determina cuánta energía usas y qué tan grande debe ser la resistencia limitadora de corriente. Para la mayoría de los LED rojos, amarillos, naranjas y verde claro, típicamente usan un voltaje entre 1.9V y 2.1V.
+Die Vorwärtsspannung muss verwendet werden, wenn die LED eingeschaltet ist. Sie ist ein sehr wichtiger Parameter beim Einsatz einer LED, da sie bestimmt, wie viel Leistung verwendet wird und wie groß der strombegrenzende Widerstand sein sollte. Für die meisten roten, gelben, orangen und hellgrünen LEDs liegt die Spannung typischerweise zwischen 1,9V und 2,1V.
 
 ![Img](./media/A548.png)
 
-Según la ley de Ohm, la corriente a través del circuito disminuye a medida que aumenta la resistencia, causando que el LED se atenúe.
+Nach dem Ohmschen Gesetz verringert sich der Strom durch den Stromkreis mit zunehmendem Widerstand, wodurch die LED dunkler wird.
 
 I = (VP-Vl)/R
 
-Para que el LED sea seguro y tenga el brillo adecuado, ¿qué resistencia debemos usar en el circuito?
+Um die LED sicher und mit der richtigen Helligkeit zu betreiben, welchen Widerstand sollten wir im Stromkreis verwenden?
 
-Para el 99% de los LED de 5mm, la corriente recomendada es 20mA, que se puede ver en la columna de condiciones en su hoja de datos:
+Für 99% der 5mm LEDs wird ein Strom von 20mA empfohlen, was aus der Spalte „Bedingungen“ im Datenblatt ersichtlich ist:
 
 ![Img](./media/A613.png)
 
-Ahora convierte la fórmula anterior a la siguiente:
+Nun wandeln wir die obige Formel um zu:
 
 R = (VP-Vl)/I
 
-Si VP = 5V, Vl (voltaje directo) = 2V, e I = 20mA, podemos decir que R es 150Ω. Por lo tanto, podemos hacer que el LED sea más brillante reduciendo la resistencia, pero la resistencia no debe ser inferior a 150Ω (este valor puede no ser exacto porque el LED proporcionado varía).
+Wenn VP = 5V, Vl (Vorwärtsspannung) = 2V und I = 20mA, ergibt sich R = 150Ω. Daher kann die LED heller gemacht werden, indem der Widerstand verringert wird, aber der Widerstand sollte nicht unter 150Ω liegen (dieser Wert ist möglicherweise nicht genau, da die verwendete LED variiert).
 
-El voltaje directo y la longitud de onda de diferentes colores de LED se muestran a continuación para tu referencia:
+Die Vorwärtsspannung und Wellenlänge verschiedener LED-Farben sind unten zu Ihrer Information dargestellt:
 
 ![Img](./media/A629.png)
 
-<span style="color: rgb(255, 76, 65);">**No conectes una resistencia con muy baja resistencia directamente a los dos polos de la fuente de alimentación, o los componentes electrónicos pueden dañarse debido a la corriente excesiva. Las resistencias no son polares.**</span>
+<span style="color: rgb(255, 76, 65);">**Schließen Sie keinen Widerstand mit sehr niedrigem Widerstandswert direkt an die beiden Pole der Stromversorgung an, da elektronische Bauteile durch zu hohen Strom beschädigt werden können. Widerstände sind nicht polarisiert.**</span>
 
-**Protoboard**
+**Steckbrett**
 
-Antes de completar cualquier circuito, se usa un protoboard para diseñar y probar circuitos rápidamente. Hay muchos agujeros en un protoboard donde se pueden insertar componentes del circuito (por ejemplo, resistencias). Un protoboard típico se muestra a continuación:
+Vor dem Fertigstellen eines Stromkreises wird ein Steckbrett verwendet, um Schaltungen schnell zu entwerfen und zu testen. Auf einem Steckbrett befinden sich viele Löcher, in die Bauteile (z.B. Widerstände) gesteckt werden können. Ein typisches Steckbrett sieht wie folgt aus:
 
 ![Img](./media/A655.png)
 
-Un protoboard tiene muchas tiras metálicas debajo para conectar los agujeros en la parte superior. Están dispuestas como se muestra a continuación.
+Unter dem Steckbrett befinden sich viele Metallstreifen, die die Löcher an der Oberseite verbinden. Sie sind wie unten gezeigt angeordnet.
 
-<span style="color: rgb(255, 76, 65);">Ten en cuenta que los agujeros superiores e inferiores están conectados horizontalmente, mientras que el resto de los agujeros están conectados verticalmente.</span>
+<span style="color: rgb(255, 76, 65);">Beachten Sie, dass die oberen und unteren Löcher horizontal verbunden sind, während die restlichen Löcher vertikal verbunden sind.</span>
 
 ![Img](./media/A723.png)
 
-Las dos primeras filas (superior) y las dos últimas (inferior) del protoboard se usan para los polos positivo (+) y negativo (-) de la fuente de alimentación, respectivamente. El diagrama de disposición conductora se muestra a continuación:
+Die ersten zwei Reihen (oben) und die letzten zwei Reihen (unten) des Steckbretts werden für die positiven (+) und negativen (-) Pole der Stromversorgung verwendet. Das leitfähige Layout ist unten dargestellt:
 
 ![Img](./media/A730.png)
 
-Al conectar componentes DIP (Dual In-line Packages), como circuitos integrados, microcontroladores, chips, etc., la ranura aísla las dos partes. Por lo tanto, los componentes DIP pueden conectarse como se muestra a continuación:
+Beim Anschluss von DIP (Dual In-line Package) Bauteilen, wie integrierten Schaltkreisen, Mikrocontrollern, Chips usw., trennt die Rille die beiden Teile. Daher können DIP-Bauteile wie unten gezeigt angeschlossen werden:
 
 ![Img](./media/A740.png)
 
 ![Img](./media/A747.png)
 
-**Cable de puente y cable DuPont**
+**Steckdraht und DuPont-Draht**
 
-Los cables de puente y los cables DuPont conectan dos terminales. Hay varios tipos, pero aquí nos enfocamos en los usados en protoboard. Transmiten señales eléctricas desde cualquier parte del protoboard a los pines de entrada/salida de un microcontrolador.
+Steckdrähte und DuPont-Drähte verbinden zwei Anschlüsse. Es gibt verschiedene Typen, hier konzentrieren wir uns auf die, die im Steckbrett verwendet werden. Sie übertragen elektrische Signale von beliebigen Stellen auf dem Steckbrett zu den Ein-/Ausgangspins eines Mikrocontrollers.
 
-Al usarlos, inserta “dos pines” de los cables en el protoboard sin soldar. Varias series de placas paralelas están dispuestas bajo la superficie del protoboard, por lo que los cables solo necesitan insertarse en agujeros específicos en un prototipo particular.
+Beim Gebrauch werden „zwei Pins“ der Drähte ohne Löten in das Steckbrett gesteckt. Unter der Oberfläche des Steckbretts sind mehrere parallele Leiterbahnen angeordnet, sodass Drähte nur in bestimmten Löchern eines bestimmten Prototyps eingesteckt werden müssen.
 
-Hay tres tipos de cables DuPont: F-F, M-M y M-F. En el cable, el pin se llama extremo macho (M), mientras que el agujero es hembra (F).
+Es gibt drei Typen von DuPont-Drähten: F-F, M-M und M-F. Am Draht wird der Pin als männliches Ende (M) bezeichnet, während das Loch weiblich (F) ist.
 
 ![Img](./media/A811.png)
 
-Se pueden usar más de un tipo en un proyecto. Aunque los colores de los cables son diferentes, cumplen la misma función. Los colores se usan para distinguir circuitos.
+Mehrere Typen können in einem Projekt verwendet werden. Obwohl die Farben der Drähte unterschiedlich sind, dienen sie dem gleichen Zweck. Farben werden verwendet, um Schaltungen zu unterscheiden.
 
-#### 4. Diagrama de Conexiones
+#### 4. Schaltplan
 
-<span style="color: rgb(255, 76, 65);">Nota: la placa micro:bit debe insertarse en la placa de expansión tipo T como se muestra a continuación. La matriz de LED de la placa micro:bit debe estar del mismo lado que el logo de la placa de expansión.</span>
+<span style="color: rgb(255, 76, 65);">Hinweis: Das micro:bit Board muss wie unten gezeigt in das T-Typ Erweiterungsboard eingesetzt werden. Die LED-Matrix des micro:bit Boards sollte auf derselben Seite wie das Logo des Erweiterungsboards sein.</span>
 
 ![Img](./media/A156.png)
 
-<span style="color: rgb(255, 76, 65);">El pin de control de la placa para el LED es P0 (el pin de la placa de expansión tipo T es digital 0).</span>
+<span style="color: rgb(255, 76, 65);">Der Steuerpin der LED ist P0 (der Pin des T-Typ Erweiterungsboards ist digital 0).</span>
 
-#### 5. Flujo del Código
+#### 5. Programmablauf
 
 ![Img](./media/A4323.png)
 
-#### 6. Código de Prueba
+#### 6. Testcode
 
-El archivo de código se proporciona en la carpeta Proyecto 01：Pequeña Lámpara con Botón, archivo Project-01-Small-Lamp-with-Button.hex.
+Die Code-Datei befindet sich im Ordner Projekt 01：Kleine Lampe mit Knopf, Datei Project-01-Small-Lamp-with-Button.hex.
 
 ![Img](./media/A357.png)
 
-**Cargar bloques de código:**
+**Codeblöcke laden:**
 
 ![Img](./media/A440.png)
 
-#### 7. Resultado de la Prueba
+#### 7. Testergebnis
 
-Para la App de Windows 10, haz clic en “<span style="color: rgb(255, 76, 65);">Descargar</span>”. Para navegadores, envía el archivo “<span style="color: rgb(255, 76, 65);">.hex</span>” descargado a la placa micro:bit.
+Für die Windows 10 App klicken Sie auf „<span style="color: rgb(255, 76, 65);">Download</span>“. Für Browser senden Sie die heruntergeladene „<span style="color: rgb(255, 76, 65);">.hex</span>“-Datei an das micro:bit Board.
 
-Después de descargar el código a la placa, la matriz de LED 5x5 muestra el icono ![Img](./media/A512.png). Presiona el botón A, y la matriz de LED 5x5 muestra el icono ![Img](./media/A518.png), el LED se enciende. Presiona el botón B, la matriz de LED 5x5 muestra el icono ![Img](./media/A527.png), el LED se apaga. ¿Parece una mini lámpara?
+Nach dem Herunterladen des Codes auf das Board zeigt die 5x5 LED-Matrix das ![Img](./media/A512.png) Symbol. Drücken Sie die Taste A, und die 5x5 LED-Matrix zeigt das ![Img](./media/A518.png) Symbol, die LED leuchtet. Drücken Sie die Taste B, und die 5x5 LED-Matrix zeigt das ![Img](./media/A527.png) Symbol, die LED geht aus. Sieht es aus wie eine Mini-Lampe?
 
-<span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no ves resultados, presiona el botón de reinicio en la parte trasera de la placa.</span>
+<span style="color: rgb(255, 76, 65);">**ACHTUNG:** Wenn die Verkabelung korrekt ist, Sie aber keine Ergebnisse sehen, drücken Sie die Reset-Taste auf der Rückseite des Boards.</span>
 
 ![Img](./media/A359.gif)
 
-<span style="color: rgb(255, 76, 65);">**Al alimentar con fuente externa, enciende el interruptor DIP.**</span>
+<span style="color: rgb(255, 76, 65);">**Beim Betrieb über eine externe Stromversorgung den DIP-Schalter auf ON stellen.**</span>
 
 ![Img](./media/A904.png)

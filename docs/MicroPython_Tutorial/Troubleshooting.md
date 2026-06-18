@@ -1,14 +1,13 @@
-## 4. Solución de Problemas
+## 4. Fehlerbehebung
 
-**Errores al Subir Códigos**
+**Fehler beim Hochladen von Codes**
 
-- Si se muestran íconos desordenados en la matriz de la placa después de subir el código, verifica si se han agregado o eliminado caracteres accidentalmente. Puedes hacer clic en “check” ![Img](./media/A5457.png). Pero ten en cuenta que algunos no son errores, solo advertencias.
+- Wenn nach dem Hochladen des Codes auf der Matrix des Boards wirre Symbole angezeigt werden, überprüfen Sie, ob versehentlich Zeichen hinzugefügt oder gelöscht wurden. Sie können auf „check“ klicken ![Img](./media/A5457.png). Beachten Sie jedoch, dass einige keine Fehler, sondern nur Warnungen sind.
 
-- Si el código incluye una biblioteca, verifica si la biblioteca está cargada en la placa. Consulta “**Cómo Mu importa la biblioteca a Micro:bit**”. Y luego verifica si se han agregado o eliminado caracteres accidentalmente.
+- Wenn der Code eine Bibliothek enthält, überprüfen Sie, ob die Bibliothek auf das Board hochgeladen wurde. Siehe „**Wie Mu Bibliothek auf Micro:bit importiert**“. Und prüfen Sie dann, ob versehentlich Zeichen hinzugefügt oder gelöscht wurden.
 
-**No Hay Impresiones en REPL**
+**Keine Ausgaben auf REPL**
 
-- Después de subir el código, haz clic en “REPL” ![Img](./media/A5530.png) y no imprime nada. En este caso, necesitamos presionar el botón de reinicio en la parte trasera de la placa micro:bit. 
-
+- Nach dem Hochladen des Codes klicken Sie auf „REPL“ ![Img](./media/A5530.png) und es wird nichts ausgegeben. In diesem Fall müssen wir die Reset-Taste auf der Rückseite des micro:bit-Boards drücken.
 
 ![Img](./media/A455.png)

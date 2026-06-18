@@ -1,203 +1,203 @@
-## 1. Sobre el software Mu
+## 1. Über die Mu-Software
 
-### 1.1. Instalar MU
+### 1.1. Mu installieren
 
-Haz clic para visitar la [página oficial del software Mu](https://codewith.mu/).
+Klicken Sie, um die [offizielle Mu-Software-Webseite](https://codewith.mu/) zu besuchen.
 
-Mu es un editor de código Python para programadores principiantes, como profesores y estudiantes. Podemos obtenerlo mediante el instalador oficial para Windows, Mac OSX o Linux (Mu ya no soporta Windows de 32 bits). La versión recomendada es Mu 1.2.0.
+Mu ist ein Python-Code-Editor für Anfänger, wie Lehrer und Schüler. Wir können ihn über den offiziellen Installer für Windows, Mac OSX oder Linux erhalten (Mu unterstützt keine 32-Bit-Windows-Versionen mehr). Die empfohlene Version ist Mu 1.2.0.
 
-**Paso 1 - Asegúrate de tu sistema operativo y luego descarga el instalador de Mu**
+**Schritt 1 - Stellen Sie sicher, welches Betriebssystem Sie haben, und laden Sie dann den Mu-Installer herunter**
 
-Primero averigua el sistema operativo de tu computadora (Windows o Mac OSX). Abre “**Este equipo**” para ver “**Propiedades**”.
+Finden Sie zuerst heraus, welches Betriebssystem Ihr Computer hat (Windows oder Mac OSX). Öffnen Sie „**Dieser PC**“, um die „**Eigenschaften**“ zu sehen.
 
 ![Img](./media/A225.png)
 
-Verifica el tipo de sistema: 64 bits o 32 bits.
+Überprüfen Sie den Systemtyp: 64-Bit oder 32-Bit.
 
 ![Img](./media/A253.png)
 
-[Descargar MU](https://codewith.mu/en/download). Descarga la versión según el sistema operativo de tu computadora.
+[MU herunterladen](https://codewith.mu/en/download). Laden Sie die Version entsprechend Ihrem Betriebssystem herunter.
 
 ![Img](./media/A348.png)
 
-<span style="color: rgb(255, 76, 65);">Aquí tomamos el sistema Windows como ejemplo, que puede servir de referencia para Mac OSX y Linux.</span>
+<span style="color: rgb(255, 76, 65);">Hier nehmen wir das Windows-System als Beispiel, das als Referenz für Mac OSX und Linux dienen kann.</span>
 
 ![Img](./media/A422.png)
 
-**Paso 2 - Ejecutar el instalador**
+**Schritt 2 - Führen Sie den Installer aus**
 
-Haz doble clic en el instalador (probablemente esté en tu carpeta de Descargas) para ejecutarlo.
+Doppelklicken Sie auf den Installer (wahrscheinlich im Ordner „Downloads“), um ihn auszuführen.
 
 ![Img](./media/A440.png)
 
-Hemos detallado los pasos adicionales necesarios para ayudar a Windows a instalar Mu en Windows 10. Otras versiones serán similares.
+Wir haben die zusätzlichen Schritte skizziert, die nötig sind, um Mu unter Windows 10 zu installieren. Andere Versionen sind ähnlich.
 
-[Instalador Mu para MacOS](https://codewith.mu/en/howto/1.1/install_macos).
+[Mu-Installer für MacOS](https://codewith.mu/en/howto/1.1/install_macos).
 
-[Instalador Mu para sistema Linux](https://codewith.mu/en/howto/1.2/install_linux).
+[Mu-Installer für Linux-System](https://codewith.mu/en/howto/1.2/install_linux).
 
-Para Windows 10, Defender mostrará un mensaje de advertencia. Debes hacer clic en el enlace “**Más información**”.
+Für Windows 10 erscheint eine Warnmeldung vom Defender. Klicken Sie auf den Link „**Weitere Informationen**“.
 
 ![Img](./media/A615.png)
 
-El mensaje cambiará proporcionando más información sobre el instalador y mostrará un botón “**Ejecutar de todas formas**”. Haz clic en “**Ejecutar de todas formas**”.
+Die Meldung ändert sich und zeigt Ihnen mehr Informationen zum Installer sowie eine Schaltfläche „**Trotzdem ausführen**“. Klicken Sie auf „**Trotzdem ausführen**“.
 
 ![Img](./media/A626.png)
 
-**Paso 3 - Acuerdo de licencia**
+**Schritt 3 - Lizenzvereinbarung**
 
-Revisa la licencia, selecciona la casilla y haz clic en “**Instalar**”.
+Überprüfen Sie die Lizenz, wählen Sie das Kontrollkästchen aus und klicken Sie auf „**Installieren**“.
 
 ![Img](./media/A1716.png)
 
-**Paso 4 - Instalando**
+**Schritt 4 - Installation**
 
-Ve a prepararte una taza de café mientras Mu se instala en tu computadora.
+Gehen Sie eine Tasse Kaffee holen, während Mu auf Ihrem Computer installiert wird.
 
 ![Img](./media/A1740.png)
 
-**Paso 5 - Completar**
+**Schritt 5 - Fertig**
 
-La instalación se ha completado con éxito, haz clic en “**Finalizar**” para cerrar el instalador.
+Die Installation wurde erfolgreich abgeschlossen, klicken Sie auf „**Fertigstellen**“, um den Installer zu schließen.
 
 ![Img](./media/A817.png)
 
-**Paso 6 - Iniciar Mu**
+**Schritt 6 - Mu starten**
 
-Puedes iniciar Mu haciendo clic en el icono en el menú Inicio o escribiendo “Mu” en el cuadro de búsqueda (ambos resaltados abajo). En el primer inicio, puede tardar un poco.
+Sie können Mu starten, indem Sie auf das Symbol im Startmenü klicken oder „Mu“ in das Suchfeld eingeben (beides unten hervorgehoben). Beim ersten Start kann es etwas dauern.
 
 ![Img](./media/A852.png)
 
-Así es como se ve:
+So sieht es aus:
 
 ![Img](./media/A909.png)
 
-### 1.2. Usar Modos y Barra de Menú
+### 1.2. Modi & Menüleiste verwenden
 
-Configura el “<span style="color: rgb(255, 76, 65);">Modo</span>” a BBC micro:bit.
+Stellen Sie den „<span style="color: rgb(255, 76, 65);">Modus</span>“ auf BBC micro:bit ein.
 
-En el menú, haz clic en “**Modo**” para configurarlo a “**BBC micro：bit**”. El modo micro:bit entiende cómo interactuar y conectarse con un micro:bit.
+Klicken Sie im Menü auf „**Modus**“ und wählen Sie „**BBC micro：bit**“. Der micro:bit-Modus versteht, wie man mit einem micro:bit interagiert und sich verbindet.
 
 ![Img](./media/A022.png)
 
-Haz clic para [Comenzar con Mu](https://codewith.mu/en/tutorials/1.1/start).
+Klicken Sie, um [mit Mu zu starten](https://codewith.mu/en/tutorials/1.1/start).
 
-Para más tutoriales sobre el uso de Mu, visita: https://codewith.mu/en/tutorials/
+Für weitere Tutorials zur Verwendung von Mu besuchen Sie bitte: https://codewith.mu/en/tutorials/
 
-### 1.3. Programar en Mu
+### 1.3. Programmieren mit Mu
 
-Aquí cargamos el “<span style="color: rgb(255, 76, 65);">heartbeat\.py</span>” en Mu. Encuéntralo en la carpeta “<span style="color: rgb(255, 76, 65);">Heart beat</span>” que proporcionamos.
+Hier laden wir die Datei „<span style="color: rgb(255, 76, 65);">heartbeat\.py</span>“ in Mu. Sie finden sie im Ordner „<span style="color: rgb(255, 76, 65);">Heart beat</span>“, den wir bereitgestellt haben.
 
 ![Img](./media/A200.png)
 
-**Método uno:**
+**Methode eins:**
 
-Abre Mu y haz clic en “<span style="color: rgb(255, 76, 65);">Cargar</span>” para elegir la ruta donde descargaste el código.
+Öffnen Sie Mu und klicken Sie auf „<span style="color: rgb(255, 76, 65);">Laden</span>“, um den Pfad auszuwählen, wo Sie den Code heruntergeladen haben.
 
 ![Img](./media/A341.png)
 
 ![Img](./media/A345.png)
 
-Cargado exitosamente, como se muestra a continuación:
+Erfolgreich geladen, wie unten gezeigt:
 
 ![Img](./media/A354.png)
 
-**Método dos:**
+**Methode zwei:**
 
-Haz clic en “nuevo” ![Img](./media/A503.png) para crear un nuevo programa y arrastra “heartbeat\.py” dentro de él:
+Klicken Sie auf „neu“ ![Img](./media/A503.png), um ein neues Programm zu erstellen, und ziehen Sie „heartbeat\.py“ hinein:
 
 ![Img](./media/A521.png)
 
-Cargado exitosamente, como se muestra a continuación:
+Erfolgreich geladen, wie unten gezeigt:
 
 ![Img](./media/A533.png)
 
-<span style="color: rgb(255, 76, 65);">Lo mismo aplica para agregar otros códigos.</span>
+<span style="color: rgb(255, 76, 65);">Das Gleiche gilt für das Hinzufügen anderer Codes.</span>
 
-### 1.4. Descargar código a Micro:bit
+### 1.4. Code auf Micro:bit herunterladen
 
-Conecta la placa a la computadora mediante un cable USB.
+Verbinden Sie das Board über ein USB-Kabel mit dem Computer.
 
 ![Img](./media/A252.png)
 
-Haz clic en “<span style="color: rgb(255, 76, 65);">**Flash**</span>” para descargar el código a la placa micro:bit.
+Klicken Sie auf „<span style="color: rgb(255, 76, 65);">**Flash**</span>“, um den Code auf das micro:bit-Board herunterzuladen.
 
 ![Img](./media/A3728.png)
 
-Después, <span style="color: rgb(255, 76, 65);">**enciende con el cable micro USB o fuente de alimentación externa (gira el interruptor DIP a ON)**</span>. Verás que la matriz LED 5×5 integrada muestra repetidamente ![Img](./media/A903.png) y luego ![Img](./media/A910.png).
+Danach <span style="color: rgb(255, 76, 65);">**schalten Sie die Stromversorgung über das Micro-USB-Kabel oder eine externe Stromquelle ein (DIP-Schalter auf ON stellen)**</span>. Sie werden sehen, dass die eingebaute 5×5 LED-Matrix wiederholt ![Img](./media/A903.png) und dann ![Img](./media/A910.png) anzeigt.
 
-<span style="color: rgb(255, 76, 65);">**Ten en cuenta que si hay un error en tu código, también puede descargarse pero no funcionará correctamente.**</span>
+<span style="color: rgb(255, 76, 65);">**Beachten Sie, dass wenn ein Fehler im Code ist, er trotzdem heruntergeladen werden kann, aber nicht richtig funktioniert.**</span>
 
-<span style="color: rgb(0, 209, 0);">Por ejemplo, la función sleep() está escrita como sleeps() en el código. Haz clic en “**Flash**” para cargar el código al micro:bit. Sin embargo, la matriz LED 5×5 muestra íconos desordenados.</span>
+<span style="color: rgb(0, 209, 0);">Zum Beispiel ist die Funktion sleep() im Code als sleeps() geschrieben. Klicken Sie auf „**Flash**“, um den Code auf den micro:bit zu laden. Die 5×5 LED-Matrix zeigt jedoch chaotische Symbole an.</span>
 
 ![Img](./media/A4003.png)
 
-En este caso, haz clic en “**REPL**” y presiona el botón de reinicio en la parte trasera de la placa. El mensaje de error se mostrará en la interfaz REPL, como se muestra a continuación:
+In diesem Fall klicken Sie auf „**REPL**“ und drücken den Reset-Knopf auf der Rückseite des Boards. Die Fehlermeldung wird im REPL-Fenster angezeigt, wie unten gezeigt:
 
 ![Img](./media/A029.png)
 
 ![Img](./media/A033.png)
 
-Haz clic en “**REPL**” nuevamente para cerrar REPL. Luego haz clic en “<span style="color: rgb(255, 76, 65);">**Flash**</span>”.
+Klicken Sie erneut auf „**REPL**“, um REPL zu schließen. Und dann klicken Sie auf „<span style="color: rgb(255, 76, 65);">**Flash**</span>“.
 
-Para asegurarte de que el código es correcto, haz clic en “<span style="color: rgb(255, 76, 65);">**Comprobar**</span>” después de terminar, y Mu señalará el error en el código.
+Um sicherzustellen, dass der Code korrekt ist, klicken Sie nach Fertigstellung auf „<span style="color: rgb(255, 76, 65);">**Check**</span>“ und Mu zeigt Fehler im Code an.
 
 ![Img](./media/A119.png)
 
-Modifica el código según el mensaje de error y haz clic en “<span style="color: rgb(255, 76, 65);">**Comprobar**</span>” de nuevo. Mu no mostrará error.
+Ändern Sie den Code entsprechend der Fehlermeldung und klicken Sie erneut auf „<span style="color: rgb(255, 76, 65);">**Check**</span>“. Mu zeigt keinen Fehler mehr an.
 
 ![Img](./media/A134.png)
 
-Consulta [más tutoriales que explican aspectos específicos de Mu](https://codewith.mu/en/tutorials/).
+Siehe [weitere Tutorials, die spezifische Aspekte von Mu erklären](https://codewith.mu/en/tutorials/).
 
-## 2. Cómo Mu importa librerías a Micro:bit
+## 2. Wie Mu Bibliotheken auf Micro:bit importiert
 
-<span style="color: rgb(255, 76, 65);">Antes de importar librerías, necesitamos subir un código .py (un código vacío también está bien) a la placa micro:bit. Aquí tomamos un código vacío como ejemplo.</span>
+<span style="color: rgb(255, 76, 65);">Bevor Bibliotheken importiert werden, müssen wir einen .py-Code (auch leerer Code ist ok) auf das micro:bit-Board hochladen. Hier nehmen wir einen leeren Code als Beispiel.</span>
 
-Conecta la placa a la computadora mediante un cable USB. Abre Mu y haz clic en “Flash” para subir el código .py (código vacío) a la placa.
+Verbinden Sie das Board über ein USB-Kabel mit dem Computer. Öffnen Sie Mu und klicken Sie auf „Flash“, um den .py-Code (leerer Code) auf das Board hochzuladen.
 
 ![Img](./media/A252.png)
 
-En este tutorial, se usan los módulos OLED y DHT11. Por lo tanto, los archivos de librería “<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>” y “<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>” deben importarse a la placa micro:bit.
+In diesem Tutorial werden OLED- und DHT11-Module verwendet. Daher müssen die Bibliotheksdateien „<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>“ und „<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>“ in das micro:bit-Board importiert werden.
 
-El directorio predeterminado donde Mu guarda archivos es “mu_code” en el directorio raíz del usuario.
+Das Standardverzeichnis, in dem Mu Dateien speichert, ist „mu_code“ im Stammverzeichnis des Benutzerverzeichnisses.
 
-Enlace de referencia: [https://codewith.mu/en/tutorials/1.0/files](https://codewith.mu/en/tutorials/1.0/files)
+Referenzlink: [https://codewith.mu/en/tutorials/1.0/files](https://codewith.mu/en/tutorials/1.0/files)
 
-**Instrucciones para importar librerías:**
+**Anleitung zum Importieren von Bibliotheken:**
 
-1\. Busca la carpeta “<span style="color: rgb(255, 76, 65);">mu_code</span>” en el Disco (C:).
+1\. Suchen Sie den Ordner „<span style="color: rgb(255, 76, 65);">mu_code</span>“ auf Laufwerk (C:).
 
 ![Img](./media/A543.png)
 
 ![Img](./media/A550.png)
 
-2\. Abre “<span style="color: rgb(255, 76, 65);">mu_code</span>”.
+2\. Öffnen Sie „<span style="color: rgb(255, 76, 65);">mu_code</span>“.
 
 ![Img](./media/A628.png)
 
-3\. Copia y pega los archivos de librería “<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>” y “<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>” en “<span style="color: rgb(255, 76, 65);">**Libraries**</span>”.
+3\. Kopieren und fügen Sie die Bibliotheksdateien „<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>“ und „<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>“ in „<span style="color: rgb(255, 76, 65);">**Libraries**</span>“ ein.
 
 ![Img](./media/A4716.png)
 
-4\. Como se muestra a continuación:
+4\. Wie unten gezeigt:
 
 ![Img](./media/A735.png)
 
-5\. Abre Mu y haz clic en “<span style="color: rgb(255, 76, 65);">**Archivos**</span>”. Aquí arrastramos la librería “<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>” al micro:bit.
+5\. Öffnen Sie Mu und klicken Sie auf „<span style="color: rgb(255, 76, 65);">**Dateien**</span>“. Ziehen Sie hier die Bibliothek „<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>“ in den micro:bit.
 
 ![Img](./media/A816.png)
 
 ![Img](./media/A820.png)
 
-6\. Después de importar “<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>”, la verás en el cuadro a la izquierda.
+6\. Nach dem Import von „<span style="color: rgb(255, 76, 65);">**DHT11\.py**</span>“ sehen Sie sie im linken Feld.
 
 ![Img](./media/A841.png)
 
-7\. Hagamos lo mismo con “<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>”.
+7\. Machen wir dasselbe mit „<span style="color: rgb(255, 76, 65);">**oled_ssd1306\.py**</span>“.
 
 ![Img](./media/A916.png)
 
 ![Img](./media/A4920.png)
 
-<span style="color: rgb(255, 76, 65);">**Ten en cuenta que cuando subes otros archivos al micro:bit, sobrescribirán el contenido original, por lo que necesitas reimportarlos para la próxima vez que los uses.**</span>
+<span style="color: rgb(255, 76, 65);">**Beachten Sie, dass wenn Sie andere Dateien auf den micro:bit hochladen, diese den ursprünglichen Inhalt überschreiben, sodass Sie sie für die nächste Verwendung erneut importieren müssen.**</span>

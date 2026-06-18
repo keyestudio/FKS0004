@@ -1,88 +1,88 @@
-### Proyecto 04: Estacionamiento Inteligente
+### Projekt 04: Smart Parking
 
-#### 1. Visión General
+#### 1. Übersicht
 
-Los estacionamientos inteligentes están en todas partes. ¿Podemos también crear un estacionamiento inteligente? Por supuesto. Podemos usar un sensor ultrasónico para detectar si hay vehículos adelante. Cuando se detecta que un vehículo (o cosa) se acerca, controlamos el servo para levantar la barra de elevación; si se detecta que se aleja, el servo bajará la barra de elevación.
+Intelligente Parkplätze sind überall. Können wir auch einen intelligenten Parkplatz erstellen? Natürlich. Wir können einen Ultraschallsensor verwenden, um zu erkennen, ob sich Fahrzeuge davor befinden. Wenn ein Fahrzeug (oder Gegenstand) erkannt wird, das sich nähert, steuern wir den Servo, um die Hebestange anzuheben; Wenn erkannt wird, dass es sich entfernt, senkt der Servo die Hebestange.
 
-#### 2. Componentes
+#### 2. Komponenten
 
 | ![Img](./media/A850.png) |       ![Img](./media/A858.png)       |              ![Img](./media/A906.png)              |
 | :---------------------: | :---------------------------------: | :-----------------------------------------------: |
-|   placa micro:bit *1    | placa de expansión tipo T para micro:bit *1 |                cable micro USB *1                 |
+|   micro:bit board *1    | micro:bit T-Typ Erweiterungsplatine *1 |                micro USB Kabel *1                 |
 | ![Img](./media/A356.png) |       ![Img](./media/A309.png)       |              ![Img](./media/A415.png)              |
-|  sensor ultrasónico *1  |              servo *1               |                   cables DuPont                    |
+|  Ultraschallsensor *1   |              Servo *1               |                   DuPont Kabel                    |
 | ![Img](./media/A017.png) |       ![Img](./media/A950.png)       |              ![Img](./media/A024.png)              |
-|      protoboard *1      |             cables puente           |soporte para baterías *1 <br> (<span style="color: rgb(255, 76, 65);">baterías AA auto-proporcionadas *2</span>)|
+|      Steckbrett *1      |             Jumper Kabel            |Batteriehalter *1 <br> (<span style="color: rgb(255, 76, 65);">selbst mitgebrachte AA Batterien *2</span>)|
 | ![Img](./media/A336.png) |       ![Img](./media/A131.png)       |                                                   |
-|       tarjeta bat *1    |          tarjeta barra de elevación *1           |                                                   |
+|       Batteriekarte *1       |          Hebestangenkarte *1           |                                                   |
 
-#### 3. Conocimiento de los Componentes
+#### 3. Komponentenwissen
 
 **Servo**
 
-El servo es un actuador de posición. Podemos usar el servo para controlar la posición exacta o para entregar alto torque. Usualmente se usa en robots, autos de control remoto e incluso modelos de aeronaves. Hay muchas especificaciones, pero todos los servos tienen tres cables: señal (naranja), positivo (rojo) y negativo (marrón). El color puede variar según la marca del servo.
+Ein Servo ist ein Positionsantrieb. Wir können einen Servo verwenden, um die genaue Position zu steuern oder ein hohes Drehmoment auszugeben. Üblicherweise wird er in Robotern, ferngesteuerten Autos und sogar Flugzeugmodellen eingesetzt. Es gibt viele Spezifikationen, aber alle Servos haben drei Kabel: Signal (orange), Plus (rot) und Minus (braun). Die Farben können je nach Servo-Marke variieren.
 
 ![Img](./media/A5525.png)
 
-**Diagrama de estructura interna:**
+**Innere Strukturdiagramm:**
 
 ![Img](./media/A5534.png)
 
-① Señal: recibe señales de control del microcontrolador;
+① Signal: empfängt Steuersignale vom Mikrocontroller;
 
-② potenciómetro: se puede medir la posición del eje de salida, que pertenece a la parte de retroalimentación de todo el servo;
+② Potentiometer: Die Position der Ausgangswelle kann gemessen werden, es gehört zum Feedback-Teil des gesamten Servos;
 
-③ Controlador interno: la placa embebida procesa señales de control externas, acciona el motor y señales de retroalimentación de posición, que es el núcleo de todo el servo;
+③ Interner Controller: Die eingebettete Platine verarbeitet Signale von der externen Steuerung, steuert den Motor und das Positionsfeedback, dies ist der Kern des gesamten Servos;
 
-④ Motor DC: actúa como un actuador para entregar velocidad, torque y posición;
+④ DC-Motor: Er dient als Aktuator zur Ausgabe von Geschwindigkeit, Drehmoment und Position;
 
-⑤ Transmisión / mecanismo del servo: el mecanismo amplifica el recorrido de salida del motor al ángulo final de salida según una cierta relación de transmisión.
+⑤ Getriebe / Servomechanismus: Der Mechanismus vergrößert den vom Motor ausgegebenen Hub auf den endgültigen Ausgangswinkel entsprechend einem bestimmten Übersetzungsverhältnis.
 
-**Conducción del servo**
+**Servo ansteuern**
 
-Se envían señales PWM a la línea de señal del servo para controlar su salida. El ciclo de trabajo del PWM determina directamente la posición del eje de salida. El período suele ser de 20 milisegundos y típicamente se configura para generar pulsos a una frecuencia de 50Hz.
+Senden Sie PWM-Signale an die Servosignalleitung, um dessen Ausgabe zu steuern. Der Tastgrad des PWM bestimmt direkt die Position der Ausgangswelle. Die Periode beträgt üblicherweise 20 Millisekunden und wird typischerweise so eingestellt, dass Impulse mit einer Frequenz von 50Hz erzeugt werden.
 
-<span style="color: rgb(255, 0, 0);">Por ejemplo (servo de 180°):</span>
+<span style="color: rgb(255, 0, 0);">Zum Beispiel (180° Servo):</span>
 
-Cuando enviamos un ancho de pulso de 1.5 milisegundos (ms) al servo de 180°, el eje de salida del servo se moverá a la posición media (90 grados);
+Wenn wir einen Puls mit einer Breite von 1,5 Millisekunden (ms) an den 180° Servo senden, bewegt sich die Ausgangswelle des Servos in die Mittelstellung (90 Grad);
 
-Si el ancho de pulso es de 0.5ms, el eje de salida se moverá a 0 grados;
+Ist die Pulsbreite 0,5 ms, bewegt sich die Ausgangswelle auf 0 Grad;
 
-Si el ancho de pulso es de 2.5ms, el eje de salida se moverá a 180 grados;
+Ist die Pulsbreite 2,5 ms, bewegt sich die Ausgangswelle auf 180 Grad;
 
 ![Img](./media/A5545.png)
 
-**Parámetros:**
+**Parameter:**
 
-- Voltaje de operación: DC 3.3V~5V
+- Betriebsspannung: DC 3,3V~5V
 
-- Temperatura de operación: -10°C ~ +50°C
+- Betriebstemperatur: -10°C ~ +50°C
 
-- Dimensiones: 32.25mm x 12.25mm x 30.42mm
+- Abmessungen: 32,25mm x 12,25mm x 30,42mm
 
-- Interfaz: interfaz de 3 pines con un espaciado de 2.54mm
+- Schnittstelle: 3-Pin Schnittstelle mit einem Abstand von 2,54mm
 
-#### 4. Diagrama de Conexiones
+#### 4. Schaltplan
 
 ![Img](./media/A606.png)
 
-<span style="color: rgb(255, 76, 65);">**Al usar el sensor ultrasónico y el servo, debemos conectar una fuente de alimentación externa y poner el interruptor DIP en ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Beim Einsatz des Ultraschallsensors und Servos müssen wir eine externe Stromversorgung anschließen und den DIP-Schalter auf ON stellen.**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A701.png)
 
-#### 5. Flujo del Código
+#### 5. Programmablauf
 
 ![Img](./media/A716.png)
 
-#### 6. Código de Prueba
+#### 6. Testcode
 
-El archivo de código se proporciona en la carpeta Proyecto 04：Smart-Parking, archivo Project-04-Smart-Parking\.py.
+Die Code-Datei befindet sich im Ordner Projekt 04：Smart-Parking, Datei Project-04-Smart-Parking\.py.
 
 ![Img](./media/A3345.png)
 
-**Código completo:** <span style="color: rgb(255, 76, 65);">El umbral en la condición 10 puede modificarse según las condiciones reales.</span>
+**Vollständiger Code:** <span style="color: rgb(255, 76, 65);">Der Schwellenwert in der Bedingung 10 kann je nach tatsächlichen Bedingungen angepasst werden.</span>
 
 ```python
 '''
@@ -133,18 +133,18 @@ while True:
        sleep(2000)
 ```
 
-#### 7. Resultado de la Prueba
+#### 7. Testergebnis
 
-Haga clic en “<span style="color: rgb(255, 76, 65);">Flash</span>” para cargar el código en la placa micro:bit.
+Klicken Sie auf „<span style="color: rgb(255, 76, 65);">Flash</span>“, um den Code auf das micro:bit Board zu laden.
 
 ![Img](./media/A3400.png)
 
-Después de descargar el código a la placa, **encienda mediante el cable micro USB o fuente de alimentación externa (ponga el interruptor DIP en ON)**, y presione el botón de reinicio en la placa.
+Nach dem Herunterladen des Codes auf das Board **mit dem micro USB Kabel oder externer Stromversorgung einschalten (DIP-Schalter auf ON stellen)** und die Reset-Taste auf dem Board drücken.
 
 ![Img](./media/A455.png)
 
-Cuando el sensor ultrasónico detecta un vehículo (o cosa) acercándose, el servo controla la barra de elevación para subirla; si el sensor detecta que se aleja, el servo bajará la barra de elevación.
+Wenn der Ultraschallsensor ein Fahrzeug (oder Gegenstand) erkennt, das sich nähert, steuert der Servo die Hebestange zum Anheben; Wenn der Sensor erkennt, dass es sich entfernt, senkt der Servo die Hebestange.
 
-<span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no ve resultados, presione el botón de reinicio en la parte trasera de la placa.</span>
+<span style="color: rgb(255, 76, 65);">**ACHTUNG:** Wenn die Verkabelung korrekt ist, Sie aber keine Ergebnisse sehen, drücken Sie die Reset-Taste auf der Rückseite des Boards.</span>
 
 ![Img](./media/A021.gif)

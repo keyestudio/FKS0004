@@ -1,108 +1,108 @@
-### Proyecto 03: Murciélago de Medición de Distancia
+### Projekt 03: Entfernungsfledermaus
 
-#### 1. Resumen
+#### 1. Übersicht
 
-Basado en un sensor ultrasónico, el murciélago de medición detecta la distancia de los obstáculos y la muestra en tiempo real en un OLED. Cuando es menor a 10cm, el altavoz emite una alarma.
+Basierend auf einem Ultraschallsensor erkennt die Entfernungsfledermaus die Entfernung von Hindernissen und zeigt diese in Echtzeit auf einem OLED an. Wenn der Abstand weniger als 10 cm beträgt, gibt der Lautsprecher Alarm.
 
-#### 2. Componentes
+#### 2. Komponenten
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| placa micro:bit *1 | placa de expansión tipo T para micro:bit *1 | cable micro USB *1 |
+| micro:bit Board *1 | micro:bit T-Typ Erweiterungsboard *1 | micro USB Kabel *1 |
 | ![Img](./media/A356.png)| ![Img](./media/A406.png)| ![Img](./media/A415.png) |
-| sensor ultrasónico *1 | módulo OLED *1 | cables DuPont |
+| Ultraschallsensor *1 | OLED Modul *1 | DuPont Kabel |
 |![Img](./media/A017.png) | ![Img](./media/A950.png) | ![Img](./media/A024.png) |
-|protoboard *1 | cables de salto | portapilas *1 <br> (<span style="color: rgb(255, 76, 65);">pilas AA auto-proporcionadas *2</span>)|
+| Steckbrett *1 | Jumper Kabel | Batteriefach *1 <br> (<span style="color: rgb(255, 76, 65);">selbst mitgebrachte AA Batterien *2</span>)|
 |![Img](./media/A315.png)|![Img](./media/A557.png) | |
-|tarjeta bat *1| tarjeta OLED *1 | |
+| Fledermauskarte *1| OLED Karte *1 | |
 
-#### 3. Conocimiento de los Componentes
+#### 3. Komponentenwissen
 
-**sensor ultrasónico**
+**Ultraschallsensor**
 
-Las ondas ultrasónicas rebotan cuando golpean un obstáculo. Medimos la distancia calculando el intervalo de tiempo entre el envío y la recepción de las ondas. Dado que la velocidad de propagación del sonido en el aire es constante v=340m/s, calculamos la distancia entre el sensor y el obstáculo: s=vt/2.
+Ultraschallwellen werden zurückgeworfen, wenn sie auf ein Hindernis treffen. Wir messen die Entfernung, indem wir das Zeitintervall zwischen dem Senden und Empfangen der Wellen berechnen. Da die Ausbreitungsgeschwindigkeit von Schall in Luft konstant v=340m/s ist, berechnen wir die Entfernung zwischen Sensor und Hindernis: s=vt/2.
 
 ![Img](./media/A846.png)
 
-El módulo ultrasónico HC-SR04 integra un transmisor y un receptor. El primero convierte señales eléctricas (energía eléctrica) en ondas sonoras de alta frecuencia (más allá del rango audible humano) (energía mecánica), mientras que el segundo hace lo contrario.
+Das HC-SR04 Ultraschallmodul integriert einen Sender und Empfänger. Der Sender wandelt elektrische Signale (elektrische Energie) in hochfrequente (für Menschen nicht hörbare) Schallwellen (mechanische Energie) um, während der Empfänger das Gegenteil macht.
 
-El diagrama esquemático del HC SR04:
+Das Schaltbild des HC SR04:
 
 ![Img](./media/A642.png)
 
-**Definición de pines:**
+**Pin-Belegung:**
 
 ![Img](./media/A702.png)
 
-**Parámetros:**
+**Parameter:**
 
-- Voltaje de operación: 5V
-- Corriente de operación: 12mA
-- Distancia mínima de medición: 2cm
-- Distancia máxima de medición: 200cm
+- Betriebsspannung: 5V
+- Betriebsstrom: 12mA
+- Minimale Messentfernung: 2cm
+- Maximale Messentfernung: 200cm
 
-**Principio de funcionamiento:**
+**Arbeitsprinzip:**
 
-Se emite un pulso de nivel alto que dura al menos 10us en el pin Trig, y el módulo comienza a transmitir ondas ultrasónicas. Al mismo tiempo, el pin Echo se pone en alto. Cuando el módulo recibe una onda ultrasónica de regreso al encontrar un obstáculo, el pin Echo se pone en bajo. La duración del nivel alto del pin Echo es el tiempo total de la onda desde el envío hasta la recepción: s=vt/2.
+Ein High-Pegel-Impuls von mindestens 10us wird am Trig-Pin ausgegeben, und das Modul beginnt mit der Aussendung von Ultraschallwellen. Gleichzeitig wird der Echo-Pin auf High gezogen. Wenn das Modul eine Ultraschallwelle zurückerhält, weil es auf ein Hindernis trifft, wird der Echo-Pin auf Low gezogen. Die Dauer des High-Pegels am Echo-Pin ist die Gesamtzeit der Welle vom Senden bis zum Empfangen: s=vt/2.
 
 ![Img](./media/A728.png)
 
-**Módulo OLED**
+**OLED Modul**
 
-La tecnología OLED ofrece un rendimiento de color rico, alto contraste y amplio ángulo de visión, proporcionando imágenes claras y vívidas, especialmente destacadas en negro.
+OLED-Technologie bietet eine reiche Farbdarstellung, hohen Kontrast und weite Betrachtungswinkel, wodurch klare und lebendige Bilder entstehen, besonders herausragend bei Schwarz.
 
-Cada píxel de la pantalla OLED emite luz por sí mismo sin retroiluminación, por lo que consume relativamente poca energía. Con tamaño pequeño, alta resolución y bajo consumo, la pantalla OLED de 0.9 pulgadas es muy adecuada para dispositivos portátiles.
+Jeder Pixel des OLED-Displays strahlt selbst Licht aus, ohne Hintergrundbeleuchtung, daher ist der Stromverbrauch relativ gering. Mit kleiner Größe, hoher Auflösung und niedrigem Stromverbrauch ist das 0,9-Zoll OLED-Display sehr gut für tragbare Geräte geeignet.
 
 ![Img](./media/A636.png)
 
-<span style="color: rgb(255, 76, 65);">**En este proyecto, el módulo de pantalla OLED conecta la interfaz SDA al pin P20 y SCL al pin P19.**</span>
+<span style="color: rgb(255, 76, 65);">**In diesem Projekt wird das OLED-Displaymodul mit dem SDA-Anschluss an Pin P20 und SCL an Pin P19 angeschlossen.**</span>
 
-**Parámetros:**
+**Parameter:**
 
-- Voltaje de operación: DC 3.3V-5V
+- Betriebsspannung: DC 3,3V-5V
 
-- Corriente de operación: 30mA
+- Betriebsstrom: 30mA
 
-- Interfaz: Puertos de pines con un espaciado de 2.54mm
+- Schnittstelle: Pin-Anschlüsse mit 2,54mm Abstand
 
-- Modo de comunicación: I2C
+- Kommunikationsmodus: I2C
 
-- Chip controlador interno: SSD1306
+- Interner Treiberchip: SSD1306
 
-- Resolución: 128*64
+- Auflösung: 128*64
 
-- Ángulo de visión: mayor a 150°
+- Betrachtungswinkel: größer als 150°
 
-#### 4. Diagrama de Conexiones
+#### 4. Schaltplan
 
 ![Img](./media/A1849.png)
 
-<span style="color: rgb(255, 76, 65);">**Al usar la pantalla OLED y el sensor ultrasónico, debemos conectar una fuente de alimentación externa y poner el interruptor DIP en ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Beim Einsatz des OLED-Displays und des Ultraschallsensors muss eine externe Stromversorgung angeschlossen und der DIP-Schalter eingeschaltet werden.**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A1906.png)
 
-#### 5. Flujo del Código
+#### 5. Programmablauf
 
 ![Img](./media/A924.png)
 
-#### 6. Código de Prueba
+#### 6. Testcode
 
-El archivo de código se proporciona en la carpeta Proyecto 03：Murciélago de Medición, archivo Project-03-Ranging-Bat.hex.
+Die Code-Datei befindet sich im Ordner Projekt 03：Entfernungsfledermaus, Datei Project-03-Ranging-Bat.hex.
 
 ![Img](./media/A955.png)
 
-**Cargar bloques de código:** <span style="color: rgb(255, 76, 65);">El umbral en la condición 10 puede modificarse según las condiciones reales.</span>
+**Codeblöcke laden:** <span style="color: rgb(255, 76, 65);">Der Schwellenwert 10 in der Bedingung kann je nach tatsächlichen Gegebenheiten angepasst werden.</span>
 
 ![Img](./media/A022.png)
 
-#### 7. Resultado de la Prueba
+#### 7. Testergebnis
 
-Para la App de Windows 10, haga clic en “<span style="color: rgb(255, 76, 65);">Descargar</span>”. Para navegadores, envíe el archivo “<span style="color: rgb(255, 76, 65);">.hex</span>” descargado a la placa micro:bit.
+Für die Windows 10 App klicken Sie auf „<span style="color: rgb(255, 76, 65);">Download</span>“. Für Browser senden Sie die heruntergeladene „<span style="color: rgb(255, 76, 65);">.hex</span>“-Datei an das micro:bit Board.
 
-Después de descargar el código a la placa, <span style="color: rgb(255, 76, 65);">encienda mediante la fuente de alimentación externa y ponga el interruptor DIP en ON</span>, y el OLED mostrará en tiempo real la distancia entre el sensor ultrasónico y el obstáculo. Cuando el valor de distancia sea menor a 10cm, el altavoz en la placa micro:bit emitirá una alarma.
+Nach dem Herunterladen des Codes auf das Board <span style="color: rgb(255, 76, 65);">mit externer Stromversorgung einschalten und den DIP-Schalter auf ON stellen</span>, zeigt das OLED die Entfernung zwischen Ultraschallsensor und Hindernis in Echtzeit an. Wenn der Abstandswert weniger als 10 cm beträgt, gibt der Lautsprecher auf dem micro:bit Board Alarm.
 
-<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no ve resultados, presione el botón de reinicio en la parte trasera de la placa.</span></span>
+<span style="color: rgb(255, 76, 65);"><span style="color: rgb(255, 76, 65);">**ACHTUNG:** Wenn die Verkabelung korrekt ist, Sie aber keine Ergebnisse sehen, drücken Sie die Reset-Taste auf der Rückseite des Boards.</span></span>
 
 ![Img](./media/A605.gif)

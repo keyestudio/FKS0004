@@ -1,74 +1,74 @@
-### Proyecto 05: Dial de Coche
+### Projekt 05: Auto-Drehzahlmesser
 
-#### 1. Resumen
+#### 1. Übersicht
 
-En este proyecto, combinamos un potenciómetro ajustable, un servo y una hermosa tarjeta de dial para hacer un modelo simple de dial de coche.
+In diesem Projekt kombinieren wir ein einstellbares Potentiometer, einen Servo und eine schöne Ziffernblattkarte, um ein einfaches Auto-Drehzahlmesser-Modell zu erstellen.
 
-#### 2. Componentes
+#### 2. Komponenten
 
 | ![Img](./media/A850.png)  |              ![Img](./media/A858.png)              | ![Img](./media/A906.png) |
 | :----------------------: | :-----------------------------------------------: | :---------------------: |
-|    placa micro:bit *1    |        placa de expansión tipo T para micro:bit *1        |   cable micro USB *1    |
+|    micro:bit Board *1    |        micro:bit T-Typ Erweiterungsboard *1        |   micro USB Kabel *1    |
 | ![Img](./media/A350.png)  |              ![Img](./media/A309.png)              | ![Img](./media/A950.png) |
-|     potenciómetro *1     |                     servo *1                      |       cables de salto        |
+|     Potentiometer *1     |                     Servo *1                      |       Jumper-Kabel      |
 | ![Img](./media/A017.png)  |              ![Img](./media/A024.png)              | ![Img](./media/A233.png) |
-|      protoboard *1       |soporte para baterías *1 <br> (<span style="color: rgb(255, 76, 65);">baterías AA auto-proporcionadas *2</span>)|  tarjeta de potenciómetro *1  |
+|      Steckbrett *1       |Batteriehalter *1 <br> (<span style="color: rgb(255, 76, 65);">selbst mitgebrachte AA Batterien *2</span>)|  Potentiometer-Karte *1  |
 | ![Img](./media/A1326.png) |                                                   |                         |
-|     tarjeta de dial de coche*1      |                                                   |                         |
+|     Auto-Drehzahlmesser-Karte *1      |                                                   |                         |
 
-#### 3. Conocimiento de Componentes
+#### 3. Komponentenwissen
 
-**potenciómetro**
+**Potentiometer**
 
 ![Img](./media/A350.png)
 
-Un potenciómetro es también un elemento resistivo con tres contactos, cuyo valor de resistencia puede ajustarse según cierta regularidad.
+Ein Potentiometer ist ebenfalls ein Widerstandselement mit drei Anschlüssen, dessen Widerstandswert nach einer bestimmten Regelmäßigkeit einstellbar ist.
 
-Vienen en todas las formas, tamaños y valores, pero todos tienen en común lo siguiente:
+Sie gibt es in allen Formen, Größen und Werten, aber sie haben alle Folgendes gemeinsam:
 
-① Tres terminales (o puntos de conexión).
+① Drei Anschlüsse (oder Verbindungspunkte).
 
-② Una perilla o deslizador móvil que puede cambiar la resistencia entre el terminal intermedio y cualquier terminal externo.
+② Einen beweglichen Knopf oder Schieberegler, der den Widerstand zwischen dem mittleren Anschluss und einem der äußeren Anschlüsse verändern kann.
 
-③ A medida que se mueve la perilla, la resistencia entre el terminal intermedio y cualquier terminal externo varía desde 0Ω hasta su máximo.
+③ Wenn der Knopf bewegt wird, variiert der Widerstand zwischen dem mittleren Anschluss und einem der äußeren Anschlüsse von 0Ω bis zum Maximalwert.
 
-El símbolo de circuito del potenciómetro:
+Das Schaltzeichen des Potentiometers:
 
 ![Img](./media/A654.png)
 
-(1)\. Como divisor de voltaje
+(1)\. Als Spannungsteiler
 
-El potenciómetro es una resistencia ajustable continuamente. Cuando giras su deslizador, el contacto móvil se desliza a lo largo de la resistencia. En este punto, se puede obtener un voltaje de salida según el voltaje aplicado al potenciómetro y el ángulo o recorrido de rotación del deslizador móvil.
+Das Potentiometer ist ein kontinuierlich einstellbarer Widerstand. Wenn Sie seinen Schieberegler drehen, gleitet der bewegliche Kontakt über den Widerstand. Dabei kann eine Spannung ausgegeben werden, die von der angelegten Spannung am Potentiometer und dem Winkel oder Hub des beweglichen Reglers abhängt.
 
-(2)\. Como resistencia variable
+(2)\. Als veränderlicher Widerstand
 
-Cuando el potenciómetro se usa como resistencia variable, conecta su terminal intermedio a uno de los dos terminales adicionales en el circuito. De esta manera, puedes obtener un valor de resistencia estable y continuamente variable dentro de su rango.
+Wenn das Potentiometer als veränderlicher Widerstand verwendet wird, verbinden Sie seinen mittleren Anschluss mit einem der beiden zusätzlichen Anschlüsse im Stromkreis. So erhalten Sie einen stabilen und kontinuierlich veränderlichen Widerstandswert innerhalb seines Bereichs.
 
-(3)\. Como controlador de corriente
+(3)\. Als Stromregler
 
-Cuando se usa como controlador de corriente, el contacto móvil debe conectarse como uno de los terminales de salida.
+Wenn es als Stromregler verwendet wird, muss der bewegliche Kontakt als einer der Ausgangsanschlüsse angeschlossen werden.
 
-#### 4. Diagrama de Conexiones
+#### 4. Schaltplan
 
 ![Img](./media/A812.png)
 
-<span style="color: rgb(255, 76, 65);">**Al usar el servo, debemos conectar una fuente de alimentación externa y poner el interruptor DIP en ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Beim Einsatz des Servos müssen wir eine externe Stromversorgung anschließen und den DIP-Schalter auf ON stellen.**</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A836.png)
 
-#### 5. Flujo del Código
+#### 5. Programmablauf
 
 ![Img](./media/A0854.png)
 
-#### 6. Código de Prueba
+#### 6. Testcode
 
-El archivo de código se proporciona en la carpeta Proyecto 05：Dial de Coche, archivo Project-05-Car-Dial\.py.
+Die Code-Datei befindet sich im Ordner Projekt 05：Auto-Drehzahlmesser, Datei Project-05-Car-Dial\.py.
 
 ![Img](./media/A3438.png)
 
-**Código completo:**
+**Vollständiger Code:**
 
 ```python
 '''
@@ -94,18 +94,18 @@ while True:
     sleep(20)
 ```
 
-#### 7. Resultado de la Prueba
+#### 7. Testergebnis
 
-Haz clic en “<span style="color: rgb(255, 76, 65);">Flash</span>” para cargar el código en la placa micro:bit.
+Klicken Sie auf „<span style="color: rgb(255, 76, 65);">Flash</span>“, um den Code auf das micro:bit Board zu laden.
 
 ![Img](./media/A3457.png)
 
-Después de descargar el código a la placa, **enciende mediante el cable micro USB o fuente de alimentación externa (pon el interruptor DIP en ON)**, y presiona el botón de reinicio en la placa.
+Nach dem Herunterladen des Codes auf das Board **mit dem micro USB Kabel oder einer externen Stromversorgung einschalten (DIP-Schalter auf ON stellen)** und die Reset-Taste auf dem Board drücken.
 
 ![Img](./media/A455.png)
 
-Gira la perilla del potenciómetro y el servo mueve la aguja en el dial.
+Drehen Sie den Knopf am Potentiometer, und der Servo bewegt den Zeiger auf dem Ziffernblatt.
 
-<span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no ves resultados, presiona el botón de reinicio en la parte trasera de la placa.</span>
+<span style="color: rgb(255, 76, 65);">**ACHTUNG:** Wenn die Verkabelung korrekt ist, Sie aber keine Ergebnisse sehen, drücken Sie die Reset-Taste auf der Rückseite des Boards.</span>
 
 ![Img](./media/A706.gif)

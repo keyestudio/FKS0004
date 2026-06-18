@@ -1,152 +1,152 @@
-**Servicio postventa**
+**Kundendienst**
 
-Si encuentra que falta algo o está roto, o tiene alguna dificultad para aprender con el kit, no dude en contactarnos. Bienvenido a enviarnos un correo electrónico a: service@keyestudio.com
+Wenn etwas fehlt oder beschädigt ist oder Sie Schwierigkeiten beim Lernen mit dem Kit haben, können Sie uns gerne kontaktieren. Senden Sie uns eine E-Mail an: service@keyestudio.com
 
-¡Nos esforzaremos por actualizar proyectos y productos continuamente a partir de sus sinceros consejos! ¡Gracias!
+Wir bemühen uns, Projekte und Produkte kontinuierlich anhand Ihrer ehrlichen Ratschläge zu aktualisieren! Danke!
 
-# Introducción del Producto
+# Produkteinführung
 
-**FKS0004 Kit de aprendizaje Keyestudio microbit**
+**FKS0004 Keyestudio microbit Lernkit**
 
 ![Img](./media/A30.jpg)
 
-Este kit de aprendizaje cubre sensores y componentes así como una placa Micro:bit, y la tarjeta de animación incluida hace que los experimentos sean más exquisitos y hermosos. No solo permite a los makers experimentar el encanto y la practicidad de la tecnología, sino que también cultiva su pensamiento lógico.
+Dieses Lernkit umfasst Sensoren und Komponenten sowie ein Micro:bit-Board, und die beiliegende Animationskarte macht Experimente noch ansprechender und schöner. Es ermöglicht nicht nur Machern, den Charme und die Praktikabilität der Technologie zu erleben, sondern fördert auch ihr logisches Denken.
 
-Al mismo tiempo, demuestra plenamente el valor práctico y el significado educativo de la aplicación de la ciencia y la tecnología.
+Gleichzeitig zeigt es den praktischen Wert und die pädagogische Bedeutung der Anwendung von Wissenschaft und Technologie umfassend auf.
 
-# Obtener Recursos (**Importante**) 
+# Ressourcen erhalten (**Wichtig**) 
 
-**Descargar (<span style="color: rgb(255, 76, 65);">Importante</span>)**：[MakeCode_Tutorial](./MakeCode_Tutorial.7z) .
+**Download (<span style="color: rgb(255, 76, 65);">Wichtig</span>)**：[MakeCode_Tutorial](./MakeCode_Tutorial.7z) .
 
-**Recordatorio especial:** Después de descargar el archivo MakeCode_Tutorial, extráigalo. La carpeta incluye códigos, controlador USB, etc.
+**Besondere Erinnerung:** Nach dem Herunterladen der MakeCode_Tutorial-Datei entpacken Sie diese. Der Ordner enthält Codes, USB-Treiber usw.
 
-**Descargar (<span style="color: rgb(255, 76, 65);">Importante</span>)**：[MicroPython_Tutorial](./MicroPython_Tutorial.7z) .
+**Download (<span style="color: rgb(255, 76, 65);">Wichtig</span>)**：[MicroPython_Tutorial](./MicroPython_Tutorial.7z) .
 
-**Recordatorio especial:** Después de descargar el archivo MicroPython_Tutorial, extráigalo. La carpeta incluye códigos, biblioteca, controlador USB, etc.
+**Besondere Erinnerung:** Nach dem Herunterladen der MicroPython_Tutorial-Datei entpacken Sie diese. Der Ordner enthält Codes, Bibliothek, USB-Treiber usw.
 
 
-# Lista del Kit de Producto
+# Produkt-Kit-Liste
 
-Por favor, revise la lista para asegurarse de que todas las piezas estén intactas. Si encuentra alguna falta, contacte inmediatamente a nuestro personal de ventas.
+Bitte überprüfen Sie die Liste, um sicherzustellen, dass alle Teile vollständig sind. Wenn Sie fehlende Teile feststellen, wenden Sie sich bitte umgehend an unser Verkaufspersonal.
 
-|  #   |           PIC            |                             NOMBRE                             | CANT |
-| :--: | :----------------------: | :------------------------------------------------------------: | :--: |
-|  1   | ![Img](./media/A107.png)  |                  placa principal micro:bit V2.0                |  1   |
-|  2   | ![Img](./media/A314.png)  |                          breadboard                            |  1   |
-|  3   | ![Img](./media/A332.png)  |                      sensor ultrasónico                        |  1   |
-|  4   | ![Img](./media/A400.png)  |                       cable Micro USB                          |  1   |
-|  5   | ![Img](./media/A457.png)  |                          cable jumper                          |  1   |
-|  6   | ![Img](./media/A516.png)  |                            servo                               |  1   |
-|  7   | ![Img](./media/A534.png)  |               placa de expansión tipo T para micro:bit         |  1   |
-|  8   | ![Img](./media/A602.png)  |                         cable DuPont                           |  1   |
-|  9   | ![Img](./media/A620.png)  | XHT11 (compatible con DHT11) |  1   |
-|  10  | ![Img](./media/A636.png)  |                         módulo OLED                            |  1   |
-|  11  | ![Img](./media/A652.png)  |                           LED RGB                              |  1   |
-|  12  | ![Img](./media/A221.png)  |                        potenciómetro                           |  1   |
-|  13  | ![Img](./media/A237.png)  |                        resistencia 220Ω                        |  5   |
-|  14  | ![Img](./media/A257.png)  |                         resistencia 1kΩ                        |  5   |
-|  15  | ![Img](./media/A316.png)  |                        resistencia 10kΩ                        |  5   |
-|  16  | ![Img](./media/A333.png)  |                           LED rojo                             |  5   |
-|  17  | ![Img](./media/A401.png)  |                          LED amarillo                          |  5   |
-|  18  | ![Img](./media/A416.png)  |                          LED verde                             |  5   |
-|  12  | ![Img](./media/A434.png)  |                       tarjeta de resistencias                  |  1   |
-|  12  | ![Img](./media/A452.png)  |                        soporte para batería                    |  1   |
-|  13  | ![Img](./media/A757.png)  | Batería AA (<span style="color: rgb(255, 76, 65);">auto-proporcionada</span>) |  2   |
-|  14  | ![Img](./media/A3343.png) |                             tarjeta                            |  1   |
-|  15  | ![Img](./media/A3237.png) |                             tarjeta                            |  1   |
+|  #   |           PIC            |                             NAME                             | MENGE |
+| :--: | :----------------------: | :----------------------------------------------------------: | :---: |
+|  1   | ![Img](./media/A107.png)  |                  micro:bit V2.0 Hauptplatine                 |   1   |
+|  2   | ![Img](./media/A314.png)  |                          Steckbrett                         |   1   |
+|  3   | ![Img](./media/A332.png)  |                      Ultraschallsensor                      |   1   |
+|  4   | ![Img](./media/A400.png)  |                       Micro USB Kabel                        |   1   |
+|  5   | ![Img](./media/A457.png)  |                          Jumper-Kabel                       |   1   |
+|  6   | ![Img](./media/A516.png)  |                            Servo                             |   1   |
+|  7   | ![Img](./media/A534.png)  |               micro:bit T-Typ Erweiterungsplatine            |   1   |
+|  8   | ![Img](./media/A602.png)  |                         DuPont-Kabel                        |   1   |
+|  9   | ![Img](./media/A620.png)  | XHT11 (kompatibel mit DHT11)                                |   1   |
+|  10  | ![Img](./media/A636.png)  |                         OLED-Modul                          |   1   |
+|  11  | ![Img](./media/A652.png)  |                           RGB LED                           |   1   |
+|  12  | ![Img](./media/A221.png)  |                        Potentiometer                        |   1   |
+|  13  | ![Img](./media/A237.png)  |                        220Ω Widerstand                      |   5   |
+|  14  | ![Img](./media/A257.png)  |                         1kΩ Widerstand                      |   5   |
+|  15  | ![Img](./media/A316.png)  |                        10kΩ Widerstand                      |   5   |
+|  16  | ![Img](./media/A333.png)  |                           rote LED                          |   5   |
+|  17  | ![Img](./media/A401.png)  |                          gelbe LED                          |   5   |
+|  18  | ![Img](./media/A416.png)  |                          grüne LED                          |   5   |
+|  12  | ![Img](./media/A434.png)  |                       Widerstandskarte                      |   1   |
+|  12  | ![Img](./media/A452.png)  |                        Batteriefach                         |   1   |
+|  13  | ![Img](./media/A757.png)  | AA Batterie (<span style="color: rgb(255, 76, 65);">selbst mitbringen</span>) |   2   |
+|  14  | ![Img](./media/A3343.png) |                             Karte                            |   1   |
+|  15  | ![Img](./media/A3237.png) |                             Karte                            |   1   |
 
-# Placa de Expansión Tipo T
+# T-Typ Erweiterungsplatine
 
 ![Img](./media/A718.png)
 
-## 1. Introducción
+## 1. Einführung
 
-En el mercado educativo, las placas micro:bit son cada vez más populares. Sin embargo, no es fácil probar una sola placa micro:bit con otros módulos sensores. Por ello, hemos diseñado especialmente esta placa de expansión tipo T para micro:bit.
+Im Bildungsmarkt werden micro:bit Boards immer beliebter. Es ist jedoch nicht einfach, ein einzelnes micro:bit Board mit anderen Sensormodulen zu testen. Daher haben wir speziell diese micro:bit T-Typ Erweiterungsplatine entworfen.
 
-La placa de expansión tipo T para micro:bit divide todos los puertos IO en la placa en pines con un espaciado de 2.54mm (GND, 5V, 3V3, Señal), lo que es muy conveniente para conectar con otros módulos sensores y componentes electrónicos.
+Die micro:bit T-Typ Erweiterungsplatine teilt alle IO-Ports auf der Platine in Pins mit einem Abstand von 2,54 mm auf (GND, 5V, 3V3, Signal), was sehr praktisch ist, um sie mit anderen Sensormodulen und elektronischen Komponenten zu verbinden.
 
-Además, puede alimentar la placa micro:bit a través del puerto DC blanco (DC 3V) o la interfaz micro USB (DC 5V) en la placa de expansión.
+Außerdem können Sie das micro:bit Board über den weißen DC-Anschluss (DC 3V) oder die micro USB-Schnittstelle (DC 5V) auf der Erweiterungsplatine mit Strom versorgen.
 
-La placa de expansión puede aumentar o convertir el voltaje. Si se alimenta con una fuente externa de 3V, puede proporcionar voltajes de 3.3V y 5V.
+Die Erweiterungsplatine kann die Spannung erhöhen oder umwandeln. Wenn sie von einer externen Stromquelle mit 3V versorgt wird, kann sie 3,3V und 5V ausgeben.
 
-## 2. Características
+## 2. Merkmale
 
-- Voltaje de entrada: puerto DC blanco (DC 3V) o interfaz micro USB (DC 5V)
+- Eingangsspannung: weißer DC-Anschluss (DC 3V) oder micro USB-Schnittstelle (DC 5V)
 
-- Voltaje de salida: 3.3V o 5V
+- Ausgangsspannung: 3,3V oder 5V
 
-- Los puertos IO de micro:bit están divididos en pines con un espaciado de 2.54mm
+- Die IO-Ports des micro:bit sind in Pins mit einem Abstand von 2,54 mm aufgeteilt
 
-- Dimensiones: 64mm x 56mm x 18mm
+- Abmessungen: 64 mm x 56 mm x 18 mm
 
-- Peso: 13.1g
+- Gewicht: 13,1 g
 
-## 3. Distribución de Pines
+## 3. Pin-Belegung
 
 ![Img](./media/A854.png)
 
-# Sobre Micro:bit
+# Über Micro:bit
 
-## 1. Qué es Micro:bit
+## 1. Was ist Micro:bit
 
-Lanzado por la British Broadcasting Corporation (BBC), micro:bit es una placa de desarrollo microcomputadora diseñada para la educación en programación para adolescentes.
+Vom British Broadcasting Corporation (BBC) eingeführt, ist micro:bit eine Mikrocomputer-Entwicklungsplatine, die für Programmierbildung für Jugendliche konzipiert wurde.
 
-Aunque tiene el tamaño de una tarjeta de crédito, la placa integra muchos componentes, incluyendo una matriz LED 5x5, 2 botones programables, un acelerómetro, una brújula, un termómetro, un logo sensible al tacto y un micrófono MEMS, un módulo Bluetooth de baja energía y un zumbador. Este zumbador incorporado reproduce todo tipo de sonidos sin ningún equipo externo. Además, su modo de suspensión reduce el consumo de energía de las baterías cuando se mantiene presionado el botón Reset&Power.
+Obwohl es nur die Größe einer Kreditkarte hat, integriert die Platine viele Komponenten, darunter eine 5x5 LED-Matrix, 2 programmierbare Tasten, einen Beschleunigungssensor, einen Kompass, ein Thermometer, ein berührungsempfindliches Logo und ein MEMS-Mikrofon, ein Bluetooth-Modul mit niedrigem Energieverbrauch und einen Summer. Dieser eingebaute Summer erzeugt alle Arten von Tönen ohne externe Geräte. Außerdem senkt sein Schlafmodus den Stromverbrauch der Batterien, wenn die Reset&Power-Taste lange gedrückt wird.
 
-### 1.1. Diseño de la placa Micro:bit V2
+### 1.1. Micro:bit V2 Platinenlayout
 
 ![Img](./media/A549.png)
 
-### 1.2. Distribución de pines Micro:bit V2
+### 1.2. Micro:bit V2 Pin-Belegung
 
 ![Img](./media/A639.png)
 
-Funciones de los pines de Micro:bit:
+Micro:bit Pin-Funktionen:
 
-| función             | pines                                                         |
+| Funktion            | Pins                                                         |
 | :------------------ | :----------------------------------------------------------- |
 | GPIO                | P0，P1，P2，P3，P4，P5，P6，P7，P8，P9，P10，P11，P12，P13，P14，P15，P16，P19，P20 |
 | ADC/DAC             | P0，P1，P2，P3，P4，P10                                      |
 | IIC                 | P19（SCL），P20（SDA）                                       |
 | SPI                 | P13（SCK），P14（MISO），P15（MOSI）                         |
-| PWM (comúnmente usado) | P0，P1，P2，P3，P4，P10                                      |
-| ocupado             | P5(Botón A)，P6(LED Col4)，P7(LED Col2)，P10(LED Col5)，P11(Botón B) |
+| PWM (häufig verwendet) | P0，P1，P2，P3，P4，P10                                      |
+| belegt              | P5(Button A)，P6(LED Col4)，P7(LED Col2)，P10(LED Col5)，P11(Button B) |
 
-Para más información visite el sitio oficial:
+Für mehr besuchen Sie bitte die offizielle Webseite:
 
 - [https://tech.microbit.org/hardware/edgeconnector/](https://tech.microbit.org/hardware/edgeconnector/)
 
 - [https://microbit.org/guide/hardware/pins/](https://microbit.org/guide/hardware/pins/)
 
-### 1.3. Notas para la aplicación de Micro:bit V2
+### 1.3. Hinweise zur Anwendung von Micro:bit V2
 
-1. Se recomienda cubrirlo con un protector de silicona para evitar cortocircuitos ya que tiene muchos componentes electrónicos sofisticados.
+1. Es wird empfohlen, es mit einem Silikonschutz zu bedecken, um Kurzschlüsse zu vermeiden, da es viele empfindliche elektronische Komponenten enthält.
 
-2. Su puerto IO es muy débil en conducción ya que solo puede manejar corriente menor a 300mA. Por lo tanto, no lo conecte con dispositivos que operen con corriente alta, como servo MG995 y motor DC, o se quemará. Además, debe conocer los requerimientos de corriente de los dispositivos antes de usarlos y generalmente se recomienda usar la placa junto con un shield para Micro:bit.
+2. Sein IO-Port ist sehr schwach in der Ansteuerung, da er nur Ströme unter 300mA bewältigen kann. Verbinden Sie es daher nicht mit Geräten, die hohe Ströme benötigen, wie Servo MG995 und DC-Motor, da es sonst beschädigt wird. Außerdem sollten Sie die Stromanforderungen der Geräte vor der Verwendung ermitteln, und es wird generell empfohlen, die Platine zusammen mit einem Micro:bit Shield zu verwenden.
 
-3. Se recomienda alimentar la placa principal vía la interfaz USB o mediante batería de 3V. El puerto IO de esta placa es 3V3, por lo que no soporta sensores de 5V. Si necesita 5V, se requiere la placa de expansión para conectar una fuente externa.
+3. Es wird empfohlen, die Hauptplatine über die USB-Schnittstelle oder über eine 3V Batterie zu versorgen. Der IO-Port dieser Platine ist 3V3, daher werden keine 5V Sensoren unterstützt. Wenn Sie 5V benötigen, ist die Erweiterungsplatine erforderlich, um eine externe Stromversorgung anzuschließen.
 
-4. Al usar los pines (P3, P4, P6, P7 y P10) compartidos con la matriz de puntos LED, bloquéelos de la matriz. De lo contrario, el LED puede mostrar aleatoriamente y los datos de los sensores conectados pueden ser incorrectos.
+4. Wenn Sie Pins (P3, P4, P6, P7 und P10) verwenden, die mit der LED-Matrix geteilt werden, blockieren Sie diese von der Matrix. Andernfalls kann die LED zufällig anzeigen und die Daten der angeschlossenen Sensoren können falsch sein.
 
-5. **Los pines 19 y 20 no pueden usarse como puertos IO** aunque Makecode muestre que sí. Solo pueden usarse para comunicación I2C.
+5. **Pin 19 und 20 können nicht als IO-Ports verwendet werden**, obwohl MakeCode dies anzeigt. Sie können nur für die I2C-Kommunikation verwendet werden.
 
-6. El puerto de batería de 3V no puede conectarse con baterías de más de 3.3V, o la placa se dañará.
+6. Der 3V-Batterieanschluss darf nicht mit Batterien über 3,3V verbunden werden, da sonst die Platine beschädigt wird.
 
-7. Está prohibido operarlo sobre productos metálicos para evitar cortocircuitos.
+7. Der Betrieb auf Metallprodukten ist verboten, um Kurzschlüsse zu vermeiden.
 
-<span style="color: rgb(255, 76, 65);">En pocas palabras</span>, micro:bit es como una microcomputadora que ha puesto la programación al alcance de nuestras manos y ha potenciado la innovación digital.
+<span style="color: rgb(255, 76, 65);">Einfach ausgedrückt</span> ist micro:bit wie ein Mikrocomputer, der Programmierung an unsere Fingerspitzen gebracht und digitale Innovation gefördert hat.
 
-## 2. Driver de Micro:bit
+## 2. Micro:bit Treiber
 
-Micro:bit no requiere instalación de driver. Sin embargo, en caso de que su computadora no reconozca la placa principal, necesita instalar el driver.
+Micro:bit benötigt keine Treiberinstallation. Falls Ihr Computer das Hauptboard jedoch nicht erkennt, müssen Sie den Treiber installieren.
 
-**Instrucciones para la instalación del driver:**
+**Anleitung zur Treiberinstallation:**
 
-Conecte la placa principal micro:bit a la computadora mediante cable USB.
+Verbinden Sie das micro:bit Hauptboard über ein USB-Kabel mit dem Computer.
 
 ![Img](./media/A252.png)
 
-En las carpetas MicroPython_Tutorial y MakeCode_Tutorial, proporcionamos archivos de driver. Elija uno de ellos. Haga clic en el archivo del driver para “**Instalar**”.
+In den Ordnern MicroPython_Tutorial und MakeCode_Tutorial stellen wir Treiberdateien bereit. Wählen Sie eine davon aus und klicken Sie auf die Treiberdatei, um sie zu „**Installieren**“.
 
 ![Img](./media/A323a.png)
 
@@ -154,16 +154,16 @@ En las carpetas MicroPython_Tutorial y MakeCode_Tutorial, proporcionamos archivo
 
 ![Img](./media/A327.png)
 
- “**Instalar**” y “**Siguiente**”.
+ „**Installieren**“ und „**Weiter**“.
 
 ![Img](./media/A347.png)
 
-“**Instalar**” y “**Finalizar**”.
+„**Installieren**“ und „**Fertigstellen**“.
 
 ![Img](./media/A408.png)
 
 ![Img](./media/A349.png)
 
-Después, ingrese a “**Equipo**” —> “**Propiedades**” —> “**Administrador de dispositivos**”:
+Danach öffnen Sie „**Computer**“ —> „**Eigenschaften**“ —> „**Geräte-Manager**“:
 
 ![Img](./media/A427.png)

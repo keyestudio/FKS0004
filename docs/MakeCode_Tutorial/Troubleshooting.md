@@ -1,117 +1,117 @@
-## 3. Solución de Problemas
+## 3. Fehlerbehebung
 
-#### MAINTENANCE: El código no se descarga en Micro:bit
+#### MAINTENANCE: Code kann nicht auf Micro:bit heruntergeladen werden
 
-**1. Problema**
+**1. Problem**
 
-Recientemente, muchos usuarios encuentran el problema de que la placa Micro:bit no responde al descargar el código.
+In letzter Zeit haben viele Benutzer das Problem, dass das Micro:bit-Board beim Herunterladen des Codes nicht reagiert.
 
-Si la forma en que operas es correcta, tal vez presionaste accidentalmente el botón de reinicio y entraste en modo MAINTENANCE o el firmware se perdió debido a una mala operación.
+Wenn die Bedienung korrekt ist, haben Sie möglicherweise versehentlich die Reset-Taste gedrückt und den MAINTENANCEsmodus aktiviert oder die Firmware wurde durch Fehlbedienung gelöscht.
 
-Conecta la placa Micro:bit, aparece la unidad “<span style="color: rgb(255, 76, 65);">MAINTENANCE</span>”, lo que significa que el programa no se puede descargar.
+Wenn Sie das Micro:bit-Board anschließen, erscheint das Laufwerk „<span style="color: rgb(255, 76, 65);">MAINTENANCE</span>“, was bedeutet, dass das Programm nicht heruntergeladen werden kann.
 
 ![Img](./media/A158.png)
 
-**2. Soluciones**
+**2. Lösungen**
 
-(1) Descarga el archivo <span style="color: rgb(255, 76, 65);">.hex</span> desde esta página a tu computadora.
+(1) Laden Sie die <span style="color: rgb(255, 76, 65);">.hex</span>-Datei von dieser Seite auf Ihren Computer herunter.
 
-Descarga [el firmware más reciente de micro:bit-0255](https://www.microbit.org/get-started/user-guide/firmware/). Si no deseas descargarlo desde este sitio web, también lo proporcionamos en nuestro tutorial.
+Laden Sie [die neueste micro:bit Firmware-0255](https://www.microbit.org/get-started/user-guide/firmware/) herunter. Wenn Sie nicht von dieser Website herunterladen möchten, stellen wir sie auch in unserem Tutorial bereit.
 
-(2) Después de descargar el firmware más reciente, arrastra Firmware para V2.20_V2.21 a la unidad “<span style="color: rgb(255, 76, 65);">MAINTENANCE</span>” para que Micro:bit vuelva al modo normal.
+(2) Nachdem die neueste Firmware heruntergeladen wurde, ziehen Sie die Firmware für V2.20_V2.21 in das „<span style="color: rgb(255, 76, 65);">MAINTENANCE</span>“-Laufwerk, um das Micro:bit wieder in den Normalmodus zu versetzen.
 
-<span style="color: rgb(255, 76, 65);">Instalamos diferentes firmwares según los modelos de placa micro:bit. Aquí es Firmware para V2.20_V2.21.</span>
+<span style="color: rgb(255, 76, 65);">Wir installieren unterschiedliche Firmwares je nach Micro:bit-Board-Modell. Hier ist die Firmware für V2.20_V2.21.</span>
 
 ![Img](./media/A326.png)
 
 ![Img](./media/A331.png)
 
-**3. Evitar entrar en “MAINTENANCE”**
+**3. Vermeiden Sie den Eintritt in den „MAINTENANCE“-Modus**
 
-(1) Asegúrate de no presionar el botón de reinicio al conectar la placa con el cable USB.
+(1) Stellen Sie sicher, dass die Reset-Taste beim Anschließen des Boards über das USB-Kabel nicht gedrückt wird.
 
 ![Img](./media/A228.png)
 
-(2) No desconectes el cable repentinamente durante la descarga del programa micro:bit, de lo contrario, el firmware se perderá y micro:bit entrará en modo “MAINTENANCE”.
+(2) Ziehen Sie das Kabel während des Herunterladens des Micro:bit-Programms nicht plötzlich ab, da sonst die Firmware verloren geht und das Micro:bit in den „MAINTENANCE“-Modus wechselt.
 
-(3) En el experimento, una conexión incorrecta también puede causar un cortocircuito o pérdida del firmware.
+(3) Falsche Verdrahtung im Experiment kann ebenfalls einen Kurzschluss oder Firmwareverlust verursachen.
 
-#### Solución de problemas de descargas con WebUSB
+#### Fehlerbehebung bei Downloads mit WebUSB
 
-Haz clic: [Solución de problemas de descargas con WebUSB](https://makecode.microbit.org/device/usb/webusb/troubleshoot)
+Klicken Sie hier: [Fehlerbehebung bei Downloads mit WebUSB](https://makecode.microbit.org/device/usb/webusb/troubleshoot)
 
-¿Tienes problemas para emparejar tu micro:bit con WebUSB? ¡Vamos a intentar descubrir por qué!
+Probleme bei der Verbindung Ihres micro:bit mit WebUSB? Lassen Sie uns herausfinden, warum!
 
-**Paso 1: Verifica tu cable**
+**Schritt 1: Überprüfen Sie Ihr Kabel**
 
-Asegúrate de que tu micro:bit esté conectado a tu computadora con un cable micro USB. Por ejemplo, en el Explorador de Windows deberías ver que aparece una unidad **MICROBIT** cuando está conectado.
+Stellen Sie sicher, dass Ihr micro:bit mit einem Micro-USB-Kabel an Ihren Computer angeschlossen ist. Zum Beispiel sollte im Windows Explorer ein **MICROBIT**-Laufwerk erscheinen, wenn es verbunden ist.
 
 ![Img](./media/A321.png)
 
-Si puedes ver la unidad MICROBIT, pasa al paso 2. Si no puedes ver la unidad:
+Wenn Sie das MICROBIT-Laufwerk sehen, fahren Sie mit Schritt 2 fort. Wenn Sie das Laufwerk nicht sehen:
 
-(1) Asegúrate de que el cable USB funcione.
+(1) Stellen Sie sicher, dass das USB-Kabel funktioniert.
 
-¿Funciona el cable en otra computadora? Si no, busca otro cable para usar. Algunos cables solo proporcionan conexión de energía y no transfieren datos realmente.
+Funktioniert das Kabel an einem anderen Computer? Wenn nicht, verwenden Sie ein anderes Kabel. Einige Kabel bieten nur eine Stromverbindung und übertragen keine Daten.
 
-(2) Prueba otro puerto USB en tu computadora.
+(2) Versuchen Sie einen anderen USB-Anschluss an Ihrem Computer.
 
-¿El cable está bien pero aún no ves la unidad MICROBIT? Hmm, podrías tener un problema con tu micro:bit.
+Ist das Kabel in Ordnung, aber Sie sehen das MICROBIT-Laufwerk immer noch nicht? Hmm, möglicherweise liegt ein Problem mit Ihrem micro:bit vor.
 
-Prueba los pasos adicionales descritos en la [página de solución de problemas en microbit.org](https://support.microbit.org/support/solutions/articles/19000024000-fault-finding-with-a-micro-bit). Si esto no ayuda, puedes [crear un ticket de soporte](https://support.microbit.org/support/tickets/new) para notificar a la Fundación Micro:bit del problema. Omite los pasos restantes de solución de problemas.
+Versuchen Sie die zusätzlichen Schritte auf der [Fehlerbehebungsseite bei microbit.org](https://support.microbit.org/support/solutions/articles/19000024000-fault-finding-with-a-micro-bit). Wenn das nicht hilft, können Sie [ein Support-Ticket erstellen](https://support.microbit.org/support/tickets/new), um die Micro:bit Foundation über das Problem zu informieren. Überspringen Sie die restlichen Fehlerbehebungsschritte.
 
-**Paso 2: Verifica la versión de tu firmware**
+**Schritt 2: Überprüfen Sie Ihre Firmware-Version**
 
-Si tus descargas aún no funcionan, es posible que la versión del firmware en el micro:bit necesite una actualización. Vamos a comprobarlo:
+Wenn Ihre Downloads immer noch nicht funktionieren, muss die Firmware-Version auf dem micro:bit möglicherweise aktualisiert werden. Lassen Sie uns das überprüfen:
 
-1. Ve a la unidad **MICROBIT**;
+1. Gehen Sie zum **MICROBIT**-Laufwerk;
 
-2. Abre el archivo <span style="color: rgb(255, 76, 65);">DETAILS.TXT</span>;
+2. Öffnen Sie die Datei <span style="color: rgb(255, 76, 65);">DETAILS.TXT</span>;
 
 ![Img](./media/A0452.png)
 
-3. Encuentra el número de versión del firmware; Busca una línea en el archivo que diga el número de versión. Debe decir Version:
+3. Finden Sie die Firmware-Versionsnummer; Suchen Sie in der Datei nach einer Zeile, die die Versionsnummer angibt. Dort sollte „Version:“ stehen:
 
 ![Img](./media/A501.png)
 
-Si la versión es 0234, 0241, 0243 NECESITAS actualizar el firmware de tu micro:bit. Ve al Paso 3 y sigue las instrucciones de actualización.
+Wenn die Version 0234, 0241 oder 0243 ist, MÜSSEN Sie die Firmware auf Ihrem micro:bit aktualisieren. Gehen Sie zu Schritt 3 und folgen Sie den Upgrade-Anweisungen.
 
-Si la versión es 0249, 0250 o superior, tienes el firmware correcto, pasa al paso 4.
+Wenn die Version 0249, 0250 oder höher ist, haben Sie die richtige Firmware und können mit Schritt 4 fortfahren.
 
-**Paso 3: Actualiza el firmware**
+**Schritt 3: Firmware aktualisieren**
 
-(1) Pon tu micro:bit en modo MAINTENANCE.
+(1) Versetzen Sie Ihr micro:bit in den MAINTENANCES-Modus.
 
-Para hacer esto, desconecta el cable USB del micro:bit y luego vuelve a conectar el cable USB mientras mantienes presionado el botón de reinicio. Una vez que insertes el cable, puedes soltar el botón de reinicio.
+Dazu ziehen Sie das USB-Kabel vom micro:bit ab und schließen es erneut an, während Sie die Reset-Taste gedrückt halten. Sobald Sie das Kabel einstecken, können Sie die Reset-Taste loslassen.
 
-Ahora deberías ver una unidad MAINTENANCE en lugar de la unidad MICROBIT como antes. Además, un LED amarillo permanecerá encendido junto al botón de reinicio.
+Sie sollten jetzt ein MAINTENANCES-Laufwerk anstelle des MICROBIT-Laufwerks sehen. Außerdem leuchtet eine gelbe LED neben der Reset-Taste dauerhaft.
 
 ![maintenance](./media/maintenance.gif)
 
-(2) Descarga el [archivo .hex del firmware](https://microbit.org/guide/firmware/).
+(2) Laden Sie die [Firmware .hex-Datei](https://microbit.org/guide/firmware/) herunter.
 
-<span style="color: rgb(255, 76, 65);">Instalamos diferentes firmwares según los modelos de placa micro:bit. Aquí es Firmware para V2.20_V2.21.</span>
+<span style="color: rgb(255, 76, 65);">Wir installieren unterschiedliche Firmwares je nach Micro:bit-Board-Modell. Hier ist die Firmware für V2.20_V2.21.</span>
 
 ![Img](./media/A0629.png)
 
-(3) Arrastra y suelta ese archivo en la unidad **MAINTENANCE**.
+(3) Ziehen Sie diese Datei auf das **MAINTENANCE**-Laufwerk.
 
-(4) Observa el LED parpadeante.
+(4) Achten Sie auf die blinkende LED.
 
-El LED amarillo parpadeará mientras se copia el archivo HEX. Cuando la copia termine, el LED se apagará y el micro:bit se reiniciará. La unidad MAINTENANCE ahora cambia de nuevo a MICROBIT.
+Die gelbe LED blinkt, während die HEX-Datei kopiert wird. Wenn der Kopiervorgang abgeschlossen ist, erlischt die LED und das micro:bit startet neu. Das MAINTENANCE-Laufwerk wechselt zurück zu MICROBIT.
 
-(5) Actualización completa.
+(5) Upgrade abgeschlossen.
 
-¡La actualización está completa! Puedes abrir el archivo <span style="color: rgb(255, 76, 65);">DETAILS.TXT</span> para verificar que la versión del firmware cambió y coincide con la versión del archivo HEX que copiaste.
+Das Upgrade ist abgeschlossen! Sie können die Datei <span style="color: rgb(255, 76, 65);">DETAILS.TXT</span> öffnen, um zu überprüfen, ob die Firmware-Version auf die Version der kopierten HEX-Datei geändert wurde.
 
-Si quieres saber más sobre cómo conectar la placa, el modo MAINTENANCE y la actualización del firmware, léelo en la [Guía de Firmware](https://microbit.org/guide/firmware/).
+Wenn Sie mehr über das Anschließen des Boards, den MAINTENANCES-Modus und das Firmware-Upgrade erfahren möchten, lesen Sie den [Firmware-Leitfaden](https://microbit.org/guide/firmware/).
 
-**Paso 4: Verifica la versión de tu navegador**
+**Schritt 4: Überprüfen Sie Ihre Browserversion**
 
-WebUSB es una función bastante nueva y puede requerir que actualices tu navegador. Verifica que la versión de tu navegador coincida con una de las siguientes: versiones de navegador para Android, Chrome OS, Linux, macOS y Chrome 65+ para Windows 10.
+WebUSB ist eine relativ neue Funktion und erfordert möglicherweise ein Update Ihres Browsers. Stellen Sie sicher, dass Ihre Browserversion einer der folgenden entspricht: Browser-Versionen für Android, Chrome OS, Linux, macOS und Chrome 65+ für Windows 10.
 
-**Paso 5: Emparejar dispositivo**
+**Schritt 5: Gerät koppeln**
 
-Una vez que hayas actualizado el firmware, abre el navegador Chrome, ve al editor y haz clic en Emparejar dispositivo en el menú del engranaje. Consulta [WebUSB(/device/usb/webusb)](https://microbit.org/get-started/user-guide/web-usb/) para instrucciones de emparejamiento.
+Nachdem Sie die Firmware aktualisiert haben, öffnen Sie den Chrome-Browser, gehen Sie zum Editor und klicken Sie im Zahnrad-Menü auf „Gerät koppeln“. Siehe [WebUSB(/device/usb/webusb)](https://microbit.org/get-started/user-guide/web-usb/) für Anweisungen zum Koppeln.
 
-¡Disfruta de descargas rápidas!
+Genießen Sie schnelle Downloads!

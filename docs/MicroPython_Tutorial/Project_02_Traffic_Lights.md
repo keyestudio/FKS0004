@@ -1,48 +1,48 @@
-### Proyecto 02: Semáforos
+### Projekt 02: Ampel
 
-#### 1. Resumen
+#### 1. Übersicht
 
-En este proyecto, utilizamos tres LEDs (rojo, amarillo y verde), un altavoz en la placa micro:bit y una matriz LED 5x5 para crear un modelo de semáforo.
+In diesem Projekt verwenden wir drei LEDs (rot, gelb und grün), einen Lautsprecher auf dem micro:bit Board und eine 5x5 LED-Matrix, um ein Modell einer Ampel zu erstellen.
 
-#### 2. Componentes
+#### 2. Komponenten
 
 |              ![Img](./media/A850.png)              |       ![Img](./media/A858.png)       | ![Img](./media/A906.png) |
 | :-----------------------------------------------: | :---------------------------------: | :---------------------: |
-|                placa micro:bit *1                 | placa de expansión tipo T para micro:bit *1 |   cable micro USB *1    |
+|                micro:bit Board *1                 | micro:bit T-Typ Erweiterungsboard *1 |   micro USB Kabel *1    |
 |              ![Img](./media/A937.png)              |      ![Img](./media/A5652.png)       | ![Img](./media/A658.png) |
-|                    LED rojo *1                     |            LED amarillo *1            |      LED verde *1       |
+|                    rote LED *1                     |            gelbe LED *1              |      grüne LED *1       |
 |              ![Img](./media/A944.png)              |       ![Img](./media/A950.png)       | ![Img](./media/A017.png) |
-|                 resistencia 220Ω *3                |             cables de conexión              |      protoboard *1      |
+|                 220Ω Widerstand *3                  |             Jumper-Kabel             |      Steckbrett *1      |
 |              ![Img](./media/A024.png)              |       ![Img](./media/A020.png)       |                         |
-| portapilas *1 <br> (<span style="color: rgb(255, 76, 65);">pilas AA auto-proporcionadas *2</span>)|       tarjeta de semáforo *1        |                         |
+| Batteriehalter *1 <br> (<span style="color: rgb(255, 76, 65);">selbst mitgebrachte AA Batterien *2</span>)|       Ampelkarte *1        |                         |
 
-#### 3. Conocimiento de Componentes
+#### 3. Komponentenwissen
 
-**Altavoz**
+**Lautsprecher**
 
 ![Img](./media/A833.png)
 
-Micro:bit viene con un altavoz, lo que facilita hacer sonidos en tu proyecto.
+Der micro:bit verfügt über einen Lautsprecher, der es einfach macht, in deinem Projekt Töne zu erzeugen.
 
-#### 4. Diagrama de Conexiones
+#### 4. Schaltplan
 
 ![Img](./media/A908.png)
 
-<span style="color: rgb(255, 76, 65);">**Nota:** la placa micro:bit debe insertarse en la placa de expansión tipo T como se muestra a continuación. La matriz LED de la placa micro:bit debe estar en el mismo lado que el logo de la placa de expansión.</span>
+<span style="color: rgb(255, 76, 65);">**Hinweis:** Das micro:bit Board muss wie unten gezeigt in das T-Typ Erweiterungsboard eingesteckt werden. Die LED-Matrix des micro:bit Boards sollte auf derselben Seite wie das Logo des Erweiterungsboards sein.</span>
 
 ![Img](./media/A940.png)
 
-#### 5. Flujo del Código
+#### 5. Programmablauf
 
 ![Img](./media/A5956.png)
 
-#### 6. Código de Prueba
+#### 6. Testcode
 
-El archivo de código se encuentra en la carpeta Proyecto 02：Semáforos, archivo Project-02-Traffic-Lights\.py.
+Die Code-Datei befindet sich im Ordner Projekt 02：Ampel, Datei Project-02-Traffic-Lights\.py.
 
 ![Img](./media/A250.png)
 
-**Código completo:** 
+**Vollständiger Code:** 
 
 ```python
 '''
@@ -115,22 +115,22 @@ while True:
    pin8.write_digital(0)
 ```
 
-#### 7. Resultado de la Prueba
+#### 7. Testergebnis
 
-Haz clic en “<span style="color: rgb(255, 76, 65);">Flash</span>” para cargar el código en la placa micro:bit.
+Klicke auf „<span style="color: rgb(255, 76, 65);">Flash</span>“, um den Code auf das micro:bit Board zu laden.
 
 ![Img](./media/A353.png)
 
-Después de descargar el código a la placa, **enciende mediante el cable micro USB o fuente de alimentación externa (gira el interruptor DIP a ON)**, y presiona el botón de reinicio en la placa.
+Nach dem Herunterladen des Codes auf das Board **mit dem micro USB Kabel oder einer externen Stromversorgung einschalten (DIP-Schalter auf ON stellen)** und die Reset-Taste auf dem Board drücken.
 
 ![Img](./media/A455.png)
 
-El LED verde se enciende y la matriz LED 5×5 cuenta regresivamente 6 segundos. Después de que el LED verde se apaga, el LED amarillo parpadea y la matriz cuenta 3 segundos con sonido del altavoz. Finalmente, el LED rojo se enciende con una cuenta regresiva de 6 segundos. Estas acciones se repiten.
+Die grüne LED leuchtet und die 5×5 LED-Matrix zählt 6 Sekunden herunter. Nachdem die grüne LED aus ist, blinkt die gelbe LED und die Matrix zählt 3 Sekunden herunter, während der Lautsprecher Töne abspielt. Zum Schluss leuchtet die rote LED mit einem Countdown von 6 Sekunden. Diese Abläufe wiederholen sich.
 
-<span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no ves resultados, presiona el botón de reinicio en la parte trasera de la placa.</span>
+<span style="color: rgb(255, 76, 65);">**ACHTUNG:** Wenn die Verkabelung korrekt ist, aber keine Ergebnisse sichtbar sind, drücke die Reset-Taste auf der Rückseite des Boards.</span>
 
 ![Img](./media/A459.gif)
 
-<span style="color: rgb(255, 76, 65);">**Al alimentar con fuente externa, gira el interruptor DIP a ON.**</span>
+<span style="color: rgb(255, 76, 65);">**Beim Einschalten über externe Stromversorgung den DIP-Schalter auf ON stellen.**</span>
 
 ![Img](./media/A904.png)

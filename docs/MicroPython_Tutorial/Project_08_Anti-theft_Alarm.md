@@ -1,48 +1,48 @@
-### Proyecto 08: Alarma Antirrobo
+### Projekt 08: Diebstahlalarm
 
-#### 1. Resumen
+#### 1. Überblick
 
-Cuando la alarma antirrobo inteligente detecta que la caja antirrobo ha sido movida, el altavoz en la placa micro:bit emitirá una alarma y el LED rojo parpadeará.
+Wenn der intelligente Diebstahlalarm erkennt, dass die Diebstahlsicherung bewegt wurde, ertönt der Lautsprecher auf dem micro:bit Board und die rote LED blinkt.
 
-#### 2. Componentes
+#### 2. Komponenten
 
 | ![Img](./media/A850.png) |              ![Img](./media/A858.png)              | ![Img](./media/A906.png) |
 | :---------------------: | :-----------------------------------------------: | :---------------------: |
-|   placa micro:bit *1    |        placa de expansión tipo T para micro:bit *1        |   cable micro USB *1    |
+|   micro:bit Board *1    |        micro:bit T-Typ Erweiterungsboard *1        |   micro USB Kabel *1    |
 | ![Img](./media/A937.png) |              ![Img](./media/A944.png)              | ![Img](./media/A950.png) |
-|       LED rojo *1       |                 resistor 220Ω *1                  |      cable de salto *2       |
+|       rote LED *1       |                 220Ω Widerstand *1                 |      Steckdraht *2      |
 | ![Img](./media/A017.png) |              ![Img](./media/A024.png)              | ![Img](./media/A952.png) |
-|      protoboard *1      |soporte para batería *1 <br> (<span style="color: rgb(255, 76, 65);">pilas AA auto-proporcionadas *2</span>)|      tarjeta de alarma *1      |
+|      Steckbrett *1      |Batteriehalter *1 <br> (<span style="color: rgb(255, 76, 65);">selbst bereitgestellte AA Batterien *2</span>)|      Alarmkarte *1      |
 
-#### 3. Conocimiento de Componentes
+#### 3. Komponentenwissen
 
-**Acelerómetro**
+**Beschleunigungssensor**
 
 ![Img](./media/A026.png)
 
-La placa micro:bit cuenta con un sensor de aceleración integrado LSM303AGR (llamado acelerómetro) que incluye modos estándar, rápido, plus y de alta velocidad (100 kHz, 400 kHz, 1 MHz y 3.4 MHz) de interfaz de bus serial I2C y una interfaz estándar serial SPI para comunicación externa, con resolución de 8/10/12 bits y rango de ±2g, ±4g o ±8g.
+Das micro:bit Board verfügt über einen eingebauten LSM303AGR Beschleunigungssensor (wir nennen ihn Beschleunigungsmesser), der den Standard-, Schnell-, Plus- und Hochgeschwindigkeitsmodus (100 kHz, 400 kHz, 1 MHz und 3,4 MHz) der I2C-Seriellschnittstelle sowie die SPI-Seriellschnittstelle für die externe Kommunikation umfasst, mit einer Auflösung von 8/10/12 Bit und einem Messbereich von ±2g, ±4g oder ±8g.
 
-Cuando la placa micro:bit está en reposo o en movimiento uniforme, el acelerómetro solo detecta la aceleración de la gravedad. Si se balancea ligeramente, la aceleración detectada es mucho menor que la de la gravedad, por lo que la diferencia puede ignorarse. Por lo tanto, principalmente detectamos el cambio de la aceleración gravitacional en los ejes x, y y z.
+Wenn das micro:bit Board ruht oder sich gleichförmig bewegt, misst der Beschleunigungsmesser nur die Erdbeschleunigung. Wenn es leicht geschwenkt wird, ist die gemessene Beschleunigung viel geringer als die der Erdbeschleunigung, sodass die Differenz vernachlässigt werden kann. Daher erfassen wir hauptsächlich die Änderung der Erdbeschleunigung auf den x-, y- und z-Achsen.
 
-#### 4. Diagrama de Conexiones
+#### 4. Schaltplan
 
 ![Img](./media/A219.png)
 
-<span style="color: rgb(255, 76, 65);">El pin de control de la placa para el LED es P1 (el pin de la placa de expansión tipo T es digital 1).</span>
+<span style="color: rgb(255, 76, 65);">Der Steuerpin des LED-Boards ist P1 (der Pin des T-Typ Erweiterungsboards ist digital 1).</span>
 
-#### 5. Flujo del Código
+#### 5. Programmablauf
 
 ![Img](./media/A4434.png)
 
-#### 6. Código de Prueba
+#### 6. Testcode
 
-El archivo de código se encuentra en la carpeta Proyecto 08：Alarma Antirrobo, archivo Project-08-Burglar-Alarm\.py.
+Die Code-Datei befindet sich im Ordner Projekt 08：Diebstahlalarm, Datei Project-08-Burglar-Alarm\.py.
 
 ![Img](./media/A3743.png)
 
-**Código completo:** 
+**Vollständiger Code:** 
 
-<span style="color: rgb(255, 76, 65);">**Después de importar el código, si el zumbador sigue sonando aunque la protoboard no se haya movido; puede deberse a factores geográficos. Puede modificar el umbral en la condición -60 y 50 según las condiciones reales.**</span>
+<span style="color: rgb(255, 76, 65);">**Nach dem Importieren des Codes, wenn der Summer ständig ertönt, obwohl das Steckbrett nicht bewegt wird, kann dies durch geografische Faktoren verursacht sein. Sie können die Schwellenwerte in der Bedingung -60 und 50 entsprechend den tatsächlichen Bedingungen anpassen.**</span>
 
 ```python
 '''
@@ -70,18 +70,18 @@ while True:
         music.reset()             # no tone
 ```
 
-#### 7. Resultado de la Prueba
+#### 7. Testergebnis
 
-Haga clic en “<span style="color: rgb(255, 76, 65);">Flash</span>” para cargar el código en la placa micro:bit.
+Klicken Sie auf „<span style="color: rgb(255, 76, 65);">Flash</span>“, um den Code auf das micro:bit Board zu laden.
 
 ![Img](./media/A3757.png)
 
-Después de descargar el código en la placa, **encienda mediante el cable micro USB o fuente de alimentación externa (mueva el interruptor DIP a ON)**, y presione el botón de reinicio en la placa.
+Nach dem Herunterladen des Codes auf das Board **schalten Sie die Stromversorgung über das micro USB Kabel oder eine externe Stromquelle ein (stellen Sie den DIP-Schalter auf ON)** und drücken Sie die Reset-Taste auf dem Board.
 
 ![Img](./media/A455.png)
 
-Después de descargar el código en la placa, mueva la protoboard. Si el valor de aceleración x＜-60 o x＞50, el altavoz en la placa emite alarma y el LED parpadea, y la matriz LED de micro:bit muestra ![Img](./media/A706.png). De lo contrario, el altavoz no emite sonido y el LED está apagado, y la matriz LED de micro:bit muestra ![Img](./media/A720.png).
+Nach dem Herunterladen des Codes auf das Board bewegen Sie das Steckbrett. Wenn der Beschleunigungswert x＜-60 oder x＞50 ist, ertönt der Lautsprecher auf dem Board und die LED blinkt, und die micro:bit LED-Matrix zeigt ![Img](./media/A706.png). Andernfalls ertönt kein Ton und die LED ist aus, und die micro:bit LED-Matrix zeigt ![Img](./media/A720.png).
 
-<span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no ve resultados, presione el botón de reinicio en la parte trasera de la placa.</span>
+<span style="color: rgb(255, 76, 65);">**ACHTUNG:** Wenn die Verkabelung korrekt ist, Sie aber keine Ergebnisse sehen, drücken Sie die Reset-Taste auf der Rückseite des Boards.</span>
 
 ![Img](./media/A936.gif)

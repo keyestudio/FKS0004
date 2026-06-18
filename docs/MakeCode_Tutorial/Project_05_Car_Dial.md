@@ -1,81 +1,81 @@
-### Proyecto 05: Dial de Coche
+### Projekt 05: Auto-Zifferblatt
 
-#### 1. Resumen
+#### 1. Übersicht
 
-En este proyecto, combinamos un potenciómetro ajustable, un servo y una hermosa tarjeta de dial para hacer un modelo simple de dial de coche.
+In diesem Projekt kombinieren wir ein einstellbares Potentiometer, einen Servo und eine schöne Zifferblattkarte, um ein einfaches Auto-Zifferblattmodell zu erstellen.
 
-#### 2. Componentes
+#### 2. Komponenten
 
 | ![Img](./media/A850.png)| ![Img](./media/A858.png) | ![Img](./media/A906.png) |
 | :--: | :--: | :--: |
-| placa micro:bit *1 | placa de expansión tipo T para micro:bit *1 | cable micro USB *1 |
+| micro:bit Board *1 | micro:bit T-Typ Erweiterungsboard *1 | micro USB Kabel *1 |
 | ![Img](./media/A350.png)| ![Img](./media/A309.png)| ![Img](./media/A950.png) |
-| potenciómetro *1 | servo *1 | cables de conexión |
+| Potentiometer *1 | Servo *1 | Verbindungskabel |
 |![Img](./media/A017.png)  | ![Img](./media/A024.png) |![Img](./media/A233.png) |
-|protoboard *1 |portapilas *1 <br> (<span style="color: rgb(255, 76, 65);">pilas AA auto-proporcionadas *2</span>)| tarjeta de potenciómetro *1 |
+| Steckbrett *1 | Batteriefach *1 <br> (<span style="color: rgb(255, 76, 65);">selbst mitgebrachte AA Batterien *2</span>)| Potentiometer-Karte *1 |
 |![Img](./media/A1326.png) |  |  |
-|tarjeta de dial de coche*1| |  |
+| Auto-Zifferblattkarte *1| |  |
 
-#### 3. Conocimiento de Componentes
+#### 3. Komponentenwissen
 
-**potenciómetro**
+**Potentiometer**
 
 ![Img](./media/A350.png)
 
-Un potenciómetro es también un elemento resistor con tres contactos, cuyo valor de resistencia puede ajustarse según cierta regularidad.
+Ein Potentiometer ist ebenfalls ein Widerstandselement mit drei Anschlüssen, dessen Widerstandswert nach einer gewissen Regelmäßigkeit einstellbar ist.
 
-Vienen en todas las formas, tamaños y valores, pero todos tienen en común lo siguiente:
+Sie gibt es in allen Formen, Größen und Werten, aber sie haben alle Folgendes gemeinsam:
 
-① Tres terminales (o puntos de conexión).
+① Drei Anschlüsse (oder Verbindungspunkte).
 
-② Una perilla o deslizador móvil que puede cambiar la resistencia entre el terminal intermedio y cualquier terminal externo.
+② Einen beweglichen Knopf oder Schieberegler, der den Widerstand zwischen dem mittleren Anschluss und einem der äußeren Anschlüsse verändern kann.
 
-③ Al mover la perilla, la resistencia entre el terminal intermedio y cualquier terminal externo varía desde 0Ω hasta su máximo.
+③ Wenn der Knopf bewegt wird, variiert der Widerstand zwischen dem mittleren Anschluss und einem der äußeren Anschlüsse von 0Ω bis zum Maximalwert.
 
-El símbolo del circuito del potenciómetro:
+Das Schaltzeichen des Potentiometers:
 
 ![Img](./media/A654.png)
 
-(1)\. Como divisor de voltaje
+(1)\. Als Spannungsteiler
 
-El potenciómetro es un resistor ajustable continuamente. Cuando giras su deslizador, el contacto móvil se desliza a lo largo del resistor. En este punto, se puede obtener una salida de voltaje según el voltaje aplicado al potenciómetro y el ángulo o recorrido de rotación del deslizador móvil.
+Das Potentiometer ist ein kontinuierlich einstellbarer Widerstand. Wenn Sie seinen Schieberegler drehen, gleitet der bewegliche Kontakt über den Widerstand. Zu diesem Zeitpunkt kann eine Spannung entsprechend der am Potentiometer angelegten Spannung und dem Winkel oder Hub der Drehung des beweglichen Reglers ausgegeben werden.
 
-(2)\. Como resistor variable
+(2)\. Als veränderlicher Widerstand
 
-Cuando el potenciómetro se usa como resistor variable, conecta su terminal intermedio a uno de los dos terminales adicionales en el circuito. De esta manera, puedes obtener un valor de resistencia estable y continuamente variable dentro de su rango.
+Wenn das Potentiometer als veränderlicher Widerstand verwendet wird, verbinden Sie seinen mittleren Anschluss mit einem der beiden zusätzlichen Anschlüsse im Stromkreis. Auf diese Weise erhalten Sie einen stabilen und kontinuierlich variierenden Widerstandswert innerhalb seines Bereichs.
 
-(3)\. Como controlador de corriente
+(3)\. Als Stromregler
 
-Cuando se usa como controlador de corriente, el contacto móvil debe conectarse como uno de los terminales de salida.
+Wenn es als Stromregler verwendet wird, muss der bewegliche Kontakt als einer der Ausgangsanschlüsse angeschlossen werden.
 
-#### 4. Diagrama de Conexiones
+#### 4. Schaltplan
 
 ![Img](./media/A812.png)
 
-<span style="color: rgb(255, 76, 65);">Al usar el servo, debemos conectar una fuente de alimentación externa y poner el interruptor DIP en ON.</span>
+<span style="color: rgb(255, 76, 65);">Beim Einsatz des Servos müssen wir eine externe Stromversorgung anschließen und den DIP-Schalter auf ON stellen.</span>
 
 ![Img](./media/A902.png)
 
 ![Img](./media/A836.png)
 
-#### 5. Flujo del Código
+#### 5. Programmablauf
 
 ![Img](./media/A0854.png)
 
-#### 6. Código de Prueba
+#### 6. Testcode
 
-El archivo de código se proporciona en la carpeta Proyecto 05：Dial de Coche, archivo Project-05-Car-Dial.hex.
+Die Code-Datei befindet sich im Ordner Projekt 05：Auto-Zifferblatt, Datei Project-05-Car-Dial.hex.
 
 ![Img](./media/A922.png)
 
-**Cargar bloques de código:**
+**Codeblöcke laden:**
 
 ![Img](./media/A942.png)
 
-#### 7. Resultado de la Prueba
+#### 7. Testergebnis
 
-Después de descargar el código a la placa, gira la perilla del potenciómetro y el servo mueve la aguja en el dial.
+Nach dem Herunterladen des Codes auf das Board drehen Sie den Knopf am Potentiometer und der Servo bewegt den Zeiger auf dem Zifferblatt.
 
-<span style="color: rgb(255, 76, 65);">**ATENCIÓN:** Si el cableado es correcto pero no ves resultados, presiona el botón de reinicio en la parte trasera de la placa.</span>
+<span style="color: rgb(255, 76, 65);">**ACHTUNG:** Wenn die Verkabelung korrekt ist, Sie aber keine Ergebnisse sehen, drücken Sie die Reset-Taste auf der Rückseite des Boards.</span>
 
 ![Img](./media/A706.gif)
